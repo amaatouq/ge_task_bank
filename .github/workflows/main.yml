@@ -1,0 +1,26 @@
+# name: Deploy
+# on:
+#   push:
+#     branches: [master]
+# jobs:
+#   setup_meteor:
+#     runs-on: ubuntu-16.04
+#     if: ${{ github.repository_owner == 'patondev' }}
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+#       - name: Generate production and token json
+#         run: |
+#           echo $PRODUCTION_JSON > $HOME/production.json
+#           echo $TOKEN_JSON > $HOME/token.json
+#         env:
+#           PRODUCTION_JSON: ${{ secrets.PRODUCTION_JSON }}
+#           TOKEN_JSON: ${{ secrets.TOKEN_JSON }}
+#       - name: Setup Meteor
+#         uses: meteorengineer/setup-meteor@v1
+#         with:
+#           meteor-release: "1.10.1"
+#       - name: NPM install
+#         run: npm install
+#       - name: Meteor Deploy
+#         run: METEOR_SESSION_FILE=$HOME/token.json meteor deploy [APP_DOMAIN_NAME] --settings $HOME/production.json --owner [OWNER_USERNAME]
