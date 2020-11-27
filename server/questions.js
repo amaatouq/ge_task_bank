@@ -14,14 +14,6 @@ calculations are necessary, just make your best estimate.
 ![/instructions/correlation-examples.png](Correlation graph examples)
     `,
   },
-  geopolitics: {
-    text: `
-The Armed Conflict Location & Event Data Project (ACLED) is a non-governmental 
-organization that tracks violent conflict in Asia, the Middle East, and Africa. 
-One type of event they track is those where civilians were intentionally targeted.  
-In 2018, they recorded 841 such events in Somalia.
-    `,
-  },
 };
 
 export const taskData = [
@@ -189,9 +181,9 @@ export const taskData = [
     ],
     question: {
       image: "",
-      text: "What is the population of New York City and it‘s agglomeration?",
+      text: "What is the population of New York City and its agglomeration?",
       answer: 21000000,
-      unit: "people",
+      unit: "person",
     },
   },
   {
@@ -200,9 +192,9 @@ export const taskData = [
     task: "population_of_large_cities",
     question: {
       image: "",
-      text: "What is the population of Madrid and it‘s agglomeration?",
+      text: "What is the population of Madrid and its agglomeration?",
       answer: 6500000,
-      unit: "people",
+      unit: "person",
     },
   },
   {
@@ -211,9 +203,9 @@ export const taskData = [
     task: "population_of_large_cities",
     question: {
       image: "",
-      text: "What is the population of Amsterdam and it‘s agglomeration?",
+      text: "What is the population of Amsterdam and its agglomeration?",
       answer: 1600000,
-      unit: "people",
+      unit: "person",
     },
   },
   {
@@ -222,9 +214,9 @@ export const taskData = [
     task: "population_of_large_cities",
     question: {
       image: "",
-      text: "What is the population of Tokyo and it‘s agglomeration?",
+      text: "What is the population of Tokyo and its agglomeration?",
       answer: 38000000,
-      unit: "people",
+      unit: "person",
     },
   },
   {
@@ -233,9 +225,9 @@ export const taskData = [
     task: "population_of_large_cities",
     question: {
       image: "",
-      text: "What is the population of Melbourne and it‘s agglomeration?",
+      text: "What is the population of Melbourne and its agglomeration?",
       answer: 4500000,
-      unit: "people",
+      unit: "person",
     },
   },
   {
@@ -244,9 +236,9 @@ export const taskData = [
     task: "population_of_large_cities",
     question: {
       image: "",
-      text: "What is the population of Seoul and it‘s agglomeration?",
+      text: "What is the population of Seoul and its agglomeration?",
       answer: 26000000,
-      unit: "people",
+      unit: "person",
     },
   },
   {
@@ -255,9 +247,9 @@ export const taskData = [
     task: "population_of_large_cities",
     question: {
       image: "",
-      text: "What is the population of Shanghai and it‘s agglomeration?",
+      text: "What is the population of Shanghai and its agglomeration?",
       answer: 25000000,
-      unit: "people",
+      unit: "person",
     },
   },
 
@@ -287,7 +279,7 @@ export const taskData = [
       text:
         "What is the mean annual gross salary of a professional league 1 soccer player in France (in euros)?",
       answer: 600000,
-      unit: "euros",
+      unit: "euro",
     },
   },
   {
@@ -299,7 +291,7 @@ export const taskData = [
       image: "",
       text: "How many cell phones are sold in France every year?",
       answer: 22000000,
-      unit: "eaches",
+      unit: "cell phone",
     },
   },
   {
@@ -311,7 +303,7 @@ export const taskData = [
       image: "",
       text: "How many cars are stolen in France every year?",
       answer: 110000,
-      unit: "eaches",
+      unit: "car",
     },
   },
   {
@@ -323,7 +315,7 @@ export const taskData = [
       image: "",
       text: "How many ebooks were sold in France in 2014?",
       answer: 10700000,
-      unit: "eaches",
+      unit: "ebook",
     },
   },
   {
@@ -349,7 +341,7 @@ export const taskData = [
       image: "",
       text: "How many people die from cancer in the world every year?",
       answer: 15000000,
-      unit: "people",
+      unit: "person",
     },
   },
 
@@ -425,7 +417,7 @@ export const taskData = [
       text:
         "How many passengers boarded out of an airport in the New York City area (JFK, La Guardia, and Newark) in 2009?",
       answer: 79120000,
-      unit: "people",
+      unit: "person",
     },
   },
 
@@ -472,6 +464,9 @@ export const taskData = [
       class: "trivia_questions",
       type: "geopolitics",
     },
+    hints: [
+      "The Armed Conflict Location & Event Data Project (ACLED) is a non-governmental organization that tracks violent conflict in Asia, the Middle East, and Africa. One type of event they track is those where civilians were intentionally targeted.  In 2018, they recorded 841 such events in Somalia.",
+    ],
     question: {
       image: "",
       text:
@@ -486,6 +481,9 @@ export const taskData = [
       class: "trivia_questions",
       type: "geopolitics",
     },
+    hints: [
+      "The Armed Conflict Location & Event Data Project (ACLED) is a non-governmental organization that tracks violent conflict in Asia, the Middle East, and Africa. One type of event they track is those where civilians were intentionally targeted.  In 2018, they recorded 841 such events in Somalia.",
+    ],
     question: {
       image: "",
       text:
