@@ -27,8 +27,8 @@ export const taskData = [
       image: "/tasks/gtc_0.png",
       text:
         "What is the correlation between the X and Y variable in this scatter plot?",
+      answer: 0.09,
     },
-    answer: 0.09,
   },
   {
     id: 2,
@@ -38,8 +38,8 @@ export const taskData = [
       image: "/tasks/gtc_2.png",
       text:
         "What is the correlation between the X and Y variable in this scatter plot?",
+      answer: 0.91,
     },
-    answer: 0.91,
   },
   {
     id: 3,
@@ -49,8 +49,8 @@ export const taskData = [
       image: "/tasks/gtc_3.png",
       text:
         "What is the correlation between the X and Y variable in this scatter plot?",
+      answer: 0.47,
     },
-    answer: 0.47,
   },
   {
     id: 4,
@@ -60,8 +60,8 @@ export const taskData = [
       image: "/tasks/gtc_11.png",
       text:
         "What is the correlation between the X and Y variable in this scatter plot?",
+      answer: 0.78,
     },
-    answer: 0.78,
   },
   {
     id: 5,
@@ -71,8 +71,8 @@ export const taskData = [
       image: "/tasks/gtc_14.png",
       text:
         "What is the correlation between the X and Y variable in this scatter plot?",
+      answer: 0.09,
     },
-    answer: 0.09,
   },
   {
     id: 6,
@@ -96,6 +96,7 @@ export const taskData = [
       image: "/tasks/marbles_1.jpg",
       text: "How many marbles are in this jar?",
       answer: 100,
+      unit: "marble",
     },
   },
 
@@ -107,6 +108,7 @@ export const taskData = [
       image: "/tasks/marbles_2.jpg",
       text: "How many marbles are in this jar?",
       answer: 450,
+      unit: "marble",
     },
   },
   {
@@ -117,6 +119,7 @@ export const taskData = [
       image: "/tasks/matches_1.jpg",
       text: "How many matches can you see?",
       answer: 240,
+      unit: "match",
     },
   },
   {
@@ -127,6 +130,7 @@ export const taskData = [
       image: "/tasks/matches_2.jpg",
       text: "How many matches can you see?",
       answer: 480,
+      unit: "match",
     },
   },
   {
@@ -137,6 +141,7 @@ export const taskData = [
       image: "/tasks/matches_3.jpg",
       text: "How many matches can you see?",
       answer: 720,
+      unit: "match",
     },
   },
 
@@ -150,6 +155,7 @@ export const taskData = [
       image: "/tasks/Rope_200.jpg",
       text: "In your opinion, how long is this rope (in cm)?",
       answer: 200,
+      unit: "cm",
     },
   },
   {
@@ -160,6 +166,7 @@ export const taskData = [
       image: "/tasks/Rope_700.jpg",
       text: "In your opinion, how long is this rope (in cm)?",
       answer: 700,
+      unit: "cm",
     },
   },
 
@@ -176,6 +183,7 @@ export const taskData = [
       image: "",
       text: "What is the population of New York City and its agglomeration?",
       answer: 21000000,
+      unit: "person",
     },
   },
   {
@@ -186,6 +194,7 @@ export const taskData = [
       image: "",
       text: "What is the population of Madrid and its agglomeration?",
       answer: 6500000,
+      unit: "person",
     },
   },
   {
@@ -196,6 +205,7 @@ export const taskData = [
       image: "",
       text: "What is the population of Amsterdam and its agglomeration?",
       answer: 1600000,
+      unit: "person",
     },
   },
   {
@@ -206,6 +216,7 @@ export const taskData = [
       image: "",
       text: "What is the population of Tokyo and its agglomeration?",
       answer: 38000000,
+      unit: "person",
     },
   },
   {
@@ -216,6 +227,7 @@ export const taskData = [
       image: "",
       text: "What is the population of Melbourne and its agglomeration?",
       answer: 4500000,
+      unit: "person",
     },
   },
   {
@@ -226,6 +238,7 @@ export const taskData = [
       image: "",
       text: "What is the population of Seoul and its agglomeration?",
       answer: 26000000,
+      unit: "person",
     },
   },
   {
@@ -236,6 +249,7 @@ export const taskData = [
       image: "",
       text: "What is the population of Shanghai and its agglomeration?",
       answer: 25000000,
+      unit: "person",
     },
   },
 
@@ -250,6 +264,7 @@ export const taskData = [
       text:
         "How many kilometers does a professional cyclist typically bike a year?",
       answer: 40000,
+      unit: "km",
     },
   },
   {
@@ -264,6 +279,7 @@ export const taskData = [
       text:
         "What is the mean annual gross salary of a professional league 1 soccer player in France (in euros)?",
       answer: 600000,
+      unit: "euro",
     },
   },
   {
@@ -275,6 +291,7 @@ export const taskData = [
       image: "",
       text: "How many cell phones are sold in France every year?",
       answer: 22000000,
+      unit: "cell phone",
     },
   },
   {
@@ -286,6 +303,7 @@ export const taskData = [
       image: "",
       text: "How many cars are stolen in France every year?",
       answer: 110000,
+      unit: "car",
     },
   },
   {
@@ -297,6 +315,7 @@ export const taskData = [
       image: "",
       text: "How many ebooks were sold in France in 2014?",
       answer: 10700000,
+      unit: "ebook",
     },
   },
   {
@@ -310,6 +329,7 @@ export const taskData = [
       image: "",
       text: "How many books does the American Library of Congress hold?",
       answer: 23000000,
+      unit: "eaches",
     },
   },
   {
@@ -321,6 +341,7 @@ export const taskData = [
       image: "",
       text: "How many people die from cancer in the world every year?",
       answer: 15000000,
+      unit: "person",
     },
   },
 
@@ -329,47 +350,35 @@ export const taskData = [
   {
     id: 28,
     meta: {
-      class: "Trivia Questions",
+      class: "trivia_questions",
       type: "art_market",
     },
-    instructions: {
-      image: "",
-      text: "",
-      text_as_image: "",
-      hint: {
-        image: "",
-        text:
-          "The painting is by Vincent Van Gogh, and it is 18 inches tall by 20 inches wide, charcoal on paper.",
-      },
-    },
+    hints: [
+      "The painting is by Vincent Van Gogh, and it is 18 inches tall by 20 inches wide, charcoal on paper.",
+    ],
     question: {
       image: "/tasks/van_Gogh_Planteuse_de_betteraves,_by_Vincent_van_Gogh.jpg",
       text:
         "This painting was sold at an auction in May, 2018. How much did it sell for?",
       answer: 3600000,
+      unit: "dollar",
     },
   },
   {
     id: 29,
     meta: {
-      class: "Trivia Questions",
+      class: "trivia_questions",
       type: "art_market",
     },
-    instructions: {
-      image: "",
-      text: "",
-      text_as_image: "",
-      hint: {
-        image: "",
-        text:
-          "The painting is by Pablo Picasso, and it is 64 inches tall by 51 inches wide, oil on canvas",
-      },
-    },
+    hints: [
+      "The painting is by Pablo Picasso, and it is 64 inches tall by 51 inches wide, oil on canvas",
+    ],
     question: {
       image: "/tasks/picasso.jpg",
       text:
         "This painting was sold at an auction in November, 2018. How much did it sell for? ",
       answer: 29600000,
+      unit: "dollar",
     },
   },
 
@@ -379,48 +388,36 @@ export const taskData = [
     id: 30,
     invalid: true,
     meta: {
-      class: "Trivia Questions",
+      class: "trivia_questions",
       type: "socioeconomic",
     },
-    instructions: {
-      image: "",
-      text: "",
-      text_as_image: "",
-      hint: {
-        image: "",
-        text:
-          "Across all colleges where the US Department of Education collected data,the average tuition revenue per full time (or equivalent) student was $10,438 per year.",
-      },
-    },
+    hints: [
+      "Across all colleges where the US Department of Education collected data,the average tuition revenue per full time (or equivalent) student was $10,438 per year.",
+    ],
     question: {
       image: "",
       text:
         "In terms of dollars, how much money do you think was spent on instruction in college, per student?",
       answer: 7912,
+      unit: "dollar",
     },
   },
   // what is the answer??
   {
     id: 31,
     meta: {
-      class: "Trivia Questions",
+      class: "trivia_questions",
       type: "socioeconomic",
     },
-    instructions: {
-      image: "",
-      text: "",
-      text_as_image: "",
-      hint: {
-        image: "",
-        text:
-          "In 2009, approximately 690 million passengers boarded a plane.  (So a round-trip flight counts for 2 passengers boarding.)",
-      },
-    },
+    hints: [
+      "In 2009, approximately 690 million passengers boarded a plane.  (So a round-trip flight counts for 2 passengers boarding.)",
+    ],
     question: {
       image: "",
       text:
         "How many passengers boarded out of an airport in the New York City area (JFK, La Guardia, and Newark) in 2009?",
       answer: 79120000,
+      unit: "person",
     },
   },
 
@@ -429,45 +426,33 @@ export const taskData = [
   {
     id: 32,
     meta: {
-      class: "Trivia Questions",
+      class: "trivia_questions",
       type: "crowdfunding",
     },
-    instructions: {
-      image: "",
-      text:
-        "Consider this crowdfunding campaign: The goal of this app is to promote new music discovery in a fun and different way.  This app would allow musicians to “drop” songs at specific physical locations.  Anyone using the app would then be able to listen to the song by visiting that location. The app sought £30,000 (British pounds) and offered funders equity in the company, with a total equity of 35% for the whole campaign.",
-      text_as_image: "",
-      hint: {
-        image: "",
-        text: "",
-      },
-    },
+    hints: [
+      "Consider this crowdfunding campaign: The goal of this app is to promote new music discovery in a fun and different way.  This app would allow musicians to “drop” songs at specific physical locations.  Anyone using the app would then be able to listen to the song by visiting that location. The app sought £30,000 (British pounds) and offered funders equity in the company, with a total equity of 35% for the whole campaign.",
+    ],
     question: {
       image: "",
       text: "How much money do you think the campaign raised?",
       answer: 30000,
+      unit: "pounds",
     },
   },
   {
     id: 33,
     meta: {
-      class: "Trivia Questions",
+      class: "trivia_questions",
       type: "crowdfunding",
     },
-    instructions: {
-      image: "",
-      text:
-        "Consider this crowdfunding campaign: The product is headphones designed for dance music.  The goal of the product is to replicate the sound style of being in a club or party.  The campaign followed a successful prior round of funding, and the company has already sold thousands of units.This campaign sought an additional £100,000 (British pounds) in exchange for equity in the company, and ended up exceeding their goals.",
-      text_as_image: "",
-      hint: {
-        image: "",
-        text: "",
-      },
-    },
+    hints: [
+      "Consider this crowdfunding campaign: The product is headphones designed for dance music.  The goal of the product is to replicate the sound style of being in a club or party.  The campaign followed a successful prior round of funding, and the company has already sold thousands of units.This campaign sought an additional £100,000 (British pounds) in exchange for equity in the company, and ended up exceeding their goals.",
+    ],
     question: {
       image: "",
       text: "How much money do you think the campaign raised?",
       answer: 142770,
+      unit: "pounds",
     },
   },
 
@@ -476,47 +461,35 @@ export const taskData = [
   {
     id: 34,
     meta: {
-      class: "Trivia Questions",
+      class: "trivia_questions",
       type: "geopolitics",
     },
-    instructions: {
-      image: "",
-      text:
-        "The Armed Conflict Location & Event Data Project (ACLED) is a non-governmental organization that tracks violent conflict in Asia, the Middle East, and Africa. One type of event they track is those where civilians were intentionally targeted.  In 2018, they recorded 841 such events in Somalia.",
-      text_as_image: "",
-      hint: {
-        image: "",
-        text: "",
-      },
-    },
+    hints: [
+      "The Armed Conflict Location & Event Data Project (ACLED) is a non-governmental organization that tracks violent conflict in Asia, the Middle East, and Africa. One type of event they track is those where civilians were intentionally targeted.  In 2018, they recorded 841 such events in Somalia.",
+    ],
     question: {
       image: "",
       text:
         "How many of type of events like this do you think they recorded in Yemen for 2018?",
       answer: 609,
+      unit: "eaches",
     },
   },
   {
     id: 35,
     meta: {
-      class: "Trivia Questions",
+      class: "trivia_questions",
       type: "geopolitics",
     },
-    instructions: {
-      image: "",
-      text:
-        "The Armed Conflict Location & Event Data Project (ACLED) is a non-governmental organization that tracks violent conflict in Asia, the Middle East, and Africa. One type of event they track is those where civilians were intentionally targeted.  In 2018, they recorded 841 such events in Somalia.",
-      text_as_image: "",
-      hint: {
-        image: "",
-        text: "",
-      },
-    },
+    hints: [
+      "The Armed Conflict Location & Event Data Project (ACLED) is a non-governmental organization that tracks violent conflict in Asia, the Middle East, and Africa. One type of event they track is those where civilians were intentionally targeted.  In 2018, they recorded 841 such events in Somalia.",
+    ],
     question: {
       image: "",
       text:
         "How many of type of events like this do you think they recorded in Syria for 2018?",
       answer: 1501,
+      unit: "eaches",
     },
   },
 
@@ -525,81 +498,48 @@ export const taskData = [
   {
     id: 36,
     meta: {
-      class: "Trivia Questions",
+      class: "trivia_questions",
       type: "extreme_events",
-    },
-    instructions: {
-      image: "",
-      text: "",
-      text_as_image: "",
-      hint: {
-        image: "",
-        text: "",
-      },
     },
     question: {
       image: "",
       text: "What is the radius of the Sun (in km)?",
       answer: 696000,
+      unit: "km",
     },
   },
   {
     id: 37,
     meta: {
-      class: "Trivia Questions",
+      class: "trivia_questions",
       type: "extreme_events",
-    },
-    instructions: {
-      image: "",
-      text: "",
-      text_as_image: "",
-      hint: {
-        image: "",
-        text: "",
-      },
     },
     question: {
       image: "",
       text: "What is the distance between the Earth and the Moon (in km)?",
       answer: 385000,
+      unit: "km",
     },
   },
   {
     id: 38,
     meta: {
-      class: "Trivia Questions",
+      class: "trivia_questions",
       type: "extreme_events",
-    },
-    instructions: {
-      image: "",
-      text: "",
-      text_as_image: "",
-      hint: {
-        image: "",
-        text: "",
-      },
     },
     question: {
       image: "",
       text:
         "What is the mean distance between planet Mercury and the Sun (in km)?",
       answer: 57800000,
+      unit: "km",
     },
   },
   {
     id: 39,
     meta: {
-      class: "Trivia Questions",
+      class: "trivia_questions",
       type: "extreme_events",
-    },
-    instructions: {
-      image: "",
-      text: "",
-      text_as_image: "",
-      hint: {
-        image: "",
-        text: "",
-      },
     },
     question: {
       image: "",
@@ -607,22 +547,14 @@ export const taskData = [
         "What is the total mass of oceans on Earth (in thousand billion of metric tons)?",
       answer: 1400000000000000,
       magnitude: 12,
+      unit: "metric ton",
     },
   },
   {
     id: 40,
     meta: {
-      class: "Trivia Questions",
+      class: "trivia_questions",
       type: "extreme_events",
-    },
-    instructions: {
-      image: "",
-      text: "",
-      text_as_image: "",
-      hint: {
-        image: "",
-        text: "",
-      },
     },
     question: {
       image: "",
@@ -630,22 +562,14 @@ export const taskData = [
         "How many cells are there in the human body (in billions of cells)?",
       answer: 100000000000000,
       magnitude: 9,
+      unit: "cell",
     },
   },
   {
     id: 41,
     meta: {
-      class: "Trivia Questions",
+      class: "trivia_questions",
       type: "extreme_events",
-    },
-    instructions: {
-      image: "",
-      text: "",
-      text_as_image: "",
-      hint: {
-        image: "",
-        text: "",
-      },
     },
     question: {
       image: "",
@@ -653,48 +577,35 @@ export const taskData = [
         "How many galaxies does the visible universe hold (in million galaxies)?",
       answer: 100000000000,
       magnitude: 6,
+      unit: "galaxy",
     },
   },
   {
     id: 42,
     meta: {
-      class: "Trivia Questions",
+      class: "trivia_questions",
       type: "extreme_events",
-    },
-    instructions: {
-      image: "",
-      text: "",
-      text_as_image: "",
-      hint: {
-        image: "",
-        text: "",
-      },
     },
     question: {
       image: "",
       text: "How many stars does the Milky way hold (in million stars)?",
-      answer: 235000,
+      answer: 235000000000,
+      magnitude: 6,
+      unit: "star",
     },
   },
   {
     id: 43,
     meta: {
-      class: "Trivia Questions",
+      class: "trivia_questions",
       type: "extreme_events",
-    },
-    instructions: {
-      image: "",
-      text: "",
-      text_as_image: "",
-      hint: {
-        image: "",
-        text: "",
-      },
     },
     question: {
       image: "",
       text: "How many billions kilometers is worth a light-year?",
-      answer: 9461,
+      answer: 9461000000000,
+      magnitude: 9,
+      unit: "km",
     },
   },
 
@@ -705,15 +616,6 @@ export const taskData = [
     meta: {
       class: "Trivia Questions",
       type: "others",
-    },
-    instructions: {
-      image: "",
-      text: "",
-      text_as_image: "",
-      hint: {
-        image: "",
-        text: "",
-      },
     },
     question: {
       image: "",
@@ -728,15 +630,6 @@ export const taskData = [
       class: "Trivia Questions",
       type: "others",
     },
-    instructions: {
-      image: "",
-      text: "",
-      text_as_image: "",
-      hint: {
-        image: "",
-        text: "",
-      },
-    },
     question: {
       image: "",
       text:
@@ -750,15 +643,6 @@ export const taskData = [
     meta: {
       class: "Trivia Questions",
       type: "others",
-    },
-    instructions: {
-      image: "",
-      text: "",
-      text_as_image: "",
-      hint: {
-        image: "",
-        text: "",
-      },
     },
     question: {
       image: "",
