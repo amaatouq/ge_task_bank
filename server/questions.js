@@ -28,6 +28,8 @@ export const taskData = [
       text:
         "What is the correlation between the X and Y variable in this scatter plot?",
       answer: 0.09,
+      min: 0,
+      max: 1,
     },
   },
   {
@@ -39,6 +41,8 @@ export const taskData = [
       text:
         "What is the correlation between the X and Y variable in this scatter plot?",
       answer: 0.91,
+      min: 0,
+      max: 1,
     },
   },
   {
@@ -50,6 +54,8 @@ export const taskData = [
       text:
         "What is the correlation between the X and Y variable in this scatter plot?",
       answer: 0.47,
+      min: 0,
+      max: 1,
     },
   },
   {
@@ -61,6 +67,8 @@ export const taskData = [
       text:
         "What is the correlation between the X and Y variable in this scatter plot?",
       answer: 0.78,
+      min: 0,
+      max: 1,
     },
   },
   {
@@ -72,6 +80,8 @@ export const taskData = [
       text:
         "What is the correlation between the X and Y variable in this scatter plot?",
       answer: 0.09,
+      min: 0,
+      max: 1,
     },
   },
   {
@@ -83,6 +93,8 @@ export const taskData = [
       text:
         "What is the correlation between the X and Y variable in this scatter plot?",
       answer: 0.03,
+      min: 0,
+      max: 1,
     },
   },
 
@@ -97,6 +109,7 @@ export const taskData = [
       text: "How many marbles are in this jar?",
       answer: 100,
       unit: "marble",
+      min: 0,
     },
   },
 
@@ -109,6 +122,7 @@ export const taskData = [
       text: "How many marbles are in this jar?",
       answer: 450,
       unit: "marble",
+      min: 0,
     },
   },
   {
@@ -120,6 +134,7 @@ export const taskData = [
       text: "How many matches can you see?",
       answer: 240,
       unit: "match",
+      min: 0,
     },
   },
   {
@@ -131,6 +146,7 @@ export const taskData = [
       text: "How many matches can you see?",
       answer: 480,
       unit: "match",
+      min: 0,
     },
   },
   {
@@ -142,6 +158,7 @@ export const taskData = [
       text: "How many matches can you see?",
       answer: 720,
       unit: "match",
+      min: 0,
     },
   },
 
@@ -156,6 +173,7 @@ export const taskData = [
       text: "In your opinion, how long is this rope (in cm)?",
       answer: 200,
       unit: "cm",
+      min: 0,
     },
   },
   {
@@ -167,6 +185,7 @@ export const taskData = [
       text: "In your opinion, how long is this rope (in cm)?",
       answer: 700,
       unit: "cm",
+      min: 0,
     },
   },
 
@@ -184,6 +203,7 @@ export const taskData = [
       text: "What is the population of New York City and its agglomeration?",
       answer: 21000000,
       unit: "person",
+      min: 0,
     },
   },
   {
@@ -195,6 +215,7 @@ export const taskData = [
       text: "What is the population of Madrid and its agglomeration?",
       answer: 6500000,
       unit: "person",
+      min: 0,
     },
   },
   {
@@ -206,6 +227,7 @@ export const taskData = [
       text: "What is the population of Amsterdam and its agglomeration?",
       answer: 1600000,
       unit: "person",
+      min: 0,
     },
   },
   {
@@ -217,6 +239,7 @@ export const taskData = [
       text: "What is the population of Tokyo and its agglomeration?",
       answer: 38000000,
       unit: "person",
+      min: 0,
     },
   },
   {
@@ -228,6 +251,7 @@ export const taskData = [
       text: "What is the population of Melbourne and its agglomeration?",
       answer: 4500000,
       unit: "person",
+      min: 0,
     },
   },
   {
@@ -239,6 +263,7 @@ export const taskData = [
       text: "What is the population of Seoul and its agglomeration?",
       answer: 26000000,
       unit: "person",
+      min: 0,
     },
   },
   {
@@ -250,6 +275,7 @@ export const taskData = [
       text: "What is the population of Shanghai and its agglomeration?",
       answer: 25000000,
       unit: "person",
+      min: 0,
     },
   },
 
@@ -265,6 +291,7 @@ export const taskData = [
         "How many kilometers does a professional cyclist typically bike a year?",
       answer: 40000,
       unit: "km",
+      min: 0,
     },
   },
   {
@@ -280,6 +307,7 @@ export const taskData = [
         "What is the mean annual gross salary of a professional league 1 soccer player in France (in euros)?",
       answer: 600000,
       unit: "euro",
+      min: 0,
     },
   },
   {
@@ -292,6 +320,7 @@ export const taskData = [
       text: "How many cell phones are sold in France every year?",
       answer: 22000000,
       unit: "cell phone",
+      min: 0,
     },
   },
   {
@@ -304,6 +333,7 @@ export const taskData = [
       text: "How many cars are stolen in France every year?",
       answer: 110000,
       unit: "car",
+      min: 0,
     },
   },
   {
@@ -316,6 +346,7 @@ export const taskData = [
       text: "How many ebooks were sold in France in 2014?",
       answer: 10700000,
       unit: "ebook",
+      min: 0,
     },
   },
   {
@@ -330,6 +361,7 @@ export const taskData = [
       text: "How many books does the American Library of Congress hold?",
       answer: 23000000,
       unit: "eaches",
+      min: 0,
     },
   },
   {
@@ -342,6 +374,7 @@ export const taskData = [
       text: "How many people die from cancer in the world every year?",
       answer: 15000000,
       unit: "person",
+      min: 0,
     },
   },
 
@@ -362,6 +395,7 @@ export const taskData = [
         "This painting was sold at an auction in May, 2018. How much did it sell for?",
       answer: 3600000,
       unit: "dollar",
+      min: 0,
     },
   },
   {
@@ -379,6 +413,7 @@ export const taskData = [
         "This painting was sold at an auction in November, 2018. How much did it sell for? ",
       answer: 29600000,
       unit: "dollar",
+      min: 0,
     },
   },
 
@@ -400,6 +435,7 @@ export const taskData = [
         "In terms of dollars, how much money do you think was spent on instruction in college, per student?",
       answer: 7912,
       unit: "dollar",
+      min: 0,
     },
   },
   // what is the answer??
@@ -408,6 +444,7 @@ export const taskData = [
     meta: {
       class: "trivia_questions",
       type: "socioeconomic",
+      min: 0,
     },
     hints: [
       "In 2009, approximately 690 million passengers boarded a plane.  (So a round-trip flight counts for 2 passengers boarding.)",
@@ -418,6 +455,7 @@ export const taskData = [
         "How many passengers boarded out of an airport in the New York City area (JFK, La Guardia, and Newark) in 2009?",
       answer: 79120000,
       unit: "person",
+      min: 0,
     },
   },
 
@@ -437,6 +475,7 @@ export const taskData = [
       text: "How much money do you think the campaign raised?",
       answer: 30000,
       unit: "pounds",
+      min: 0,
     },
   },
   {
@@ -453,6 +492,7 @@ export const taskData = [
       text: "How much money do you think the campaign raised?",
       answer: 142770,
       unit: "pounds",
+      min: 0,
     },
   },
 
@@ -473,6 +513,7 @@ export const taskData = [
         "How many of type of events like this do you think they recorded in Yemen for 2018?",
       answer: 609,
       unit: "eaches",
+      min: 0,
     },
   },
   {
@@ -490,6 +531,7 @@ export const taskData = [
         "How many of type of events like this do you think they recorded in Syria for 2018?",
       answer: 1501,
       unit: "eaches",
+      min: 0,
     },
   },
 
@@ -506,6 +548,7 @@ export const taskData = [
       text: "What is the radius of the Sun (in km)?",
       answer: 696000,
       unit: "km",
+      min: 0,
     },
   },
   {
@@ -519,6 +562,7 @@ export const taskData = [
       text: "What is the distance between the Earth and the Moon (in km)?",
       answer: 385000,
       unit: "km",
+      min: 0,
     },
   },
   {
@@ -533,6 +577,7 @@ export const taskData = [
         "What is the mean distance between planet Mercury and the Sun (in km)?",
       answer: 57800000,
       unit: "km",
+      min: 0,
     },
   },
   {
@@ -548,6 +593,7 @@ export const taskData = [
       answer: 1400000000000000,
       magnitude: 12,
       unit: "metric ton",
+      min: 0,
     },
   },
   {
@@ -563,6 +609,7 @@ export const taskData = [
       answer: 100000000000000,
       magnitude: 9,
       unit: "cell",
+      min: 0,
     },
   },
   {
@@ -578,6 +625,7 @@ export const taskData = [
       answer: 100000000000,
       magnitude: 6,
       unit: "galaxy",
+      min: 0,
     },
   },
   {
@@ -592,6 +640,7 @@ export const taskData = [
       answer: 235000000000,
       magnitude: 6,
       unit: "star",
+      min: 0,
     },
   },
   {
@@ -606,6 +655,7 @@ export const taskData = [
       answer: 9461000000000,
       magnitude: 9,
       unit: "km",
+      min: 0,
     },
   },
 
@@ -622,6 +672,7 @@ export const taskData = [
       text: "What is the mass of the Cheops pyramid (in metric tons)?",
       answer: 5000000,
       unit: "metric ton",
+      min: 0,
     },
   },
   {
@@ -636,6 +687,7 @@ export const taskData = [
         "What is the total length of the metal threads used in the Golden Gate Bridge’s braided cables (in km)?",
       answer: 129000,
       unit: "km",
+      min: 0,
     },
   },
   {
@@ -651,6 +703,7 @@ export const taskData = [
       answer: 1500000000,
       unit: "dollar",
       magnitude: 3,
+      min: 0,
     },
   },
 ];
