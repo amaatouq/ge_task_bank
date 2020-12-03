@@ -110,7 +110,6 @@ export const taskData = [
       answer: 100,
       unit: "marble",
       min: 0,
-      max: "inf",
     },
   },
 
@@ -124,7 +123,6 @@ export const taskData = [
       answer: 450,
       unit: "marble",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -137,7 +135,6 @@ export const taskData = [
       answer: 240,
       unit: "match",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -150,7 +147,6 @@ export const taskData = [
       answer: 480,
       unit: "match",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -163,7 +159,6 @@ export const taskData = [
       answer: 720,
       unit: "match",
       min: 0,
-      max: "inf",
     },
   },
 
@@ -179,7 +174,6 @@ export const taskData = [
       answer: 200,
       unit: "cm",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -192,7 +186,6 @@ export const taskData = [
       answer: 700,
       unit: "cm",
       min: 0,
-      max: "inf",
     },
   },
 
@@ -211,7 +204,6 @@ export const taskData = [
       answer: 21000000,
       unit: "person",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -224,7 +216,6 @@ export const taskData = [
       answer: 6500000,
       unit: "person",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -237,7 +228,6 @@ export const taskData = [
       answer: 1600000,
       unit: "person",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -250,7 +240,6 @@ export const taskData = [
       answer: 38000000,
       unit: "person",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -263,7 +252,6 @@ export const taskData = [
       answer: 4500000,
       unit: "person",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -276,7 +264,6 @@ export const taskData = [
       answer: 26000000,
       unit: "person",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -289,7 +276,6 @@ export const taskData = [
       answer: 25000000,
       unit: "person",
       min: 0,
-      max: "inf",
     },
   },
 
@@ -306,7 +292,6 @@ export const taskData = [
       answer: 40000,
       unit: "km",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -323,7 +308,6 @@ export const taskData = [
       answer: 600000,
       unit: "euro",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -337,7 +321,6 @@ export const taskData = [
       answer: 22000000,
       unit: "cell phone",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -351,7 +334,6 @@ export const taskData = [
       answer: 110000,
       unit: "car",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -365,7 +347,6 @@ export const taskData = [
       answer: 10700000,
       unit: "ebook",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -381,7 +362,6 @@ export const taskData = [
       answer: 23000000,
       unit: "eaches",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -395,7 +375,6 @@ export const taskData = [
       answer: 15000000,
       unit: "person",
       min: 0,
-      max: "inf",
     },
   },
 
@@ -417,7 +396,6 @@ export const taskData = [
       answer: 3600000,
       unit: "dollar",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -436,7 +414,6 @@ export const taskData = [
       answer: 29600000,
       unit: "dollar",
       min: 0,
-      max: "inf",
     },
   },
 
@@ -459,7 +436,6 @@ export const taskData = [
       answer: 7912,
       unit: "dollar",
       min: 0,
-      max: "inf",
     },
   },
   // what is the answer??
@@ -469,7 +445,6 @@ export const taskData = [
       class: "trivia_questions",
       type: "socioeconomic",
       min: 0,
-      max: "inf",
     },
     hints: [
       "In 2009, approximately 690 million passengers boarded a plane.  (So a round-trip flight counts for 2 passengers boarding.)",
@@ -481,7 +456,6 @@ export const taskData = [
       answer: 79120000,
       unit: "person",
       min: 0,
-      max: "inf",
     },
   },
 
@@ -502,7 +476,6 @@ export const taskData = [
       answer: 30000,
       unit: "pounds",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -520,7 +493,6 @@ export const taskData = [
       answer: 142770,
       unit: "pounds",
       min: 0,
-      max: "inf",
     },
   },
 
@@ -542,7 +514,6 @@ export const taskData = [
       answer: 609,
       unit: "eaches",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -561,7 +532,6 @@ export const taskData = [
       answer: 1501,
       unit: "eaches",
       min: 0,
-      max: "inf",
     },
   },
 
@@ -579,7 +549,6 @@ export const taskData = [
       answer: 696000,
       unit: "km",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -594,7 +563,6 @@ export const taskData = [
       answer: 385000,
       unit: "km",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -610,7 +578,6 @@ export const taskData = [
       answer: 57800000,
       unit: "km",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -627,7 +594,6 @@ export const taskData = [
       magnitude: 12,
       unit: "metric ton",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -644,7 +610,6 @@ export const taskData = [
       magnitude: 9,
       unit: "cell",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -661,7 +626,6 @@ export const taskData = [
       magnitude: 6,
       unit: "galaxy",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -677,7 +641,6 @@ export const taskData = [
       magnitude: 6,
       unit: "star",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -693,7 +656,6 @@ export const taskData = [
       magnitude: 9,
       unit: "km",
       min: 0,
-      max: "inf",
     },
   },
 
@@ -711,7 +673,6 @@ export const taskData = [
       answer: 5000000,
       unit: "metric ton",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -727,7 +688,6 @@ export const taskData = [
       answer: 129000,
       unit: "km",
       min: 0,
-      max: "inf",
     },
   },
   {
@@ -744,7 +704,6 @@ export const taskData = [
       unit: "dollar",
       magnitude: 3,
       min: 0,
-      max: "inf",
     },
   },
 ];
