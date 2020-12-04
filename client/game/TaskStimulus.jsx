@@ -1,12 +1,28 @@
 import React from "react";
 
 export default class TaskStimulus extends React.Component {
+  state = {
+    question: {},
+  };
+
+  componentDidMount() {
+    this.setState({
+      question: this.props.round.get("task").question,
+    });
+  }
   render() {
-    const { round, stage, player } = this.props;
+    const {
+      question: { text, image },
+    } = this.state;
 
     return (
       <div className="task-stimulus">
-        Welcome to Empirica! Try changing the slider.
+        <p>{text}</p>
+        {image && (
+          <div>
+            <img src={image} className="task-image" />
+          </div>
+        )}
       </div>
     );
   }
