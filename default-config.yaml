@@ -1,0 +1,94 @@
+treatments:
+  - name: Solo Player
+    factorIds:
+      - YWwosMevTALbyZmjc
+      - Z8qTZzDedy9mqYYhY
+      - gY4a5Hzm6bm4i7gbg
+      - azezpovtd8pW5iYfb
+      - QFTGzd5aLHFdFGdyd
+      - qtgWqpEtizZ4SKF5C
+factorTypes:
+  - _id: oFXyKxvHE6M6CNg7B
+    name: playerCount
+    description: The Number of players participating in the given game.
+    required: true
+    type: Integer
+    min: 1
+  - _id: sToqhgYZPejDWvsp9
+    name: nRounds
+    description: number of round
+    required: false
+    type: Integer
+    min: 0
+  - _id: wz7s4ufXj2ss5hHGY
+    name: randomizeTask
+    description: Randomize task
+    required: false
+    type: Boolean
+  - _id: K8CyzfYPg8g2Wh3Sg
+    name: stageDuration
+    description: How long stage duration
+    required: false
+    type: Integer
+  - _id: GCGbdjiqFbsHYAYSk
+    name: feedback
+    description: Feedback
+    required: false
+    type: Boolean
+  - _id: iw8PeJ2CMPbzWhjjZ
+    name: feedbackDuration
+    description: Feedback duration
+    required: false
+    type: Number
+factors:
+  - _id: YWwosMevTALbyZmjc
+    name: '1'
+    value: 1
+    factorTypeId: oFXyKxvHE6M6CNg7B
+  - _id: gY4a5Hzm6bm4i7gbg
+    name: 'true'
+    value: true
+    factorTypeId: wz7s4ufXj2ss5hHGY
+  - _id: HHiKpfJ9zAjuZxFC4
+    name: 'false'
+    value: false
+    factorTypeId: wz7s4ufXj2ss5hHGY
+  - _id: R93tXg5QKZ5eshCM9
+    name: 'true'
+    value: true
+    factorTypeId: GCGbdjiqFbsHYAYSk
+  - _id: QFTGzd5aLHFdFGdyd
+    name: 'false'
+    value: false
+    factorTypeId: GCGbdjiqFbsHYAYSk
+  - _id: Z8qTZzDedy9mqYYhY
+    name: '5'
+    value: 5
+    factorTypeId: sToqhgYZPejDWvsp9
+  - _id: Sqr54q2XogC8senCu
+    name: '10'
+    value: 10
+    factorTypeId: sToqhgYZPejDWvsp9
+  - _id: qtgWqpEtizZ4SKF5C
+    name: '30'
+    value: 30
+    factorTypeId: iw8PeJ2CMPbzWhjjZ
+  - _id: azezpovtd8pW5iYfb
+    name: '120'
+    value: 120
+    factorTypeId: K8CyzfYPg8g2Wh3Sg
+  - _id: 7S3fCFGB9JZeoiXFe
+    name: '60'
+    value: 60
+    factorTypeId: K8CyzfYPg8g2Wh3Sg
+lobbyConfigs:
+  - name: Default
+    timeoutType: lobby
+    timeoutInSeconds: 300
+    timeoutStrategy: fail
+    gameLobbyIds: []
+  - name: NeverFail
+    timeoutType: lobby
+    timeoutInSeconds: 3600000
+    timeoutStrategy: fail
+    gameLobbyIds: []
