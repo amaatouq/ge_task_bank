@@ -1,8 +1,5 @@
 import React from "react";
 
-import PlayerProfile from "./PlayerProfile.jsx";
-// import SocialExposure from "./SocialExposure.jsx";
-import Task from "./Task.jsx";
 
 export default class Round extends React.Component {
   render() {
@@ -11,8 +8,10 @@ export default class Round extends React.Component {
     return (
       <div className="round">
         <div className="content">
-          <PlayerProfile player={player} stage={stage} game={game} />
-          <Task game={game} round={round} stage={stage} player={player} />
+        <h1 class="text-xl text-blue-500 uppercase">Hello, TailwindCSS!</h1>
+
+          {/* <PlayerProfile player={player} stage={stage} game={game} />
+          <Task game={game} round={round} stage={stage} player={player} /> */}
           {/* <SocialExposure stage={stage} player={player} game={game} /> */}
         </div>
       </div>
