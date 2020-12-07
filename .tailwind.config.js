@@ -1,3 +1,5 @@
+import forms from "@tailwindcss/forms";
+
 module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
@@ -5,7 +7,9 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: {
+      borderWidth: ["focus"],
+    },
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [forms],
 };

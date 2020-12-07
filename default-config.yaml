@@ -1,6 +1,18 @@
 treatments:
+  - name: solo 5 feedback long
+    factorIds:
+      - YWwosMevTALbyZmjc
+      - Z8qTZzDedy9mqYYhY
+      - CWhQMSrkLDjuPvdLJ
+      - 7DdaLQTBzuctmsqci
+      - qtgWqpEtizZ4SKF5C
+      - 8xBkmBYw37fmy9Ztb
+      - oWBpWDi7Bp2MysKkg
+      - HtyBPSwcDcFZiGLvJ
+      - cwBPNzx6ASumGTWfw
+      - ydAx2s49LieqJ33WD
 factorTypes:
-  - _id: TRtCBwvRMNJZJqLbq
+  - _id: Rve8jfoiwXXiYAbZf
     name: playerCount
     description: The Number of players participating in the given game.
     required: true
@@ -76,32 +88,48 @@ factorTypes:
     required: false
     type: Boolean
 factors:
-  - _id: 22pryLMa9Kk74sov9
-    name: randomized
+  - _id: CWhQMSrkLDjuPvdLJ
+    name: 'true'
     value: true
     factorTypeId: wz7s4ufXj2ss5hHGY
-  - _id: r2hzXZZ5Ka65DD58D
-    name: ordered
+  - _id: 3RkEsXCQ42jbXZaSi
+    name: 'false'
     value: false
     factorTypeId: wz7s4ufXj2ss5hHGY
-  - _id: fpZ8ivCQt5aC2c8Eu
-    name: showFeedback
+  - _id: 7DdaLQTBzuctmsqci
+    name: 'true'
     value: true
     factorTypeId: GCGbdjiqFbsHYAYSk
-  - _id: hy3LNpPzWropeC9NJ
-    name: doNotShowFeedback
+  - _id: bmAmYHpZv6StBN9Qi
+    name: 'false'
     value: false
     factorTypeId: GCGbdjiqFbsHYAYSk
+  - _id: cwBPNzx6ASumGTWfw
+    name: 'true'
+    value: true
+    factorTypeId: YMa7vmBFmum5YcHX4
+  - _id: MsMZFTrJEsvdchxd7
+    name: 'false'
+    value: false
+    factorTypeId: YMa7vmBFmum5YcHX4
+  - _id: ydAx2s49LieqJ33WD
+    name: 'true'
+    value: true
+    factorTypeId: pGbLrSrHZAatHoC9K
+  - _id: xwaJzJWR5ozbSpFkR
+    name: 'false'
+    value: false
+    factorTypeId: pGbLrSrHZAatHoC9K
   - _id: YWwosMevTALbyZmjc
-    name: "1"
+    name: '1'
     value: 1
-    factorTypeId: TRtCBwvRMNJZJqLbq
+    factorTypeId: Rve8jfoiwXXiYAbZf
   - _id: Z8qTZzDedy9mqYYhY
-    name: "5"
+    name: '5'
     value: 5
     factorTypeId: sToqhgYZPejDWvsp9
   - _id: Sqr54q2XogC8senCu
-    name: "10"
+    name: '10'
     value: 10
     factorTypeId: sToqhgYZPejDWvsp9
   - _id: qtgWqpEtizZ4SKF5C
@@ -122,24 +150,8 @@ factors:
     factorTypeId: hYW2mT46onSdYX7ds
   - _id: AAXBytkKFMDyadCH9
     name: geopolitics_daily_life_facts
-    value: "geopolitics,daily_life_facts"
+    value: 'geopolitics,daily_life_facts'
     factorTypeId: yyF4hBsuajGDxxfYP
-  - _id: fAHZxpvQyTvd2YNX2
-    name: "true"
-    value: true
-    factorTypeId: YMa7vmBFmum5YcHX4
-  - _id: 6n6wvWEL9cTgz6ec8
-    name: "false"
-    value: false
-    factorTypeId: YMa7vmBFmum5YcHX4
-  - _id: SDzdYuSctCNMpzgtD
-    name: "true"
-    value: true
-    factorTypeId: pGbLrSrHZAatHoC9K
-  - _id: ZYikYDbEDBhZcTAy4
-    name: "false"
-    value: false
-    factorTypeId: pGbLrSrHZAatHoC9K
 lobbyConfigs:
   - name: Default
     timeoutType: lobby

@@ -8,6 +8,7 @@ export default class Round extends React.Component {
   render() {
     const { round, stage, player, game } = this.props;
     const task = round.get("task");
+    console.log(stage.name);
     console.log(task);
 
     let columns = 1;

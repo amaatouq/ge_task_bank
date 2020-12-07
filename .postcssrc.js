@@ -3,7 +3,7 @@ module.exports = (ctx) => {
   if (ctx.meteor) {
     const config = {
       plugins: {
-        tailwindcss: {},
+        tailwindcss: { config: "./.tailwind.config.js" },
         autoprefixer: { overrideBrowserslist: ["last 2 versions"] },
       },
     };

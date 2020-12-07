@@ -584,7 +584,7 @@ export const taskData = [
     },
     question: {
       text:
-        "What is the total mass of oceans on Earth (in thousand billion of metric tons)?",
+        "What is the total mass of oceans on Earth (in trillion metric tons)?",
       magnitude: 12,
       unit: "metric ton",
       min: 0,

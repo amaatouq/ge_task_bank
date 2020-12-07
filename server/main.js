@@ -78,7 +78,7 @@ Empirica.gameInit((game) => {
       name: "response",
       displayName: "Response",
       // durationInSeconds: responseDuration,
-      durationInSeconds: 1000,
+      durationInSeconds: 31540000,
     });
 
     if (feedback) {
@@ -86,7 +86,7 @@ Empirica.gameInit((game) => {
         name: "feedback",
         displayName: "Feedback",
         // durationInSeconds: feedbackDuration,
-        durationInSeconds: 1000,
+        durationInSeconds: 31540000,
       });
     }
 
