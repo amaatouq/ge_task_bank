@@ -2,7 +2,6 @@ import Empirica from "meteor/empirica:core";
 import { render } from "react-dom";
 import ExitSurvey from "./exit/ExitSurvey";
 import Thanks from "./exit/Thanks";
-import About from "./game/About";
 import Round from "./game/Round";
 import Consent from "./intro/Consent";
 import InstructionStepOne from "./intro/InstructionStepOne";
@@ -10,15 +9,21 @@ import InstructionStepTwo from "./intro/InstructionStepTwo";
 import Quiz from "./intro/Quiz";
 
 // Set the About Component you want to use for the About dialog (optional).
-Empirica.about(About);
+// Empirica.about(About);
 
 // Set the Consent Component you want to present players (optional).
 Empirica.consent(Consent);
+
+// Remove header
+Empirica.header(() => null);
+// Remove breadcrumb
+Empirica.breadcrumb(() => null);
 
 // Introduction pages to show before they play the game (optional).
 // At this point they have been assigned a treatment. You can return
 // different instruction steps depending on the assigned treatment.
 Empirica.introSteps((game, treatment) => {
+  return [];
   const steps = [InstructionStepOne];
   if (treatment.playerCount > 1) {
     steps.push(InstructionStepTwo);

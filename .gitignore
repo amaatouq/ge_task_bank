@@ -9,3 +9,4 @@ dev.json
 local.json
 token.json
 *.orig
+.DS_Store

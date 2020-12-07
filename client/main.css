@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body {
+  font-size: 16px;
+}
+
+main {
+  padding: 0;
+}
+
+.grid h1 {
+  margin: 0;
+}
+
+.admin {
+  font-size: 14px;
+}

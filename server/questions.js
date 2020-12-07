@@ -27,10 +27,10 @@ export const taskData = [
       image: "/tasks/gtc_0.png",
       text:
         "What is the correlation between the X and Y variable in this scatter plot?",
-      answer: 0.09,
       min: 0,
       max: 1,
     },
+    answer: 0.09,
   },
   {
     id: 2,
@@ -40,10 +40,10 @@ export const taskData = [
       image: "/tasks/gtc_2.png",
       text:
         "What is the correlation between the X and Y variable in this scatter plot?",
-      answer: 0.91,
       min: 0,
       max: 1,
     },
+    answer: 0.91,
   },
   {
     id: 3,
@@ -66,10 +66,10 @@ export const taskData = [
       image: "/tasks/gtc_11.png",
       text:
         "What is the correlation between the X and Y variable in this scatter plot?",
-      answer: 0.78,
       min: 0,
       max: 1,
     },
+    answer: 0.78,
   },
   {
     id: 5,
@@ -79,10 +79,10 @@ export const taskData = [
       image: "/tasks/gtc_14.png",
       text:
         "What is the correlation between the X and Y variable in this scatter plot?",
-      answer: 0.09,
       min: 0,
       max: 1,
     },
+    answer: 0.09,
   },
   {
     id: 6,
@@ -92,10 +92,10 @@ export const taskData = [
       image: "/tasks/gtc_18.png",
       text:
         "What is the correlation between the X and Y variable in this scatter plot?",
-      answer: 0.03,
       min: 0,
       max: 1,
     },
+    answer: 0.03,
   },
 
   // counting objects questions
@@ -107,10 +107,10 @@ export const taskData = [
     question: {
       image: "/tasks/marbles_1.jpg",
       text: "How many marbles are in this jar?",
-      answer: 100,
       unit: "marble",
       min: 0,
     },
+    answer: 100,
   },
 
   {
@@ -120,10 +120,10 @@ export const taskData = [
     question: {
       image: "/tasks/marbles_2.jpg",
       text: "How many marbles are in this jar?",
-      answer: 450,
       unit: "marble",
       min: 0,
     },
+    answer: 450,
   },
   {
     id: 9,
@@ -132,10 +132,10 @@ export const taskData = [
     question: {
       image: "/tasks/matches_1.jpg",
       text: "How many matches can you see?",
-      answer: 240,
       unit: "match",
       min: 0,
     },
+    answer: 240,
   },
   {
     id: 10,
@@ -144,10 +144,10 @@ export const taskData = [
     question: {
       image: "/tasks/matches_2.jpg",
       text: "How many matches can you see?",
-      answer: 480,
       unit: "match",
       min: 0,
     },
+    answer: 480,
   },
   {
     id: 11,
@@ -156,10 +156,10 @@ export const taskData = [
     question: {
       image: "/tasks/matches_3.jpg",
       text: "How many matches can you see?",
-      answer: 720,
       unit: "match",
       min: 0,
     },
+    answer: 720,
   },
 
   // length of objects questions
@@ -171,10 +171,10 @@ export const taskData = [
     question: {
       image: "/tasks/Rope_200.jpg",
       text: "In your opinion, how long is this rope (in cm)?",
-      answer: 200,
       unit: "cm",
       min: 0,
     },
+    answer: 200,
   },
   {
     id: 13,
@@ -183,10 +183,10 @@ export const taskData = [
     question: {
       image: "/tasks/Rope_700.jpg",
       text: "In your opinion, how long is this rope (in cm)?",
-      answer: 700,
       unit: "cm",
       min: 0,
     },
+    answer: 700,
   },
 
   // population of large cities questions
@@ -200,10 +200,10 @@ export const taskData = [
     ],
     question: {
       text: "What is the population of New York City and its agglomeration?",
-      answer: 21000000,
       unit: "person",
       min: 0,
     },
+    answer: 21000000,
   },
   {
     id: 15,
@@ -211,10 +211,10 @@ export const taskData = [
     task: "population_of_large_cities",
     question: {
       text: "What is the population of Madrid and its agglomeration?",
-      answer: 6500000,
       unit: "person",
       min: 0,
     },
+    answer: 6500000,
   },
   {
     id: 16,
@@ -222,10 +222,10 @@ export const taskData = [
     task: "population_of_large_cities",
     question: {
       text: "What is the population of Amsterdam and its agglomeration?",
-      answer: 1600000,
       unit: "person",
       min: 0,
     },
+    answer: 1600000,
   },
   {
     id: 17,
@@ -233,10 +233,10 @@ export const taskData = [
     task: "population_of_large_cities",
     question: {
       text: "What is the population of Tokyo and its agglomeration?",
-      answer: 38000000,
       unit: "person",
       min: 0,
     },
+    answer: 38000000,
   },
   {
     id: 18,
@@ -244,10 +244,10 @@ export const taskData = [
     task: "population_of_large_cities",
     question: {
       text: "What is the population of Melbourne and its agglomeration?",
-      answer: 4500000,
       unit: "person",
       min: 0,
     },
+    answer: 4500000,
   },
   {
     id: 19,
@@ -255,10 +255,10 @@ export const taskData = [
     task: "population_of_large_cities",
     question: {
       text: "What is the population of Seoul and its agglomeration?",
-      answer: 26000000,
       unit: "person",
       min: 0,
     },
+    answer: 26000000,
   },
   {
     id: 20,
@@ -266,10 +266,10 @@ export const taskData = [
     task: "population_of_large_cities",
     question: {
       text: "What is the population of Shanghai and its agglomeration?",
-      answer: 25000000,
       unit: "person",
       min: 0,
     },
+    answer: 25000000,
   },
 
   // add hints to daily life facts questions
@@ -281,10 +281,10 @@ export const taskData = [
     question: {
       text:
         "How many kilometers does a professional cyclist typically bike a year?",
-      answer: 40000,
       unit: "km",
       min: 0,
     },
+    answer: 40000,
   },
   {
     id: 22,
@@ -296,10 +296,10 @@ export const taskData = [
     question: {
       text:
         "What is the mean annual gross salary of a professional league 1 soccer player in France (in euros)?",
-      answer: 600000,
       unit: "euro",
       min: 0,
     },
+    answer: 600000,
   },
   {
     id: 23,
@@ -308,10 +308,10 @@ export const taskData = [
     hints: ["22.74 million cell phones were sold in germany in 2018."],
     question: {
       text: "How many cell phones are sold in France every year?",
-      answer: 22000000,
       unit: "cell phone",
       min: 0,
     },
+    answer: 22000000,
   },
   {
     id: 24,
@@ -320,10 +320,10 @@ export const taskData = [
     hints: ["Italy has 300,000 cars stolen every year."],
     question: {
       text: "How many cars are stolen in France every year?",
-      answer: 110000,
       unit: "car",
       min: 0,
     },
+    answer: 110000,
   },
   {
     id: 25,
@@ -332,10 +332,10 @@ export const taskData = [
     hints: ["There were 85.5 million ebooks sold in Britain in 2015."],
     question: {
       text: "How many ebooks were sold in France in 2014?",
-      answer: 10700000,
       unit: "ebook",
       min: 0,
     },
+    answer: 10700000,
   },
   {
     id: 26,
@@ -346,10 +346,10 @@ export const taskData = [
     ],
     question: {
       text: "How many books does the American Library of Congress hold?",
-      answer: 23000000,
-      unit: "eaches",
+      unit: "book",
       min: 0,
     },
+    answer: 23000000,
   },
   {
     id: 27,
@@ -358,10 +358,10 @@ export const taskData = [
     hints: ["The flu kills 646,000 people every year."],
     question: {
       text: "How many people die from cancer in the world every year?",
-      answer: 15000000,
       unit: "person",
       min: 0,
     },
+    answer: 15000000,
   },
 
   // art market questions
@@ -379,10 +379,10 @@ export const taskData = [
       image: "/tasks/van_Gogh_Planteuse_de_betteraves,_by_Vincent_van_Gogh.jpg",
       text:
         "This painting was sold at an auction in May, 2018. How much did it sell for?",
-      answer: 3600000,
       unit: "dollar",
       min: 0,
     },
+    answer: 3600000,
   },
   {
     id: 29,
@@ -397,10 +397,10 @@ export const taskData = [
       image: "/tasks/picasso.jpg",
       text:
         "This painting was sold at an auction in November, 2018. How much did it sell for? ",
-      answer: 29600000,
       unit: "dollar",
       min: 0,
     },
+    answer: 29600000,
   },
 
   // Socioeconomic questions
@@ -418,10 +418,10 @@ export const taskData = [
     question: {
       text:
         "In terms of dollars, how much money do you think was spent on instruction in college, per student?",
-      answer: 7912,
       unit: "dollar",
       min: 0,
     },
+    answer: 7912,
   },
   // what is the answer??
   {
@@ -437,10 +437,10 @@ export const taskData = [
     question: {
       text:
         "How many passengers boarded out of an airport in the New York City area (JFK, La Guardia, and Newark) in 2009?",
-      answer: 79120000,
       unit: "person",
       min: 0,
     },
+    answer: 79120000,
   },
 
   // crowdfunding questions
@@ -451,15 +451,21 @@ export const taskData = [
       class: "trivia_questions",
       type: "crowdfunding",
     },
-    hints: [
-      "Consider this crowdfunding campaign: The goal of this app is to promote new music discovery in a fun and different way.  This app would allow musicians to “drop” songs at specific physical locations.  Anyone using the app would then be able to listen to the song by visiting that location. The app sought £30,000 (British pounds) and offered funders equity in the company, with a total equity of 35% for the whole campaign.",
-    ],
     question: {
       text: "How much money do you think the campaign raised?",
-      answer: 30000,
+      description: `
+        Consider this crowdfunding campaign: The goal of this app is to promote
+        new music discovery in a fun and different way.  This app would allow
+        musicians to “drop” songs at specific physical locations.  Anyone using
+        the app would then be able to listen to the song by visiting that
+        location. The app sought £30,000 (British pounds) and offered funders
+        equity in the company, with a total equity of 35% for the whole
+        campaign.
+      `,
       unit: "pounds",
       min: 0,
     },
+    answer: 30000,
   },
   {
     id: 33,
@@ -467,15 +473,20 @@ export const taskData = [
       class: "trivia_questions",
       type: "crowdfunding",
     },
-    hints: [
-      "Consider this crowdfunding campaign: The product is headphones designed for dance music.  The goal of the product is to replicate the sound style of being in a club or party.  The campaign followed a successful prior round of funding, and the company has already sold thousands of units.This campaign sought an additional £100,000 (British pounds) in exchange for equity in the company, and ended up exceeding their goals.",
-    ],
     question: {
       text: "How much money do you think the campaign raised?",
-      answer: 142770,
+      description: `
+        Consider this crowdfunding campaign: The product is headphones designed
+        for dance music. The goal of the product is to replicate the sound style
+        of being in a club or party.  The campaign followed a successful prior
+        round of funding, and the company has already sold thousands of units.
+        This campaign sought an additional £100,000 (British pounds) in exchange
+        for equity in the company, and ended up exceeding their goals.
+      `,
       unit: "pounds",
       min: 0,
     },
+    answer: 142770,
   },
 
   // geopolitics questions
@@ -486,16 +497,20 @@ export const taskData = [
       class: "trivia_questions",
       type: "geopolitics",
     },
-    hints: [
-      "The Armed Conflict Location & Event Data Project (ACLED) is a non-governmental organization that tracks violent conflict in Asia, the Middle East, and Africa. One type of event they track is those where civilians were intentionally targeted.  In 2018, they recorded 841 such events in Somalia.",
-    ],
     question: {
       text:
         "How many of type of events like this do you think they recorded in Yemen for 2018?",
-      answer: 609,
-      unit: "eaches",
+      description: `
+        The Armed Conflict Location & Event Data Project (ACLED) is a
+        non-governmental organization that tracks violent conflict in Asia, the
+        Middle East, and Africa. One type of event they track is those where
+        civilians were intentionally targeted.  In 2018, they recorded 841 such
+        events in Somalia.
+      `,
+      unit: "event",
       min: 0,
     },
+    answer: 609,
   },
   {
     id: 35,
@@ -503,16 +518,20 @@ export const taskData = [
       class: "trivia_questions",
       type: "geopolitics",
     },
-    hints: [
-      "The Armed Conflict Location & Event Data Project (ACLED) is a non-governmental organization that tracks violent conflict in Asia, the Middle East, and Africa. One type of event they track is those where civilians were intentionally targeted.  In 2018, they recorded 841 such events in Somalia.",
-    ],
     question: {
       text:
         "How many of type of events like this do you think they recorded in Syria for 2018?",
-      answer: 1501,
-      unit: "eaches",
+      description: `
+      The Armed Conflict Location & Event Data Project (ACLED) is a
+      non-governmental organization that tracks violent conflict in Asia,
+      the Middle East, and Africa. One type of event they track is those where
+      civilians were intentionally targeted. In 2018, they recorded 841 such
+      events in Somalia.
+      `,
+      unit: "event",
       min: 0,
     },
+    answer: 1501,
   },
 
   // extreme events questions
@@ -525,10 +544,10 @@ export const taskData = [
     },
     question: {
       text: "What is the radius of the Sun (in km)?",
-      answer: 696000,
       unit: "km",
       min: 0,
     },
+    answer: 696000,
   },
   {
     id: 37,
@@ -538,10 +557,10 @@ export const taskData = [
     },
     question: {
       text: "What is the distance between the Earth and the Moon (in km)?",
-      answer: 385000,
       unit: "km",
       min: 0,
     },
+    answer: 385000,
   },
   {
     id: 38,
@@ -552,10 +571,10 @@ export const taskData = [
     question: {
       text:
         "What is the mean distance between planet Mercury and the Sun (in km)?",
-      answer: 57800000,
       unit: "km",
       min: 0,
     },
+    answer: 57800000,
   },
   {
     id: 39,
@@ -566,11 +585,11 @@ export const taskData = [
     question: {
       text:
         "What is the total mass of oceans on Earth (in thousand billion of metric tons)?",
-      answer: 1400000000000000,
       magnitude: 12,
       unit: "metric ton",
       min: 0,
     },
+    answer: 1400000000000000,
   },
   {
     id: 40,
@@ -596,11 +615,11 @@ export const taskData = [
     question: {
       text:
         "How many galaxies does the visible universe hold (in million galaxies)?",
-      answer: 100000000000,
       magnitude: 6,
       unit: "galaxy",
       min: 0,
     },
+    answer: 100000000000,
   },
   {
     id: 42,
@@ -610,11 +629,11 @@ export const taskData = [
     },
     question: {
       text: "How many stars does the Milky way hold (in million stars)?",
-      answer: 235000000000,
       magnitude: 6,
       unit: "star",
       min: 0,
     },
+    answer: 235000000000,
   },
   {
     id: 43,
@@ -624,11 +643,11 @@ export const taskData = [
     },
     question: {
       text: "How many billions kilometers is worth a light-year?",
-      answer: 9461000000000,
       magnitude: 9,
       unit: "km",
       min: 0,
     },
+    answer: 9461000000000,
   },
 
   // other questions
@@ -641,10 +660,10 @@ export const taskData = [
     },
     question: {
       text: "What is the mass of the Cheops pyramid (in metric tons)?",
-      answer: 5000000,
       unit: "metric ton",
       min: 0,
     },
+    answer: 5000000,
   },
   {
     id: 45,
@@ -655,10 +674,10 @@ export const taskData = [
     question: {
       text:
         "What is the total length of the metal threads used in the Golden Gate Bridge’s braided cables (in km)?",
-      answer: 129000,
       unit: "km",
       min: 0,
     },
+    answer: 129000,
   },
   {
     id: 46,
@@ -669,10 +688,10 @@ export const taskData = [
     question: {
       text:
         "How much did Burj Khalifa Tower, in Dubai, cost to build (in thousands of dollars)?",
-      answer: 1500000000,
       unit: "dollar",
       magnitude: 3,
       min: 0,
     },
+    answer: 1500000000,
   },
 ];
