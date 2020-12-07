@@ -21,10 +21,9 @@ export default class Answer extends React.Component {
             value={answer}
             displayType="text"
             thousandSeparator={true}
-            className="w-full pl-2 py-2 text-3xl text-gray-500 leading-snug"
-            value={answer}
+            className="w-full pl-2 py-2 text-3xl text-gray-500 leading-snug text-right tabular-nums"
           />
-          <Unit answer={answer} {...this.props} />
+          <Unit result answer={answer} {...this.props} />
         </div>
       </div>
     );

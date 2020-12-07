@@ -3,7 +3,7 @@ import Empirica from "meteor/empirica:core";
 // onGameStart is triggered opnce per game before the game starts, and before
 // the first onRoundStart. It receives the game and list of all the players in
 // the game.
-Empirica.onGameStart(game => {});
+Empirica.onGameStart((game) => {});
 
 // onRoundStart is triggered before each round starts, and before onStageStart.
 // It receives the same options as onGameStart, and the round that is starting.
@@ -15,21 +15,45 @@ Empirica.onStageStart((game, round, stage) => {});
 
 // onStageEnd is triggered after each stage.
 // It receives the same options as onRoundEnd, and the stage that just ended.
-Empirica.onStageEnd((game, round, stage) => {});
+Empirica.onStageEnd((game, round, stage) => {
+  if (stage.name !== "response") {
+    return;
+  }
+
+  computeScore(game.players, round);
+});
+
+function computeScore(players, round) {
+  const task = round.get("task");
+  const correctAnswer = task.answer;
+
+  players.forEach((player) => {
+    const guess = player.round.get("answer");
+    const roughScore =
+      guess === undefined || guess === null
+        ? 0
+        : 1 - Math.abs(guess - correctAnswer) / correctAnswer;
+    if (roughScore < 0) {
+      player.round.set("score", 0);
+    } else {
+      player.round.set("score", Math.round(10 * roughScore * 100) / 100);
+    }
+  });
+}
 
 // onRoundEnd is triggered after each round.
 // It receives the same options as onGameEnd, and the round that just ended.
 Empirica.onRoundEnd((game, round) => {
-  game.players.forEach(player => {
-    const value = player.round.get("value") || 0;
+  game.players.forEach((player) => {
+    const newScore = player.round.get("score") || 0;
     const prevScore = player.get("score") || 0;
-    player.set("score", prevScore + value);
+    player.set("score", prevScore + newScore);
   });
 });
 
 // onGameEnd is triggered when the game ends.
 // It receives the same options as onGameStart.
-Empirica.onGameEnd(game => {});
+Empirica.onGameEnd((game) => {});
 
 // ===========================================================================
 // => onSet, onAppend and onChange ==========================================

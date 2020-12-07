@@ -1,5 +1,7 @@
 import React from "react";
 import NumberFormat from "react-number-format";
+import { applyMagnitude } from "../../shared/conversions";
+import Button from "./Button";
 import Unit from "./Unit";
 
 export default class ResponseInput extends React.Component {
@@ -7,7 +9,10 @@ export default class ResponseInput extends React.Component {
     super(props);
 
     this.state = {
-      answer: props.player.round.get("answer") || "",
+      answer:
+        props.player.stage.get("tmpanswer") ||
+        props.player.round.get("answer") ||
+        "",
       focused: false,
     };
   }
@@ -19,6 +24,8 @@ export default class ResponseInput extends React.Component {
   // };
 
   handleChangeValue = (change) => {
+    const { player } = this.props;
+    player.stage.set("tmpanswer", change.value);
     this.setState({ answer: change.value });
   };
 
@@ -50,6 +57,7 @@ export default class ResponseInput extends React.Component {
       a = i;
     }
 
+    player.stage.set("answer", a);
     player.round.set("answer", a);
     player.stage.submit();
   };
@@ -68,29 +76,67 @@ export default class ResponseInput extends React.Component {
     }
 
     return (
-      <form action="#" onSubmit={this.handleSubmit} className="flex">
-        <NumberFormat
-          thousandSeparator={true}
-          isNumericString
-          className="w-full px-0 m-0 py-2 text-3xl text-gray-500 bg-transparent placeholder-gray-300 border-0 border-b-2 border-gray-300 focus:ring-0 focus:outline-none focus:border-b-2 focus:border-gray-500 leading-snug"
-          placeholder="Type your answer here..."
-          autoFocus
-          name="answer"
-          // type="number"
-          value={answer}
-          // onChange={this.handleChange}
-          onValueChange={this.handleChangeValue}
-          onFocus={this.handleFocus}
-          onBlur={this.handleBlur}
-          {...minmax}
-        />
-        <Unit
-          input
-          magnitude
-          focused={focused}
-          answer={answer}
-          {...this.props}
-        />
+      <form action="#" onSubmit={this.handleSubmit} className="relative">
+        <div className="flex">
+          <NumberFormat
+            thousandSeparator={true}
+            isNumericString
+            className="w-full px-0 m-0 py-2 text-3xl text-gray-500 bg-transparent placeholder-gray-300 border-0 border-b-2 border-gray-300 focus:ring-0 focus:outline-none focus:border-b-2 focus:border-gray-500 leading-snug tabular-nums"
+            placeholder="Type your answer here..."
+            autoFocus
+            name="answer"
+            // type="number"
+            value={answer}
+            // onChange={this.handleChange}
+            onValueChange={this.handleChangeValue}
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur}
+            {...minmax}
+          />
+          <Unit
+            input
+            magnitude
+            focused={focused}
+            answer={answer}
+            {...this.props}
+          />
+        </div>
+
+        {answer && task.question.magnitude ? (
+          <div className="absolute bottom-0">
+            <div className="absolute">
+              <div className="mt-1 flex whitespace-nowrap w-full py-2 text-gray-600 leading-none tabular-nums">
+                <NumberFormat
+                  value={applyMagnitude(
+                    parseInt(answer, 10),
+                    task.question.magnitude
+                  )}
+                  displayType="text"
+                  thousandSeparator={true}
+                  className=""
+                />
+                <div className="ml-2">
+                  <Unit answer={answer} {...this.props} />
+                </div>
+                <div className="ml-1">total</div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
+
+        {answer === "" ? (
+          ""
+        ) : (
+          <div className="absolute bottom-0">
+            <div className="absolute">
+              <div className="mt-12">
+                <Button tick text="OK" />
+              </div>
+            </div>
+          </div>
+        )}
       </form>
     );
   }

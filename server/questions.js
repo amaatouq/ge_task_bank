@@ -53,10 +53,10 @@ export const taskData = [
       image: "/tasks/gtc_3.png",
       text:
         "What is the correlation between the X and Y variable in this scatter plot?",
-      answer: 0.47,
       min: 0,
       max: 1,
     },
+    answer: 0.47,
   },
   {
     id: 4,
