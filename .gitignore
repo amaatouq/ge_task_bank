@@ -10,3 +10,6 @@ local.json
 token.json
 *.orig
 .DS_Store
+local.json
+**/.idea
+.DS_Store
