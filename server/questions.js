@@ -5,13 +5,13 @@ Correlation measures how closely related two variables are. For the example
 below, if tall kids tend to be heavy, and short kids tend to be light, we would
 say that height and weight are correlated.
 
-![/instructions/height-age.png](Height and age correlation graph)
+![Height and age correlation graph](/instructions/height-age.png)
 
 In this task, your correlation guess can range from 0 to 1, and the closer the
 points fit to a straight line, the closer the correlation will be to 1. No
 calculations are necessary, just make your best estimate.
 
-![/instructions/correlation-examples.png](Correlation graph examples)
+![Correlation graph examples](/instructions/correlation-examples.png)
     `,
   },
 };
@@ -195,13 +195,13 @@ export const taskData = [
     id: 14,
     class: "trivia_questions",
     task: "population_of_large_cities",
-    hints: [
-      "There are approximately 8.4 million people who live in just New York City.",
-    ],
     question: {
       text: "What is the population of New York City and its agglomeration?",
       unit: "person",
       min: 0,
+      hints: [
+        "There are approximately 8.4 million people who live in just New York City.",
+      ],
     },
     answer: 21000000,
   },
@@ -290,14 +290,14 @@ export const taskData = [
     id: 22,
     class: "trivia_questions",
     task: "daily_life_facts",
-    hints: [
-      "The mean annual gross salary of a professional English Premier League Player in England is 732,288 euros",
-    ],
     question: {
       text:
         "What is the mean annual gross salary of a professional league 1 soccer player in France (in euros)?",
       unit: "euro",
       min: 0,
+      hints: [
+        "The mean annual gross salary of a professional English Premier League Player in England is 732,288 euros",
+      ],
     },
     answer: 600000,
   },
@@ -305,11 +305,11 @@ export const taskData = [
     id: 23,
     class: "trivia_questions",
     task: "daily_life_facts",
-    hints: ["22.74 million cell phones were sold in germany in 2018."],
     question: {
       text: "How many cell phones are sold in France every year?",
       unit: "cell phone",
       min: 0,
+      hints: ["22.74 million cell phones were sold in germany in 2018."],
     },
     answer: 22000000,
   },
@@ -317,11 +317,11 @@ export const taskData = [
     id: 24,
     class: "trivia_questions",
     task: "daily_life_facts",
-    hints: ["Italy has 300,000 cars stolen every year."],
     question: {
       text: "How many cars are stolen in France every year?",
       unit: "car",
       min: 0,
+      hints: ["Italy has 300,000 cars stolen every year."],
     },
     answer: 110000,
   },
@@ -329,11 +329,11 @@ export const taskData = [
     id: 25,
     class: "trivia_questions",
     task: "daily_life_facts",
-    hints: ["There were 85.5 million ebooks sold in Britain in 2015."],
     question: {
       text: "How many ebooks were sold in France in 2014?",
       unit: "ebook",
       min: 0,
+      hints: ["There were 85.5 million ebooks sold in Britain in 2015."],
     },
     answer: 10700000,
   },
@@ -341,13 +341,13 @@ export const taskData = [
     id: 26,
     class: "trivia_questions",
     task: "daily_life_facts",
-    hints: [
-      "There are around 53 million books in the New York Public Library.",
-    ],
     question: {
       text: "How many books does the American Library of Congress hold?",
       unit: "book",
       min: 0,
+      hints: [
+        "There are around 53 million books in the New York Public Library.",
+      ],
     },
     answer: 23000000,
   },
@@ -355,16 +355,16 @@ export const taskData = [
     id: 27,
     class: "trivia_questions",
     task: "daily_life_facts",
-    hints: ["The flu kills 646,000 people every year."],
     question: {
       text: "How many people die from cancer in the world every year?",
       unit: "person",
       min: 0,
+      hints: ["The flu kills 646,000 people every year."],
     },
     answer: 15000000,
   },
 
-  // art market questions
+  // // art market questions
 
   {
     id: 28,
@@ -372,15 +372,16 @@ export const taskData = [
       class: "trivia_questions",
       type: "art_market",
     },
-    hints: [
-      "The painting is by Vincent Van Gogh, and it is 18 inches tall by 20 inches wide, charcoal on paper.",
-    ],
     question: {
       image: "/tasks/van_Gogh_Planteuse_de_betteraves,_by_Vincent_van_Gogh.jpg",
       text:
         "This painting was sold at an auction in May, 2018. How much did it sell for?",
       unit: "dollar",
       min: 0,
+      hints: [
+        "The painting is by Vincent Van Gogh, and it is 18 inches tall by 20 inches wide, charcoal on paper.",
+        "The painting is by Vincent Van Gogh, and it is 18 inches tall by 20 inches wide, charcoal on paper.",
+      ],
     },
     answer: 3600000,
   },
@@ -390,15 +391,15 @@ export const taskData = [
       class: "trivia_questions",
       type: "art_market",
     },
-    hints: [
-      "The painting is by Pablo Picasso, and it is 64 inches tall by 51 inches wide, oil on canvas",
-    ],
     question: {
       image: "/tasks/picasso.jpg",
       text:
         "This painting was sold at an auction in November, 2018. How much did it sell for? ",
       unit: "dollar",
       min: 0,
+      hints: [
+        "The painting is by Pablo Picasso, and it is 64 inches tall by 51 inches wide, oil on canvas",
+      ],
     },
     answer: 29600000,
   },
@@ -412,14 +413,14 @@ export const taskData = [
       class: "trivia_questions",
       type: "socioeconomic",
     },
-    hints: [
-      "Across all colleges where the US Department of Education collected data,the average tuition revenue per full time (or equivalent) student was $10,438 per year.",
-    ],
     question: {
       text:
         "In terms of dollars, how much money do you think was spent on instruction in college, per student?",
       unit: "dollar",
       min: 0,
+      hints: [
+        "Across all colleges where the US Department of Education collected data,the average tuition revenue per full time (or equivalent) student was $10,438 per year.",
+      ],
     },
     answer: 7912,
   },
@@ -431,14 +432,14 @@ export const taskData = [
       type: "socioeconomic",
       min: 0,
     },
-    hints: [
-      "In 2009, approximately 690 million passengers boarded a plane.  (So a round-trip flight counts for 2 passengers boarding.)",
-    ],
     question: {
       text:
         "How many passengers boarded out of an airport in the New York City area (JFK, La Guardia, and Newark) in 2009?",
       unit: "person",
       min: 0,
+      hints: [
+        "In 2009, approximately 690 million passengers boarded a plane.  (So a round-trip flight counts for 2 passengers boarding.)",
+      ],
     },
     answer: 79120000,
   },

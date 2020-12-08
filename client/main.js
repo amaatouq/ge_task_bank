@@ -3,6 +3,7 @@ import { render } from "react-dom";
 import ExitSurvey from "./exit/ExitSurvey";
 import Thanks from "./exit/Thanks";
 import Round from "./game/Round";
+import Waiting from "./game/Waiting";
 import Consent from "./intro/Consent";
 import InstructionStepOne from "./intro/InstructionStepOne";
 import InstructionStepTwo from "./intro/InstructionStepTwo";
@@ -15,6 +16,7 @@ import Quiz from "./intro/Quiz";
 // Set the Consent Component you want to present players (optional).
 Empirica.consent(Consent);
 Empirica.newPlayer(NewPlayerForm);
+Empirica.waiting(Waiting);
 
 // Remove header
 Empirica.header(() => null);

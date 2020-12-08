@@ -1,12 +1,11 @@
 import React from "react";
-
-import { Centered } from "meteor/empirica:core";
+import Wrapper from "../game/Wrapper";
 
 export default class InstructionStepTwo extends React.Component {
   render() {
     const { hasPrev, hasNext, onNext, onPrev } = this.props;
     return (
-      <Centered>
+      <Wrapper {...this.props}>
         <div className="instructions">
           <h1> Instructions 2 </h1>
           <p>
@@ -25,7 +24,7 @@ export default class InstructionStepTwo extends React.Component {
             </button>
           </p>
         </div>
-      </Centered>
+      </Wrapper>
     );
   }
 }

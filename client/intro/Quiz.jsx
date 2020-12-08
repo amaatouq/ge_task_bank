@@ -1,16 +1,15 @@
 import React from "react";
-
-import { Centered } from "meteor/empirica:core";
+import Wrapper from "../game/Wrapper";
 
 export default class Quiz extends React.Component {
   state = { sum: "", horse: "" };
 
-  handleChange = event => {
+  handleChange = (event) => {
     const el = event.currentTarget;
     this.setState({ [el.name]: el.value.trim().toLowerCase() });
   };
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
 
     if (this.state.sum !== "4" || this.state.horse !== "white") {
@@ -24,7 +23,7 @@ export default class Quiz extends React.Component {
     const { hasPrev, hasNext, onNext, onPrev } = this.props;
     const { sum, horse } = this.state;
     return (
-      <Centered>
+      <Wrapper {...this.props}>
         <div className="quiz">
           <h1> Quiz </h1>
           <form onSubmit={this.handleSubmit}>
@@ -67,7 +66,7 @@ export default class Quiz extends React.Component {
             </p>
           </form>
         </div>
-      </Centered>
+      </Wrapper>
     );
   }
 }

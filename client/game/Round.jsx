@@ -1,5 +1,6 @@
 import React from "react";
 import { Avatar } from "./Avatar";
+import DebugButtons from "./DebugButtons";
 import Response from "./Response";
 import Score from "./Score";
 import Timer from "./Timer";
@@ -8,6 +9,8 @@ import Wait from "./Wait";
 export default class Round extends React.Component {
   render() {
     const { round, stage, player, game } = this.props;
+
+    // return <Waiting />;
 
     const task = round.get("task");
     console.log(stage.name);
@@ -25,7 +28,10 @@ export default class Round extends React.Component {
             <Avatar bordered player={player} />
           </div>
           {stage.name === "wait" ? <div></div> : <Timer {...this.props} />}
-          <Score player={player} />
+          <div className="flex justify-end items-center">
+            <DebugButtons {...this.props} />
+            <Score player={player} />
+          </div>
         </header>
 
         {stage.name === "wait" ? (
@@ -37,10 +43,6 @@ export default class Round extends React.Component {
             <Response {...this.props} />
           </section>
         )}
-
-        {/* <PlayerProfile player={player} stage={stage} game={game} />
-          <Task game={game} round={round} stage={stage} player={player} /> */}
-        {/* <SocialExposure stage={stage} player={player} game={game} /> */}
       </div>
     );
   }

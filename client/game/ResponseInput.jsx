@@ -76,7 +76,7 @@ export default class ResponseInput extends React.Component {
     }
 
     return (
-      <form action="#" onSubmit={this.handleSubmit} className="relative">
+      <form action="#" onSubmit={this.handleSubmit} className="relative w-full">
         <div className="flex">
           <NumberFormat
             thousandSeparator={true}

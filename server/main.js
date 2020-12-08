@@ -2,7 +2,7 @@ import Empirica from "meteor/empirica:core";
 import { avatarNames } from "../shared/avatars.js";
 import "./bots.js";
 import "./callbacks.js";
-import { taskData } from "./questions";
+import { instructions, taskData } from "./questions";
 
 // gameInit is where the structure of a game is defined.
 // Just before every game starts, once all the players needed are ready, this
@@ -73,7 +73,9 @@ Empirica.gameInit((game) => {
 
   _.times(nRounds, (i) => {
     const round = game.addRound();
-    round.set("task", tasks[i]);
+    const task = tasks[i];
+    task.instructions = instructions[task.task];
+    round.set("task", task);
     round.addStage({
       name: "response",
       displayName: "Response",
@@ -90,7 +92,7 @@ Empirica.gameInit((game) => {
       });
     }
 
-    if (longTermEngagement) {
+    if (longTermEngagement && i + 1 < nRounds) {
       round.addStage({
         name: "wait",
         displayName: "Wait",
