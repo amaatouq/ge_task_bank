@@ -6,6 +6,7 @@ import Round from "./game/Round";
 import Consent from "./intro/Consent";
 import InstructionStepOne from "./intro/InstructionStepOne";
 import InstructionStepTwo from "./intro/InstructionStepTwo";
+import NewPlayerForm from "./intro/NewPlayerForm";
 import Quiz from "./intro/Quiz";
 
 // Set the About Component you want to use for the About dialog (optional).
@@ -13,6 +14,7 @@ import Quiz from "./intro/Quiz";
 
 // Set the Consent Component you want to present players (optional).
 Empirica.consent(Consent);
+Empirica.newPlayer(NewPlayerForm);
 
 // Remove header
 Empirica.header(() => null);

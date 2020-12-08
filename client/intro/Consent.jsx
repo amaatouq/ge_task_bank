@@ -1,13 +1,12 @@
+import { ConsentButton } from "meteor/empirica:core";
 import React from "react";
-
-import { Centered, ConsentButton } from "meteor/empirica:core";
 
 export default class Consent extends React.Component {
   render() {
     return (
-      <Centered>
-        <div className="consent">
-          <h1> Consent Form </h1>
+      <div className="flex justify-center items-center text-base text-gray-800">
+        <div className="max-w-2xl">
+          <div className="text-4xl font-semibold mt-8 mb-6"> Consent Form </div>
           <p>
             This experiment is part of a MIT scientific project. Your decision
             to participate in this experiment is entirely voluntary. There are
@@ -22,7 +21,7 @@ export default class Consent extends React.Component {
           <br />
           <ConsentButton text="I AGREE" />
         </div>
-      </Centered>
+      </div>
     );
   }
 }

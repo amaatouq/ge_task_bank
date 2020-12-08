@@ -1,30 +1,51 @@
 import React from "react";
+import Button from "../game/Button";
 
-import { Centered } from "meteor/empirica:core";
+function Radio({ selected, name, value, label, onChange }) {
+  return (
+    <label className="mr-4 text-gray-600 font-medium">
+      <input
+        type="radio"
+        name={name}
+        value={value}
+        checked={selected === value}
+        onChange={onChange}
+        className="mr-2"
+      />
+      {label}
+    </label>
+  );
+}
 
-const Radio = ({ selected, name, value, label, onChange }) => (
-  <label>
-    <input
-      type="radio"
-      name={name}
-      value={value}
-      checked={selected === value}
-      onChange={onChange}
-    />
-    {label}
-  </label>
-);
+function Label({ text, htmlFor }) {
+  return (
+    <label
+      className="block mt-6 mb-2 text-gray-600 font-medium"
+      htmlFor={htmlFor}
+    >
+      {text}
+    </label>
+  );
+}
+
+function Input({ ...rest }) {
+  return <input className="py-1 px-3" {...rest} />;
+}
+
+function Textarea({ ...rest }) {
+  return <textarea className="w-96 h-24" {...rest} />;
+}
 
 export default class ExitSurvey extends React.Component {
   static stepName = "ExitSurvey";
   state = { age: "", gender: "", strength: "", fair: "", feedback: "" };
 
-  handleChange = event => {
+  handleChange = (event) => {
     const el = event.currentTarget;
     this.setState({ [el.name]: el.value });
   };
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
     this.props.onSubmit(this.state);
   };
@@ -34,9 +55,9 @@ export default class ExitSurvey extends React.Component {
     const { age, gender, strength, fair, feedback, education } = this.state;
 
     return (
-      <Centered>
-        <div className="exit-survey">
-          <h1> Exit Survey </h1>
+      <div className="flex justify-center items-center text-base text-gray-800">
+        <div className="max-w-7xl">
+          <div className="text-4xl font-semibold mt-8 mb-6"> Exit Survey </div>
           <p>
             Please submit the following code to receive your bonus:{" "}
             <strong>{player._id}</strong>.
@@ -45,17 +66,19 @@ export default class ExitSurvey extends React.Component {
             You final <strong>bonus</strong> is in addition of the{" "}
             <strong>1 base reward</strong> for completing the HIT.
           </p>
-          <br />
-          <p>
-            Please answer the following short survey. You do not have to provide
-            any information you feel uncomfortable with.
+          <p className="mt-4">
+            Please answer the following short survey.{" "}
+            <em>
+              You do not have to provide any information you feel uncomfortable
+              with.
+            </em>
           </p>
           <form onSubmit={this.handleSubmit}>
             <div className="form-line">
               <div>
-                <label htmlFor="age">Age</label>
+                <Label htmlFor="age" text="Age" />
                 <div>
-                  <input
+                  <Input
                     id="age"
                     type="number"
                     min="0"
@@ -69,9 +92,9 @@ export default class ExitSurvey extends React.Component {
                 </div>
               </div>
               <div>
-                <label htmlFor="gender">Gender</label>
+                <Label htmlFor="gender" text="Gender" />
                 <div>
-                  <input
+                  <Input
                     id="gender"
                     type="text"
                     dir="auto"
@@ -85,7 +108,10 @@ export default class ExitSurvey extends React.Component {
             </div>
 
             <div>
-              <label>Highest Education Qualification</label>
+              <Label
+                htmlFor="education"
+                text="Highest Education Qualification"
+              />
               <div>
                 <Radio
                   selected={education}
@@ -120,11 +146,12 @@ export default class ExitSurvey extends React.Component {
 
             <div className="form-line thirds">
               <div>
-                <label htmlFor="strength">
-                  How would you describe your strength in the game?
-                </label>
+                <Label
+                  htmlFor="strength"
+                  text="How would you describe your strength in the game?"
+                />
                 <div>
-                  <textarea
+                  <Textarea
                     dir="auto"
                     id="strength"
                     name="strength"
@@ -134,9 +161,9 @@ export default class ExitSurvey extends React.Component {
                 </div>
               </div>
               <div>
-                <label htmlFor="fair">Do you feel the pay was fair?</label>
+                <Label htmlFor="fair" text="Do you feel the pay was fair?" />
                 <div>
-                  <textarea
+                  <Textarea
                     dir="auto"
                     id="fair"
                     name="fair"
@@ -146,11 +173,12 @@ export default class ExitSurvey extends React.Component {
                 </div>
               </div>
               <div>
-                <label htmlFor="feedback">
-                  Feedback, including problems you encountered.
-                </label>
+                <Label
+                  htmlFor="feedback"
+                  text="Feedback, including problems you encountered."
+                />
                 <div>
-                  <textarea
+                  <Textarea
                     dir="auto"
                     id="feedback"
                     name="feedback"
@@ -161,10 +189,12 @@ export default class ExitSurvey extends React.Component {
               </div>
             </div>
 
-            <button type="submit">Submit</button>
+            <div className="mt-8 mb-8">
+              <Button text="Submit" />
+            </div>
           </form>
         </div>
-      </Centered>
+      </div>
     );
   }
 }
