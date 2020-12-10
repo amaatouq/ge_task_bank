@@ -1,7 +1,7 @@
 import React from "react";
 import NumberFormat from "react-number-format";
-import { applyMagnitude } from "../../shared/conversions";
 import Button from "./Button";
+import NumberToWords from "./NumberToWords";
 import Unit from "./Unit";
 
 export default class ResponseInput extends React.Component {
@@ -102,6 +102,7 @@ export default class ResponseInput extends React.Component {
           />
         </div>
 
+        {/* 
         {answer && task.question.magnitude ? (
           <div className="absolute bottom-0">
             <div className="absolute">
@@ -125,6 +126,9 @@ export default class ResponseInput extends React.Component {
         ) : (
           ""
         )}
+        */}
+
+        <NumberToWords answer={answer} task={task} {...this.props} />
 
         {answer === "" ? (
           ""
