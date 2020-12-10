@@ -46,6 +46,7 @@ Empirica.gameInit((game) => {
   game.players.forEach((player, i) => {
     player.set("avatar", avatars.pop());
     player.set("score", 0);
+    player.set("index", i + 1);
   });
 
   // Task selection
@@ -79,16 +80,16 @@ Empirica.gameInit((game) => {
     round.addStage({
       name: "response",
       displayName: "Response",
-      // durationInSeconds: responseDuration,
-      durationInSeconds: 31540000,
+      durationInSeconds: responseDuration,
+      // durationInSeconds: 31540000,
     });
 
     if (feedback) {
       round.addStage({
         name: "feedback",
         displayName: "Feedback",
-        // durationInSeconds: feedbackDuration,
-        durationInSeconds: 31540000,
+        durationInSeconds: feedbackDuration,
+        // durationInSeconds: 31540000,
       });
     }
 

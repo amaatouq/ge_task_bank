@@ -11,6 +11,7 @@ treatments:
       - HtyBPSwcDcFZiGLvJ
       - cwBPNzx6ASumGTWfw
       - ydAx2s49LieqJ33WD
+      - 4iyZdsK3HiRFWYcdi
 factorTypes:
   - _id: Rve8jfoiwXXiYAbZf
     name: playerCount
@@ -87,49 +88,59 @@ factorTypes:
       starting a new round.
     required: false
     type: Boolean
+  - _id: KPaBsT8QA6WWc8osT
+    name: hints
+    description: >-
+      Determines what percentage of players will receive hints for their
+      questions. This is a JSON map for player index to an array of hint indexes
+      that describes exactly which hints are available to which player. If a
+      player is not defined they have no hints, if no hints are defined at all,
+      all players see all hints. E.g. { "1": [1,2], "2": [2,3], "4": [2]...}
+    required: false
+    type: String
 factors:
   - _id: CWhQMSrkLDjuPvdLJ
-    name: 'true'
+    name: "true"
     value: true
     factorTypeId: wz7s4ufXj2ss5hHGY
   - _id: 3RkEsXCQ42jbXZaSi
-    name: 'false'
+    name: "false"
     value: false
     factorTypeId: wz7s4ufXj2ss5hHGY
   - _id: 7DdaLQTBzuctmsqci
-    name: 'true'
+    name: "true"
     value: true
     factorTypeId: GCGbdjiqFbsHYAYSk
   - _id: bmAmYHpZv6StBN9Qi
-    name: 'false'
+    name: "false"
     value: false
     factorTypeId: GCGbdjiqFbsHYAYSk
   - _id: cwBPNzx6ASumGTWfw
-    name: 'true'
+    name: "true"
     value: true
     factorTypeId: YMa7vmBFmum5YcHX4
   - _id: MsMZFTrJEsvdchxd7
-    name: 'false'
+    name: "false"
     value: false
     factorTypeId: YMa7vmBFmum5YcHX4
   - _id: ydAx2s49LieqJ33WD
-    name: 'true'
+    name: "true"
     value: true
     factorTypeId: pGbLrSrHZAatHoC9K
   - _id: xwaJzJWR5ozbSpFkR
-    name: 'false'
+    name: "false"
     value: false
     factorTypeId: pGbLrSrHZAatHoC9K
   - _id: YWwosMevTALbyZmjc
-    name: '1'
+    name: "1"
     value: 1
     factorTypeId: Rve8jfoiwXXiYAbZf
   - _id: Z8qTZzDedy9mqYYhY
-    name: '5'
+    name: "5"
     value: 5
     factorTypeId: sToqhgYZPejDWvsp9
   - _id: Sqr54q2XogC8senCu
-    name: '10'
+    name: "10"
     value: 10
     factorTypeId: sToqhgYZPejDWvsp9
   - _id: qtgWqpEtizZ4SKF5C
@@ -150,8 +161,12 @@ factors:
     factorTypeId: hYW2mT46onSdYX7ds
   - _id: AAXBytkKFMDyadCH9
     name: geopolitics_daily_life_facts
-    value: 'geopolitics,daily_life_facts'
+    value: "geopolitics,daily_life_facts"
     factorTypeId: yyF4hBsuajGDxxfYP
+  - _id: 4iyZdsK3HiRFWYcdi
+    name: somehints
+    value: '{ "1": [1,2], "2": [2,3], "4": [2]}'
+    factorTypeId: KPaBsT8QA6WWc8osT
 lobbyConfigs:
   - name: Default
     timeoutType: lobby

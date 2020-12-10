@@ -14,8 +14,6 @@ export default class Question extends React.Component {
     const { round } = this.props;
     const task = round.get("task");
     if (task.instructions) {
-      console.log(task.instructions);
-      console.log("DID LOAD", this.instructionsRef.current);
       tippy(this.instructionsRef.current, {
         content: `<div class="p-4"> ${marked(task.instructions.text)} </div>`,
         allowHTML: true,
@@ -23,6 +21,43 @@ export default class Question extends React.Component {
         theme: "light",
       });
     }
+  }
+
+  renderError() {
+    const { player, round, stage } = this.props;
+    const task = round.get("task");
+
+    if (task.question.min === undefined && task.question.max === undefined) {
+      return null;
+    }
+
+    let answer = player.stage.get("tmpanswer");
+    if (task.question.magnitude) {
+      answer = applyMagnitude(answer, task.question.magnitude);
+    }
+
+    let err;
+    if (task.question.min !== undefined) {
+      if (answer < task.question.min) {
+        err = `Answer should be at least ${task.question.min}.`;
+      }
+    }
+
+    if (task.question.max !== undefined) {
+      if (answer > task.question.max) {
+        err = `Answer should be at most ${task.question.max}.`;
+      }
+    }
+
+    if (!err) {
+      return null;
+    }
+
+    return (
+      <div className="w-full mt-2 font-semibold text-red-500">
+        <div>{err}</div>
+      </div>
+    );
   }
 
   render() {
@@ -67,6 +102,8 @@ export default class Question extends React.Component {
             ) : (
               ""
             )}
+
+            {this.renderError()}
 
             <div className="mt-8 w-full">{children}</div>
           </div>

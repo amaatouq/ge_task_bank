@@ -98,7 +98,7 @@ export const taskData = [
     answer: 0.03,
   },
 
-  // counting objects questions
+  // // counting objects questions
 
   {
     id: 7,
@@ -189,7 +189,7 @@ export const taskData = [
     answer: 700,
   },
 
-  // population of large cities questions
+  // // population of large cities questions
 
   {
     id: 14,
@@ -364,7 +364,7 @@ export const taskData = [
     answer: 15000000,
   },
 
-  // // art market questions
+  // art market questions
 
   {
     id: 28,

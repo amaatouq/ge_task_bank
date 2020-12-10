@@ -57,13 +57,30 @@ export default class Response extends React.Component {
   }
 
   renderHints() {
-    const { player, round, stage } = this.props;
+    const { player, round, stage, game } = this.props;
+    const { treatment } = game;
     const task = round.get("task");
 
-    const hints = task.question.hints;
+    const possibleHints = task.question.hints;
 
-    if (!hints || hints.length === 0) {
+    if (!possibleHints || possibleHints.length === 0) {
       return null;
+    }
+
+    let hints = [];
+    if (treatment.hints) {
+      const hintsConf = JSON.parse(treatment.hints);
+      const conf = hintsConf[player.get("index").toString()];
+      if (!conf) {
+        return null;
+      }
+      for (let i = 0; i < possibleHints.length; i++) {
+        if (conf.includes(i + 1)) {
+          hints.push(possibleHints[i]);
+        }
+      }
+    } else {
+      hints = possibleHints;
     }
 
     const revealed = player.round.get("hintsRevealed") || 0;
