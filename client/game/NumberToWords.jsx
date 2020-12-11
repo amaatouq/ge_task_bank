@@ -1,5 +1,6 @@
 import numberToWords from "number-to-words";
 import React from "react";
+import { applyMagnitude } from "../../shared/conversions";
 import Unit from "./Unit";
 
 export default class NumberToWords extends React.Component {

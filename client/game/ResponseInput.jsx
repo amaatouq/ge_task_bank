@@ -1,6 +1,6 @@
 import React from "react";
 import NumberFormat from "react-number-format";
-import Button from "./Button";
+import Button from "../components/Button";
 import NumberToWords from "./NumberToWords";
 import Unit from "./Unit";
 

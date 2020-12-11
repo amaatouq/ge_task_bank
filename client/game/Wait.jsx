@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "./Button";
+import Button from "../components/Button";
 
 export default class Wait extends React.Component {
   render() {

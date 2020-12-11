@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../game/Button";
+import Button from "../components/Button";
 import Wrapper from "../game/Wrapper";
 
 export default class NewPlayerForm extends React.Component {

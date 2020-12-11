@@ -10,7 +10,7 @@ export default class Score extends React.Component {
           Score
         </div>
         <span className="text-3xl tabular-nums slashed-zero leading-none flex">
-          {player.get("score")}
+          {player.get("score") || "0.00"}
           {/* <div className="text-gray-400">pts</div> */}
         </span>
       </div>
