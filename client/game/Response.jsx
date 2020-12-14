@@ -1,7 +1,7 @@
 import React from "react";
 import { applyMagnitude } from "../../shared/conversions";
 import Answer from "./Answer";
-import Button from "./Button";
+import Button from "../components/Button";
 import Question from "./Question";
 import QuestionImage from "./QuestionImage";
 import ResponseInput from "./ResponseInput";

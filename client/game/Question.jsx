@@ -3,6 +3,7 @@ import React from "react";
 import tippy from "tippy.js";
 import "tippy.js/dist/tippy.css"; // optional
 import "tippy.js/themes/light.css";
+import { applyMagnitude } from "../../shared/conversions";
 
 export default class Question extends React.Component {
   constructor(props) {

@@ -5,10 +5,11 @@ import Thanks from "./exit/Thanks";
 import Round from "./game/Round";
 import Waiting from "./game/Waiting";
 import Consent from "./intro/Consent";
-import InstructionStepOne from "./intro/InstructionStepOne";
-import InstructionStepTwo from "./intro/InstructionStepTwo";
+import GameOverview from "./intro/GameOverview";
+import SoloResponseStage from "./intro/SoloResponseStage";
+import DemoStage from "./intro/DemoStage";
 import NewPlayerForm from "./intro/NewPlayerForm";
-import Quiz from "./intro/Quiz";
+// import Quiz from "./intro/Quiz";
 
 // Set the About Component you want to use for the About dialog (optional).
 // Empirica.about(About);
@@ -27,13 +28,14 @@ Empirica.breadcrumb(() => null);
 // At this point they have been assigned a treatment. You can return
 // different instruction steps depending on the assigned treatment.
 Empirica.introSteps((game, treatment) => {
-  return [];
-  const steps = [InstructionStepOne];
-  if (treatment.playerCount > 1) {
-    steps.push(InstructionStepTwo);
-  }
-  steps.push(Quiz);
+  const steps = [GameOverview, SoloResponseStage, DemoStage];
   return steps;
+  // return [];
+  // const steps = [InstructionStepOne];
+  // if (treatment.playerCount > 1) {
+  //   steps.push(InstructionStepTwo);
+  // }
+  // steps.push(Quiz);
 });
 
 // The Round component containing the game UI logic.

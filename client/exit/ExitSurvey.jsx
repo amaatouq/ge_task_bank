@@ -1,41 +1,7 @@
 import React from "react";
-import Button from "../game/Button";
+import Button from "../components/Button";
 import Wrapper from "../game/Wrapper";
-
-function Radio({ selected, name, value, label, onChange }) {
-  return (
-    <label className="mr-4 text-gray-600 font-medium">
-      <input
-        type="radio"
-        name={name}
-        value={value}
-        checked={selected === value}
-        onChange={onChange}
-        className="mr-2"
-      />
-      {label}
-    </label>
-  );
-}
-
-function Label({ text, htmlFor }) {
-  return (
-    <label
-      className="block mt-6 mb-2 text-gray-600 font-medium"
-      htmlFor={htmlFor}
-    >
-      {text}
-    </label>
-  );
-}
-
-function Input({ ...rest }) {
-  return <input className="py-1 px-3" {...rest} />;
-}
-
-function Textarea({ ...rest }) {
-  return <textarea className="w-96 h-24" {...rest} />;
-}
+import { Label, Input, Radio, Textarea } from "../components/Forms";
 
 export default class ExitSurvey extends React.Component {
   static stepName = "ExitSurvey";
@@ -58,11 +24,8 @@ export default class ExitSurvey extends React.Component {
     return (
       <Wrapper {...this.props}>
         <div className="flex justify-center items-center text-gray-800">
-          <div className="max-w-7xl">
-            <div className="text-4xl font-semibold mt-8 mb-6">
-              {" "}
-              Exit Survey{" "}
-            </div>
+          <div className="max-w-4xl">
+            <div className="text-4xl font-semibold mt-8 mb-6">Exit Survey</div>
             <p>
               Please submit the following code to receive your bonus:{" "}
               <strong>{player._id}</strong>.

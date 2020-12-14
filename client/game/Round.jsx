@@ -13,8 +13,8 @@ export default class Round extends React.Component {
     // return <Waiting />;
 
     const task = round.get("task");
-    console.log(stage.name);
-    console.log(task);
+    // console.log(stage.name);
+    // console.log(task);
 
     let columns = 1;
     if (task.question.image) {
