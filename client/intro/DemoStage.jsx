@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { magnitudesToEnglish } from "../../shared/conversions";
+import { applyMagnitude, magnitudesToEnglish } from "../../shared/conversions";
 import NumberFormat from "react-number-format";
 import numberToWords from "number-to-words";
 import DebugButtons from "../game/DebugButtons";
@@ -146,6 +146,7 @@ export default class DemoStage extends Component {
                         name="answer"
                         value={answer}
                         onValueChange={this.handleChange}
+                        autoComplete="off"
                         {...minmax}
                       />
                       <UnitDemo
