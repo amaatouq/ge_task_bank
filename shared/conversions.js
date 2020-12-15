@@ -1,13 +1,9 @@
 export function applyMagnitude(num, magnitude) {
-  if (num * Math.pow(10, magnitude) > Number.MAX_SAFE_INTEGER) {
-    // return false if the num too large
-    return false;
-  }
   return num * Math.pow(10, magnitude);
 }
 
 export const magnitudesToEnglish = {
-  2: "ten",
+  1: "ten",
   2: "hundred",
   3: "thousand",
   4: "ten thousand",

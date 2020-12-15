@@ -15,7 +15,6 @@ export default class ResponseInput extends React.Component {
         props.player.round.get("answer") ||
         "",
       focused: false,
-      err: "",
     };
   }
 
@@ -27,19 +26,8 @@ export default class ResponseInput extends React.Component {
 
   handleChangeValue = (change) => {
     const { player, round } = this.props;
-    const task = round.get("task");
-    let allowedNNumber = change.value < Number.MAX_SAFE_INTEGER;
-    if (task.question.magnitude) {
-      allowedNNumber = applyMagnitude(change.value, task.question.magnitude);
-    }
-    if (allowedNNumber) {
-      player.stage.set("tmpanswer", change.value);
-      this.setState({ answer: change.value, err: "" });
-    } else {
-      this.setState({
-        err: `Answer should be at most ${Number.MAX_SAFE_INTEGER}.`,
-      });
-    }
+    player.stage.set("tmpanswer", change.value);
+    this.setState({ answer: change.value, err: "" });
   };
 
   handleFocus = (event) => {
@@ -153,11 +141,6 @@ export default class ResponseInput extends React.Component {
                 <Button tick text="OK" />
               </div>
             </div>
-          </div>
-        )}
-        {err !== "" && (
-          <div className="w-full mt-2 font-semibold text-red-500">
-            <div>{err}</div>
           </div>
         )}
       </form>
