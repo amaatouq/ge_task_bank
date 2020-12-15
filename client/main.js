@@ -9,6 +9,7 @@ import GameOverview from "./intro/GameOverview";
 import SoloResponseStage from "./intro/SoloResponseStage";
 import DemoStage from "./intro/DemoStage";
 import NewPlayerForm from "./intro/NewPlayerForm";
+import Sorry from "./exit/Sorry";
 // import Quiz from "./intro/Quiz";
 
 // Set the About Component you want to use for the About dialog (optional).
@@ -52,6 +53,9 @@ Empirica.round(Round);
 // If you don't return anything, or do not define this function, a default
 // exit screen will be shown.
 Empirica.exitSteps((game, player) => {
+  if (!game || (player.exitStatus && player.exitStatus !== "finished")) {
+    return [Sorry, Thanks];
+  }
   return [ExitSurvey, Thanks];
 });
 

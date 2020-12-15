@@ -8,7 +8,14 @@ import Wait from "./Wait";
 
 export default class Round extends React.Component {
   render() {
-    const { round, stage, player, game } = this.props;
+    const {
+      round,
+      stage,
+      player,
+      game: {
+        treatment: { feedback },
+      },
+    } = this.props;
 
     // return <Waiting />;
 
@@ -30,7 +37,7 @@ export default class Round extends React.Component {
           {stage.name === "wait" ? <div></div> : <Timer {...this.props} />}
           <div className="flex justify-end items-center">
             <DebugButtons {...this.props} />
-            <Score player={player} />
+            {feedback && <Score player={player} />}
           </div>
         </header>
 

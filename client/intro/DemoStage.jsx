@@ -15,10 +15,12 @@ function NumberToWordsDemo({ answer }) {
   let val = parseInt(answer, 10);
 
   let res;
-  try {
-    res = numberToWords.toWords(val);
-  } catch (err) {
-    console.error(err);
+  if (val > Number.MAX_SAFE_INTEGER) {
+    try {
+      res = numberToWords.toWords(val);
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   if (!res) {
@@ -85,21 +87,20 @@ export default class DemoStage extends Component {
     };
   }
   handleChange = (change) => {
-    if (change.value < Number.MAX_SAFE_INTEGER) {
-      this.setState({ answer: change.value, err: "" });
-    } else {
-      this.setState({
-        err: `Answer should be at most ${Number.MAX_SAFE_INTEGER}.`,
-      });
-    }
+    this.setState({ answer: change.value, err: "" });
   };
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.onNext();
   };
   render() {
-    const { player } = this.props;
-    const { answer, err } = this.state;
+    const { answer } = this.state;
+    const {
+      player,
+      game: {
+        treatment: { feedback = false },
+      },
+    } = this.props;
     const minmax = { min: 0 };
     return (
       <div className="flex flex-col h-full text-base">
@@ -107,7 +108,7 @@ export default class DemoStage extends Component {
           <div className="text-lg">Demonstration</div>
           <div className="flex justify-end items-center">
             <DebugButtons {...this.props} />
-            <Score player={player} />
+            {feedback && <Score player={player} />}
           </div>
         </header>
 
@@ -172,11 +173,6 @@ export default class DemoStage extends Component {
                             <Button tick text="OK" />
                           </div>
                         </div>
-                      </div>
-                    )}
-                    {err !== "" && (
-                      <div className="w-full mt-2 font-semibold text-red-500">
-                        <div>{err}</div>
                       </div>
                     )}
                   </form>
