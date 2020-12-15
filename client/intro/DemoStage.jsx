@@ -94,7 +94,12 @@ export default class DemoStage extends Component {
     this.props.onNext();
   };
   render() {
-    const { player } = this.props;
+    const {
+      player,
+      game: {
+        treatment: { feedback = false },
+      },
+    } = this.props;
     const { answer } = this.state;
     const minmax = { min: 0 };
     return (
@@ -103,7 +108,7 @@ export default class DemoStage extends Component {
           <div className="text-lg">Demonstration</div>
           <div className="flex justify-end items-center">
             <DebugButtons {...this.props} />
-            <Score player={player} />
+            {feedback && <Score player={player} />}
           </div>
         </header>
 
