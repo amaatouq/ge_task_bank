@@ -13,15 +13,14 @@ function NumberToWordsDemo({ answer }) {
   }
 
   let val = parseInt(answer, 10);
-  if (task.question.magnitude) {
-    val = applyMagnitude(val, task.question.magnitude);
-  }
 
   let res;
-  try {
-    res = numberToWords.toWords(val);
-  } catch (err) {
-    console.error(err);
+  if (val > Number.MAX_SAFE_INTEGER) {
+    try {
+      res = numberToWords.toWords(val);
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   if (!res) {
@@ -36,7 +35,7 @@ function NumberToWordsDemo({ answer }) {
         <div className="mt-1 flex whitespace-nowrap w-full py-2 text-gray-400 leading-none tabular-nums">
           <div className="">{res}</div>
           <div className="ml-1">
-            <Unit answer={answer} {...this.props} />
+            <UnitDemo answer={answer} {...this.props} />
           </div>
           {/* <div className="ml-1">total</div> */}
         </div>
@@ -84,23 +83,24 @@ export default class DemoStage extends Component {
     super(props);
     this.state = {
       answer: "",
+      err: "",
     };
   }
   handleChange = (change) => {
-    this.setState({ answer: change.value });
+    this.setState({ answer: change.value, err: "" });
   };
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.onNext();
   };
   render() {
+    const { answer } = this.state;
     const {
       player,
       game: {
         treatment: { feedback = false },
       },
     } = this.props;
-    const { answer } = this.state;
     const minmax = { min: 0 };
     return (
       <div className="flex flex-col h-full text-base">

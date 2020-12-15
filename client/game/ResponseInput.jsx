@@ -1,5 +1,6 @@
 import React from "react";
 import NumberFormat from "react-number-format";
+import { applyMagnitude } from "../../shared/conversions";
 import Button from "../components/Button";
 import NumberToWords from "./NumberToWords";
 import Unit from "./Unit";
@@ -24,9 +25,9 @@ export default class ResponseInput extends React.Component {
   // };
 
   handleChangeValue = (change) => {
-    const { player } = this.props;
+    const { player, round } = this.props;
     player.stage.set("tmpanswer", change.value);
-    this.setState({ answer: change.value });
+    this.setState({ answer: change.value, err: "" });
   };
 
   handleFocus = (event) => {
@@ -64,7 +65,7 @@ export default class ResponseInput extends React.Component {
 
   render() {
     const { round } = this.props;
-    const { answer, focused } = this.state;
+    const { answer, focused, err } = this.state;
     const task = round.get("task");
 
     const minmax = {};
@@ -91,6 +92,7 @@ export default class ResponseInput extends React.Component {
             onValueChange={this.handleChangeValue}
             onFocus={this.handleFocus}
             onBlur={this.handleBlur}
+            autoComplete="off"
             {...minmax}
           />
           <Unit

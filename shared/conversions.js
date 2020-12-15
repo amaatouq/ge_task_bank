@@ -3,7 +3,7 @@ export function applyMagnitude(num, magnitude) {
 }
 
 export const magnitudesToEnglish = {
-  2: "ten",
+  1: "ten",
   2: "hundred",
   3: "thousand",
   4: "ten thousand",

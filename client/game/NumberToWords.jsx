@@ -17,10 +17,12 @@ export default class NumberToWords extends React.Component {
     }
 
     let res;
-    try {
-      res = numberToWords.toWords(val);
-    } catch (err) {
-      console.error(err);
+    if (val > Number.MAX_SAFE_INTEGER) {
+      try {
+        res = numberToWords.toWords(val);
+      } catch (err) {
+        console.error(err);
+      }
     }
 
     if (!res) {
