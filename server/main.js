@@ -107,7 +107,6 @@ Empirica.gameInit((game) => {
 
 function check(condition, message, shouldThrow = true) {
   if (condition) {
-    console.log(condition);
     console.error(`
     
     ${message}

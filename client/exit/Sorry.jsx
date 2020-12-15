@@ -1,5 +1,6 @@
 import React from "react";
 import Wrapper from "../game/Wrapper";
+import { Meteor } from "meteor/meteor";
 
 export default class Sorry extends React.Component {
   static stepName = "Sorry";
@@ -27,9 +28,9 @@ export default class Sorry extends React.Component {
         "Unfortunately you did not meet the conditions required to play the game.";
     }
     // Only for dev
-    if (!game) {
+    if (!game && Meteor.isDevelopment) {
       msg =
-        "Unfortunately the Game was cancelled because of failed to init Game.";
+        "Unfortunately the Game was cancelled because of failed to init Game (only visible in development, check the logs).";
     }
     return (
       <Wrapper {...this.props}>
