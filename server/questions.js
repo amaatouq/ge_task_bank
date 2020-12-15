@@ -369,7 +369,7 @@ export const taskData = [
   {
     id: 28,
     class: "trivia_questions",
-    type: "art_market",
+    task: "art_market",
     question: {
       image: "/tasks/van_Gogh_Planteuse_de_betteraves,_by_Vincent_van_Gogh.jpg",
       text:
@@ -386,7 +386,7 @@ export const taskData = [
   {
     id: 29,
     class: "trivia_questions",
-    type: "art_market",
+    task: "art_market",
     question: {
       image: "/tasks/picasso.jpg",
       text:
@@ -406,7 +406,7 @@ export const taskData = [
     id: 30,
     invalid: true,
     class: "trivia_questions",
-    type: "socioeconomic",
+    task: "socioeconomic",
     question: {
       text:
         "In terms of dollars, how much money do you think was spent on instruction in college, per student?",
@@ -422,7 +422,7 @@ export const taskData = [
   {
     id: 31,
     class: "trivia_questions",
-    type: "socioeconomic",
+    task: "socioeconomic",
     question: {
       text:
         "How many passengers boarded out of an airport in the New York City area (JFK, La Guardia, and Newark) in 2009?",
@@ -440,7 +440,7 @@ export const taskData = [
   {
     id: 32,
     class: "trivia_questions",
-    type: "crowdfunding",
+    task: "crowdfunding",
     question: {
       text: "How much money do you think the campaign raised?",
       description: `
@@ -460,7 +460,7 @@ export const taskData = [
   {
     id: 33,
     class: "trivia_questions",
-    type: "crowdfunding",
+    task: "crowdfunding",
     question: {
       text: "How much money do you think the campaign raised?",
       description: `
@@ -482,7 +482,7 @@ export const taskData = [
   {
     id: 34,
     class: "trivia_questions",
-    type: "geopolitics",
+    task: "geopolitics",
     question: {
       text:
         "How many of type of events like this do you think they recorded in Yemen for 2018?",
@@ -501,7 +501,7 @@ export const taskData = [
   {
     id: 35,
     class: "trivia_questions",
-    type: "geopolitics",
+    task: "geopolitics",
     question: {
       text:
         "How many of type of events like this do you think they recorded in Syria for 2018?",
@@ -523,7 +523,7 @@ export const taskData = [
   {
     id: 36,
     class: "trivia_questions",
-    type: "extreme_events",
+    task: "extreme_events",
     question: {
       text: "What is the radius of the Sun (in km)?",
       unit: "km",
@@ -534,7 +534,7 @@ export const taskData = [
   {
     id: 37,
     class: "trivia_questions",
-    type: "extreme_events",
+    task: "extreme_events",
     question: {
       text: "What is the distance between the Earth and the Moon (in km)?",
       unit: "km",
@@ -545,7 +545,7 @@ export const taskData = [
   {
     id: 38,
     class: "trivia_questions",
-    type: "extreme_events",
+    task: "extreme_events",
     question: {
       text:
         "What is the mean distance between planet Mercury and the Sun (in km)?",
@@ -557,7 +557,7 @@ export const taskData = [
   {
     id: 39,
     class: "trivia_questions",
-    type: "extreme_events",
+    task: "extreme_events",
     question: {
       text:
         "What is the total mass of oceans on Earth (in trillion metric tons)?",
@@ -570,7 +570,7 @@ export const taskData = [
   {
     id: 40,
     class: "trivia_questions",
-    type: "extreme_events",
+    task: "extreme_events",
     question: {
       text:
         "How many cells are there in the human body (in billions of cells)?",
@@ -583,7 +583,7 @@ export const taskData = [
   {
     id: 41,
     class: "trivia_questions",
-    type: "extreme_events",
+    task: "extreme_events",
     question: {
       text:
         "How many galaxies does the visible universe hold (in million galaxies)?",
@@ -596,7 +596,7 @@ export const taskData = [
   {
     id: 42,
     class: "trivia_questions",
-    type: "extreme_events",
+    task: "extreme_events",
     question: {
       text: "How many stars does the Milky way hold (in million stars)?",
       magnitude: 6,
@@ -608,7 +608,7 @@ export const taskData = [
   {
     id: 43,
     class: "trivia_questions",
-    type: "extreme_events",
+    task: "extreme_events",
     question: {
       text: "How many billions kilometers is worth a light-year?",
       magnitude: 9,
@@ -623,7 +623,7 @@ export const taskData = [
   {
     id: 44,
     class: "Trivia Questions",
-    type: "others",
+    task: "others",
     question: {
       text: "What is the mass of the Cheops pyramid (in metric tons)?",
       unit: "metric ton",
@@ -634,7 +634,7 @@ export const taskData = [
   {
     id: 45,
     class: "Trivia Questions",
-    type: "others",
+    task: "others",
     question: {
       text:
         "What is the total length of the metal threads used in the Golden Gate Bridge’s braided cables (in km)?",
@@ -646,7 +646,7 @@ export const taskData = [
   {
     id: 46,
     class: "Trivia Questions",
-    type: "others",
+    task: "others",
     question: {
       text:
         "How much did Burj Khalifa Tower, in Dubai, cost to build (in thousands of dollars)?",

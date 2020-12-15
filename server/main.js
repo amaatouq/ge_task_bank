@@ -66,6 +66,8 @@ Empirica.gameInit((game) => {
     daily_life_facts,population_of_large_cities,geopolitics`
   );
 
+  check(tasks.length < nRounds, "Tasks should be >= nRounds");
+
   if (randomizeTask) {
     tasks = _.shuffle(tasks);
   }
@@ -105,6 +107,7 @@ Empirica.gameInit((game) => {
 
 function check(condition, message, shouldThrow = true) {
   if (condition) {
+    console.log(condition);
     console.error(`
     
     ${message}
