@@ -13,9 +13,6 @@ function NumberToWordsDemo({ answer }) {
   }
 
   let val = parseInt(answer, 10);
-  if (task.question.magnitude) {
-    val = applyMagnitude(val, task.question.magnitude);
-  }
 
   let res;
   try {
@@ -36,7 +33,7 @@ function NumberToWordsDemo({ answer }) {
         <div className="mt-1 flex whitespace-nowrap w-full py-2 text-gray-400 leading-none tabular-nums">
           <div className="">{res}</div>
           <div className="ml-1">
-            <Unit answer={answer} {...this.props} />
+            <UnitDemo answer={answer} {...this.props} />
           </div>
           {/* <div className="ml-1">total</div> */}
         </div>
@@ -84,10 +81,17 @@ export default class DemoStage extends Component {
     super(props);
     this.state = {
       answer: "",
+      err: "",
     };
   }
   handleChange = (change) => {
-    this.setState({ answer: change.value });
+    if (change.value < Number.MAX_SAFE_INTEGER) {
+      this.setState({ answer: change.value, err: "" });
+    } else {
+      this.setState({
+        err: `Answer should be at most ${Number.MAX_SAFE_INTEGER}.`,
+      });
+    }
   };
   handleSubmit = (e) => {
     e.preventDefault();
@@ -95,7 +99,7 @@ export default class DemoStage extends Component {
   };
   render() {
     const { player } = this.props;
-    const { answer } = this.state;
+    const { answer, err } = this.state;
     const minmax = { min: 0 };
     return (
       <div className="flex flex-col h-full text-base">
@@ -168,6 +172,11 @@ export default class DemoStage extends Component {
                             <Button tick text="OK" />
                           </div>
                         </div>
+                      </div>
+                    )}
+                    {err !== "" && (
+                      <div className="w-full mt-2 font-semibold text-red-500">
+                        <div>{err}</div>
                       </div>
                     )}
                   </form>

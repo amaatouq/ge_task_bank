@@ -1,4 +1,8 @@
 export function applyMagnitude(num, magnitude) {
+  if (num * Math.pow(10, magnitude) > Number.MAX_SAFE_INTEGER) {
+    // return false if the num too large
+    return false;
+  }
   return num * Math.pow(10, magnitude);
 }
 

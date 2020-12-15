@@ -1,5 +1,6 @@
 import React from "react";
 import NumberFormat from "react-number-format";
+import { applyMagnitude } from "../../shared/conversions";
 import Button from "../components/Button";
 import NumberToWords from "./NumberToWords";
 import Unit from "./Unit";
@@ -14,6 +15,7 @@ export default class ResponseInput extends React.Component {
         props.player.round.get("answer") ||
         "",
       focused: false,
+      err: "",
     };
   }
 
@@ -24,9 +26,20 @@ export default class ResponseInput extends React.Component {
   // };
 
   handleChangeValue = (change) => {
-    const { player } = this.props;
-    player.stage.set("tmpanswer", change.value);
-    this.setState({ answer: change.value });
+    const { player, round } = this.props;
+    const task = round.get("task");
+    let allowedNNumber = change.value < Number.MAX_SAFE_INTEGER;
+    if (task.question.magnitude) {
+      allowedNNumber = applyMagnitude(change.value, task.question.magnitude);
+    }
+    if (allowedNNumber) {
+      player.stage.set("tmpanswer", change.value);
+      this.setState({ answer: change.value, err: "" });
+    } else {
+      this.setState({
+        err: `Answer should be at most ${Number.MAX_SAFE_INTEGER}.`,
+      });
+    }
   };
 
   handleFocus = (event) => {
@@ -64,7 +77,7 @@ export default class ResponseInput extends React.Component {
 
   render() {
     const { round } = this.props;
-    const { answer, focused } = this.state;
+    const { answer, focused, err } = this.state;
     const task = round.get("task");
 
     const minmax = {};
@@ -91,6 +104,7 @@ export default class ResponseInput extends React.Component {
             onValueChange={this.handleChangeValue}
             onFocus={this.handleFocus}
             onBlur={this.handleBlur}
+            autoComplete="off"
             {...minmax}
           />
           <Unit
@@ -139,6 +153,11 @@ export default class ResponseInput extends React.Component {
                 <Button tick text="OK" />
               </div>
             </div>
+          </div>
+        )}
+        {err !== "" && (
+          <div className="w-full mt-2 font-semibold text-red-500">
+            <div>{err}</div>
           </div>
         )}
       </form>
