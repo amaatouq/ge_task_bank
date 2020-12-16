@@ -53,7 +53,12 @@ Empirica.round(Round);
 // If you don't return anything, or do not define this function, a default
 // exit screen will be shown.
 Empirica.exitSteps((game, player) => {
-  if (!game || (player.exitStatus && player.exitStatus !== "finished")) {
+  if (
+    !game ||
+    (player.exitStatus &&
+      player.exitStatus !== "finished" &&
+      player.exitReason !== "playerQuit")
+  ) {
     return [Sorry, Thanks];
   }
   return [ExitSurvey, Thanks];
