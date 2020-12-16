@@ -3,17 +3,18 @@ treatments:
     factorIds:
       - YWwosMevTALbyZmjc
       - Z8qTZzDedy9mqYYhY
-      - CWhQMSrkLDjuPvdLJ
-      - 7DdaLQTBzuctmsqci
+      - kiKcJfJTFANqW2Z6g
+      - bnxoQJ6wHvM4Zm8sd
       - qtgWqpEtizZ4SKF5C
       - 8xBkmBYw37fmy9Ztb
       - oWBpWDi7Bp2MysKkg
       - HtyBPSwcDcFZiGLvJ
-      - cwBPNzx6ASumGTWfw
-      - ydAx2s49LieqJ33WD
+      - X5QksjWTyCb26JJip
+      - kp2Wg59FePepAvNjk
       - 4iyZdsK3HiRFWYcdi
+      - KmgB9zz5ddXa7jdsg
 factorTypes:
-  - _id: Rve8jfoiwXXiYAbZf
+  - _id: YESkX9Jmf59uKrxhd
     name: playerCount
     description: The Number of players participating in the given game.
     required: true
@@ -98,43 +99,48 @@ factorTypes:
       all players see all hints. E.g. { "1": [1,2], "2": [2,3], "4": [2]...}
     required: false
     type: String
+  - _id: P5KW2yckW6fdA7Zix
+    name: showAvatar
+    description: Set the avatar on or off.
+    required: false
+    type: Boolean
 factors:
-  - _id: CWhQMSrkLDjuPvdLJ
+  - _id: kiKcJfJTFANqW2Z6g
     name: "true"
     value: true
     factorTypeId: wz7s4ufXj2ss5hHGY
-  - _id: 3RkEsXCQ42jbXZaSi
+  - _id: Z6f7TS5PJcrg7K9HX
     name: "false"
     value: false
     factorTypeId: wz7s4ufXj2ss5hHGY
-  - _id: 7DdaLQTBzuctmsqci
+  - _id: bnxoQJ6wHvM4Zm8sd
     name: "true"
     value: true
     factorTypeId: GCGbdjiqFbsHYAYSk
-  - _id: bmAmYHpZv6StBN9Qi
+  - _id: Kij3tW4fAoM8tzr5S
     name: "false"
     value: false
     factorTypeId: GCGbdjiqFbsHYAYSk
-  - _id: cwBPNzx6ASumGTWfw
+  - _id: X5QksjWTyCb26JJip
     name: "true"
     value: true
     factorTypeId: YMa7vmBFmum5YcHX4
-  - _id: MsMZFTrJEsvdchxd7
+  - _id: vqsuP8ezetDJTs96Z
     name: "false"
     value: false
     factorTypeId: YMa7vmBFmum5YcHX4
-  - _id: ydAx2s49LieqJ33WD
+  - _id: kp2Wg59FePepAvNjk
     name: "true"
     value: true
     factorTypeId: pGbLrSrHZAatHoC9K
-  - _id: xwaJzJWR5ozbSpFkR
+  - _id: CZxqY2a2pdp5e7mDf
     name: "false"
     value: false
     factorTypeId: pGbLrSrHZAatHoC9K
   - _id: YWwosMevTALbyZmjc
     name: "1"
     value: 1
-    factorTypeId: Rve8jfoiwXXiYAbZf
+    factorTypeId: YESkX9Jmf59uKrxhd
   - _id: Z8qTZzDedy9mqYYhY
     name: "5"
     value: 5
@@ -167,6 +173,14 @@ factors:
     name: somehints
     value: '{ "1": [1,2], "2": [2,3], "4": [2]}'
     factorTypeId: KPaBsT8QA6WWc8osT
+  - _id: KmgB9zz5ddXa7jdsg
+    name: "true"
+    value: true
+    factorTypeId: P5KW2yckW6fdA7Zix
+  - _id: p5vMQfWkNu2PZSBLc
+    name: "false"
+    value: false
+    factorTypeId: P5KW2yckW6fdA7Zix
 lobbyConfigs:
   - name: Default
     timeoutType: lobby
