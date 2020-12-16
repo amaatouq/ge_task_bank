@@ -20,6 +20,7 @@ export default class Wait extends React.Component {
     });
   }
   _handleYes() {
+    const { player } = this.props;
     this.setState({
       confirmShow: false,
     });
