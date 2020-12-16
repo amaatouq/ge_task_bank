@@ -13,7 +13,7 @@ export default class Round extends React.Component {
       stage,
       player,
       game: {
-        treatment: { feedback },
+        treatment: { feedback, playerCount },
       },
     } = this.props;
 
@@ -31,9 +31,7 @@ export default class Round extends React.Component {
     return (
       <div className="flex flex-col h-full text-base">
         <header className="h-16	bg-gray-200 grid grid-cols-3 items-center px-6">
-          <div>
-            <Avatar bordered player={player} />
-          </div>
+          <div>{playerCount > 0 && <Avatar bordered player={player} />}</div>
           {stage.name === "wait" ? <div></div> : <Timer {...this.props} />}
           <div className="flex justify-end items-center">
             <DebugButtons {...this.props} />
