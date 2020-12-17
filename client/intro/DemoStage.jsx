@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { applyMagnitude, magnitudesToEnglish } from "../../shared/conversions";
+import { magnitudesToEnglish } from "../../shared/conversions";
 import NumberFormat from "react-number-format";
 import numberToWords from "number-to-words";
 import DebugButtons from "../game/DebugButtons";
+import Timer from "../game/Timer";
 import Score from "../game/Score";
 import pluralize from "pluralize";
 import Button from "../components/Button";
@@ -81,9 +82,15 @@ function UnitDemo(props) {
 export default class DemoStage extends Component {
   constructor(props) {
     super(props);
+    this.timer = null;
+
     this.state = {
       answer: "",
       err: "",
+      remainingSeconds: 120, // faketimer
+      submitted: false,
+      score: 0,
+      correctAnswer: 150,
     };
   }
   handleChange = (change) => {
@@ -91,24 +98,152 @@ export default class DemoStage extends Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.onNext();
+    this.setState({
+      submitted: true,
+    });
+    // this.props.onNext();
   };
-  render() {
+
+  componentDidUpdate(prevProp, prevState) {
+    const { remainingSeconds, submitted, correctAnswer, answer } = this.state;
+    if (
+      prevState.remainingSeconds !== remainingSeconds &&
+      remainingSeconds === 0
+    ) {
+      this.setState({
+        submitted: true, // force submitted
+      });
+    }
+    if (prevState.submitted !== submitted) {
+      if (submitted) {
+        const score =
+          answer === ""
+            ? 0
+            : 1 - Math.abs(answer - correctAnswer) / correctAnswer;
+
+        this.setState({
+          score: score.toFixed(2),
+        });
+      }
+    }
+  }
+
+  componentDidMount() {
+    this.timer = setInterval(() => {
+      const { remainingSeconds } = this.state;
+      this.setState({
+        remainingSeconds: remainingSeconds > 0 ? remainingSeconds - 1 : 0,
+      });
+    }, 1000);
+  }
+
+  componentWillUnmount() {
+    if (this.timer) {
+      clearInterval(this.timer);
+    }
+  }
+
+  formAnswer() {
     const { answer } = this.state;
+    const minmax = { min: 0 };
+
+    return (
+      <form action="#" onSubmit={this.handleSubmit} className="relative w-full">
+        <div className="flex">
+          <NumberFormat
+            thousandSeparator={true}
+            isNumericString
+            className="w-full px-0 m-0 py-2 text-3xl text-gray-500 bg-transparent placeholder-gray-300 border-0 border-b-2 border-gray-300 focus:ring-0 focus:outline-none focus:border-b-2 focus:border-gray-500 leading-snug tabular-nums"
+            placeholder="Type your answer here..."
+            autoFocus
+            name="answer"
+            value={answer}
+            onValueChange={this.handleChange}
+            autoComplete="off"
+            {...minmax}
+          />
+          <UnitDemo input magnitude={false} focused={true} answer={answer} />
+        </div>
+
+        <NumberToWordsDemo answer={answer} />
+
+        {answer === "" ? (
+          ""
+        ) : (
+          <div className="absolute bottom-0">
+            <div className="absolute">
+              <div className="mt-12">
+                <Button tick text="Submit" />
+              </div>
+            </div>
+          </div>
+        )}
+      </form>
+    );
+  }
+  renderAnswer(correct) {
+    const { answer, correctAnswer } = this.state;
+
+    const guess = correct ? correctAnswer : answer;
+
+    return (
+      <div className="flex flex-col mb-12">
+        <div
+          className={`mb-2 font-semibold ${correct ? "text-green-500" : ""}`}
+        >
+          {correct ? "Correct" : "Your"} answer
+        </div>
+        <div
+          className={`relative flex ${correct ? "bg-green-50" : "bg-gray-100"}`}
+        >
+          <NumberFormat
+            value={guess}
+            displayType="text"
+            thousandSeparator={true}
+            className="w-full pl-2 py-2 text-3xl text-gray-500 leading-snug text-right tabular-nums"
+          />
+          <UnitDemo input magnitude={false} focused={true} answer={guess} />
+          <NumberToWordsDemo answer={guess} />
+        </div>
+        {correct && (
+          <div className="relative bottom-0">
+            <div className="absolute">
+              <div className="mt-12">
+                <Button tick text="Submit" onClick={this.props.onNext} />
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+  renderFeedback() {
+    return (
+      <>
+        {this.renderAnswer(false)}
+        {this.renderAnswer(true)}
+      </>
+    );
+  }
+
+  render() {
+    const { answer, remainingSeconds, submitted, score } = this.state;
     const {
       player,
       game: {
         treatment: { feedback = false },
       },
     } = this.props;
-    const minmax = { min: 0 };
     return (
       <div className="flex flex-col h-full text-base">
-        <header className="h-16	bg-gray-200 grid grid-cols-2 items-center px-6">
+        <header className="h-16	bg-gray-200 grid grid-cols-3 items-center px-6">
           <div className="text-lg">Demonstration</div>
+          <div className="text-lg">
+            <Timer remainingSeconds={remainingSeconds} />
+          </div>
           <div className="flex justify-end items-center">
             <DebugButtons {...this.props} />
-            {feedback && <Score player={player} />}
+            {feedback && <Score player={player} demoScore={score} />}
           </div>
         </header>
 
@@ -136,46 +271,8 @@ export default class DemoStage extends Component {
                   Estimate the number of chocolates in the glass.
                 </div>
                 <div className="mt-8 w-full">
-                  <form
-                    action="#"
-                    onSubmit={this.handleSubmit}
-                    className="relative w-full"
-                  >
-                    <div className="flex">
-                      <NumberFormat
-                        thousandSeparator={true}
-                        isNumericString
-                        className="w-full px-0 m-0 py-2 text-3xl text-gray-500 bg-transparent placeholder-gray-300 border-0 border-b-2 border-gray-300 focus:ring-0 focus:outline-none focus:border-b-2 focus:border-gray-500 leading-snug tabular-nums"
-                        placeholder="Type your answer here..."
-                        autoFocus
-                        name="answer"
-                        value={answer}
-                        onValueChange={this.handleChange}
-                        autoComplete="off"
-                        {...minmax}
-                      />
-                      <UnitDemo
-                        input
-                        magnitude={false}
-                        focused={true}
-                        answer={answer}
-                      />
-                    </div>
-
-                    <NumberToWordsDemo answer={answer} />
-
-                    {answer === "" ? (
-                      ""
-                    ) : (
-                      <div className="absolute bottom-0">
-                        <div className="absolute">
-                          <div className="mt-12">
-                            <Button tick text="OK" />
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </form>
+                  {!submitted && this.formAnswer()}
+                  {submitted && feedback && this.renderFeedback()}
                 </div>
               </div>
             </div>

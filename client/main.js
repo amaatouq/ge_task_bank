@@ -10,7 +10,7 @@ import SoloResponseStage from "./intro/SoloResponseStage";
 import DemoStage from "./intro/DemoStage";
 import NewPlayerForm from "./intro/NewPlayerForm";
 import Sorry from "./exit/Sorry";
-// import Quiz from "./intro/Quiz";
+import Quiz from "./intro/Quiz";
 
 // Set the About Component you want to use for the About dialog (optional).
 // Empirica.about(About);
@@ -29,7 +29,11 @@ Empirica.breadcrumb(() => null);
 // At this point they have been assigned a treatment. You can return
 // different instruction steps depending on the assigned treatment.
 Empirica.introSteps((game, treatment) => {
-  const steps = [GameOverview, SoloResponseStage, DemoStage];
+  const steps = [GameOverview];
+  if (treatment.playerCount === 1) {
+    steps.push(SoloResponseStage);
+  }
+  steps.push(DemoStage, Quiz);
   return steps;
   // return [];
   // const steps = [InstructionStepOne];
