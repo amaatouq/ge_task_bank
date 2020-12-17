@@ -28,7 +28,9 @@ export function Label({ text, htmlFor }) {
 }
 
 export function Input({ ...rest }) {
-  return <input className="py-1 px-3 w-3/12 rounded-sm" {...rest} />;
+  return (
+    <input className="w-6/12 border py-1 px-3 w-3/12 rounded-sm" {...rest} />
+  );
 }
 
 export function Textarea({ ...rest }) {
