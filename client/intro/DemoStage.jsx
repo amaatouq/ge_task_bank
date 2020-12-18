@@ -122,7 +122,7 @@ export default class DemoStage extends Component {
             : 1 - Math.abs(answer - correctAnswer) / correctAnswer;
 
         this.setState({
-          score: score.toFixed(2),
+          score,
         });
       }
     }
