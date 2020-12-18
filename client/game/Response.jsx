@@ -86,7 +86,10 @@ export default class Response extends React.Component {
     const revealed = player.round.get("hintsRevealed") || 0;
     return (
       <div className="mt-36">
-        {hints.map((hint, i) => this.renderHint(i, hint, revealed))}
+        {hints.map((hint, i) => {
+          const revealIndex = treatment.revealHints ? i + 1 : revealed;
+          return this.renderHint(i, hint, revealIndex);
+        })}
       </div>
     );
   }
