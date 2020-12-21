@@ -80,7 +80,7 @@ export default class Wait extends React.Component {
           this.setState({
             alertShow: false,
           });
-        }, 12000);
+        }, 3000);
       }
     }
   }
