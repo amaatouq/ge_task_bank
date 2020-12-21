@@ -49,11 +49,14 @@ export function CustomButton({
   outline && classNames.push("border");
   const colors = {
     default: outline
-      ? "border-blue-500 hover:border-blue-400 text-blue-500"
+      ? "border-blue-500 hover:border-blue-400 text-blue-500 hover:text-blue-400"
       : "bg-blue-500 hover:bg-blue-400 text-blue-100 ",
     secondary: outline
-      ? "border-gray-500 hover:border-gray-400 text-gray-500"
+      ? "border-gray-500 text-gray-500 hover:border-gray-400 hover:text-gray-400"
       : "bg-gray-500 hover:bg-gray-400 text-gray-100",
+    error: outline
+      ? "border-red-500 text-red-500 hover:border-red-400 hover:text-red-400"
+      : "bg-red-500 hover:bg-red-400 text-red-100",
   };
   classNames.push(colors[color]);
   classNames.push(className);

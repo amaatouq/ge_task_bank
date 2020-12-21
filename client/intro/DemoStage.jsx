@@ -227,7 +227,7 @@ export default class DemoStage extends Component {
   }
 
   render() {
-    const { answer, remainingSeconds, submitted, score } = this.state;
+    const { remainingSeconds, submitted, score } = this.state;
     const {
       player,
       game: {
@@ -235,7 +235,7 @@ export default class DemoStage extends Component {
       },
     } = this.props;
     return (
-      <div className="flex flex-col h-full text-base">
+      <div className="flex flex-col h-screen text-base">
         <header className="h-16	bg-gray-200 grid grid-cols-3 items-center px-6">
           <div className="text-lg">Demonstration</div>
           <div className="text-lg">
