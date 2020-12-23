@@ -1,7 +1,7 @@
 import React from "react";
-import Button from "../components/Button";
-import ConfirmBox from "../components/CofirmBox";
-import Toast from "../components/Toast";
+import Button from "./Button";
+import ConfirmBox from "./CofirmBox";
+import Toast from "./Toast";
 
 export default class Wait extends React.Component {
   constructor(props) {
@@ -64,11 +64,12 @@ export default class Wait extends React.Component {
         Press CONTINUE when you are ready to go to the next round
         {longTermEngagement &&
           `. If you want to leave, you can press the COPY LINK button`}
-        {quitEarly && ` (should not press QUIT)`}.
+        {quitEarly && ` (should not press QUIT)`}
         {quitEarly &&
           `, or press QUIT if you've had enough and want to exit the experiment`}
         {longTermEngagement &&
-          ` You can come back with the copied link, that link will send you back here.`}
+          `. You can come back with the copied link, that link will send you back here`}
+        .
       </div>
     );
   }

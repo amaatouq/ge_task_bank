@@ -20,7 +20,7 @@ export default function Toast({ children, type = "success" }) {
           width="1.8em"
           height="1.8em"
           viewBox="0 0 16 16"
-          class="bi bi-check"
+          className="bi bi-check"
           fill="currentColor"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -35,7 +35,7 @@ export default function Toast({ children, type = "success" }) {
           width="1.8em"
           height="1.8em"
           viewBox="0 0 16 16"
-          class="bi bi-info"
+          className="bi bi-info"
           fill="currentColor"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -48,7 +48,7 @@ export default function Toast({ children, type = "success" }) {
           width="1.8em"
           height="1.8em"
           viewBox="0 0 16 16"
-          class="bi bi-exclamation"
+          className="bi bi-exclamation"
           fill="currentColor"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -60,7 +60,7 @@ export default function Toast({ children, type = "success" }) {
           width="1.8em"
           height="1.8em"
           viewBox="0 0 16 16"
-          class="bi bi-x"
+          className="bi bi-x"
           fill="currentColor"
           xmlns="http://www.w3.org/2000/svg"
         >

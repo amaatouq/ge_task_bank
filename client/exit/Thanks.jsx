@@ -1,5 +1,5 @@
 import React from "react";
-import Wrapper from "../game/Wrapper";
+import Wrapper from "../components/Wrapper";
 
 export default class Thanks extends React.Component {
   static stepName = "Thanks";

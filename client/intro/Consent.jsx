@@ -1,6 +1,6 @@
 import { ConsentButton } from "meteor/empirica:core";
 import React from "react";
-import Wrapper from "../game/Wrapper";
+import Wrapper from "../components/Wrapper";
 
 export default class Consent extends React.Component {
   render() {

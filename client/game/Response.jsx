@@ -1,11 +1,11 @@
 import React from "react";
 import { applyMagnitude } from "../../shared/conversions";
-import Answer from "./Answer";
+import Answer from "../components/round/Answer";
 import Button from "../components/Button";
-import Question from "./Question";
-import QuestionImage from "./QuestionImage";
-import ResponseInput from "./ResponseInput";
-import RoundScore from "./RoundScore";
+import Question from "../components/round/Question";
+import QuestionImage from "../components/round/QuestionImage";
+import ResponseInput from "../components/round/ResponseInput";
+import RoundScore from "../components/round/RoundScore";
 
 export default class Response extends React.Component {
   revealHint = (event) => {

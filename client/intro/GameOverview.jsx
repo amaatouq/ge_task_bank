@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { CustomButton } from "../components/Button";
-import Wrapper from "../game/Wrapper";
 import IntroLayout from "./IntroLayout";
 
 export default class GameOverview extends Component {

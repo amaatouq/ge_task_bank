@@ -1,4 +1,4 @@
-import React, { Children, Component } from "react";
+import React, { Component } from "react";
 import { CustomButton } from "./Button";
 function WarningIcon() {
   return (
@@ -64,7 +64,7 @@ export default class ConfirmBox extends Component {
                     </h3>
                   )}
                   <div className="mt-2">
-                    <p className="text-sm text-gray-500">{children}</p>
+                    <div className="text-sm text-gray-500">{children}</div>
                   </div>
                 </div>
               </div>
