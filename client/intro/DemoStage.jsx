@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { magnitudesToEnglish } from "../../shared/conversions";
 import NumberFormat from "react-number-format";
 import numberToWords from "number-to-words";
-import DebugButtons from "../game/DebugButtons";
+import DebugButtons from "../components/DebugButtons";
 import Timer from "../game/Timer";
 import Score from "../game/Score";
 import pluralize from "pluralize";

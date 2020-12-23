@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../components/Button";
-import Wrapper from "../game/Wrapper";
+import Wrapper from "../components/Wrapper";
 
 export default class NewPlayerForm extends React.Component {
   state = { id: "" };

@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../components/Button";
-import Wrapper from "../game/Wrapper";
+import Wrapper from "../components/Wrapper";
 import { Label, Input, Radio, Textarea } from "../components/Forms";
 
 export default class ExitSurvey extends React.Component {

@@ -1,5 +1,5 @@
 import React from "react";
-import Wrapper from "../game/Wrapper";
+import Wrapper from "../components/Wrapper";
 import { Meteor } from "meteor/meteor";
 
 export default class Sorry extends React.Component {

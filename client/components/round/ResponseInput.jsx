@@ -1,7 +1,7 @@
 import React from "react";
 import NumberFormat from "react-number-format";
-import { applyMagnitude } from "../../shared/conversions";
-import Button from "../components/Button";
+// import { applyMagnitude } from "../../shared/conversions";
+import Button from "../Button";
 import NumberToWords from "./NumberToWords";
 import Unit from "./Unit";
 

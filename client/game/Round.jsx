@@ -1,10 +1,10 @@
 import React from "react";
 import { Avatar } from "./Avatar";
-import DebugButtons from "./DebugButtons";
+import DebugButtons from "../components/DebugButtons";
 import Response from "./Response";
 import Score from "./Score";
 import Timer from "./Timer";
-import Wait from "./Wait";
+import Wait from "../components/Wait";
 
 export default class Round extends React.Component {
   render() {

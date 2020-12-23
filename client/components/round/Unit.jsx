@@ -1,6 +1,6 @@
 import pluralize from "pluralize";
 import React from "react";
-import { magnitudesToEnglish } from "../../shared/conversions";
+import { magnitudesToEnglish } from "../../../shared/conversions";
 
 export default class Unit extends React.Component {
   render() {

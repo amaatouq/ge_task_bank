@@ -1,6 +1,6 @@
 import numberToWords from "number-to-words";
 import React from "react";
-import { applyMagnitude } from "../../shared/conversions";
+import { applyMagnitude } from "../../../shared/conversions";
 import Unit from "./Unit";
 
 export default class NumberToWords extends React.Component {
@@ -17,11 +17,11 @@ export default class NumberToWords extends React.Component {
     }
 
     let res;
-    if (val > Number.MAX_SAFE_INTEGER) {
+    if (val < Number.MAX_SAFE_INTEGER) {
       try {
         res = numberToWords.toWords(val);
       } catch (err) {
-        console.error(err);
+        //console.error(err);
       }
     }
 
