@@ -101,9 +101,9 @@ export default class Quiz extends React.Component {
               className="mr-4"
               outline
             >
-              instructions
+              Back to instructions
             </CustomButton>
-            <CustomButton type="submit">Submit</CustomButton>
+            <CustomButton type="submit">Submit and begin game</CustomButton>
           </p>
         </form>
       </IntroLayout>

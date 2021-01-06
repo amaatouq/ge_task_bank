@@ -7,6 +7,7 @@ import Timer from "../game/Timer";
 import Score from "../game/Score";
 import pluralize from "pluralize";
 import Button from "../components/Button";
+import { CustomButton } from "../components/Button";
 
 function NumberToWordsDemo({ answer }) {
   if (!answer || parseInt(answer, 10) < 1000) {
@@ -64,13 +65,11 @@ function UnitDemo(props) {
     <div
       className={
         result || input
-          ? `pl-2 py-2 text-3xl ${
-              input
-                ? "border-b-2 border-gray-300 text-gray-400"
-                : "text-gray-500 pr-2"
-            } whitespace-nowrap leading-snug ${
-              focused ? "border-gray-500" : "border-gray-300"
-            }`
+          ? `pl-2 py-2 text-3xl ${input
+            ? "border-b-2 border-gray-300 text-gray-400"
+            : "text-gray-500 pr-2"
+          } whitespace-nowrap leading-snug ${focused ? "border-gray-500" : "border-gray-300"
+          }`
           : ""
       }
     >
@@ -170,14 +169,14 @@ export default class DemoStage extends Component {
         {answer === "" ? (
           ""
         ) : (
-          <div className="absolute bottom-0">
-            <div className="absolute">
-              <div className="mt-12">
-                <Button tick text="Submit" />
+            <div className="absolute bottom-0">
+              <div className="absolute">
+                <div className="mt-12">
+                  <Button tick text="Submit" />
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
       </form>
     );
   }
@@ -278,6 +277,23 @@ export default class DemoStage extends Component {
             </div>
           </div>
         </section>
+
+        <p className="mt-24" style={{
+          display: "flex",
+          justifyContent: "center",
+          margin: "0px",
+          marginBottom: "10px"
+        }}>
+          <CustomButton
+            onClick={this.props.onPrev}
+            disabled={!this.props.hasPrev}
+            color="secondary"
+            className="mr-4"
+            outline
+          >
+            Back to instructions
+            </CustomButton>
+        </p>
       </div>
     );
   }
