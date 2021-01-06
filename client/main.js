@@ -5,8 +5,7 @@ import Thanks from "./exit/Thanks";
 import Round from "./game/Round";
 import Waiting from "./components/Waiting";
 import Consent from "./intro/Consent";
-import GameOverview from "./intro/GameOverview";
-import SoloResponseStage from "./intro/SoloResponseStage";
+import Instructions from "./intro/Instructions";
 import DemoStage from "./intro/DemoStage";
 import NewPlayerForm from "./intro/NewPlayerForm";
 import Sorry from "./exit/Sorry";
@@ -29,11 +28,7 @@ Empirica.breadcrumb(() => null);
 // At this point they have been assigned a treatment. You can return
 // different instruction steps depending on the assigned treatment.
 Empirica.introSteps((game, treatment) => {
-  const steps = [GameOverview];
-  if (treatment.playerCount === 1) {
-    steps.push(SoloResponseStage);
-  }
-  steps.push(DemoStage, Quiz);
+  const steps = [Instructions, DemoStage, Quiz];
   return steps;
   // return [];
   // const steps = [InstructionStepOne];
