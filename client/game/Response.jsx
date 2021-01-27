@@ -20,18 +20,16 @@ export default class Response extends React.Component {
     let content = (
       <div
         key={index}
-        className={`mt-6 flex text-xl ${
-          isNext
-            ? "text-gray-400 text-shadow-md"
-            : isRevealed
+        className={`mt-6 flex text-xl ${isNext
+          ? "text-gray-400 text-shadow-md"
+          : isRevealed
             ? "text-gray-500"
             : "text-gray-300"
-        }`}
+          }`}
       >
         <div
-          className={`whitespace-nowrap ${
-            isNext ? "" : isRevealed ? "text-gray-300" : "text-gray-300"
-          }`}
+          className={`whitespace-nowrap ${isNext ? "" : isRevealed ? "text-gray-300" : "text-gray-300"
+            }`}
         >
           Hint {index + 1}
         </div>
@@ -39,8 +37,8 @@ export default class Response extends React.Component {
           {isNext
             ? "Reveal Hint"
             : isRevealed
-            ? hint
-            : "Reveal previous hint first"}
+              ? hint
+              : "Reveal previous hint first"}
         </div>
       </div>
     );

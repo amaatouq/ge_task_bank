@@ -135,14 +135,14 @@ export default class ResponseInput extends React.Component {
         {answer === "" ? (
           ""
         ) : (
-          <div className="absolute bottom-0">
-            <div className="absolute">
-              <div className="mt-12">
-                <Button tick text="OK" />
+            <div className="absolute bottom-0">
+              <div className="absolute">
+                <div className="mt-12">
+                  <Button tick text="Submit" />
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
       </form>
     );
   }

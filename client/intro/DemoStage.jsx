@@ -97,10 +97,14 @@ export default class DemoStage extends Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    this.setState({
-      submitted: true,
-    });
-    // this.props.onNext();
+
+    if (this.props.game.treatment.feedback) {
+      this.setState({
+        submitted: true,
+      });
+    } else {
+      this.props.onNext();
+    }
   };
 
   componentDidUpdate(prevProp, prevState) {
@@ -208,7 +212,7 @@ export default class DemoStage extends Component {
           <div className="relative bottom-0">
             <div className="absolute">
               <div className="mt-12">
-                <Button tick text="Submit" onClick={this.props.onNext} />
+                <Button tick text="OK" onClick={this.props.onNext} />
               </div>
             </div>
           </div>
