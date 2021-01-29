@@ -59,7 +59,7 @@ export default class Quiz extends React.Component {
                 name="goal"
                 value="estimate"
                 onChange={this.handleChange}
-                label="Make the closest estimate possible to the right answer."
+                label="The goal of the task is to make the closest estimate possible to the right answer."
               />
               <div className="mb-3">
                 <Radio
@@ -67,7 +67,7 @@ export default class Quiz extends React.Component {
                   name="goal"
                   value="close"
                   onChange={this.handleChange}
-                  label="Make a somewhat close guess as fast as possible."
+                  label="The goal of the task is to make a somewhat close guess as fast as possible."
                 />
               </div>
             </div>
@@ -101,9 +101,9 @@ export default class Quiz extends React.Component {
               className="mr-4"
               outline
             >
-              instructions
+              Back to instructions
             </CustomButton>
-            <CustomButton type="submit">Submit</CustomButton>
+            <CustomButton type="submit">Submit and begin game</CustomButton>
           </p>
         </form>
       </IntroLayout>
