@@ -6,6 +6,7 @@ import Question from "../components/round/Question";
 import QuestionImage from "../components/round/QuestionImage";
 import ResponseInput from "../components/round/ResponseInput";
 import RoundScore from "../components/round/RoundScore";
+import SocialExposure from "../components/round/SocialExposure";
 
 export default class Response extends React.Component {
   revealHint = (event) => {
@@ -125,13 +126,22 @@ export default class Response extends React.Component {
   }
 
   render() {
+    const {
+      stage,
+      game: {
+        treatment: { playerCount },
+      },
+    } = this.props;
     return (
-      <div className="flex justify-center">
-        <div className="xl:max-w-screen-lg max-w-screen-sm">
-          <QuestionImage {...this.props} />
-          <Question {...this.props}>{this.renderAnswer()}</Question>
+      <>
+        <QuestionImage {...this.props} />
+        <div className="flex justify-center items-center">
+          <div className="xl:max-w-screen-lg max-w-screen-sm">
+            <Question {...this.props}>{this.renderAnswer()}</Question>
+          </div>
         </div>
-      </div>
+        <SocialExposure stage={stage} playerCount={playerCount} />
+      </>
     );
   }
 }

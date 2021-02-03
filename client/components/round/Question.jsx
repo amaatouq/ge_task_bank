@@ -62,7 +62,7 @@ export default class Question extends React.Component {
   }
 
   render() {
-    const { round, children } = this.props;
+    const { round, stage, children } = this.props;
     const task = round.get("task");
 
     return (
@@ -71,10 +71,16 @@ export default class Question extends React.Component {
         className="flex flex-col justify-center items-center pl-8 py-2 pr-24 w-full"
       >
         <div className="flex items-baseline justify-center w-full max-w-4xl">
-          <div className="text-base text-gray-500">{round.index + 1}.</div>
+          <div
+            className={`${
+              stage.name !== "response" && "text-right w-20 "
+            }text-base text-gray-500 pr-3`}
+          >
+            {round.index + 1}.
+          </div>
           <div
             key="question"
-            className="flex flex-col justify-center items-start w-full ml-4"
+            className="flex flex-col justify-center items-start w-full"
           >
             <div className="questions-text text-gray-400">
               {task.question.text}
@@ -105,10 +111,9 @@ export default class Question extends React.Component {
             )}
 
             {this.renderError()}
-
-            <div className="mt-4 w-full">{children}</div>
           </div>
         </div>
+        <div className="mt-4 w-full">{children}</div>
       </div>
     );
   }

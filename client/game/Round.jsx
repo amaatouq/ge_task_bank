@@ -17,16 +17,6 @@ export default class Round extends React.Component {
       },
     } = this.props;
 
-    // return <Waiting />;
-
-    const task = round.get("task");
-    // console.log(stage.name);
-    // console.log(task);
-
-    let columns = 1;
-    if (task.question.image) {
-      columns++;
-    }
     return (
       <div className="flex flex-col h-full text-base">
         <header className="h-16	bg-gray-200 grid grid-cols-3 items-center px-6">
@@ -51,7 +41,7 @@ export default class Round extends React.Component {
           <Wait {...this.props} />
         ) : (
           <section
-            className={`bg-gray-50 h-full overflow-auto grid grid-cols-${columns}`}
+            className={`bg-gray-50 h-full overflow-auto grid grid-flow-col auto-cols-max justify-center`}
           >
             <Response {...this.props} />
           </section>
