@@ -17,7 +17,6 @@ export default class GameOverview extends Component {
       hasNext,
     } = this.props;
 
-    console.log(feedback)
     return (
       <IntroLayout title="Instructions" {...this.props}>
         <p>
