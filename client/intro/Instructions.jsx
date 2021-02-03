@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { CustomButton } from "../components/Button";
 import IntroLayout from "./IntroLayout";
+import { instructions, taskData } from "../../shared/tasks/tasks";
 
 export default class GameOverview extends Component {
   constructor(props) {
@@ -17,6 +18,9 @@ export default class GameOverview extends Component {
       hasNext,
     } = this.props;
 
+    let tasks = taskData.slice();
+    let textRounds = tasks.length < nRounds ? tasks.length : nRounds
+
     return (
       <IntroLayout title="Instructions" {...this.props}>
         <p>
@@ -26,7 +30,7 @@ export default class GameOverview extends Component {
         <br />
         <p><strong>Rounds</strong></p>
         <p>
-          The game consists of <strong>{nRounds} rounds</strong>. In each round
+          The game consists of <strong>{textRounds} round{textRounds > 1 && "s"}</strong>. In each round
           you will see a question (possibly an image as well) and be asked to{" "}
           <strong>
             make an educated <a target="_blank" href="https://en.wikipedia.org/wiki/Estimation">
