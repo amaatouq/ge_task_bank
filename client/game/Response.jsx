@@ -17,6 +17,7 @@ export default class Response extends React.Component {
   renderHint(index, hint, hintName, isOnlyOneHint, revealed) {
     const isNext = revealed === index;
     const isRevealed = revealed > index;
+    const hintText = hintName ? hintName : "Hint";
     let content = (
       <div
         key={index}
@@ -31,14 +32,14 @@ export default class Response extends React.Component {
           className={`whitespace-nowrap ${isNext ? "" : isRevealed ? "text-gray-300" : "text-gray-300"
             }`}
         >
-          {hintName ? hintName : "Hint"} {isOnlyOneHint ? "" : index + 1}
+          {hintText} {isOnlyOneHint ? "" : index + 1}
         </div>
         <div className="ml-4">
           {isNext
-            ? "Reveal Hint"
+            ? "Reveal " + hintText
             : isRevealed
               ? hint
-              : "Reveal previous hint first"}
+              : "Reveal previous " + hintText + " first"}
         </div>
       </div>
     );
