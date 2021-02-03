@@ -14,7 +14,6 @@ import { instructions, taskData } from "../shared/tasks/tasks";
 Empirica.gameInit((game) => {
   const {
     treatment: {
-      nRounds = 15,
       randomizeTask,
       taskType,
       responseDuration = 30,
@@ -24,6 +23,8 @@ Empirica.gameInit((game) => {
       quitEarly,
     },
   } = game;
+
+  let nRounds = game.treatment.nRounds;
 
   check(nRounds <= 0, "nRounds should be > 0");
   check(responseDuration <= 0, "responseDuration should be > 0");
@@ -66,7 +67,12 @@ Empirica.gameInit((game) => {
     daily_life_facts,population_of_large_cities,geopolitics`
   );
 
-  check(tasks.length < nRounds, "Tasks should be >= nRounds");
+
+  if (tasks.length < nRounds) {
+    nRounds = tasks.length;
+    game.treatment.nRounds = tasks.length;
+    console.log("Fewer tasks than nRounds. Setting nRounds to tasks.length.")
+  }
 
   if (randomizeTask) {
     tasks = _.shuffle(tasks);
