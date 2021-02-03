@@ -14,7 +14,7 @@ export default class Response extends React.Component {
     player.round.set("hintsRevealed", revealed + 1);
   };
 
-  renderHint(index, hint, revealed) {
+  renderHint(index, hint, hintName, isOnlyOneHint, revealed) {
     const isNext = revealed === index;
     const isRevealed = revealed > index;
     let content = (
@@ -31,7 +31,7 @@ export default class Response extends React.Component {
           className={`whitespace-nowrap ${isNext ? "" : isRevealed ? "text-gray-300" : "text-gray-300"
             }`}
         >
-          Hint {index + 1}
+          {hintName ? hintName : "Hint"} {isOnlyOneHint ? "" : index + 1}
         </div>
         <div className="ml-4">
           {isNext
@@ -60,6 +60,7 @@ export default class Response extends React.Component {
     const task = round.get("task");
 
     const possibleHints = task.question.hints;
+    const hintName = task.question.hintName;
 
     if (!possibleHints || possibleHints.length === 0) {
       return null;
@@ -81,12 +82,13 @@ export default class Response extends React.Component {
       hints = possibleHints;
     }
 
+    const isOnlyOneHint = hints.length == 1;
     const revealed = player.round.get("hintsRevealed") || 0;
     return (
       <div className="mt-36">
         {hints.map((hint, i) => {
           const revealIndex = treatment.revealHints ? i + 1 : revealed;
-          return this.renderHint(i, hint, revealIndex);
+          return this.renderHint(i, hint, hintName, isOnlyOneHint, revealIndex);
         })}
       </div>
     );
