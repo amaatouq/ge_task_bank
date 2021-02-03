@@ -5,6 +5,7 @@ import Response from "./Response";
 import Score from "./Score";
 import Timer from "./Timer";
 import Wait from "../components/Wait";
+import SocialExposure from "../game/SocialExposure";
 
 export default class Round extends React.Component {
   render() {
@@ -17,14 +18,14 @@ export default class Round extends React.Component {
       },
     } = this.props;
 
-    // return <Waiting />;
-
     const task = round.get("task");
-    // console.log(stage.name);
-    // console.log(task);
 
     let columns = 1;
     if (task.question.image) {
+      columns++;
+    }
+
+    if (playerCount > 1) {
       columns++;
     }
 
@@ -46,6 +47,7 @@ export default class Round extends React.Component {
             className={`bg-gray-50 h-full overflow-auto grid grid-cols-${columns}`}
           >
             <Response {...this.props} />
+            {playerCount > 1 && <SocialExposure {...this.props} />}
           </section>
         )}
       </div>

@@ -1,41 +1,27 @@
 import React from "react";
-import Slider from "meteor/empirica:slider";
+import ChatContainer from "../components/chat/ChatContainer";
+import PlayersResponse from "./PlayersResponse";
 
 export default class SocialExposure extends React.Component {
-  renderSocialInteraction(otherPlayer) {
-    const value = otherPlayer.round.get("value");
-    return (
-      <div className="alter" key={otherPlayer._id}>
-        <img src={otherPlayer.get("avatar")} className="profile-avatar" />
-        <div className="range">
-          <Slider
-            min={0}
-            max={1}
-            stepSize={0.01}
-            value={value}
-            disabled
-            hideHandleOnEmpty
-          />
-        </div>
-      </div>
-    );
-  }
-
   render() {
-    const { game, player } = this.props;
+    const { game, player, stage } = this.props;
+    const { chat = false, interactionMode = "discreet" } = game.treatment;
+    let hasFeedback = true;
+    let rows = 1;
 
-    const otherPlayers = _.reject(game.players, p => p._id === player._id);
+    if (interactionMode === "discreet" && stage.name === "response") {
+      hasFeedback = false;
+      rows--;
+    }
 
-    if (otherPlayers.length === 0) {
-      return null;
+    if (chat) {
+      rows++;
     }
 
     return (
-      <div className="social-exposure">
-        <p>
-          <strong>There are {otherPlayers.length} other players:</strong>
-        </p>
-        {otherPlayers.map(p => this.renderSocialInteraction(p))}
+      <div className={`"grid grid-rows-${rows}" h-full overflow-auto`}>
+        {hasFeedback && <PlayersResponse {...this.props} />}
+        {chat && <ChatContainer player={player} game={game} />}
       </div>
     );
   }

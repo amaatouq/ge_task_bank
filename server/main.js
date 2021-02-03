@@ -82,16 +82,16 @@ Empirica.gameInit((game) => {
     round.addStage({
       name: "response",
       displayName: "Response",
-      durationInSeconds: responseDuration,
-      // durationInSeconds: 31540000,
+      // durationInSeconds: responseDuration,
+      durationInSeconds: 31540000,
     });
 
     if (feedback) {
       round.addStage({
         name: "feedback",
         displayName: "Feedback",
-        durationInSeconds: feedbackDuration,
-        // durationInSeconds: 31540000,
+        // durationInSeconds: feedbackDuration,
+        durationInSeconds: 31540000,
       });
     }
 
