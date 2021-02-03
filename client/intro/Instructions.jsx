@@ -9,7 +9,7 @@ export default class GameOverview extends Component {
   render() {
     const {
       game: {
-        treatment: { nRounds, responseDuration, playerCount, feedback, feedbackDuration, longTermEngagement, quitEarly },
+        treatment: { nRounds, responseDuration, playerCount, feedback, feedbackDuration, longTermEngagement, quitEarly, hideAvatar },
       },
       hasPrev,
       onPrev,
@@ -64,10 +64,14 @@ export default class GameOverview extends Component {
 
         <br />
 
-        <p><strong>Avatar</strong></p>
-        <p>
-          You will receive an avatar (an animal's icon and name). Your avatar appears in the top left corner of the screen during the game.
-        </p>
+        {!hideAvatar &&
+          <div>
+            <p><strong>Avatar</strong></p>
+            <p>
+              You will receive an avatar (an animal's icon and name). Your avatar appears in the top left corner of the screen during the game.
+          </p>
+          </div>
+        }
 
         {playerCount > 1 &&
           <Fragment>

@@ -3,17 +3,17 @@ treatments:
     factorIds:
       - YWwosMevTALbyZmjc
       - Z8qTZzDedy9mqYYhY
-      - xdnJX6aE86TNBxn4g
-      - PwAkY4bpymX2Bjppg
+      - Jck2MChGCTBmYDT6y
+      - oP2c7grWPHbYfgo7d
       - qtgWqpEtizZ4SKF5C
       - 8xBkmBYw37fmy9Ztb
       - oWBpWDi7Bp2MysKkg
       - HtyBPSwcDcFZiGLvJ
-      - oRctTBv4rTfPerJi5
-      - Qhen54AJYDksmzazH
+      - tNTjGkudgj8QWEN37
+      - A5kMZp5o6gouqKEKj
       - 4iyZdsK3HiRFWYcdi
 factorTypes:
-  - _id: ZeNLaqgjiE7DEuEyG
+  - _id: pv33ikQ6gT7ifmc4r
     name: playerCount
     description: The Number of players participating in the given game.
     required: true
@@ -103,49 +103,62 @@ factorTypes:
     description: Allows to set the hints as directly revealed.
     required: false
     type: Boolean
+  - _id: b48q4W96daDbt4Gmd
+    name: hideAvatar
+    description: 'If this is set to true, it will hide the players'' avatar during the game.'
+    required: false
+    type: Boolean
 factors:
-  - _id: xdnJX6aE86TNBxn4g
-    name: "true"
+  - _id: Jck2MChGCTBmYDT6y
+    name: 'true'
     value: true
     factorTypeId: wz7s4ufXj2ss5hHGY
-  - _id: oFXixBjQdZ4SoRw8j
-    name: "false"
+  - _id: gkD6sAFcoz9sSn6Qo
+    name: 'false'
     value: false
     factorTypeId: wz7s4ufXj2ss5hHGY
-  - _id: PwAkY4bpymX2Bjppg
-    name: "true"
+  - _id: oP2c7grWPHbYfgo7d
+    name: 'true'
     value: true
     factorTypeId: GCGbdjiqFbsHYAYSk
-  - _id: PFji4nCCAwkuP5QTX
-    name: "false"
+  - _id: Bpff6vTHc4hx4p9BD
+    name: 'false'
     value: false
     factorTypeId: GCGbdjiqFbsHYAYSk
-  - _id: oRctTBv4rTfPerJi5
-    name: "true"
+  - _id: tNTjGkudgj8QWEN37
+    name: 'true'
     value: true
     factorTypeId: YMa7vmBFmum5YcHX4
-  - _id: 6LuSdsYTLRFKPZrmv
-    name: "false"
+  - _id: eD6DsxAY8eKJ9FSMJ
+    name: 'false'
     value: false
     factorTypeId: YMa7vmBFmum5YcHX4
-  - _id: Qhen54AJYDksmzazH
-    name: "true"
+  - _id: A5kMZp5o6gouqKEKj
+    name: 'true'
     value: true
     factorTypeId: pGbLrSrHZAatHoC9K
-  - _id: kzRGyfE47w5okh9Wd
-    name: "false"
+  - _id: XofbX6NJ8GTX2rEfW
+    name: 'false'
     value: false
     factorTypeId: pGbLrSrHZAatHoC9K
+  - _id: hHf3sGPeWftyRCTMP
+    name: 'true'
+    value: true
+    factorTypeId: nB5HyfYmdxKQzWkyi
+  - _id: FQcQavRGgG29X69dN
+    name: 'false'
+    value: false
+    factorTypeId: nB5HyfYmdxKQzWkyi
   - _id: YWwosMevTALbyZmjc
-    name: "1"
+    name: '1'
     value: 1
-    factorTypeId: ZeNLaqgjiE7DEuEyG
+    factorTypeId: pv33ikQ6gT7ifmc4r
   - _id: Z8qTZzDedy9mqYYhY
-    name: "5"
+    name: '5'
     value: 5
     factorTypeId: sToqhgYZPejDWvsp9
   - _id: Sqr54q2XogC8senCu
-    name: "10"
+    name: '10'
     value: 10
     factorTypeId: sToqhgYZPejDWvsp9
   - _id: qtgWqpEtizZ4SKF5C
@@ -166,24 +179,24 @@ factors:
     factorTypeId: hYW2mT46onSdYX7ds
   - _id: AAXBytkKFMDyadCH9
     name: geopolitics_daily_life_facts
-    value: "geopolitics,daily_life_facts"
+    value: 'geopolitics,daily_life_facts'
     factorTypeId: yyF4hBsuajGDxxfYP
   - _id: 4iyZdsK3HiRFWYcdi
     name: somehints
     value: '{ "1": [1,2], "2": [2,3], "4": [2]}'
     factorTypeId: KPaBsT8QA6WWc8osT
-  - _id: tQyDQgdhcsD7ariNL
-    name: "true"
-    value: true
-    factorTypeId: nB5HyfYmdxKQzWkyi
-  - _id: NKuWZHejRaG6cpCxq
-    name: "false"
-    value: false
-    factorTypeId: nB5HyfYmdxKQzWkyi
   - _id: AtNbG3cX6WPS5gRQY
-    name: "45"
+    name: '45'
     value: 45
     factorTypeId: sToqhgYZPejDWvsp9
+  - _id: FB5wxSJrMBYE2ys9a
+    name: 'true'
+    value: true
+    factorTypeId: b48q4W96daDbt4Gmd
+  - _id: pHbnCjGzbZdoTv4PC
+    name: 'false'
+    value: false
+    factorTypeId: b48q4W96daDbt4Gmd
 lobbyConfigs:
   - name: Default
     timeoutType: lobby
