@@ -111,6 +111,13 @@ factorTypes:
     description: 'If this is set to true, it will hide the players'' avatar during the game.'
     required: false
     type: Boolean
+  - _id: 8faqAbLdQx7La6C7u
+    name: hideTimer
+    description: >-
+      If this is set to true, it will hide the timer in all the stages of the
+      game except the tutorial.
+    required: false
+    type: Boolean
 factors:
   - _id: Jck2MChGCTBmYDT6y
     name: 'true'
@@ -148,7 +155,7 @@ factors:
     name: 'true'
     value: true
     factorTypeId: nB5HyfYmdxKQzWkyi
-  - _id: FQcQavRGgG29X69dN
+  - _id: nc5xd6CEG9gadGgwi
     name: 'false'
     value: false
     factorTypeId: nB5HyfYmdxKQzWkyi
@@ -208,6 +215,14 @@ factors:
     name: 'false'
     value: false
     factorTypeId: b48q4W96daDbt4Gmd
+  - _id: 9JmumrbBhASe7ozsE
+    name: 'true'
+    value: true
+    factorTypeId: 8faqAbLdQx7La6C7u
+  - _id: bWDTCCc9hLCqGZBAv
+    name: 'false'
+    value: false
+    factorTypeId: 8faqAbLdQx7La6C7u
 lobbyConfigs:
   - name: Default
     timeoutType: lobby
