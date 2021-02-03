@@ -47,6 +47,7 @@ Empirica.gameInit((game) => {
     player.set("avatar", avatars.pop());
     player.set("score", 0);
     player.set("index", i + 1);
+    player.set("hints", {});
   });
 
   // Task selection
@@ -79,6 +80,7 @@ Empirica.gameInit((game) => {
     const task = tasks[i];
     task.instructions = instructions[task.task];
     round.set("task", task);
+    round.set("index", i);
     round.addStage({
       name: "response",
       displayName: "Response",

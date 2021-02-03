@@ -93,9 +93,12 @@ factorTypes:
     description: >-
       Determines what percentage of players will receive hints for their
       questions. This is a JSON map for player index to an array of hint indexes
-      that describes exactly which hints are available to which player. If a
-      player is not defined they have no hints, if no hints are defined at all,
-      all players see all hints. E.g. { "1": [1,2], "2": [2,3], "4": [2]...}
+      that describes exactly which hints are available to which player. 
+      If a player is not defined they have no hints. 
+      If no hints are defined at all, all players see all hints.     
+      If you want to a random selection of hints (no doubles), put a "?" (with
+      the quotation marks) instead of a number.
+      E.g. { "1": [1,2], "2": [2,3], "4": [2, "?"]...}. 
     required: false
     type: String
   - _id: nB5HyfYmdxKQzWkyi
@@ -184,6 +187,10 @@ factors:
     name: "45"
     value: 45
     factorTypeId: sToqhgYZPejDWvsp9
+  - _id: YGyrZQhE6azy6h4cE
+    name: 1random
+    value: '{"1":["?"]}'
+    factorTypeId: KPaBsT8QA6WWc8osT
 lobbyConfigs:
   - name: Default
     timeoutType: lobby
