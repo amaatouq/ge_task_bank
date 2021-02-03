@@ -9,7 +9,7 @@ export default class GameOverview extends Component {
   render() {
     const {
       game: {
-        treatment: { nRounds, responseDuration, playerCount, feedback, feedbackDuration, longTermEngagement, quitEarly },
+        treatment: { nRounds, responseDuration, playerCount, feedback, feedbackDuration, longTermEngagement, quitEarly, hideTimer },
       },
       hasPrev,
       onPrev,
@@ -58,9 +58,11 @@ export default class GameOverview extends Component {
         <p>
           Once you start typing an answer, a <strong>Submit</strong> button will appear that you can click when you are ready.
         </p>
-        <p>
-          You have <strong>{responseDuration} seconds</strong> to submit your answer.
-        </p>
+        {!hideTimer &&
+          <p>
+            You have <strong>{responseDuration} seconds</strong> to submit your answer.
+          </p>
+        }
 
         <br />
 
@@ -137,7 +139,7 @@ export default class GameOverview extends Component {
           toward your final score.
         </p>
         <p>
-          You are given more time than in the actual game to understand the layout better.
+          You are given a different amount of time than in the actual game, just for this practice stage.
         </p>
 
         <br />
