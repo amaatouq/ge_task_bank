@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind screens;
 
 html,
 body {
@@ -75,5 +76,31 @@ input[type="number"]::-webkit-outer-spin-button {
     -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 0;
+  }
+}
+
+.h-response {
+  height: calc(100vh - 14rem);
+}
+.h-with-header {
+  height: calc(100vh - 4rem);
+}
+
+.icon-right-arrow::before {
+  content: "\2192";
+  display: inline-block;
+}
+
+.questions-text {
+  @apply text-sm;
+}
+@screen lg {
+  .questions-text {
+    @apply text-lg;
+  }
+}
+@screen xl {
+  .questions-text {
+    @apply text-2xl;
   }
 }

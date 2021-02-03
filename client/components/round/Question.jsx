@@ -68,15 +68,15 @@ export default class Question extends React.Component {
     return (
       <div
         key="question"
-        className="flex flex-col justify-center items-center p-8 pr-24"
+        className="flex flex-col justify-center items-center pl-8 py-2 pr-24 w-full"
       >
-        <div className="flex items-baseline justify-center w-full max-w-6xl">
+        <div className="flex items-baseline justify-center w-full max-w-4xl">
           <div className="text-base text-gray-500">{round.index + 1}.</div>
           <div
             key="question"
             className="flex flex-col justify-center items-start w-full ml-4"
           >
-            <div className="text-2xl text-gray-400">
+            <div className="questions-text text-gray-400">
               {task.question.text}
               {task.instructions ? (
                 <div
@@ -97,7 +97,7 @@ export default class Question extends React.Component {
             </div>
 
             {task.question.description ? (
-              <div className="text-xl text-gray-400 italic mt-4">
+              <div className="questions-text text-gray-400 italic mt-4">
                 {task.question.description}
               </div>
             ) : (
@@ -106,7 +106,7 @@ export default class Question extends React.Component {
 
             {this.renderError()}
 
-            <div className="mt-8 w-full">{children}</div>
+            <div className="mt-4 w-full">{children}</div>
           </div>
         </div>
       </div>
