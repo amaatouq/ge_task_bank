@@ -93,7 +93,7 @@ export default class Quiz extends React.Component {
               to the instructions.
             </Alert>
           )}
-          <p className="mt-24">
+          <p className="mt-20">
             <CustomButton
               onClick={onPrev}
               disabled={!hasPrev}

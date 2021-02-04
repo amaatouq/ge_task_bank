@@ -10,7 +10,7 @@ export default class Unit extends React.Component {
       <div
         className={
           result || input
-            ? `pl-2 py-2 text-3xl ${
+            ? `pl-2 py-2 lg:text-xl xl:text-2xl text-md ${
                 input
                   ? "border-b-2 border-gray-300 text-gray-400"
                   : "text-gray-500 pr-2"
