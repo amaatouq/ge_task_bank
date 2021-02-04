@@ -45,7 +45,7 @@ export default class Round extends React.Component {
             className={`bg-gray-50 h-full overflow-auto grid grid-flow-col auto-cols-max justify-center`}
           >
             <Response {...this.props} />
-            {playerCount > 1 && <SocialExposure {...this.props} />}
+            {/* {playerCount > 1 && <SocialExposure {...this.props} />} */}
           </section>
         )}
       </div>
