@@ -101,6 +101,7 @@ export default class Response extends React.Component {
 
     switch (stage.name) {
       case "response":
+      case "social":
         return (
           <>
             <ResponseInput {...this.props} />

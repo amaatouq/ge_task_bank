@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Chat } from "@empirica/chat";
 import ChatFooter from "./ChatFooter";
 import ChatMessage from "./ChatMessage";
-import ChatGroups from "../../../chatGroups.json";
 import { convertCharToNumber } from "../../../shared/helper";
 
 export default class ChatContainer extends Component {
@@ -13,38 +12,23 @@ export default class ChatContainer extends Component {
 
   setGroups = () => {
     const { player } = this.props;
-    const chatGroupsKey = 0;
 
-    if (!ChatGroups) {
-      console.warn("Chat Groups rule doesn\t exist!");
-      return;
-    }
+    this.setState(
+      {
+        groups: player.get("chatGroups"),
+      },
+      () => {
+        const { groups } = this.state;
+        // player doesn't have group chat
+        if (groups.length === 0) {
+          return;
+        }
 
-    let chatGroups = ChatGroups[chatGroupsKey].split(",");
-    chatGroups.forEach((g) => {
-      const connection = g.split("-");
-      const { groups } = this.state;
-
-      if (player.get("index") !== parseInt(connection[0])) {
-        return;
+        this.setState({
+          activeGroup: groups[0],
+        });
       }
-
-      groups.push(connection[1]);
-
-      this.setState({
-        groups: groups.sort(),
-      });
-    });
-
-    const { groups } = this.state;
-    // player doesn't have group chat
-    if (groups.length === 0) {
-      return;
-    }
-
-    this.setState({
-      activeGroup: groups[0],
-    });
+    );
   };
 
   componentDidMount() {
