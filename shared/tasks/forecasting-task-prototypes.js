@@ -19,18 +19,20 @@ export const taskData = [
             min: 0,
             hintName: "Additional Information",
 
+            unit: "point",
+
             get text() {
                 return "What score will the " + this.teamA + " obtain in their game against the " + this.teamB + " on " + this.dateEvent
             },
             get description() {
-                return "All the " + this.hintName + " provided was accurate as of " + this.dateHints + ", and by 'this regular season' we mean the " + this.season + " regular season."
+                return "All the " + this.hintName + " provided was accurate as of " + this.dateHints + "."
             },
 
             hints: [
                 "Last time they played in the 2019-2020 NBA regular season - The Charlotte Hornets (108 points) won against the Houston Rockets (99 points)",
                 "Total win and losses against each other in regular season games - The Charlotte Hornets won 15 and the Houston Rockets won 45 of the 61 regular season games they played against each other",
                 "2020 Forbes Value of the teams - Forbes values the Charlotte Hornets at $1,500,000,000 and the Houston Rockets at $2,475,000,000",
-                "Win-Loss this regular season - The Charlotte Hornets have a win-loss of (10-12 or 0.455%); the Houston Rockets have a win-loss of (10-12 or 0.500%).",
+                "Win-Loss this regular season - The Charlotte Hornets have a win-loss of (10-12 or 0.455%); the Houston Rockets have a win-loss of (10-10 or 0.500%).",
                 "Average points per game (PPG) this regular season - The Charlotte Hornets have a PPG of 109.6 and the Houston Rockets have a PPG of 111.1",
                 "Average opponent points per game (OPP PPG) this regular season -  The Charlotte Hornets have an OPP PPG of 110.5 scored against them and the Houston Rockets have an OPP PPG scored agains them of 109.1",
                 "Home and Away stats this regular season - The Charlotte Hornets are playing at home (win-loss at home of 5-6) and the Houston Rockets are playing on the road (win-loss on the road of 5-6)",
@@ -58,18 +60,21 @@ export const taskData = [
             max: 100,
             hintName: "Additional Information",
 
+            unit: "% win probability",
+            preventPluralize: true,
+
             get text() {
                 return "How likely (0-100%) are the " + this.teamA + " to win their game against the " + this.teamB + " on " + this.dateEvent
             },
             get description() {
-                return "All the " + this.hintName + " provided was accurate as of " + this.dateHints + ", and by 'this regular season' we mean the " + this.season + " regular season."
+                return "All the " + this.hintName + " provided was accurate as of " + this.dateHints + "."
             },
 
             hints: [
                 "Last time they played in the 2019-2020 NBA regular season - The Charlotte Hornets (108 points) won against the Houston Rockets (99 points)",
                 "Total win and losses against each other in regular season games - The Charlotte Hornets won 15 and the Houston Rockets won 45 of the 61 regular season games they played against each other",
                 "2020 Forbes Value of the teams - Forbes values the Charlotte Hornets at $1,500,000,000 and the Houston Rockets at $2,475,000,000",
-                "Win-Loss this regular season - The Charlotte Hornets have a win-loss of (10-12 or 0.455%); the Houston Rockets have a win-loss of (10-12 or 0.500%).",
+                "Win-Loss this regular season - The Charlotte Hornets have a win-loss of (10-12 or 0.455%); the Houston Rockets have a win-loss of (10-10 or 0.500%).",
                 "Average points per game (PPG) this regular season - The Charlotte Hornets have a PPG of 109.6 and the Houston Rockets have a PPG of 111.1",
                 "Average opponent points per game (OPP PPG) this regular season -  The Charlotte Hornets have an OPP PPG of 110.5 scored against them and the Houston Rockets have an OPP PPG scored agains them of 109.1",
                 "Home and Away stats this regular season - The Charlotte Hornets are playing at home (win-loss at home of 5-6) and the Houston Rockets are playing on the road (win-loss on the road of 5-6)",
@@ -94,6 +99,9 @@ export const taskData = [
             min: 0,
             max: 10,
             hintName: "Additional Information",
+
+            unit: "/10",
+            preventPluralize: true,
 
             get text() {
                 return `What Metacritic user score (out of 10) will game ${this.videogame} have at time ${this.dateEvent}?`
@@ -123,6 +131,8 @@ export const taskData = [
 
             min: 0,
             hintName: "Additional Information",
+
+            unit: "review",
 
             get text() {
                 return `How many Steam reviews will game ${this.videogame} have at time ${this.dateEvent}?`
