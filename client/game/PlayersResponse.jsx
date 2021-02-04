@@ -40,7 +40,7 @@ export default class PlayersResponse extends React.Component {
                 />
                 <span className="text-gray-400 pr-3">{p.get("avatar")}</span>
                 <span className="text-gray-500 pr-3 text-sm">
-                  +{p.get("score")}
+                  +{p.round.get("score")}
                 </span>
               </div>
               <div className="mr-11 flex flex-row text-sm">

@@ -5,7 +5,6 @@ import Response from "./Response";
 import Score from "./Score";
 import Timer from "./Timer";
 import Wait from "../components/Wait";
-import SocialExposure from "../game/SocialExposure";
 
 export default class Round extends React.Component {
   render() {
@@ -45,7 +44,6 @@ export default class Round extends React.Component {
             className={`bg-gray-50 h-full overflow-auto grid grid-flow-col auto-cols-max justify-center`}
           >
             <Response {...this.props} />
-            {/* {playerCount > 1 && <SocialExposure {...this.props} />} */}
           </section>
         )}
       </div>
