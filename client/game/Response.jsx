@@ -110,13 +110,15 @@ export default class Response extends React.Component {
 
           // If numeric...
           if (typeof config == "number") {
-            // ...check that there could be a hint with this index
-            if (possibleHints.length >= (config - 1)) {
+
+            // ...check that there could be a hint with this index (it doesn't return undefined)
+            if (typeof possibleHints[config - 1] != "undefined") {
               // ...push the hint that has this index
               hints.push(possibleHints[config - 1]);
               // and take this hint out of the hints ready to be selected randomly
               randomPossibleHints.splice(config - 1, 1);
             }
+
           } else {
             // Else, increase the number of random hints
             nbRandomHints++
