@@ -51,7 +51,36 @@ export default class ChatContainer extends Component {
     this.setGroups();
   }
 
-  setActiveGroup = (activeGroup) => this.setState({ activeGroup: activeGroup });
+  setActiveGroup = (activeGroup) => {
+    const { newMessagesGroup } = this.state;
+    const groups = _.reject(newMessagesGroup, (g) => g === activeGroup);
+    this.setState({
+      activeGroup,
+      newMessagesGroup: groups,
+    });
+  };
+
+  handleIncomingMessage = (msgs, customKey) => {
+    const { newMessagesGroup, activeGroup } = this.state;
+    const { player } = this.props;
+
+    // key already exist in groups
+    if (newMessagesGroup.includes(customKey)) {
+      return;
+    }
+
+    // player already on the same window
+    if (activeGroup === customKey) {
+      return;
+    }
+
+    const playerMessage = _.find(msgs, (m) => m.player._id === player._id);
+
+    if (!playerMessage) {
+      newMessagesGroup.push(customKey);
+      this.setState({ newMessagesGroup });
+    }
+  };
 
   render() {
     const { activeGroup, groups, newMessagesGroup } = this.state;
@@ -61,7 +90,6 @@ export default class ChatContainer extends Component {
       player,
       scope: game,
       timeStamp: new Date(TimeSync.serverTime(null, 1000)),
-      customKey: activeGroup,
     };
 
     if (groups.length === 0) {
@@ -97,9 +125,28 @@ export default class ChatContainer extends Component {
             );
           })}
         </div>
-        <div style={{ height: "calc(100vh - 180px)" }}>
-          <Chat {...commonProps} footer={ChatFooter} message={ChatMessage} />
-        </div>
+        {groups.map((g) => {
+          const classnames = ["h-full"];
+          if (g !== activeGroup) {
+            classnames.push("hidden");
+          }
+
+          return (
+            <div
+              key={g}
+              className={classnames.join(" ")}
+              style={{ height: "calc(100vh - 180px)" }}
+            >
+              <Chat
+                {...commonProps}
+                customKey={g}
+                footer={ChatFooter}
+                message={ChatMessage}
+                onIncomingMessage={this.handleIncomingMessage}
+              />
+            </div>
+          );
+        })}
       </div>
     );
   }
