@@ -10,14 +10,15 @@ export default class QuestionImage extends React.Component {
     }
 
     return (
-      <div
-        key="image"
-        className="p-8 pl-24 h-full w-full m-w-full m-h-full overflow-hidden"
-      >
-        <img
-          className="h-full w-full object-scale-down"
-          src={task.question.image}
-        />
+      <div className="flex justify-center items-center">
+        <div className="xl:max-w-screen-lg max-w-screen-sm">
+          <div key="image" className="p-8 pl-24 h-full overflow-hidden">
+            <img
+              className="h-full max-h-96 object-scale-down"
+              src={task.question.image}
+            />
+          </div>
+        </div>
       </div>
     );
   }

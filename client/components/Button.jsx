@@ -6,7 +6,7 @@ export default class Button extends React.Component {
 
     return (
       <button
-        className="p-4 bg-gray-300 hover:bg-gray-200 active:bg-gray-400 text-gray-800 rounded flex items-center text-xl font-semibold leading-none shadow-lg"
+        className="px-4 py-3 bg-gray-300 hover:bg-gray-200 active:bg-gray-400 text-gray-800 rounded flex items-center text-lg font-semibold leading-none shadow-md"
         type="submit"
         onClick={onClick}
         {...rest}
