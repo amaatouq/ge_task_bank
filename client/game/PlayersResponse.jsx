@@ -1,4 +1,5 @@
 import React from "react";
+import NumberFormat from "react-number-format";
 import { nameToAvatar } from "../../shared/avatars";
 import { getUnit } from "../../shared/unit";
 
@@ -39,7 +40,16 @@ export default class PlayersResponse extends React.Component {
                 </span>
               </div>
               <div className="mr-11 flex flex-row text-sm">
-                <span className="text-gray-400">{answer}&nbsp;</span>
+                <span className="text-gray-400">
+                  {
+                    <NumberFormat
+                      value={answer}
+                      displayType={"text"}
+                      thousandSeparator={true}
+                    />
+                  }
+                  &nbsp;
+                </span>
                 <span className="text-gray-300">{unit}</span>
               </div>
             </div>
