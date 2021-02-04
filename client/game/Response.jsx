@@ -6,6 +6,7 @@ import Question from "../components/round/Question";
 import QuestionImage from "../components/round/QuestionImage";
 import ResponseInput from "../components/round/ResponseInput";
 import RoundScore from "../components/round/RoundScore";
+import SocialExposure from "../components/round/SocialExposure";
 
 export default class Response extends React.Component {
   revealHint = (event) => {
@@ -20,16 +21,18 @@ export default class Response extends React.Component {
     let content = (
       <div
         key={index}
-        className={`mt-6 flex text-xl ${isNext
-          ? "text-gray-400 text-shadow-md"
-          : isRevealed
+        className={`mt-6 flex text-md xl:text-xl ${
+          isNext
+            ? "text-gray-400 xl:text-shadow-md text-shadow-sm"
+            : isRevealed
             ? "text-gray-500"
             : "text-gray-300"
-          }`}
+        }`}
       >
         <div
-          className={`whitespace-nowrap ${isNext ? "" : isRevealed ? "text-gray-300" : "text-gray-300"
-            }`}
+          className={`whitespace-nowrap ${
+            isNext ? "" : isRevealed ? "text-gray-300" : "text-gray-300"
+          }`}
         >
           Hint {index + 1}
         </div>
@@ -37,8 +40,8 @@ export default class Response extends React.Component {
           {isNext
             ? "Reveal Hint"
             : isRevealed
-              ? hint
-              : "Reveal previous hint first"}
+            ? hint
+            : "Reveal previous hint first"}
         </div>
       </div>
     );
@@ -83,7 +86,7 @@ export default class Response extends React.Component {
 
     const revealed = player.round.get("hintsRevealed") || 0;
     return (
-      <div className="mt-36">
+      <div className="mt-14">
         {hints.map((hint, i) => {
           const revealIndex = treatment.revealHints ? i + 1 : revealed;
           return this.renderHint(i, hint, revealIndex);
@@ -110,8 +113,7 @@ export default class Response extends React.Component {
           answer = applyMagnitude(answer, task.question.magnitude);
         }
         return (
-          <div className="w-min">
-            <div className="h-1 w-96"></div>
+          <div className="w-full">
             <Answer answer={answer} {...this.props} />
             <Answer correct answer={task.answer} {...this.props} />
             <RoundScore score={player.round.get("score") || 0} />
@@ -124,10 +126,21 @@ export default class Response extends React.Component {
   }
 
   render() {
+    const {
+      stage,
+      game: {
+        treatment: { playerCount },
+      },
+    } = this.props;
     return (
       <>
         <QuestionImage {...this.props} />
-        <Question {...this.props}>{this.renderAnswer()}</Question>
+        <div className="flex justify-center items-center">
+          <div className="xl:max-w-screen-lg max-w-screen-sm">
+            <Question {...this.props}>{this.renderAnswer()}</Question>
+          </div>
+        </div>
+        <SocialExposure stage={stage} playerCount={playerCount} />
       </>
     );
   }

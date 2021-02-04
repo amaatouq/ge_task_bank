@@ -65,11 +65,13 @@ function UnitDemo(props) {
     <div
       className={
         result || input
-          ? `pl-2 py-2 text-3xl ${input
-            ? "border-b-2 border-gray-300 text-gray-400"
-            : "text-gray-500 pr-2"
-          } whitespace-nowrap leading-snug ${focused ? "border-gray-500" : "border-gray-300"
-          }`
+          ? `pl-2 py-2 text-xl ${
+              input
+                ? "border-b-2 border-gray-300 text-gray-400"
+                : "text-gray-500 pr-2"
+            } whitespace-nowrap leading-snug ${
+              focused ? "border-gray-500" : "border-gray-300"
+            }`
           : ""
       }
     >
@@ -156,7 +158,7 @@ export default class DemoStage extends Component {
           <NumberFormat
             thousandSeparator={true}
             isNumericString
-            className="w-full px-0 m-0 py-2 text-3xl text-gray-500 bg-transparent placeholder-gray-300 border-0 border-b-2 border-gray-300 focus:ring-0 focus:outline-none focus:border-b-2 focus:border-gray-500 leading-snug tabular-nums"
+            className="w-full px-0 m-0 py-2 text-xl text-gray-500 bg-transparent placeholder-gray-300 border-0 border-b-2 border-gray-300 focus:ring-0 focus:outline-none focus:border-b-2 focus:border-gray-500 leading-snug tabular-nums"
             placeholder="Type your answer here..."
             autoFocus
             name="answer"
@@ -173,14 +175,14 @@ export default class DemoStage extends Component {
         {answer === "" ? (
           ""
         ) : (
-            <div className="absolute bottom-0">
-              <div className="absolute">
-                <div className="mt-12">
-                  <Button tick text="Submit" />
-                </div>
+          <div className="bottom-0">
+            <div className="relative">
+              <div className="mt-6">
+                <Button tick text="Submit" />
               </div>
             </div>
-          )}
+          </div>
+        )}
       </form>
     );
   }
@@ -190,7 +192,7 @@ export default class DemoStage extends Component {
     const guess = correct ? correctAnswer : answer;
 
     return (
-      <div className="flex flex-col mb-12">
+      <div className="flex flex-col mb-6">
         <div
           className={`mb-2 font-semibold ${correct ? "text-green-500" : ""}`}
         >
@@ -203,15 +205,15 @@ export default class DemoStage extends Component {
             value={guess}
             displayType="text"
             thousandSeparator={true}
-            className="w-full pl-2 py-2 text-3xl text-gray-500 leading-snug text-right tabular-nums"
+            className="w-full pl-2 py-2 text-xl text-gray-500 leading-snug text-right tabular-nums"
           />
           <UnitDemo input magnitude={false} focused={true} answer={guess} />
           <NumberToWordsDemo answer={guess} />
         </div>
         {correct && (
           <div className="relative bottom-0">
-            <div className="absolute">
-              <div className="mt-12">
+            <div className="relative">
+              <div className="mt-6">
                 <Button tick text="OK" onClick={this.props.onNext} />
               </div>
             </div>
@@ -238,66 +240,73 @@ export default class DemoStage extends Component {
       },
     } = this.props;
     return (
-      <div className="flex flex-col h-screen text-base">
-        <header className="h-16	bg-gray-200 grid grid-cols-3 items-center px-6">
-          <div className="text-lg">Demonstration</div>
-          <div className="text-lg">
-            <Timer remainingSeconds={remainingSeconds} />
-          </div>
-          <div className="flex justify-end items-center">
-            <DebugButtons {...this.props} />
-            {feedback && <Score player={player} demoScore={score} />}
-          </div>
-        </header>
-
-        <section className={`bg-gray-50 h-full overflow-auto grid grid-cols-2`}>
-          <div
-            key="image"
-            className="p-8 pl-24 h-full w-full m-w-full m-h-full overflow-hidden"
-          >
-            <img
-              className="h-full w-full object-scale-down"
-              src="/instructions/candies_C_268.jpg"
-            />
-          </div>
-          <div
-            key="question"
-            className="flex flex-col justify-center items-center p-8 pr-24"
-          >
-            <div className="flex items-baseline justify-center w-full max-w-6xl">
-              <div className="text-base text-gray-500">Demo 1.</div>
+      <div className="flex flex-col h-screen text-base overflow-hidden">
+        <div className="flex-none w-full">
+          <header className="h-16	bg-gray-200 grid grid-cols-3 items-center px-6">
+            <div className="text-xl text-gray-400 leading-none">Response</div>
+            <div className="text-lg">
+              <Timer remainingSeconds={remainingSeconds} />
+            </div>
+            <div className="flex justify-end items-center">
+              <DebugButtons {...this.props} />
+              {feedback && <Score player={player} demoScore={score} />}
+            </div>
+          </header>
+        </div>
+        <div className="bg-gray-50 flex-none px-24 w-full h-with-header overflow-auto">
+          <section className="grid grid-flow-row auto-rows-max gap-4 ">
+            <div className="flex h-16 items-center">
+              <div className="border py-1 border-gray-400 px-5 rounded-full flex-initial">
+                Demonstration
+              </div>
+            </div>
+            <div className="grid h-full grid-cols-2 gap-4">
+              <div className="h-response">
+                <img
+                  className="m-auto h-full object-contain"
+                  src="/instructions/candies_C_268.jpg"
+                />
+              </div>
               <div
                 key="question"
-                className="flex flex-col justify-center items-start w-full ml-4"
+                className="flex h-response justify-center items-center"
               >
-                <div className="text-2xl text-gray-400">
-                  Estimate the number of chocolates in the glass.
-                </div>
-                <div className="mt-8 w-full">
-                  {!submitted && this.formAnswer()}
-                  {submitted && feedback && this.renderFeedback()}
+                <div className="w-full">
+                  <div className="flex items-baseline justify-center">
+                    <div className="flex-initial text-base text-gray-500 ">
+                      1.
+                    </div>
+                    <div className="flex-initial">
+                      <div
+                        key="question"
+                        className="flex flex-wrap justify-center items-start w-full ml-4"
+                      >
+                        <div className="text-xl text-gray-400 w-full">
+                          Estimate the number of chocolates in the glass.
+                        </div>
+                        <div className="mt-4 w-full">
+                          {!submitted && this.formAnswer()}
+                          {submitted && feedback && this.renderFeedback()}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-
-        <p className="mt-24" style={{
-          display: "flex",
-          justifyContent: "center",
-          margin: "0px",
-          marginBottom: "10px"
-        }}>
-          <CustomButton
-            onClick={this.props.onPrev}
-            disabled={!this.props.hasPrev}
-            color="secondary"
-            className="mr-4"
-            outline
-          >
-            Back to instructions
-            </CustomButton>
-        </p>
+            <div className="flex justify-center h-16 items-center">
+              <CustomButton
+                onClick={this.props.onPrev}
+                disabled={!this.props.hasPrev}
+                color="secondary"
+                className="mr-4"
+                outline
+              >
+                Back to instructions
+              </CustomButton>
+            </div>
+          </section>
+        </div>
       </div>
     );
   }
