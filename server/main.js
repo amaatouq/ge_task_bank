@@ -3,6 +3,7 @@ import { avatarNames } from "../shared/avatars.js";
 import "./bots.js";
 import "./callbacks.js";
 import { instructions, taskData } from "../shared/tasks/tasks";
+import { choice } from "../shared/helperFunctions/choice";
 
 // gameInit is where the structure of a game is defined.
 // Just before every game starts, once all the players needed are ready, this
@@ -21,6 +22,8 @@ Empirica.gameInit((game) => {
       feedbackDuration = 30,
       longTermEngagement,
       quitEarly,
+      hints,
+      shuffleHints
     },
   } = game;
 
@@ -40,6 +43,14 @@ Empirica.gameInit((game) => {
     false
   );
 
+  if (shuffleHints && typeof hints != "undefined") {
+    // Prepare for shuffling the hints
+    // Randomly create as many indexes as in the hints object
+    let myHints = JSON.parse(hints);
+    let playerIndexes = []
+    _.times(Object.keys(myHints).length, (i) => { playerIndexes.push(i + 1) });
+  }
+
   // Player info
 
   const avatars = _.shuffle(avatarNames);
@@ -47,7 +58,14 @@ Empirica.gameInit((game) => {
   game.players.forEach((player, i) => {
     player.set("avatar", avatars.pop());
     player.set("score", 0);
-    player.set("index", i + 1);
+
+    // Shuffling the hints
+    if (shuffleHints && typeof hints != "undefined") {
+      player.set("index", choice(playerIndexes));
+    } else {
+      player.set("index", i + 1);
+    }
+
     player.set("hints", {});
   });
 
