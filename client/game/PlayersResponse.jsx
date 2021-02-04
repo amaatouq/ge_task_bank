@@ -4,13 +4,17 @@ import { getUnit } from "../../shared/unit";
 
 export default class PlayersResponse extends React.Component {
   render() {
-    const { game, player, stage, round } = this.props;
+    const { game, player, stage, round, withChat = false } = this.props;
     const answerType = stage.name === "response" ? "tmpanswer" : "answer";
     const players = _.reject(game.players, (p) => p._id === player._id);
     players.unshift(player);
 
     return (
-      <div className="py-10 overflow-y-auto">
+      <div
+        className={`max-h-64 overflow-y-auto${
+          withChat && " border-b border-gray-200"
+        }`}
+      >
         {players.map((p, i) => {
           if (!p.get("avatar")) {
             return null;

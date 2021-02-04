@@ -24,7 +24,7 @@ export default class ChatContainer extends Component {
     };
 
     return (
-      <>
+      <div className="max-h-64 overflow-y-auto">
         <div className="py-10 overflow-y-hidden overflow-x-auto whitespace-nowrap">
           {groups.map((g, i) => {
             let textColor = "text-gray-300";
@@ -55,7 +55,7 @@ export default class ChatContainer extends Component {
         <div style={{ height: "calc(100vh - 180px)" }}>
           <Chat {...commonProps} footer={ChatFooter} message={ChatMessage} />
         </div>
-      </>
+      </div>
     );
   }
 }
