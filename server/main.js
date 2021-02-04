@@ -43,8 +43,8 @@ Empirica.gameInit((game) => {
     false
   );
 
+  // Prepare for shuffling the hints
   if (shuffleHints && typeof hints != "undefined") {
-    // Prepare for shuffling the hints
     // Randomly create as many indexes as in the hints object
     let myHints = JSON.parse(hints);
     let playerIndexes = []
