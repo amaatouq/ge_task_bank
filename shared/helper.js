@@ -5,3 +5,7 @@ export function isMultiPlayer(playerCount) {
 
   return false;
 }
+
+export function convertCharToNumber(char) {
+  return char.toUpperCase().charCodeAt(0) - 64;
+}

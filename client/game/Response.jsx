@@ -126,12 +126,6 @@ export default class Response extends React.Component {
   }
 
   render() {
-    const {
-      stage,
-      game: {
-        treatment: { playerCount },
-      },
-    } = this.props;
     return (
       <>
         <QuestionImage {...this.props} />
@@ -140,7 +134,7 @@ export default class Response extends React.Component {
             <Question {...this.props}>{this.renderAnswer()}</Question>
           </div>
         </div>
-        <SocialExposure stage={stage} playerCount={playerCount} />
+        <SocialExposure {...this.props} />
       </>
     );
   }

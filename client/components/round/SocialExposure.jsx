@@ -1,17 +1,23 @@
 import React from "react";
 import { isMultiPlayer } from "../../../shared/helper";
+import PlayersResponse from "../../game/PlayersResponse";
+import ChatContainer from "../chat/ChatContainer";
 
-export default function SocialExposure({ stage, playerCount }) {
-  if (stage.name !== "feedback" && isMultiPlayer(playerCount)) {
-    return null;
+export default function SocialExposure(props) {
+  const { stage, game, player } = props;
+  const { treatment } = game;
+  const { chat = false, interactionMode = "discreet" } = treatment;
+  let hasFeedback = true;
+
+  if (interactionMode === "discreet" && stage.name === "response") {
+    hasFeedback = false;
   }
+
   return (
     <div className="flex justify-end items-center pr-20">
-      <div className="w-full grid grid-rows-2 items-end">
-        <div className="py-3 px-5 border-b border-gray-200">
-          Social Exposure here
-        </div>
-        <div className="py-3 px-5">Chat Here</div>
+      <div className="w-full grid grid-flow-row auto-rows-max max-h-96 items-end">
+        {hasFeedback && <PlayersResponse {...props} withChat={chat} />}
+        {chat && <ChatContainer player={player} game={game} />}
       </div>
     </div>
   );
