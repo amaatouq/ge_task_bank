@@ -1,7 +1,7 @@
 import React from "react";
 
 export default class ChatFooter extends React.Component {
-  state = { comment: "", rows: 1, minRows: 1, maxRows: 5, buttonHeight: 30 };
+  state = { comment: "", rows: 1, minRows: 1, maxRows: 5 };
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -50,21 +50,14 @@ export default class ChatFooter extends React.Component {
 
     const usedRows = currentRows < maxRows ? currentRows : maxRows;
 
-    this.setState(
-      {
-        [el.name]: el.value,
-        rows: usedRows,
-      },
-      () => {
-        this.setState({
-          buttonHeight: document.getElementById("chat-input").offsetHeight,
-        });
-      }
-    );
+    this.setState({
+      [el.name]: el.value,
+      rows: usedRows,
+    });
   };
 
   render() {
-    const { comment, rows, buttonHeight } = this.state;
+    const { comment, rows } = this.state;
 
     return (
       <form onSubmit={this.handleSubmit}>
