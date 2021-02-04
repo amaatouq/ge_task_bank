@@ -70,10 +70,10 @@ export default class ChatFooter extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <div className="chat-footer">
           <textarea
+            className="w-full px-0 m-0 py-2 resize-none lg:text-md xl:text-l text-md text-gray-500 bg-transparent placeholder-gray-300 border-0 border-b-2 border-gray-300 focus:ring-0 focus:outline-none focus:border-b-2 focus:border-gray-500 leading-snug tabular-nums"
             id="chat-input"
             name="comment"
-            className="chat-input"
-            placeholder="Enter chat message"
+            placeholder="Type chat message here..."
             value={comment}
             onKeyPress={(e) => {
               if (e.key === "Enter") {
@@ -84,14 +84,6 @@ export default class ChatFooter extends React.Component {
             onChange={this.handleChange}
             autoComplete="off"
           />
-          <button
-            type="submit"
-            style={{ height: buttonHeight }}
-            className="chat-button-send"
-            disabled={!comment}
-          >
-            Send
-          </button>
         </div>
       </form>
     );
