@@ -97,7 +97,7 @@ export default class ChatContainer extends Component {
     }
 
     return (
-      <div className="overflow-y-auto">
+      <div className="max-h-64 overflow-y-auto">
         <div className="py-10 overflow-y-hidden overflow-x-auto whitespace-nowrap">
           {groups.map((g, i) => {
             let textColor = "text-gray-300";
