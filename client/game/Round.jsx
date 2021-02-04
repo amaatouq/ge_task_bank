@@ -18,17 +18,6 @@ export default class Round extends React.Component {
       },
     } = this.props;
 
-    // const task = round.get("task");
-
-    // let columns = 1;
-    // if (task.question.image) {
-    //   columns++;
-    // }
-
-    // if (playerCount > 1) {
-    //   columns++;
-    // }
-
     return (
       <div className="flex flex-col h-full text-base">
         <header className="h-16	bg-gray-200 grid grid-cols-3 items-center px-6">

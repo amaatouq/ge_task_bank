@@ -2,26 +2,71 @@ import React, { Component } from "react";
 import { Chat } from "@empirica/chat";
 import ChatFooter from "./ChatFooter";
 import ChatMessage from "./ChatMessage";
+import ChatGroups from "../../../chatGroups.json";
+import { convertCharToNumber } from "../../../shared/helper";
 
 export default class ChatContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = { activeGroup: "group1" };
+    this.state = { activeGroup: "", groups: [], newMessagesGroup: [] };
+  }
+
+  setGroups = () => {
+    const { player } = this.props;
+    const chatGroupsKey = 0;
+
+    if (!ChatGroups) {
+      console.warn("Chat Groups rule doesn\t exist!");
+      return;
+    }
+
+    let chatGroups = ChatGroups[chatGroupsKey].split(",");
+    chatGroups.forEach((g) => {
+      const connection = g.split("-");
+      const { groups } = this.state;
+
+      if (player.get("index") !== parseInt(connection[0])) {
+        return;
+      }
+
+      groups.push(connection[1]);
+
+      this.setState({
+        groups: groups.sort(),
+      });
+    });
+
+    const { groups } = this.state;
+    // player doesn't have group chat
+    if (groups.length === 0) {
+      return;
+    }
+
+    this.setState({
+      activeGroup: groups[0],
+    });
+  };
+
+  componentDidMount() {
+    this.setGroups();
   }
 
   setActiveGroup = (activeGroup) => this.setState({ activeGroup: activeGroup });
 
   render() {
-    const { activeGroup } = this.state;
+    const { activeGroup, groups, newMessagesGroup } = this.state;
     const { player, game } = this.props;
-    const groups = ["group1", "group2", "group3"];
-    const newMessagesGroup = ["group3"];
+
     const commonProps = {
       player,
       scope: game,
       timeStamp: new Date(TimeSync.serverTime(null, 1000)),
       customKey: activeGroup,
     };
+
+    if (groups.length === 0) {
+      return null;
+    }
 
     return (
       <>
@@ -43,7 +88,7 @@ export default class ChatContainer extends Component {
                 className={`bg-transparent ml-10 text-xl font-semibold leading-none outline-none focus:outline-none ${textColor}`}
               >
                 <div className="flex flex-row items-center">
-                  <span>{g}</span>
+                  <span>Group {convertCharToNumber(g)}</span>
                   {hasNewMessage && (
                     <div className="rounded-full h-3 w-3 flex items-center justify-center bg-blue-500 ml-2" />
                   )}
