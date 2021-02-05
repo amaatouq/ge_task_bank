@@ -53,20 +53,34 @@ export default function SocialExposure(props) {
   if (medianSocialInfo) {
     info.push("median");
   }
-
+  const colHeight = hasFeedback ? "h-full" : "h-1/2";
+  const chatHeight = hasFeedback ? "h-1/2" : "h-full";
   return (
-    <div className="flex justify-end items-center pr-20">
-      <div className="w-full grid grid-flow-row auto-rows-max max-h-96 items-end">
-        {hasFeedback &&
-          neighbors.length > 0 &&
-          info.length > 0 &&
-          info.map((i) => (
-            <SocialInfo key={i} type={i} neighbors={neighbors} />
-          ))}
-        {hasFeedback && neighbors.length > 0 && (
-          <PlayersResponse {...props} neighbors={neighbors} withChat={chat} />
+    <div className="flex justify-end items-end sidebar-right pr-8">
+      <div className={`w-full ${colHeight}`}>
+        {hasFeedback && (
+          <div className={`flex h-1/2 overflow-hidden pb-3`}>
+            <div className={`w-full border-b border-gray-200`}>
+              {neighbors.length > 0 &&
+                info.length > 0 &&
+                info.map((i) => (
+                  <SocialInfo key={i} type={i} neighbors={neighbors} />
+                ))}
+              {neighbors.length > 0 && (
+                <PlayersResponse
+                  {...props}
+                  neighbors={neighbors}
+                  withInfo={info.length > 0}
+                />
+              )}
+            </div>
+          </div>
         )}
-        {chat && <ChatContainer player={player} game={game} />}
+        <div className={`flex ${chatHeight}`}>
+          <div className="w-full">
+            {chat && <ChatContainer player={player} game={game} />}
+          </div>
+        </div>
       </div>
     </div>
   );

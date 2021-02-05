@@ -81,8 +81,8 @@ export default class ChatContainer extends Component {
     }
 
     return (
-      <div className="max-h-64 overflow-y-auto">
-        <div className="py-10 overflow-y-hidden overflow-x-auto whitespace-nowrap">
+      <div className="h-full overflow-hidden">
+        <div className="overflow-y-hidden overflow-x-auto whitespace-nowrap">
           {groups.map((g, i) => {
             let textColor = "text-gray-300";
             let hasNewMessage = false;
@@ -97,12 +97,12 @@ export default class ChatContainer extends Component {
               <button
                 key={i}
                 onClick={() => this.setActiveGroup(g)}
-                className={`bg-transparent ml-10 text-xl font-semibold leading-none outline-none focus:outline-none ${textColor}`}
+                className={`bg-transparent ml-10 md:text-md text-sm font-semibold leading-none outline-none focus:outline-none ${textColor}`}
               >
                 <div className="flex flex-row items-center">
                   <span>Group {convertCharToNumber(g)}</span>
                   {hasNewMessage && (
-                    <div className="rounded-full h-3 w-3 flex items-center justify-center bg-blue-500 ml-2" />
+                    <div className="rounded-full w-3 flex items-center justify-center bg-blue-500 ml-2" />
                   )}
                 </div>
               </button>
@@ -110,17 +110,13 @@ export default class ChatContainer extends Component {
           })}
         </div>
         {groups.map((g) => {
-          const classnames = ["h-full"];
+          const classnames = ["h-messages-chat-group"];
           if (g !== activeGroup) {
             classnames.push("hidden");
           }
 
           return (
-            <div
-              key={g}
-              className={classnames.join(" ")}
-              style={{ height: "calc(100vh - 180px)" }}
-            >
+            <div key={g} className={classnames.join(" ")}>
               <Chat
                 {...commonProps}
                 customKey={g}

@@ -68,7 +68,7 @@ export default class Question extends React.Component {
     return (
       <div
         key="question"
-        className="flex flex-col justify-center items-center pl-8 py-2 pr-24 w-full"
+        className="flex flex-col justify-center items-center pl-8 py-2 p-16 w-full"
       >
         <div className="flex items-baseline justify-center w-full max-w-4xl">
           <div

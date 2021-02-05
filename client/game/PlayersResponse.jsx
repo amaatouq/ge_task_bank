@@ -8,7 +8,7 @@ export default class PlayersResponse extends React.Component {
     const {
       player,
       round,
-      withChat = false,
+      withInfo = false,
       neighbors: players,
       stage,
     } = this.props;
@@ -16,8 +16,8 @@ export default class PlayersResponse extends React.Component {
 
     return (
       <div
-        className={`max-h-64 overflow-y-auto${
-          withChat && " border-b border-gray-200"
+        className={`max-h-social-side overflow-y-auto${
+          withInfo && " with-info"
         }`}
       >
         {players.map((p, i) => {
