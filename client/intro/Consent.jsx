@@ -1,6 +1,7 @@
 import { ConsentButton } from "meteor/empirica:core";
 import React from "react";
 import Wrapper from "../components/Wrapper";
+import TriggerWarning from "./TriggerWarning";
 
 export default class Consent extends React.Component {
   render() {
@@ -8,6 +9,9 @@ export default class Consent extends React.Component {
       <Wrapper {...this.props}>
         <div className="flex justify-center items-center text-base text-gray-800">
           <div className="max-w-2xl">
+
+            <TriggerWarning />
+
             <div className="text-5xl font-semibold mt-8 mb-6">
               {" "}
               Consent Form{" "}
