@@ -103,15 +103,15 @@ Empirica.gameInit((game) => {
     task.instructions = instructions[task.task];
     round.set("task", task);
 
-    round.addStage({
-      name: "response",
-      displayName: "Response",
-      durationInSeconds: responseDuration,
-      // durationInSeconds: 31540000,
-    });
+    for (let i = 0; i < nInteractions + 1; i++) {
+      round.addStage({
+        name: "response",
+        displayName: "Response",
+        durationInSeconds: responseDuration,
+        // durationInSeconds: 31540000,
+      });
 
-    if (playerCount > 1) {
-      for (let i = 0; i < nInteractions + 1; i++) {
+      if (playerCount > 1) {
         round.addStage({
           name: "social",
           displayName: "Social",

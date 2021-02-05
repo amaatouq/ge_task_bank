@@ -29,6 +29,33 @@ treatments:
       - 2duLyYvaQhewWps8x
       - o8zYCvwLka2rwDgfX
       - qGAvofMccGriujk7W
+    archivedAt: 2021-02-05T00:52:24.847Z
+  - name: multi3_continuous_mean_max
+    factorIds:
+      - p6nwB2WcgooiR5f7b
+      - Z8qTZzDedy9mqYYhY
+      - PQvnpuGXvAbpdSAg7
+      - Ciqz88yG78NNW7axH
+      - qtgWqpEtizZ4SKF5C
+      - 8xBkmBYw37fmy9Ztb
+      - AAXBytkKFMDyadCH9
+      - oWBpWDi7Bp2MysKkg
+      - HtyBPSwcDcFZiGLvJ
+      - tJmZu4H8sbYRjXiuK
+      - MaG95p6XpuhAcDuyv
+      - 4iyZdsK3HiRFWYcdi
+      - 2duLyYvaQhewWps8x
+      - o8zYCvwLka2rwDgfX
+      - d8g6RFXEof6HrRm3g
+      - iQFwSueW7AupfFpGu
+      - tPTgyDJuhEMqPfMcK
+      - oe75BoxtCTnRPqRtK
+      - LecBF3rZkCoZ4e4m7
+      - RHzN3nGkCDE6avj7D
+      - RcdR9P9YhKkHn6Ght
+      - BYeSsSwkoAHyh6tJb
+      - wbHTzzZF298gp3zkF
+      - tz95WfetfCbBPhpqw
 factorTypes:
   - _id: juXd9nXMj8iiotuBM
     name: playerCount
@@ -138,6 +165,67 @@ factorTypes:
     type: String
     min: 1
     max: 999999
+  - _id: e2qdsQ7BTpB32kX5j
+    name: networkStructure
+    description: >-
+      For multiplayer, Determine who is connected to who. I.e.,
+      "1-2,1-3,2-5,2-6"
+    required: false
+    type: String
+    min: 1
+    max: 999999999999
+  - _id: 2cYukeq3bvgZb8Qa6
+    name: socialDuration
+    description: Social stage duration in seconds
+    required: false
+    type: Integer
+    min: 1
+    max: 999999999
+  - _id: u6Gc6NvGLnZX57cKg
+    name: meanSocialInfo
+    description: Show mean value of neighbors on social exposure
+    required: false
+    type: Boolean
+  - _id: SfuTi4jrjoJKeNj8m
+    name: minSocialInfo
+    description: Show min value of neighbors on social exposure
+    required: false
+    type: Boolean
+  - _id: JTYhugFFkpcQt794j
+    name: maxSocialInfo
+    description: Show max value of neighbors on social exposure
+    required: false
+    type: Boolean
+  - _id: obi4tgdNS3xNAEiBc
+    name: medianSocialInfo
+    description: Show median value of neighbor on social exposure
+    required: false
+    type: Boolean
+  - _id: HqQepyditiFfBdzH6
+    name: nInteractions
+    description: >-
+      Determines how many interactive stages there will be. This means there
+      will be nInteractions separate stages where players will be able to see
+      their neighbors’ guesses.
+    required: false
+    type: Integer
+    min: 1
+    max: 99999999
+  - _id: g26DS57dNWkaMiRcp
+    name: individualNumeric
+    description: Determines whether or not you can see your neighbors’ individual guesses.
+    required: false
+    type: Boolean
+  - _id: 4Mc2N6mo29A78JWXD
+    name: chatGroups
+    description: >-
+      players are in multiple chat groups (denoted by a letter):
+      1-A,1-B,2-B,3-B,4-A,... (1 has 2 chat windows, can talk with 2 and 3 in
+      window B, and with 4 in window A).
+    required: false
+    type: String
+    min: 1
+    max: 999999999999
 factors:
   - _id: PQvnpuGXvAbpdSAg7
     name: 'true'
@@ -244,6 +332,72 @@ factors:
     name: continuous
     value: continuous
     factorTypeId: mJ3zD5ewQTKtQDmhh
+  - _id: tPTgyDJuhEMqPfMcK
+    name: 30s
+    value: 30
+    factorTypeId: 2cYukeq3bvgZb8Qa6
+  - _id: oe75BoxtCTnRPqRtK
+    name: 'true'
+    value: true
+    factorTypeId: u6Gc6NvGLnZX57cKg
+  - _id: v2BF3Y8ecbj2hoYmG
+    name: 'false'
+    value: false
+    factorTypeId: u6Gc6NvGLnZX57cKg
+  - _id: rAjW9NowNNMdJyRg5
+    name: 'true'
+    value: true
+    factorTypeId: SfuTi4jrjoJKeNj8m
+  - _id: LecBF3rZkCoZ4e4m7
+    name: 'false'
+    value: false
+    factorTypeId: SfuTi4jrjoJKeNj8m
+  - _id: RHzN3nGkCDE6avj7D
+    name: 'true'
+    value: true
+    factorTypeId: JTYhugFFkpcQt794j
+  - _id: 5gCjPyEQTppCvHTcC
+    name: 'false'
+    value: false
+    factorTypeId: JTYhugFFkpcQt794j
+  - _id: DBKnWshiii4gRpyjn
+    name: 'true'
+    value: true
+    factorTypeId: obi4tgdNS3xNAEiBc
+  - _id: RcdR9P9YhKkHn6Ght
+    name: 'false'
+    value: false
+    factorTypeId: obi4tgdNS3xNAEiBc
+  - _id: BYeSsSwkoAHyh6tJb
+    name: 3x
+    value: 3
+    factorTypeId: HqQepyditiFfBdzH6
+  - _id: ZAJfMmqvM58XTiGN5
+    name: 'true'
+    value: true
+    factorTypeId: g26DS57dNWkaMiRcp
+  - _id: wbHTzzZF298gp3zkF
+    name: 'false'
+    value: false
+    factorTypeId: g26DS57dNWkaMiRcp
+  - _id: n9JLgRZHaaxmG5pva
+    name: 3players
+    value: '"1-A,1-B,2-B,3-B,2-A"'
+    factorTypeId: 4Mc2N6mo29A78JWXD
+    archivedAt: 2021-02-04T15:36:43.844Z
+  - _id: dkpPXNPMWngjRc5jr
+    name: 3players
+    value: '1-2,1-3,2-3,'
+    factorTypeId: e2qdsQ7BTpB32kX5j
+    archivedAt: 2021-02-04T15:37:33.668Z
+  - _id: tz95WfetfCbBPhpqw
+    name: 3players
+    value: '1-A,1-B,2-B,3-B,2-A'
+    factorTypeId: 4Mc2N6mo29A78JWXD
+  - _id: iQFwSueW7AupfFpGu
+    name: 3players
+    value: '1-2,1-3,2-3'
+    factorTypeId: e2qdsQ7BTpB32kX5j
 lobbyConfigs:
   - name: Default
     timeoutType: lobby
