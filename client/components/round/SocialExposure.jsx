@@ -13,7 +13,12 @@ export default function SocialExposure(props) {
     minSocialInfo = false,
     maxSocialInfo = false,
     medianSocialInfo = false,
+    playerCount,
   } = treatment;
+
+  if (playerCount === 1) {
+    return null;
+  }
 
   const neighborIndexes = player.get("neighbors");
   const neighbors = [];

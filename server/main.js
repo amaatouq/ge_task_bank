@@ -27,6 +27,7 @@ Empirica.gameInit((game) => {
       socialDuration = 30,
       playerCount,
       networkStructure,
+      interactionMode,
       chatGroups,
       chat = false,
     },
@@ -56,7 +57,7 @@ Empirica.gameInit((game) => {
     player.set("index", i + 1);
   });
 
-  if (playerCount > 0) {
+  if (playerCount > 1) {
     check(
       !networkStructure,
       "networkStructure must be set if in multi player!"
