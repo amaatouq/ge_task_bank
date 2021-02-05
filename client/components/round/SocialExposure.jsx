@@ -8,7 +8,7 @@ export default function SocialExposure(props) {
   const { treatment } = game;
   const {
     chat = false,
-    individualNumeric = true,
+    individualNumeric = false,
     meanSocialInfo = false,
     minSocialInfo = false,
     maxSocialInfo = false,
@@ -26,7 +26,7 @@ export default function SocialExposure(props) {
   let hasFeedback = true;
 
   neighborIndexes.forEach((i) => {
-    const neighbor = game.players.find((p) => p.get("index") === i);
+    const neighbor = game.players.find((p) => p.get("index") === parseInt(i));
 
     if (neighbor) {
       neighbors.push(neighbor);
@@ -37,7 +37,7 @@ export default function SocialExposure(props) {
     hasFeedback = false;
   }
 
-  if (!individualNumeric) {
+  if (individualNumeric) {
     hasFeedback = false;
   }
 
@@ -57,13 +57,14 @@ export default function SocialExposure(props) {
   return (
     <div className="flex justify-end items-center pr-20">
       <div className="w-full grid grid-flow-row auto-rows-max max-h-96 items-end">
-        {neighbors.length > 0 &&
+        {hasFeedback &&
+          neighbors.length > 0 &&
           info.length > 0 &&
           info.map((i) => (
             <SocialInfo key={i} type={i} neighbors={neighbors} />
           ))}
         {hasFeedback && neighbors.length > 0 && (
-          <PlayersResponse {...props} withChat={chat} />
+          <PlayersResponse {...props} neighbors={neighbors} withChat={chat} />
         )}
         {chat && <ChatContainer player={player} game={game} />}
       </div>

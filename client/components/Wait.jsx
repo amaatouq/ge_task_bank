@@ -108,15 +108,26 @@ export default class Wait extends React.Component {
                 tick
                 onClick={() => player.stage.submit()}
                 text="CONTINUE"
+                disabled={player.stage.submitted}
               />
               {longTermEngagement && (
                 <div className="ml-4">
-                  <Button tick onClick={this.handleCopy} text="COPY LINK" />
+                  <Button
+                    tick
+                    onClick={this.handleCopy}
+                    text="COPY LINK"
+                    disabled={player.stage.submitted}
+                  />
                 </div>
               )}
               {quitEarly && (
                 <div className="ml-4">
-                  <Button tick onClick={this.handleQuit} text="QUIT" />
+                  <Button
+                    tick
+                    onClick={this.handleQuit}
+                    text="QUIT"
+                    disabled={player.stage.submitted}
+                  />
                 </div>
               )}
             </div>
