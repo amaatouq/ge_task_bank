@@ -96,9 +96,13 @@ Empirica.gameInit((game) => {
     tasks = _.shuffle(tasks);
   }
 
+  let numberOfInteractions = nInteractions || 0; // Fallback nInteractions
+
   // Round/Stage info
   check(
-    playerCount > 1 && interactionMode === "continuous" && nInteractions > 0,
+    playerCount > 1 &&
+      interactionMode === "continuous" &&
+      numberOfInteractions > 0,
     "Continuous interaction mode with multiplayer cannot have nInteractions more than 0 "
   );
 
@@ -107,14 +111,6 @@ Empirica.gameInit((game) => {
     const task = tasks[i];
     task.instructions = instructions[task.task];
     round.set("task", task);
-
-    let numberOfInteractions = nInteractions || 0; // Fallback nInteractions
-
-    check(
-      numberOfInteractions > 0 &&
-        (playerCount <= 1 || interactionMode !== "discreet"),
-      "For discreet interaction should be 0 and should multiple player"
-    );
 
     for (let i = 0; i < numberOfInteractions + 1; i++) {
       round.addStage({
