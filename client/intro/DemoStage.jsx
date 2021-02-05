@@ -49,7 +49,7 @@ function NumberToWordsDemo({ answer }) {
 function UnitDemo(props) {
   const { input, result, magnitude, focused, answer } = props;
 
-  let unit = "chocolate";
+  let unit = "point";
   if (!unit) {
     return "";
   }
@@ -86,7 +86,7 @@ export default class DemoStage extends Component {
     this.state = {
       answer: "",
       err: "",
-      remainingSeconds: 120, // faketimer
+      remainingSeconds: 999999, // faketimer
       submitted: false,
       score: 0,
       correctAnswer: 150,
@@ -173,13 +173,11 @@ export default class DemoStage extends Component {
         {answer === "" ? (
           ""
         ) : (
-            <div className="absolute bottom-0">
-              <div className="absolute">
-                <div className="mt-12">
-                  <Button tick text="Submit" />
-                </div>
-              </div>
+
+            <div className="mt-12">
+              <Button tick text="Submit" />
             </div>
+
           )}
       </form>
     );
@@ -241,25 +239,13 @@ export default class DemoStage extends Component {
       <div className="flex flex-col h-screen text-base">
         <header className="h-16	bg-gray-200 grid grid-cols-3 items-center px-6">
           <div className="text-lg">Demonstration</div>
-          <div className="text-lg">
-            <Timer remainingSeconds={remainingSeconds} />
-          </div>
           <div className="flex justify-end items-center">
             <DebugButtons {...this.props} />
             {feedback && <Score player={player} demoScore={score} />}
           </div>
         </header>
 
-        <section className={`bg-gray-50 h-full overflow-auto grid grid-cols-2`}>
-          <div
-            key="image"
-            className="p-8 pl-24 h-full w-full m-w-full m-h-full overflow-hidden"
-          >
-            <img
-              className="h-full w-full object-scale-down"
-              src="/instructions/candies_C_268.jpg"
-            />
-          </div>
+        <section className={`bg-gray-50  `}>
           <div
             key="question"
             className="flex flex-col justify-center items-center p-8 pr-24"
@@ -271,7 +257,7 @@ export default class DemoStage extends Component {
                 className="flex flex-col justify-center items-start w-full ml-4"
               >
                 <div className="text-2xl text-gray-400">
-                  Estimate the number of chocolates in the glass.
+                  How many points will fakeTeamA score in their game of inventedSport against fakeTeamB on inventedDate?
                 </div>
                 <div className="mt-8 w-full">
                   {!submitted && this.formAnswer()}
@@ -285,8 +271,9 @@ export default class DemoStage extends Component {
         <p className="mt-24" style={{
           display: "flex",
           justifyContent: "center",
-          margin: "0px",
-          marginBottom: "10px"
+          margin: "0",
+          marginTop: "5px",
+          marginBottom: "5px"
         }}>
           <CustomButton
             onClick={this.props.onPrev}
