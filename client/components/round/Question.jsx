@@ -73,7 +73,9 @@ export default class Question extends React.Component {
         <div className="flex items-baseline justify-center w-full max-w-4xl">
           <div
             className={`${
-              stage.name !== "response" && "text-right w-20 "
+              stage.name !== "response" &&
+              stage.name !== "social" &&
+              "text-right w-20 "
             }text-base text-gray-500 pr-3`}
           >
             {round.index + 1}.

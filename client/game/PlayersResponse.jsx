@@ -5,9 +5,14 @@ import { getUnit } from "../../shared/unit";
 
 export default class PlayersResponse extends React.Component {
   render() {
-    const { game, player, stage, round, withChat = false } = this.props;
+    const {
+      player,
+      stage,
+      round,
+      withChat = false,
+      neighbors: players,
+    } = this.props;
     const answerType = stage.name === "response" ? "tmpanswer" : "answer";
-    const players = _.reject(game.players, (p) => p._id === player._id);
     players.unshift(player);
 
     return (
