@@ -64,12 +64,12 @@ Empirica.gameInit((game) => {
 
     game.players.forEach((p) => {
       p.set("neighbors", getNeighbors(networkStructure, p));
-    });
 
-    if (chat) {
-      check(!chatGroups, "chatGroups must be set when chat is used!");
-      p.set("chatGroups", getChatGroups(chatGroups, p));
-    }
+      if (chat) {
+        check(!chatGroups, "chatGroups must be set when chat is used!");
+        p.set("chatGroups", getChatGroups(chatGroups, p));
+      }
+    });
   }
 
   // Task selection
