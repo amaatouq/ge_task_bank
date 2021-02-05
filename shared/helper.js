@@ -17,7 +17,7 @@ export function getSocialInfoValue(type, neighbors) {
   }
 
   const values = neighbors.map(
-    (p) => p.stage.get("tmpanswer") || p.round.get("answer")
+    (p) => p.stage.get("tmpanswer") || p.round.get("answer") || 0
   );
 
   if (values.length === 0) {
