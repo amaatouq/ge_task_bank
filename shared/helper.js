@@ -66,12 +66,12 @@ export function getNeighbors(structure, player) {
 
   network.forEach((n) => {
     const connection = n.split("-");
-    const playerIndex = player.get("index") + 1;
+    const playerIndex = player.get("index");
 
     if (playerIndex === parseInt(connection[0])) {
-      neighbors.push(connection[1] - 1);
+      neighbors.push(connection[1]);
     } else if (playerIndex === parseInt(connection[1])) {
-      neighbors.push(connection[0] - 1);
+      neighbors.push(connection[0]);
     }
   });
 
