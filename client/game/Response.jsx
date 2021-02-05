@@ -118,7 +118,12 @@ export default class Response extends React.Component {
             <Answer correct answer={task.answer} {...this.props} />
             <RoundScore score={player.round.get("score") || 0} />
             <div className="mt-8">
-              <Button tick onClick={() => player.stage.submit()} text="OK" />
+              <Button
+                tick
+                onClick={() => player.stage.submit()}
+                text="OK"
+                disabled={player.stage.submitted}
+              />
             </div>
           </div>
         );

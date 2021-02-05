@@ -12,8 +12,11 @@ module.exports = {
   },
   variants: {
     extend: {
-      borderWidth: ["focus"],
-      backgroundColor: ["active"],
+      borderWidth: ["focus", "disabled"],
+      backgroundColor: ["active", "disabled"],
+      opacity: ["disabled"],
+      cursor: ["disabled"],
+      textColor: ["disabled"],
     },
   },
   plugins: [forms],
