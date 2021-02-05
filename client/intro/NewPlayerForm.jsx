@@ -33,7 +33,7 @@ export default class NewPlayerForm extends React.Component {
                 className="block mt-8 text-gray-500 text-medium"
                 htmlFor="id"
               >
-                Player ID
+                Please enter your MTurk ID:
               </label>
 
               <input
@@ -44,13 +44,10 @@ export default class NewPlayerForm extends React.Component {
                 id="id"
                 value={id}
                 onChange={this.handleUpdate}
-                placeholder="e.g. john@example.com"
+                placeholder=""
                 required
                 autoComplete="off"
               />
-              <div className="m-1 text-sm text-gray-400 leading-snug">
-                Enter your player identification (provided ID, MTurk ID, etc.)
-              </div>
 
               <div className="mt-8">
                 <Button text="Submit" />
