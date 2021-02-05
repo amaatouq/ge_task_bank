@@ -131,6 +131,12 @@ export default class Response extends React.Component {
   }
 
   render() {
+    const {
+      stage,
+      game: {
+        treatment: { playerCount },
+      },
+    } = this.props;
     return (
       <>
         <QuestionImage {...this.props} />
