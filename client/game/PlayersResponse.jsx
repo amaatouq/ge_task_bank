@@ -5,14 +5,7 @@ import { getUnit } from "../../shared/unit";
 
 export default class PlayersResponse extends React.Component {
   render() {
-    const {
-      player,
-      stage,
-      round,
-      withChat = false,
-      neighbors: players,
-    } = this.props;
-    const answerType = stage.name === "response" ? "tmpanswer" : "answer";
+    const { player, round, withChat = false, neighbors: players } = this.props;
     players.unshift(player);
 
     return (
@@ -30,7 +23,7 @@ export default class PlayersResponse extends React.Component {
           if (!avatar) {
             return null;
           }
-          const answer = p.stage.get(answerType);
+          const answer = p.stage.get("answer") || p.round.get("answer");
           const unit = getUnit({ round, answer, magnitude: true });
 
           return (
