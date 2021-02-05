@@ -1,23 +1,10 @@
-import pluralize from "pluralize";
 import React from "react";
-import { magnitudesToEnglish } from "../../../shared/conversions";
+import { getUnit } from "../../../shared/unit";
 
 export default class Unit extends React.Component {
   render() {
     const { input, result, magnitude, round, focused, answer } = this.props;
-    const task = round.get("task");
-
-    let unit = task.question.unit;
-    if (!unit) {
-      return "";
-    }
-
-    if (magnitude && task.question.magnitude) {
-      unit = magnitudesToEnglish[task.question.magnitude] + " " + unit;
-    }
-
-    const a = parseInt(answer || 0, 10);
-    unit = pluralize(unit, a);
+    const unit = getUnit({ round, answer, magnitude });
 
     return (
       <div

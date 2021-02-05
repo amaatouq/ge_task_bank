@@ -101,6 +101,7 @@ export default class Response extends React.Component {
 
     switch (stage.name) {
       case "response":
+      case "social":
         return (
           <>
             <ResponseInput {...this.props} />
@@ -118,7 +119,12 @@ export default class Response extends React.Component {
             <Answer correct answer={task.answer} {...this.props} />
             <RoundScore score={player.round.get("score") || 0} />
             <div className="mt-8">
-              <Button tick onClick={() => player.stage.submit()} text="OK" />
+              <Button
+                tick
+                onClick={() => player.stage.submit()}
+                text="OK"
+                disabled={player.stage.submitted}
+              />
             </div>
           </div>
         );
@@ -126,12 +132,6 @@ export default class Response extends React.Component {
   }
 
   render() {
-    const {
-      stage,
-      game: {
-        treatment: { playerCount },
-      },
-    } = this.props;
     return (
       <>
         <QuestionImage {...this.props} />
@@ -140,7 +140,7 @@ export default class Response extends React.Component {
             <Question {...this.props}>{this.renderAnswer()}</Question>
           </div>
         </div>
-        <SocialExposure stage={stage} playerCount={playerCount} />
+        <SocialExposure {...this.props} />
       </>
     );
   }
