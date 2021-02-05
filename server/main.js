@@ -116,16 +116,16 @@ Empirica.gameInit((game) => {
       round.addStage({
         name: "response",
         displayName: "Response",
-        // durationInSeconds: responseDuration,
-        durationInSeconds: 31540000,
+        durationInSeconds: responseDuration,
+        // durationInSeconds: 31540000,
       });
 
       if (playerCount > 1) {
         round.addStage({
           name: "social",
           displayName: "Social",
-          // durationInSeconds: socialDuration,
-          durationInSeconds: 31540000,
+          durationInSeconds: socialDuration,
+          // durationInSeconds: 31540000,
         });
       }
     }
