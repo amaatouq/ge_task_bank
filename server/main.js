@@ -96,6 +96,10 @@ Empirica.gameInit((game) => {
   }
 
   // Round/Stage info
+  check(
+    playerCount > 1 && interactionMode === "continuous" && nInteractions > 0,
+    "Continuous interaction mode with multiplayer cannot have nInteractions more than 0 "
+  );
 
   _.times(nRounds, (i) => {
     const round = game.addRound();
