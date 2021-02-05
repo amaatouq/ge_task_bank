@@ -27,6 +27,7 @@ Empirica.gameInit((game) => {
       socialDuration = 30,
       playerCount,
       networkStructure,
+      interactionMode,
       chatGroups,
       chat = false,
     },
@@ -56,7 +57,7 @@ Empirica.gameInit((game) => {
     player.set("index", i + 1);
   });
 
-  if (playerCount > 0) {
+  if (playerCount > 1) {
     check(
       !networkStructure,
       "networkStructure must be set if in multi player!"
@@ -103,20 +104,28 @@ Empirica.gameInit((game) => {
     task.instructions = instructions[task.task];
     round.set("task", task);
 
-    for (let i = 0; i < nInteractions + 1; i++) {
+    let numberOfInteractions = nInteractions || 0; // Fallback nInteractions
+
+    check(
+      numberOfInteractions > 0 &&
+        (playerCount <= 1 || interactionMode !== "discreet"),
+      "For discreet interaction should be 0 and should multiple player"
+    );
+
+    for (let i = 0; i < numberOfInteractions + 1; i++) {
       round.addStage({
         name: "response",
         displayName: "Response",
-        durationInSeconds: responseDuration,
-        // durationInSeconds: 31540000,
+        // durationInSeconds: responseDuration,
+        durationInSeconds: 31540000,
       });
 
       if (playerCount > 1) {
         round.addStage({
           name: "social",
           displayName: "Social",
-          durationInSeconds: socialDuration,
-          // durationInSeconds: 31540000,
+          // durationInSeconds: socialDuration,
+          durationInSeconds: 31540000,
         });
       }
     }
