@@ -96,13 +96,9 @@ Empirica.gameInit((game) => {
     tasks = _.shuffle(tasks);
   }
 
-  let numberOfInteractions = nInteractions || 0; // Fallback nInteractions
-
   // Round/Stage info
   check(
-    playerCount > 1 &&
-      interactionMode === "continuous" &&
-      numberOfInteractions > 0,
+    playerCount > 1 && interactionMode === "continuous" && nInteractions > 0,
     "Continuous interaction mode with multiplayer cannot have nInteractions more than 0 "
   );
 
@@ -112,7 +108,7 @@ Empirica.gameInit((game) => {
     task.instructions = instructions[task.task];
     round.set("task", task);
 
-    for (let i = 0; i < numberOfInteractions + 1; i++) {
+    for (let i = 0; i < nInteractions + 1; i++) {
       round.addStage({
         name: "response",
         displayName: "Response",
