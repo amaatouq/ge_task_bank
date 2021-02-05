@@ -15,9 +15,18 @@ export default function SocialExposure(props) {
     medianSocialInfo = false,
   } = treatment;
 
-  const neighbors = player.get("neighbors");
+  const neighborIndexes = player.get("neighbors");
+  const neighbors = [];
   const info = [];
   let hasFeedback = true;
+
+  neighborIndexes.forEach((i) => {
+    const neighbor = game.players.find((p) => p.get("index") === i);
+
+    if (neighbor) {
+      neighbors.push(neighbor);
+    }
+  });
 
   if (stage.name === "response") {
     hasFeedback = false;

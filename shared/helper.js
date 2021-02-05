@@ -10,31 +10,55 @@ export function convertCharToNumber(char) {
   return char.toUpperCase().charCodeAt(0) - 64;
 }
 
-export function getSocialInfoValue(type, values) {
+export function getSocialInfoValue(type, neighbors) {
+  if (!neighbors) {
+    console.warn("No neighbors on getSocialInfovalue!");
+    return 0;
+  }
+
+  const values = neighbors.map(
+    (p) => p.stage.get("tmpanswer") || p.round.get("answer")
+  );
+
+  if (values.length === 0) {
+    return 0;
+  }
+
   switch (type) {
     case "mean":
-      getMeanValue(values);
-      break;
+      return getMeanValue(values);
     case "min":
-      getMinValue(values);
-      break;
+      return getMinValue(values);
     case "max":
-      getMaxValue(values);
-      break;
+      return getMaxValue(values);
     case "median":
-      getMedianValue(values);
-      break;
-
+      return getMedianValue(values);
     default:
       console.warn("Social info type is not supported!");
-      break;
+      return 0;
   }
 }
 
-export function getMeanValue(values) {}
-export function getMinValue(values) {}
-export function getMaxValue(values) {}
-export function getMedianValue(values) {}
+export function getMeanValue(values) {
+  const getSum = (total, num) => {
+    return total + num;
+  };
+
+  let result = values.reduce(getSum, 0);
+  result = (result / values.length).toFixed(2);
+  return result;
+}
+export function getMinValue(values) {
+  return Math.min(...values);
+}
+export function getMaxValue(values) {
+  return Math.max(...values);
+}
+export function getMedianValue(values) {
+  const mid = Math.floor(values.length / 2);
+  const nums = [...values].sort((a, b) => a - b);
+  return values.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+}
 
 export function getNeighbors(structure, player) {
   const neighbors = [];
