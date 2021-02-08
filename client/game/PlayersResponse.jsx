@@ -2,6 +2,7 @@ import React from "react";
 import NumberFormat from "react-number-format";
 import { nameToAvatar } from "../../shared/avatars";
 import { getUnit } from "../../shared/unit";
+import { TickIcon } from "../components/icons/TickIcon";
 
 export default class PlayersResponse extends React.Component {
   render() {
@@ -35,15 +36,24 @@ export default class PlayersResponse extends React.Component {
             p.round.get("answer");
           const unit = getUnit({ round, answer, magnitude: true });
 
+          const playerInfoClassNames = ["flex flex-row items-center pl-2"];
+          if (p.stage.submitted) {
+            playerInfoClassNames.push("bg-green-100");
+          }
+
           return (
             <div key={i} className="flex flex-col justify-end items-end mb-4">
-              <div className="flex flex-row items-center">
+              <div className={playerInfoClassNames.join(" ")}>
+                {p.stage.submitted && (
+                  <TickIcon width={12} className="mr-2" color="#008c41" />
+                )}
                 {i === 0 && (
                   <span className="text-gray-300 pr-3 text-sm">You</span>
                 )}
+
                 <div
                   dangerouslySetInnerHTML={{ __html: avatar.svg }}
-                  className="pr-3 h-10 w-10"
+                  className="pr-3 w-10 h-icon-svg"
                 />
                 <span className="text-gray-400 pr-3">{p.get("avatar")}</span>
                 <span className="text-gray-500 pr-3 text-sm">
