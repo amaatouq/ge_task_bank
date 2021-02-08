@@ -2,7 +2,7 @@ import Empirica from "meteor/empirica:core";
 import { avatarNames } from "../shared/avatars.js";
 import "./bots.js";
 import "./callbacks.js";
-import { instructions, taskData } from "./questions";
+import { instructions, taskData } from "../shared/tasks/tasks";
 import { getChatGroups, getNeighbors, getOtherPlayers } from "../shared/helper";
 
 // gameInit is where the structure of a game is defined.
