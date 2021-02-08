@@ -3,14 +3,24 @@ treatments:
     factorIds:
       - YWwosMevTALbyZmjc
       - Z8qTZzDedy9mqYYhY
+<<<<<<< HEAD
       - nQ8GQJ5XbaaWBPxBK
       - v7njQ4bWPypBcJ43n
+=======
+      - Jck2MChGCTBmYDT6y
+      - oP2c7grWPHbYfgo7d
+>>>>>>> all_recent_feat_merged
       - qtgWqpEtizZ4SKF5C
       - 8xBkmBYw37fmy9Ztb
       - oWBpWDi7Bp2MysKkg
       - HtyBPSwcDcFZiGLvJ
+<<<<<<< HEAD
       - uL9QuNLtXvGawYYCo
       - ZpuqmBcSAPFGca29Z
+=======
+      - tNTjGkudgj8QWEN37
+      - A5kMZp5o6gouqKEKj
+>>>>>>> all_recent_feat_merged
       - 4iyZdsK3HiRFWYcdi
   - name: multi3
     factorIds:
@@ -90,7 +100,11 @@ treatments:
       - eC2FSHLZvFFGu4ifi
       - Kx8eQvgmXphXMC9LD
 factorTypes:
+<<<<<<< HEAD
   - _id: Qnsbuwjx5BqTKRf4k
+=======
+  - _id: pv33ikQ6gT7ifmc4r
+>>>>>>> all_recent_feat_merged
     name: playerCount
     description: The Number of players participating in the given game.
     required: true
@@ -170,9 +184,12 @@ factorTypes:
     description: >-
       Determines what percentage of players will receive hints for their
       questions. This is a JSON map for player index to an array of hint indexes
-      that describes exactly which hints are available to which player. If a
-      player is not defined they have no hints, if no hints are defined at all,
-      all players see all hints. E.g. { "1": [1,2], "2": [2,3], "4": [2]...}
+      that describes exactly which hints are available to which player. 
+      If a player is not defined they have no hints. 
+      If no hints are defined at all, all players see all hints.     
+      If you want to a random selection of hints (no doubles), put a "?" (with
+      the quotation marks) instead of a number.
+      E.g. { "1": [1,2], "2": [2,3], "4": [2, "?"]...}. 
     required: false
     type: String
   - _id: nB5HyfYmdxKQzWkyi
@@ -180,6 +197,7 @@ factorTypes:
     description: Allows to set the hints as directly revealed.
     required: false
     type: Boolean
+<<<<<<< HEAD
   - _id: LqbnLgDHgJzprHbAR
     name: chat
     description: >-
@@ -352,6 +370,65 @@ factors:
     name: '1'
     value: 1
     factorTypeId: Qnsbuwjx5BqTKRf4k
+=======
+  - _id: b48q4W96daDbt4Gmd
+    name: hideAvatar
+    description: 'If this is set to true, it will hide the players'' avatar during the game.'
+    required: false
+    type: Boolean
+  - _id: 8faqAbLdQx7La6C7u
+    name: hideTimer
+    description: >-
+      If this is set to true, it will hide the timer in all the stages of the
+      game except the tutorial.
+    required: false
+    type: Boolean
+factors:
+  - _id: Jck2MChGCTBmYDT6y
+    name: 'true'
+    value: true
+    factorTypeId: wz7s4ufXj2ss5hHGY
+  - _id: gkD6sAFcoz9sSn6Qo
+    name: 'false'
+    value: false
+    factorTypeId: wz7s4ufXj2ss5hHGY
+  - _id: oP2c7grWPHbYfgo7d
+    name: 'true'
+    value: true
+    factorTypeId: GCGbdjiqFbsHYAYSk
+  - _id: Bpff6vTHc4hx4p9BD
+    name: 'false'
+    value: false
+    factorTypeId: GCGbdjiqFbsHYAYSk
+  - _id: tNTjGkudgj8QWEN37
+    name: 'true'
+    value: true
+    factorTypeId: YMa7vmBFmum5YcHX4
+  - _id: eD6DsxAY8eKJ9FSMJ
+    name: 'false'
+    value: false
+    factorTypeId: YMa7vmBFmum5YcHX4
+  - _id: A5kMZp5o6gouqKEKj
+    name: 'true'
+    value: true
+    factorTypeId: pGbLrSrHZAatHoC9K
+  - _id: XofbX6NJ8GTX2rEfW
+    name: 'false'
+    value: false
+    factorTypeId: pGbLrSrHZAatHoC9K
+  - _id: hHf3sGPeWftyRCTMP
+    name: 'true'
+    value: true
+    factorTypeId: nB5HyfYmdxKQzWkyi
+  - _id: nc5xd6CEG9gadGgwi
+    name: 'false'
+    value: false
+    factorTypeId: nB5HyfYmdxKQzWkyi
+  - _id: YWwosMevTALbyZmjc
+    name: '1'
+    value: 1
+    factorTypeId: pv33ikQ6gT7ifmc4r
+>>>>>>> all_recent_feat_merged
   - _id: Z8qTZzDedy9mqYYhY
     name: '5'
     value: 5
@@ -388,6 +465,7 @@ factors:
     name: '45'
     value: 45
     factorTypeId: sToqhgYZPejDWvsp9
+<<<<<<< HEAD
   - _id: p6nwB2WcgooiR5f7b
     name: '3'
     value: 3
@@ -447,6 +525,32 @@ factors:
     name: '0'
     value: 0
     factorTypeId: HqQepyditiFfBdzH6
+=======
+  - _id: bZ7CAPYhYGZZgvA6N
+    name: '999999999'
+    value: 999999999
+    factorTypeId: sToqhgYZPejDWvsp9
+  - _id: YGyrZQhE6azy6h4cE
+    name: 1random
+    value: '{"1":["?"]}'
+    factorTypeId: KPaBsT8QA6WWc8osT
+  - _id: FB5wxSJrMBYE2ys9a
+    name: 'true'
+    value: true
+    factorTypeId: b48q4W96daDbt4Gmd
+  - _id: pHbnCjGzbZdoTv4PC
+    name: 'false'
+    value: false
+    factorTypeId: b48q4W96daDbt4Gmd
+  - _id: 9JmumrbBhASe7ozsE
+    name: 'true'
+    value: true
+    factorTypeId: 8faqAbLdQx7La6C7u
+  - _id: bWDTCCc9hLCqGZBAv
+    name: 'false'
+    value: false
+    factorTypeId: 8faqAbLdQx7La6C7u
+>>>>>>> all_recent_feat_merged
 lobbyConfigs:
   - name: Default
     timeoutType: lobby
