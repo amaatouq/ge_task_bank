@@ -19,9 +19,9 @@ export default class Consent extends React.Component {
 
             <div>
               <p><strong>Department: </strong>UCL Organisations and Innovation</p>
-              <p><strong>Name and contact details of the researchers: </strong>Dr. Joshua Becker (joshua.becker@ucl.ac.uk), Samuel Dupret (samuel.dupret.19@ucl.ac.uk)</p>
+              <p><strong>Name and contact details of the researchers: </strong>Dr. Joshua Becker (joshua.becker@ucl.ac.uk)</p>
               <p><strong>Name and contact details of the UCL Data Protection Officer: </strong>Lee Shailer (data-protection@ucl.ac.uk)</p>
-              <p>This study has been <strong>approved by ?? Ethics Chair</strong> [??]</p>
+              <p>This study has been approved in accordance with the ethical standards at University College London.</p>
             </div>
 
             <h4 className="text-3xl font-semibold mt-8 mb-6">Information about this study</h4>

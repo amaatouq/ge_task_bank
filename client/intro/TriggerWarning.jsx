@@ -24,9 +24,6 @@ export default class TriggerWarning extends Component {
                         If you have a history of <strong>gambling</strong>, you might want to stop the study now and close this browser. You will not be
                         penalised in any way.
                     </p>
-                    <p>
-                        LINKS
-                    </p>
                 </div>
             </div>
 
