@@ -66,7 +66,7 @@ Empirica.exitSteps((game, player) => {
       player.exitStatus !== "finished" &&
       player.exitReason !== "playerQuit")
   ) {
-    return [Sorry, Thanks];
+    return [Sorry];
   }
   return [SurveyNBA, ExitSurvey, Thanks];
 });
