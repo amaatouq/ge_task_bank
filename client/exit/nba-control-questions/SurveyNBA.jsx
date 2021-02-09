@@ -43,12 +43,8 @@ export default class SurveyNBA extends Component {
                             justifyContent: "center",
                         }}>
                             <Button
-                                text={"next"}
+                                text={"Next"}
                                 onClick={onSubmit}
-                                disabled={
-                                    (Object.keys(sportsConsumeNBA).length !== questions.length) ||
-                                    (hasFavouriteTeam && favouriteTeam === "")
-                                }
                             />
                         </p>
                     </div>
