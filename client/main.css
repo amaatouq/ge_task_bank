@@ -77,3 +77,29 @@ input[type="number"]::-webkit-outer-spin-button {
     opacity: 0;
   }
 }
+
+
+/* Matrice styling */
+.matrix {
+  display: flex;
+  justify-content: center;
+}
+
+.matrix table {
+  border-collapse: collapse;
+}
+
+.matrix td, th {
+  padding: 15px;
+}
+
+.matrix .matrix-input, th {
+  text-align: center;
+}
+
+
+.matrix tr:hover {
+  background-color: #eaf0f5;
+}
+
+.matrix input[type='radio'] { transform: scale(2); }

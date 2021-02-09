@@ -1,15 +1,23 @@
+// General Empirica imports
 import Empirica from "meteor/empirica:core";
 import { render } from "react-dom";
-import ExitSurvey from "./exit/ExitSurvey";
-import Thanks from "./exit/Thanks";
-import Round from "./game/Round";
-import Waiting from "./components/Waiting";
+
+// Intro imports
 import Consent from "./intro/Consent";
+import NewPlayerForm from "./intro/NewPlayerForm";
 import Instructions from "./intro/Instructions";
 import DemoStage from "./intro/DemoStage";
-import NewPlayerForm from "./intro/NewPlayerForm";
-import Sorry from "./exit/Sorry";
 import Quiz from "./intro/Quiz";
+
+// Exit imports
+import SurveyNBA from "./exit/nba-control-questions/SurveyNBA";
+import ExitSurvey from "./exit/ExitSurvey";
+import Thanks from "./exit/Thanks";
+import Sorry from "./exit/Sorry";
+
+// Other imports
+import Round from "./game/Round";
+import Waiting from "./components/Waiting";
 
 // Set the About Component you want to use for the About dialog (optional).
 // Empirica.about(About);
@@ -60,7 +68,7 @@ Empirica.exitSteps((game, player) => {
   ) {
     return [Sorry, Thanks];
   }
-  return [ExitSurvey, Thanks];
+  return [SurveyNBA, ExitSurvey, Thanks];
 });
 
 // Start the app render tree.
