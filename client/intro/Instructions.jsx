@@ -2,6 +2,8 @@ import React, { Component, Fragment } from "react";
 import { CustomButton } from "../components/Button";
 import IntroLayout from "./IntroLayout";
 import { isMultiPlayer } from "../../shared/helper";
+import { instructions, taskData } from "../../shared/tasks/tasks";
+
 export default class GameOverview extends Component {
   constructor(props) {
     super(props);
@@ -9,21 +11,16 @@ export default class GameOverview extends Component {
   render() {
     const {
       game: {
-        treatment: {
-          nRounds,
-          responseDuration,
-          playerCount,
-          feedback,
-          feedbackDuration,
-          longTermEngagement,
-          quitEarly,
-        },
+        treatment: { nRounds, responseDuration, playerCount, feedback, feedbackDuration, longTermEngagement, quitEarly, hideAvatar, hideTimer },
       },
       hasPrev,
       onPrev,
       onNext,
       hasNext,
     } = this.props;
+
+    let tasks = taskData.slice();
+    let textRounds = tasks.length < nRounds ? tasks.length : nRounds
 
     return (
       <IntroLayout title="Instructions" {...this.props}>
@@ -36,7 +33,7 @@ export default class GameOverview extends Component {
           <strong>Rounds</strong>
         </p>
         <p>
-          The game consists of <strong>{nRounds} rounds</strong>. In each round
+          The game consists of <strong>{textRounds} round{textRounds > 1 && "s"}</strong>. In each round
           you will see a question (possibly an image as well) and be asked to{" "}
           <strong>
             make an educated{" "}
@@ -72,20 +69,22 @@ export default class GameOverview extends Component {
           Once you start typing an answer, a <strong>Submit</strong> button will
           appear that you can click when you are ready.
         </p>
-        <p>
-          You have <strong>{responseDuration} seconds</strong> to submit your
-          answer.
-        </p>
+        {!hideTimer &&
+          <p>
+            You have <strong>{responseDuration} seconds</strong> to submit your answer.
+          </p>
+        }
 
         <br />
 
-        <p>
-          <strong>Avatar</strong>
-        </p>
-        <p>
-          You will receive an avatar (an animal's icon and name). Your avatar
-          appears in the top left corner of the screen during the game.
-        </p>
+        {!hideAvatar &&
+          <div>
+            <p><strong>Avatar</strong></p>
+            <p>
+              You will receive an avatar (an animal's icon and name). Your avatar appears in the top left corner of the screen during the game.
+          </p>
+          </div>
+        }
 
         {isMultiPlayer(playerCount) && (
           <Fragment>
@@ -121,11 +120,11 @@ export default class GameOverview extends Component {
             can click an "OK" button when you have finished reading the answer.{" "}
           </p>
         ) : (
-          <p>
-            Once you have submitted your answer, you will NOT be shown the
-            correct answer.
-          </p>
-        )}
+            <p>
+              Once you have submitted your answer, you will NOT be shown the
+              correct answer.
+            </p>
+          )}
         <p>
           You will score points{" "}
           <strong>
@@ -172,11 +171,11 @@ export default class GameOverview extends Component {
             )}
           </Fragment>
         ) : (
-          <p>
-            Once you have provided your answer and obtained your score, the next
-            question starts.
-          </p>
-        )}
+            <p>
+              Once you have provided your answer and obtained your score, the next
+              question starts.
+            </p>
+          )}
 
         <br />
 
@@ -192,8 +191,7 @@ export default class GameOverview extends Component {
           score.
         </p>
         <p>
-          You are given more time than in the actual game to understand the
-          layout better.
+          You are given a different amount of time than in the actual game, just for this practice stage.
         </p>
 
         <br />
