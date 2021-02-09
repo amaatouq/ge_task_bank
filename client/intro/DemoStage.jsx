@@ -65,13 +65,11 @@ function UnitDemo(props) {
     <div
       className={
         result || input
-          ? `pl-2 py-2 text-xl ${
-              input
-                ? "border-b-2 border-gray-300 text-gray-400"
-                : "text-gray-500 pr-2"
-            } whitespace-nowrap leading-snug ${
-              focused ? "border-gray-500" : "border-gray-300"
-            }`
+          ? `pl-2 py-2 text-xl ${input
+            ? "border-b-2 border-gray-300 text-gray-400"
+            : "text-gray-500 pr-2"
+          } whitespace-nowrap leading-snug ${focused ? "border-gray-500" : "border-gray-300"
+          }`
           : ""
       }
     >
@@ -175,14 +173,14 @@ export default class DemoStage extends Component {
         {answer === "" ? (
           ""
         ) : (
-          <div className="bottom-0">
-            <div className="relative">
-              <div className="mt-6">
-                <Button tick text="Submit" />
+            <div className="bottom-0">
+              <div className="relative">
+                <div className="mt-6">
+                  <Button tick text="Submit" disabled={answer < 0} />
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
       </form>
     );
   }
