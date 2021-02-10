@@ -71,12 +71,12 @@ export default class Question extends React.Component {
         className="flex flex-col justify-center items-center p-8 pr-24"
       >
         <div className="flex items-baseline justify-center w-full max-w-6xl">
-          <div className="text-base text-gray-500">{round.index + 1}.</div>
+          <div className="text-base text-gray-800">{round.index + 1}.</div>
           <div
             key="question"
             className="flex flex-col justify-center items-start w-full ml-4"
           >
-            <div className="text-2xl text-gray-400">
+            <div className="text-2xl text-gray-800">
               {task.question.text}
               {task.instructions ? (
                 <div
@@ -92,17 +92,17 @@ export default class Question extends React.Component {
                   </svg>
                 </div>
               ) : (
-                ""
-              )}
+                  ""
+                )}
             </div>
 
             {task.question.description ? (
-              <div className="text-xl text-gray-400 italic mt-4">
+              <div className="text-xl text-gray-600 italic mt-4">
                 {task.question.description}
               </div>
             ) : (
-              ""
-            )}
+                ""
+              )}
 
             {this.renderError()}
 

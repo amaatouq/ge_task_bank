@@ -3,7 +3,7 @@ import DelayedDisplay from "./DelayedDisplay";
 
 function WaitMessage() {
   return (
-    <div className="text-gray-500 max-w-xl text-center">
+    <div className="text-gray-800 max-w-xl text-center">
       Please wait until all players are ready.
       <br />
       If this takes more than 5 seconds, please <em>Refresh the page</em>.

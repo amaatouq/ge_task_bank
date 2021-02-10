@@ -22,7 +22,7 @@ export default class Answer extends React.Component {
             value={answer}
             displayType="text"
             thousandSeparator={true}
-            className="w-full pl-2 py-2 text-3xl text-gray-500 leading-snug text-right tabular-nums"
+            className="w-full pl-2 py-2 text-3xl text-gray-800 leading-snug text-right tabular-nums"
           />
           <Unit result answer={answer} {...this.props} />
           <NumberToWords answer={answer} task={task} {...this.props} />

@@ -82,7 +82,7 @@ export default class ResponseInput extends React.Component {
           <NumberFormat
             thousandSeparator={true}
             isNumericString
-            className="w-full px-0 m-0 py-2 text-3xl text-gray-500 bg-transparent placeholder-gray-300 border-0 border-b-2 border-gray-300 focus:ring-0 focus:outline-none focus:border-b-2 focus:border-gray-500 leading-snug tabular-nums"
+            className="w-full px-0 m-0 py-2 text-3xl text-gray-800 bg-transparent placeholder-gray-300 border-0 border-b-2 border-gray-300 focus:ring-0 focus:outline-none focus:border-b-2 focus:border-gray-500 leading-snug tabular-nums"
             placeholder="Type your answer here..."
             autoFocus
             name="answer"

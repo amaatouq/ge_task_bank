@@ -100,7 +100,7 @@ export default class Wait extends React.Component {
 
     return (
       <>
-        <div className="flex h-full justify-center items-center text-gray-500">
+        <div className="flex h-full justify-center items-center text-gray-800">
           <div className="w-10/12 max-w-3xl">
             {this.renderMessage()}
             <div className="mt-8 flex">

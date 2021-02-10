@@ -64,7 +64,7 @@ export default class ConfirmBox extends Component {
                     </h3>
                   )}
                   <div className="mt-2">
-                    <div className="text-sm text-gray-500">{children}</div>
+                    <div className="text-sm text-gray-800">{children}</div>
                   </div>
                 </div>
               </div>

@@ -26,12 +26,12 @@ export default class Response extends React.Component {
         className={`mt-6 flex text-xl ${isNext
           ? "text-gray-400 text-shadow-md"
           : isRevealed
-            ? "text-gray-500"
+            ? "text-gray-800"
             : "text-gray-300"
           }`}
       >
         <div
-          className={`whitespace-nowrap ${isNext ? "" : isRevealed ? "text-gray-300" : "text-gray-300"
+          className={`whitespace-nowrap ${isNext ? "" : isRevealed ? "text-gray-400" : "text-gray-300"
             }`}
         >
           {hintText} {isOnlyOneHint ? "" : index + 1}
