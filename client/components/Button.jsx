@@ -2,7 +2,9 @@ import React from "react";
 
 export default class Button extends React.Component {
   render() {
-    const { text, tick, enter, onClick, ...rest } = this.props;
+    const { text, tick, done, enter, onClick, ...rest } = this.props;
+
+    const iconColor = done ? "text-green-700" : "text-gray-700";
 
     return (
       <button
@@ -20,11 +22,9 @@ export default class Button extends React.Component {
               viewBox="0 0 16 13"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              className={`fill-current ${iconColor}`}
             >
-              <path
-                d="M14.293 0.29303L15.707 1.70703L4.99997 12.414L0.292969 7.70703L1.70697 6.29303L4.99997 9.58603L14.293 0.29303Z"
-                fill="#344049"
-              />
+              <path d="M14.293 0.29303L15.707 1.70703L4.99997 12.414L0.292969 7.70703L1.70697 6.29303L4.99997 9.58603L14.293 0.29303Z" />
             </svg>
           </div>
         ) : (

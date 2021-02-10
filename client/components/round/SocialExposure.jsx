@@ -58,23 +58,29 @@ export default function SocialExposure(props) {
   return (
     <div className={`pr-4 h-full grid grid-rows-${feedback && chat ? 2 : 1}`}>
       {feedback && (
-        <div className="overflow-hidden pb-3">
-          {isFeedback && (
-            <div className="border-b border-gray-200">
-              {neighbors.length > 0 &&
-                info.length > 0 &&
-                info.map((i) => (
-                  <SocialInfo key={i} type={i} neighbors={neighbors} />
-                ))}
-              {neighbors.length > 0 && (
-                <PlayersResponse
-                  {...props}
-                  neighbors={neighbors}
-                  withInfo={info.length > 0}
-                />
-              )}
-            </div>
-          )}
+        <div className="overflow-y-auto h-full">
+          <div className="py-4 flex flex-col min-h-full justify-center">
+            {isFeedback && (
+              <>
+                {neighbors.length > 0 && info.length > 0 && (
+                  <dl>
+                    {info.map((i) => (
+                      <SocialInfo key={i} type={i} neighbors={neighbors} />
+                    ))}
+                  </dl>
+                )}
+                {neighbors.length > 0 && (
+                  <div className="mt-5">
+                    <PlayersResponse
+                      {...props}
+                      neighbors={neighbors}
+                      withInfo={info.length > 0}
+                    />
+                  </div>
+                )}
+              </>
+            )}
+          </div>
         </div>
       )}
       {chat && <ChatContainer player={player} game={game} />}

@@ -83,11 +83,9 @@ export default class ResponseInput extends React.Component {
       minmax.max = task.question.max;
     }
 
-    let disabledForm = player.stage.submitted;
-
-    if (interactionMode !== "continuous" && stage.name === "social") {
-      disabledForm = true;
-    }
+    const disabledForm =
+      player.stage.submitted ||
+      (interactionMode !== "continuous" && stage.name === "social");
 
     return (
       <form action="#" onSubmit={this.handleSubmit} className="relative w-full">
@@ -95,7 +93,7 @@ export default class ResponseInput extends React.Component {
           <NumberFormat
             thousandSeparator={true}
             isNumericString
-            className="w-full px-0 m-0 py-2 lg:text-xl xl:text-2xl text-md disabled:text-gray-300 disabled:border-gray-50 text-gray-500 bg-transparent placeholder-gray-300 border-0 border-b-2 border-gray-300 focus:ring-0 focus:outline-none focus:border-b-2 focus:border-gray-500 leading-snug tabular-nums"
+            className="w-full px-0 m-0 py-2 lg:text-xl xl:text-2xl text-md disabled:text-gray-700 focus:text-gray-900 disabled:border-gray-50 text-gray-700 bg-transparent placeholder-gray-400 border-0 border-b-2 border-gray-300 focus:ring-0 focus:outline-none focus:border-b-2 focus:border-gray-500 leading-snug tabular-nums"
             placeholder="Type your answer here..."
             autoFocus
             name="answer"
@@ -148,17 +146,26 @@ export default class ResponseInput extends React.Component {
         {answer === "" ? (
           ""
         ) : (
-            <>
-              <div className="mt-12">
-                <Button tick text="Submit" disabled={player.stage.submitted || answer < minmax.min || answer > minmax.max} />
+          <>
+            <div className="mt-12">
+              <Button
+                tick
+                text={player.stage.submitted ? "Submitted" : "Submit"}
+                done={player.stage.submitted}
+                disabled={
+                  player.stage.submitted ||
+                  answer < minmax.min ||
+                  answer > minmax.max
+                }
+              />
+            </div>
+            {interactionMode === "continuous" && stage.name === "social" && (
+              <div className="text-gray-400 text-xs mt-3">
+                <i>You can edit your previous answer.</i>
               </div>
-              {interactionMode === "continuous" && stage.name === "social" && (
-                <div className="text-gray-400 text-xs mt-3">
-                  <i>You can edit your previous answer.</i>
-                </div>
-              )}
-            </>
-          )}
+            )}
+          </>
+        )}
       </form>
     );
   }
