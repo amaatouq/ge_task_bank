@@ -137,6 +137,7 @@ Empirica.gameInit((game) => {
     const task = tasks[i];
     task.instructions = instructions[task.task];
     round.set("task", task);
+    round.set("index", i);
 
     for (let i = 0; i < nInteractions + 1; i++) {
       round.addStage({
