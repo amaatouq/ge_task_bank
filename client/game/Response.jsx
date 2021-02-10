@@ -1,14 +1,14 @@
 import React from "react";
 import { applyMagnitude } from "../../shared/conversions";
-import Answer from "../components/round/Answer";
+import { deepCopy } from "../../shared/helperFunctions/deepCopy";
+import { popChoice } from "../../shared/helperFunctions/popChoice";
 import Button from "../components/Button";
+import Answer from "../components/round/Answer";
 import Question from "../components/round/Question";
 import QuestionImage from "../components/round/QuestionImage";
 import ResponseInput from "../components/round/ResponseInput";
 import RoundScore from "../components/round/RoundScore";
 import SocialExposure from "../components/round/SocialExposure";
-import { deepCopy } from "../../shared/helperFunctions/deepCopy";
-import { popChoice } from "../../shared/helperFunctions/popChoice";
 
 export default class Response extends React.Component {
   revealHint = (event) => {
@@ -24,16 +24,18 @@ export default class Response extends React.Component {
     let content = (
       <div
         key={index}
-        className={`mt-6 flex text-md xl:text-xl ${isNext
+        className={`mt-6 flex text-md xl:text-xl ${
+          isNext
             ? "text-gray-400 xl:text-shadow-md text-shadow-sm"
             : isRevealed
-              ? "text-gray-500"
-              : "text-gray-300"
-          }`}
+            ? "text-gray-500"
+            : "text-gray-300"
+        }`}
       >
         <div
-          className={`whitespace-nowrap ${isNext ? "" : isRevealed ? "text-gray-300" : "text-gray-300"
-            }`}
+          className={`whitespace-nowrap ${
+            isNext ? "" : isRevealed ? "text-gray-300" : "text-gray-300"
+          }`}
         >
           {hintText} {isOnlyOneHint ? "" : index + 1}
         </div>
@@ -41,8 +43,8 @@ export default class Response extends React.Component {
           {isNext
             ? "Reveal " + hintText
             : isRevealed
-              ? hint
-              : "Reveal previous " + hintText + " first"}
+            ? hint
+            : "Reveal previous " + hintText + " first"}
         </div>
       </div>
     );
@@ -59,7 +61,6 @@ export default class Response extends React.Component {
   }
 
   renderHints() {
-
     const { player, round, stage, game } = this.props;
     const { treatment } = game;
     const task = round.get("task");
@@ -85,7 +86,6 @@ export default class Response extends React.Component {
     if (typeof player.get("hints")[round.get("index")] != "undefined") {
       hints = player.get("hints")[round.get("index")];
     } else {
-
       //If they are not set, you want to set them...
       hints = [];
 
@@ -107,11 +107,9 @@ export default class Response extends React.Component {
         let randomPossibleHints = deepCopy(possibleHints);
 
         // For each value of the configuration...
-        configuration.forEach(config => {
-
+        configuration.forEach((config) => {
           // If numeric...
           if (typeof config == "number") {
-
             // ...check that there could be a hint with this index (it doesn't return undefined)
             if (typeof possibleHints[config - 1] != "undefined") {
               // ...push the hint that has this index
@@ -119,10 +117,9 @@ export default class Response extends React.Component {
               // and take this hint out of the hints ready to be selected randomly
               randomPossibleHints.splice(config - 1, 1);
             }
-
           } else {
             // Else, increase the number of random hints
-            nbRandomHints++
+            nbRandomHints++;
           }
         });
 
@@ -133,7 +130,6 @@ export default class Response extends React.Component {
             hints.push(popChoice(randomPossibleHints));
           }
         }
-
       } else {
         // Else, just allocate all the hints
         hints = possibleHints;
@@ -197,7 +193,7 @@ export default class Response extends React.Component {
     return (
       <>
         <QuestionImage {...this.props} />
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center w-full">
           <div className="xl:max-w-screen-lg max-w-screen-sm">
             <Question {...this.props}>{this.renderAnswer()}</Question>
           </div>

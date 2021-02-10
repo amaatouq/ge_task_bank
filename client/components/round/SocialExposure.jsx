@@ -9,6 +9,7 @@ export default function SocialExposure(props) {
   const {
     chat = false,
     individualNumeric = false,
+    feedback = false,
     meanSocialInfo = false,
     minSocialInfo = false,
     maxSocialInfo = false,
@@ -23,7 +24,7 @@ export default function SocialExposure(props) {
   const neighborIndexes = player.get("neighbors");
   const neighbors = [];
   const info = [];
-  let hasFeedback = true;
+  let isFeedback = true;
 
   neighborIndexes.forEach((i) => {
     const neighbor = game.players.find((p) => p.get("index") === parseInt(i));
@@ -34,11 +35,11 @@ export default function SocialExposure(props) {
   });
 
   if (stage.name === "response") {
-    hasFeedback = false;
+    isFeedback = false;
   }
 
   if (individualNumeric) {
-    hasFeedback = false;
+    isFeedback = false;
   }
 
   if (meanSocialInfo) {
@@ -53,14 +54,13 @@ export default function SocialExposure(props) {
   if (medianSocialInfo) {
     info.push("median");
   }
-  const colHeight = hasFeedback ? "h-full" : "h-1/2";
-  const chatHeight = hasFeedback ? "h-1/2" : "h-full";
+
   return (
-    <div className="flex justify-end items-end sidebar-right pr-8">
-      <div className={`w-full ${colHeight}`}>
-        {hasFeedback && (
-          <div className={`flex h-1/2 overflow-hidden pb-3`}>
-            <div className={`w-full border-b border-gray-200`}>
+    <div className={`pr-4 h-full grid grid-rows-${feedback && chat ? 2 : 1}`}>
+      {feedback && (
+        <div className="overflow-hidden pb-3">
+          {isFeedback && (
+            <div className="border-b border-gray-200">
               {neighbors.length > 0 &&
                 info.length > 0 &&
                 info.map((i) => (
@@ -74,14 +74,10 @@ export default function SocialExposure(props) {
                 />
               )}
             </div>
-          </div>
-        )}
-        <div className={`flex ${chatHeight}`}>
-          <div className="w-full">
-            {chat && <ChatContainer player={player} game={game} />}
-          </div>
+          )}
         </div>
-      </div>
+      )}
+      {chat && <ChatContainer player={player} game={game} />}
     </div>
   );
 }

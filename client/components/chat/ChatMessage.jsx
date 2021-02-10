@@ -55,12 +55,14 @@ export default class Message extends React.Component {
           ></div>
           {new Date(timeStamp).getTime() > 0 && this.renderTime(timeStamp)}
         </div>
-        <div
-          className={
-            "px-4 py-2 bg-gray-200 text-gray-500 rounded-md max-w-sm break-words"
-          }
-        >
-          {text}
+        <div className={"max-w-sm"}>
+          <div
+            className={
+              "px-4 py-2 bg-gray-200 text-gray-500 rounded-md break-words inline-block"
+            }
+          >
+            {text}
+          </div>
         </div>
       </div>
     );
