@@ -63,7 +63,7 @@ export default class ExitSurvey extends Component {
                                 type="number"
                                 name="age"
                                 size="20"
-                                value={demographics.age ? demographics.age : "0"}
+                                value={demographics.age ? demographics.age : ""}
                                 onChange={this.handleChangeAge}
                             />
                             <br />

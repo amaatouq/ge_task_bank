@@ -13,4 +13,4 @@ token.json
 local.json
 **/.idea
 .DS_Store
-.bat
+*.bat
