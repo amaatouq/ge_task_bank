@@ -3,17 +3,31 @@ treatments:
     factorIds:
       - YWwosMevTALbyZmjc
       - Z8qTZzDedy9mqYYhY
-      - JRFdTGEFggbqX5KmX
-      - jroGer53RuC45SK4D
+      - 4enkhg6NMAsgrv2gX
+      - 32bL5Py4noFMGFkSi
       - qtgWqpEtizZ4SKF5C
       - 8xBkmBYw37fmy9Ztb
       - oWBpWDi7Bp2MysKkg
       - HtyBPSwcDcFZiGLvJ
-      - kkMvHy4TPDWLXR4yQ
-      - i9BTjcKPJZPPupFzp
+      - jNhPpLsoK4zwEFqQt
+      - AjceGuBfb7JcdaLbh
       - 4iyZdsK3HiRFWYcdi
+  - name: forecast_noTimer_wildcard
+    factorIds:
+      - YWwosMevTALbyZmjc
+      - bZ7CAPYhYGZZgvA6N
+      - 4enkhg6NMAsgrv2gX
+      - ihsRsXbgnGv3pY3LK
+      - EGcopygvdfTFtx9Pn
+      - xE2dNYwis7QWG9Rvt
+      - 9MaLLXaZmKKAKZHkL
+      - YGyrZQhE6azy6h4cE
+      - wvsCxpMXa7ZQuQ4fn
+      - 2bwyZMvJe3FSccyua
+      - 82A2CKjXBqZB2uGkd
+      - EzckrLs4RztQZ7Tgq
 factorTypes:
-  - _id: f2kFS6kvXozvzBKRH
+  - _id: ARERngkNXFGo3ZDpm
     name: playerCount
     description: The Number of players participating in the given game.
     required: true
@@ -120,73 +134,80 @@ factorTypes:
   - _id: dpr3vjHMt2pTHjywC
     name: shuffleHints
     description: >-
-      If this is true, the player index will be shuffled so that the
-      players always receive the same position of hint (the 1st, 2nd, or 3rd,
-      etc.) for each task, but which position of hint they receive is random at
-      first.
+      If this is true, the player index will be shuffled so that the players
+      always receive the same position of hint (the 1st, 2nd, or 3rd, etc.) for
+      each task, but which position of hint they receive is random at first.
     required: false
     type: Boolean
 factors:
-  - _id: JRFdTGEFggbqX5KmX
+  - _id: 4enkhg6NMAsgrv2gX
     name: 'true'
     value: true
     factorTypeId: wz7s4ufXj2ss5hHGY
-  - _id: MgmZcGRbhcT8obfBR
+  - _id: wKm7mp7jWiY9gvFuc
     name: 'false'
     value: false
     factorTypeId: wz7s4ufXj2ss5hHGY
-  - _id: jroGer53RuC45SK4D
+  - _id: 32bL5Py4noFMGFkSi
     name: 'true'
     value: true
     factorTypeId: GCGbdjiqFbsHYAYSk
-  - _id: hxX9kQr2aG9pFCJxy
+  - _id: ihsRsXbgnGv3pY3LK
     name: 'false'
     value: false
     factorTypeId: GCGbdjiqFbsHYAYSk
-  - _id: kkMvHy4TPDWLXR4yQ
+  - _id: jNhPpLsoK4zwEFqQt
     name: 'true'
     value: true
     factorTypeId: YMa7vmBFmum5YcHX4
-  - _id: fNujPCT2T9tBJHjae
+  - _id: xE2dNYwis7QWG9Rvt
     name: 'false'
     value: false
     factorTypeId: YMa7vmBFmum5YcHX4
-  - _id: i9BTjcKPJZPPupFzp
+  - _id: AjceGuBfb7JcdaLbh
     name: 'true'
     value: true
     factorTypeId: pGbLrSrHZAatHoC9K
-  - _id: PkBhE6BPdi6BKSQZi
+  - _id: 9MaLLXaZmKKAKZHkL
     name: 'false'
     value: false
     factorTypeId: pGbLrSrHZAatHoC9K
-  - _id: cqDztrwmRTTzqEG3E
+  - _id: wvsCxpMXa7ZQuQ4fn
     name: 'true'
     value: true
     factorTypeId: nB5HyfYmdxKQzWkyi
-  - _id: N4c6mXPCrBTjHkzeN
+  - _id: yGNDjyw6WJ2P3DW4J
     name: 'false'
     value: false
     factorTypeId: nB5HyfYmdxKQzWkyi
-  - _id: wvSxkWQzxprMtpsGL
+  - _id: 2bwyZMvJe3FSccyua
     name: 'true'
     value: true
     factorTypeId: b48q4W96daDbt4Gmd
-  - _id: kpTrWRQn4axpcdgsa
+  - _id: gSHCFCouqieZHnjTs
     name: 'false'
     value: false
     factorTypeId: b48q4W96daDbt4Gmd
-  - _id: g8cZvLubsKyKWXyoP
+  - _id: 82A2CKjXBqZB2uGkd
     name: 'true'
     value: true
     factorTypeId: 8faqAbLdQx7La6C7u
-  - _id: XqnxwtbYBZDS6rG2E
+  - _id: ZZ4Lr2iccKdheCk8t
     name: 'false'
     value: false
     factorTypeId: 8faqAbLdQx7La6C7u
+  - _id: rW54TtkSSNvWTjxBx
+    name: 'true'
+    value: true
+    factorTypeId: dpr3vjHMt2pTHjywC
+  - _id: EzckrLs4RztQZ7Tgq
+    name: 'false'
+    value: false
+    factorTypeId: dpr3vjHMt2pTHjywC
   - _id: YWwosMevTALbyZmjc
     name: '1'
     value: 1
-    factorTypeId: f2kFS6kvXozvzBKRH
+    factorTypeId: ARERngkNXFGo3ZDpm
   - _id: Z8qTZzDedy9mqYYhY
     name: '5'
     value: 5
@@ -240,14 +261,10 @@ factors:
       [         8     ],     "9": [         9     ],     "10": [         10    
       ] }
     factorTypeId: KPaBsT8QA6WWc8osT
-  - _id: 9HdLoXxTKLoK3ZNuX
-    name: 'true'
-    value: true
-    factorTypeId: dpr3vjHMt2pTHjywC
-  - _id: DCtqDn3N3j8dPSy37
-    name: 'false'
-    value: false
-    factorTypeId: dpr3vjHMt2pTHjywC
+  - _id: EGcopygvdfTFtx9Pn
+    name: infinite
+    value: 1000000000000000
+    factorTypeId: TiwWcki7aj5rS7PvN
 lobbyConfigs:
   - name: Default
     timeoutType: lobby
