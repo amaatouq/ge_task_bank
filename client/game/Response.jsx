@@ -1,13 +1,14 @@
 import React from "react";
 import { applyMagnitude } from "../../shared/conversions";
-import Answer from "../components/round/Answer";
+import { deepCopy } from "../../shared/helperFunctions/deepCopy";
+import { popChoice } from "../../shared/helperFunctions/popChoice";
 import Button from "../components/Button";
+import Answer from "../components/round/Answer";
 import Question from "../components/round/Question";
 import QuestionImage from "../components/round/QuestionImage";
 import ResponseInput from "../components/round/ResponseInput";
 import RoundScore from "../components/round/RoundScore";
-import { deepCopy } from "../../shared/helperFunctions/deepCopy";
-import { popChoice } from "../../shared/helperFunctions/popChoice";
+import SocialExposure from "../components/round/SocialExposure";
 
 export default class Response extends React.Component {
   revealHint = (event) => {
@@ -23,11 +24,11 @@ export default class Response extends React.Component {
     let content = (
       <div
         key={index}
-        className={`mt-6 flex text-xl ${isNext
-          ? "text-gray-400 text-shadow-md"
-          : isRevealed
-            ? "text-gray-800"
-            : "text-gray-300"
+        className={`mt-6 flex text-md xl:text-xl ${isNext
+            ? "text-gray-400 xl:text-shadow-md text-shadow-sm"
+            : isRevealed
+              ? "text-gray-800"
+              : "text-gray-300"
           }`}
       >
         <div
@@ -58,7 +59,6 @@ export default class Response extends React.Component {
   }
 
   renderHints() {
-
     const { player, round, stage, game } = this.props;
     const { treatment } = game;
     const task = round.get("task");
@@ -84,7 +84,6 @@ export default class Response extends React.Component {
     if (typeof player.get("hints")[round.get("index")] != "undefined") {
       hints = player.get("hints")[round.get("index")];
     } else {
-
       //If they are not set, you want to set them...
       hints = [];
 
@@ -106,11 +105,9 @@ export default class Response extends React.Component {
         let randomPossibleHints = deepCopy(possibleHints);
 
         // For each value of the configuration...
-        configuration.forEach(config => {
-
+        configuration.forEach((config) => {
           // If numeric...
           if (typeof config == "number") {
-
             // ...check that there could be a hint with this index (it doesn't return undefined)
             if (typeof possibleHints[config - 1] != "undefined") {
               // ...push the hint that has this index
@@ -118,10 +115,9 @@ export default class Response extends React.Component {
               // and take this hint out of the hints ready to be selected randomly
               randomPossibleHints.splice(config - 1, 1);
             }
-
           } else {
             // Else, increase the number of random hints
-            nbRandomHints++
+            nbRandomHints++;
           }
         });
 
@@ -132,7 +128,6 @@ export default class Response extends React.Component {
             hints.push(popChoice(randomPossibleHints));
           }
         }
-
       } else {
         // Else, just allocate all the hints
         hints = possibleHints;
@@ -147,7 +142,7 @@ export default class Response extends React.Component {
     const isOnlyOneHint = hints.length == 1;
     const revealed = player.round.get("hintsRevealed") || 0;
     return (
-      <div className="mt-36">
+      <div className="mt-14">
         {hints.map((hint, i) => {
           const revealIndex = treatment.revealHints ? i + 1 : revealed;
           return this.renderHint(i, hint, hintName, isOnlyOneHint, revealIndex);
@@ -162,6 +157,7 @@ export default class Response extends React.Component {
 
     switch (stage.name) {
       case "response":
+      case "social":
         return (
           <>
             <ResponseInput {...this.props} />
@@ -174,13 +170,17 @@ export default class Response extends React.Component {
           answer = applyMagnitude(answer, task.question.magnitude);
         }
         return (
-          <div className="w-min">
-            <div className="h-1 w-96"></div>
+          <div className="w-full">
             <Answer answer={answer} {...this.props} />
             <Answer correct answer={task.answer} {...this.props} />
             <RoundScore score={player.round.get("score") || 0} />
             <div className="mt-8">
-              <Button tick onClick={() => player.stage.submit()} text="OK" />
+              <Button
+                tick
+                onClick={() => player.stage.submit()}
+                text="OK"
+                disabled={player.stage.submitted}
+              />
             </div>
           </div>
         );
@@ -191,7 +191,12 @@ export default class Response extends React.Component {
     return (
       <>
         <QuestionImage {...this.props} />
-        <Question {...this.props}>{this.renderAnswer()}</Question>
+        <div className="flex justify-center items-center w-full">
+          <div className="xl:max-w-screen-lg max-w-screen-sm">
+            <Question {...this.props}>{this.renderAnswer()}</Question>
+          </div>
+        </div>
+        <SocialExposure {...this.props} />
       </>
     );
   }

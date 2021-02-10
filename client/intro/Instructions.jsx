@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { CustomButton } from "../components/Button";
 import IntroLayout from "./IntroLayout";
+import { isMultiPlayer } from "../../shared/helper";
 import { instructions, taskData } from "../../shared/tasks/tasks";
 
 export default class GameOverview extends Component {
@@ -44,7 +45,7 @@ export default class GameOverview extends Component {
 
         <p style={{ display: "flex", justifyContent: "center" }}>
           <CustomButton onClick={onNext} disabled={!hasNext}>
-            Continue to practice
+            Continue
           </CustomButton>
         </p>
       </IntroLayout >

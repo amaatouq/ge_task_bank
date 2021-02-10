@@ -34,7 +34,7 @@ export default class NumberToWords extends React.Component {
     return (
       <div className="absolute bottom-0">
         <div className="absolute">
-          <div className="mt-1 flex whitespace-nowrap w-full py-2 text-gray-500 leading-none tabular-nums">
+          <div className="flex whitespace-nowrap w-full py-2 text-gray-500 leading-none tabular-nums">
             <div className="">{res}</div>
             <div className="ml-1">
               <Unit answer={answer} {...this.props} />

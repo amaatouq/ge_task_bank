@@ -62,21 +62,28 @@ export default class Question extends React.Component {
   }
 
   render() {
-    const { round, children } = this.props;
+    const { round, stage, children } = this.props;
     const task = round.get("task");
 
     return (
       <div
         key="question"
-        className="flex flex-col justify-center items-center p-8 pr-24"
+        className="flex flex-col justify-center items-center pl-8 py-2 p-16 w-full"
       >
-        <div className="flex items-baseline justify-center w-full max-w-6xl">
-          <div className="text-base text-gray-800">{round.index + 1}.</div>
+        <div className="flex items-baseline justify-center w-full max-w-4xl">
+          <div
+            className={`${stage.name !== "response" &&
+              stage.name !== "social" &&
+              "text-right w-20 "
+              }text-base text-gray-800 pr-3`}
+          >
+            {round.index + 1}.
+          </div>
           <div
             key="question"
-            className="flex flex-col justify-center items-start w-full ml-4"
+            className="flex flex-col justify-center items-start w-full"
           >
-            <div className="text-2xl text-gray-800">
+            <div className="questions-text text-gray-800">
               {task.question.text}
               {task.instructions ? (
                 <div
@@ -97,7 +104,7 @@ export default class Question extends React.Component {
             </div>
 
             {task.question.description ? (
-              <div className="text-xl text-gray-600 italic mt-4">
+              <div className="questions-text text-gray-600 italic mt-4">
                 {task.question.description}
               </div>
             ) : (
@@ -105,10 +112,9 @@ export default class Question extends React.Component {
               )}
 
             {this.renderError()}
-
-            <div className="mt-8 w-full">{children}</div>
           </div>
         </div>
+        <div className="mt-4 w-full">{children}</div>
       </div>
     );
   }

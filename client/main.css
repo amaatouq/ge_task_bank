@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind screens;
 
 html,
 body {
@@ -78,6 +79,72 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 
+.h-response {
+  height: calc(100vh - 14rem);
+}
+.h-with-header {
+  height: calc(100vh - 4rem);
+}
+
+.icon-right-arrow::before {
+  content: "\2192";
+  display: inline-block;
+}
+
+.questions-text {
+  @apply text-sm;
+}
+
+.h-icon-svg svg {
+  @apply h-6;
+}
+@screen lg {
+  .questions-text {
+    @apply text-lg;
+  }
+  .sidebar-right {
+    width: 25vw;
+  }
+}
+@screen xl {
+  .questions-text {
+    @apply text-2xl;
+  }
+  .sidebar-right {
+    width: 20vw;
+  }
+}
+
+.main-container {
+  display: grid;
+  grid-template-rows: 64px 1fr;
+}
+
+.experiment-chat {
+  height: 100%;
+}
+
+.experiment-chat .chat {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.experiment-chat .chat .messages {
+  padding-bottom: 12px;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.experiment-chat .chat .messages .empty {
+  padding: 16px;
+}
+
+.experiment-chat .chat form {
+  flex-shrink: 0;
+}
+
 /* Matrice styling */
 .matrix {
   display: flex;
@@ -95,7 +162,6 @@ input[type="number"]::-webkit-outer-spin-button {
 .matrix .matrix-input, th {
   text-align: center;
 }
-
 
 .matrix tr:hover {
   background-color: #eaf0f5;

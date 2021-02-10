@@ -3,31 +3,108 @@ treatments:
     factorIds:
       - YWwosMevTALbyZmjc
       - Z8qTZzDedy9mqYYhY
-      - 4enkhg6NMAsgrv2gX
-      - 32bL5Py4noFMGFkSi
+      - ATjRiJNisbf86vRTN
+      - z8767AJKKtymMQjLm
       - qtgWqpEtizZ4SKF5C
       - 8xBkmBYw37fmy9Ztb
       - oWBpWDi7Bp2MysKkg
       - HtyBPSwcDcFZiGLvJ
-      - jNhPpLsoK4zwEFqQt
-      - AjceGuBfb7JcdaLbh
+      - 3ZQckJGz2BygRiodF
+      - kyLM7ddhtX6B4sWQQ
       - 4iyZdsK3HiRFWYcdi
+  - name: multi3
+    factorIds:
+      - p6nwB2WcgooiR5f7b
+      - Z8qTZzDedy9mqYYhY
+      - ATjRiJNisbf86vRTN
+      - z8767AJKKtymMQjLm
+      - qtgWqpEtizZ4SKF5C
+      - 8xBkmBYw37fmy9Ztb
+      - AAXBytkKFMDyadCH9
+      - oWBpWDi7Bp2MysKkg
+      - HtyBPSwcDcFZiGLvJ
+      - kZqLjjocsqRRLQWvg
+      - kyLM7ddhtX6B4sWQQ
+      - 4iyZdsK3HiRFWYcdi
+      - djBWEgZmJ7SpnxEbG
+      - AYAsyjSLHXHwgzRej
+      - d8g6RFXEof6HrRm3g
+      - iQFwSueW7AupfFpGu
+      - tPTgyDJuhEMqPfMcK
+      - SpAThg4crzNo8xQab
+      - Y73hyzNBpwvHfXbFC
+      - qnuncfbEQ7CiHe4e9
+      - h4KhDxmwDNiuN238g
+      - BYeSsSwkoAHyh6tJb
+      - Ro7BTjpCcNFL7fzzT
+      - tz95WfetfCbBPhpqw
+  - name: 4players_discreet
+    factorIds:
+      - 3rBswLaaDosuk8nBx
+      - Z8qTZzDedy9mqYYhY
+      - ATjRiJNisbf86vRTN
+      - z8767AJKKtymMQjLm
+      - qtgWqpEtizZ4SKF5C
+      - 8xBkmBYw37fmy9Ztb
+      - AAXBytkKFMDyadCH9
+      - oWBpWDi7Bp2MysKkg
+      - HtyBPSwcDcFZiGLvJ
+      - kZqLjjocsqRRLQWvg
+      - kyLM7ddhtX6B4sWQQ
+      - 4iyZdsK3HiRFWYcdi
+      - djBWEgZmJ7SpnxEbG
+      - AYAsyjSLHXHwgzRej
+      - d8g6RFXEof6HrRm3g
+      - Js7We2E3L9h8WHbTG
+      - tPTgyDJuhEMqPfMcK
+      - SpAThg4crzNo8xQab
+      - Y73hyzNBpwvHfXbFC
+      - qnuncfbEQ7CiHe4e9
+      - h4KhDxmwDNiuN238g
+      - BYeSsSwkoAHyh6tJb
+      - Ro7BTjpCcNFL7fzzT
+      - Kx8eQvgmXphXMC9LD
+  - name: 4players_continuous
+    factorIds:
+      - 3rBswLaaDosuk8nBx
+      - Z8qTZzDedy9mqYYhY
+      - ATjRiJNisbf86vRTN
+      - z8767AJKKtymMQjLm
+      - qtgWqpEtizZ4SKF5C
+      - 8xBkmBYw37fmy9Ztb
+      - AAXBytkKFMDyadCH9
+      - oWBpWDi7Bp2MysKkg
+      - HtyBPSwcDcFZiGLvJ
+      - kZqLjjocsqRRLQWvg
+      - JPH6B6PmeQnoEmq5j
+      - 4iyZdsK3HiRFWYcdi
+      - djBWEgZmJ7SpnxEbG
+      - AYAsyjSLHXHwgzRej
+      - qGAvofMccGriujk7W
+      - Js7We2E3L9h8WHbTG
+      - tPTgyDJuhEMqPfMcK
+      - Mj72mWrtaYj2NJ2pp
+      - bYNTszSjZ5TD5dfX6
+      - kGW4rgBLf2Ri3rkxZ
+      - gqK3LzxoH8jGr2kAL
+      - Ro7BTjpCcNFL7fzzT
+      - Kx8eQvgmXphXMC9LD
   - name: forecast_noTimer_wildcard
     factorIds:
       - YWwosMevTALbyZmjc
       - bZ7CAPYhYGZZgvA6N
-      - 4enkhg6NMAsgrv2gX
-      - ihsRsXbgnGv3pY3LK
+      - ATjRiJNisbf86vRTN
+      - WAZdsachEdSCfKKEp
       - EGcopygvdfTFtx9Pn
-      - xE2dNYwis7QWG9Rvt
-      - 9MaLLXaZmKKAKZHkL
+      - kZqLjjocsqRRLQWvg
+      - JPH6B6PmeQnoEmq5j
       - YGyrZQhE6azy6h4cE
-      - wvsCxpMXa7ZQuQ4fn
-      - 2bwyZMvJe3FSccyua
-      - 82A2CKjXBqZB2uGkd
-      - EzckrLs4RztQZ7Tgq
+      - djBWEgZmJ7SpnxEbG
+      - 7nGrz7nLgheXGZaSg
+      - uMKi7xecTZJqTBKsg
+      - gv7qKexZJvym8Mkai
 factorTypes:
-  - _id: ARERngkNXFGo3ZDpm
+  - _id: YpJNFPfDZEbwsAmMd
     name: playerCount
     description: The Number of players participating in the given game.
     required: true
@@ -119,6 +196,85 @@ factorTypes:
     description: Allows to set the hints as directly revealed.
     required: false
     type: Boolean
+  - _id: LqbnLgDHgJzprHbAR
+    name: chat
+    description: >-
+      Determines whether or not you can chat with your neighbors during the
+      interactive stage.
+    required: false
+    type: Boolean
+  - _id: mJ3zD5ewQTKtQDmhh
+    name: interactionMode
+    description: >-
+      Determines what kind of interactions the user will be capable of. This
+      will either be continuous (each player will be able to see their
+      neighbors’ real-time changes) or discreet (players will only be allowed to
+      see their neighbors’ guesses after the stage is done).
+    required: false
+    type: String
+    min: 1
+    max: 999999
+  - _id: e2qdsQ7BTpB32kX5j
+    name: networkStructure
+    description: >-
+      For multiplayer, Determine who is connected to who. I.e.,
+      "1-2,1-3,2-5,2-6"
+    required: false
+    type: String
+    min: 1
+    max: 999999999999
+  - _id: 2cYukeq3bvgZb8Qa6
+    name: socialDuration
+    description: Social stage duration in seconds
+    required: false
+    type: Integer
+    min: 1
+    max: 999999999
+  - _id: u6Gc6NvGLnZX57cKg
+    name: meanSocialInfo
+    description: Show mean value of neighbors on social exposure
+    required: false
+    type: Boolean
+  - _id: SfuTi4jrjoJKeNj8m
+    name: minSocialInfo
+    description: Show min value of neighbors on social exposure
+    required: false
+    type: Boolean
+  - _id: JTYhugFFkpcQt794j
+    name: maxSocialInfo
+    description: Show max value of neighbors on social exposure
+    required: false
+    type: Boolean
+  - _id: obi4tgdNS3xNAEiBc
+    name: medianSocialInfo
+    description: Show median value of neighbor on social exposure
+    required: false
+    type: Boolean
+  - _id: HqQepyditiFfBdzH6
+    name: nInteractions
+    description: >-
+      Determines how many interactive stages there will be. This means there
+      will be nInteractions separate stages where players will be able to see
+      their neighbors’ guesses.
+    required: false
+    type: Integer
+    min: 0
+    max: 99999999
+  - _id: g26DS57dNWkaMiRcp
+    name: individualNumeric
+    description: Determines whether or not you can see your neighbors’ individual guesses.
+    required: false
+    type: Boolean
+  - _id: 4Mc2N6mo29A78JWXD
+    name: chatGroups
+    description: >-
+      players are in multiple chat groups (denoted by a letter):
+      1-A,1-B,2-B,3-B,4-A,... (1 has 2 chat windows, can talk with 2 and 3 in
+      window B, and with 4 in window A).
+    required: false
+    type: String
+    min: 1
+    max: 999999999999
   - _id: b48q4W96daDbt4Gmd
     name: hideAvatar
     description: 'If this is set to true, it will hide the players'' avatar during the game.'
@@ -140,74 +296,122 @@ factorTypes:
     required: false
     type: Boolean
 factors:
-  - _id: 4enkhg6NMAsgrv2gX
+  - _id: ATjRiJNisbf86vRTN
     name: 'true'
     value: true
     factorTypeId: wz7s4ufXj2ss5hHGY
-  - _id: wKm7mp7jWiY9gvFuc
+  - _id: RtsEBRnPbDbkxfyGp
     name: 'false'
     value: false
     factorTypeId: wz7s4ufXj2ss5hHGY
-  - _id: 32bL5Py4noFMGFkSi
+  - _id: z8767AJKKtymMQjLm
     name: 'true'
     value: true
     factorTypeId: GCGbdjiqFbsHYAYSk
-  - _id: ihsRsXbgnGv3pY3LK
+  - _id: WAZdsachEdSCfKKEp
     name: 'false'
     value: false
     factorTypeId: GCGbdjiqFbsHYAYSk
-  - _id: jNhPpLsoK4zwEFqQt
+  - _id: 3ZQckJGz2BygRiodF
     name: 'true'
     value: true
     factorTypeId: YMa7vmBFmum5YcHX4
-  - _id: xE2dNYwis7QWG9Rvt
+  - _id: kZqLjjocsqRRLQWvg
     name: 'false'
     value: false
     factorTypeId: YMa7vmBFmum5YcHX4
-  - _id: AjceGuBfb7JcdaLbh
+  - _id: kyLM7ddhtX6B4sWQQ
     name: 'true'
     value: true
     factorTypeId: pGbLrSrHZAatHoC9K
-  - _id: 9MaLLXaZmKKAKZHkL
+  - _id: JPH6B6PmeQnoEmq5j
     name: 'false'
     value: false
     factorTypeId: pGbLrSrHZAatHoC9K
-  - _id: wvsCxpMXa7ZQuQ4fn
+  - _id: djBWEgZmJ7SpnxEbG
     name: 'true'
     value: true
     factorTypeId: nB5HyfYmdxKQzWkyi
-  - _id: yGNDjyw6WJ2P3DW4J
+  - _id: rYpfromDfcfXwYLQx
     name: 'false'
     value: false
     factorTypeId: nB5HyfYmdxKQzWkyi
-  - _id: 2bwyZMvJe3FSccyua
+  - _id: AYAsyjSLHXHwgzRej
+    name: 'true'
+    value: true
+    factorTypeId: LqbnLgDHgJzprHbAR
+  - _id: mavFoTXBgk8XK7Q8s
+    name: 'false'
+    value: false
+    factorTypeId: LqbnLgDHgJzprHbAR
+  - _id: SpAThg4crzNo8xQab
+    name: 'true'
+    value: true
+    factorTypeId: u6Gc6NvGLnZX57cKg
+  - _id: gqK3LzxoH8jGr2kAL
+    name: 'false'
+    value: false
+    factorTypeId: u6Gc6NvGLnZX57cKg
+  - _id: Y73hyzNBpwvHfXbFC
+    name: 'true'
+    value: true
+    factorTypeId: SfuTi4jrjoJKeNj8m
+  - _id: kGW4rgBLf2Ri3rkxZ
+    name: 'false'
+    value: false
+    factorTypeId: SfuTi4jrjoJKeNj8m
+  - _id: Mj72mWrtaYj2NJ2pp
+    name: 'true'
+    value: true
+    factorTypeId: JTYhugFFkpcQt794j
+  - _id: qnuncfbEQ7CiHe4e9
+    name: 'false'
+    value: false
+    factorTypeId: JTYhugFFkpcQt794j
+  - _id: bYNTszSjZ5TD5dfX6
+    name: 'true'
+    value: true
+    factorTypeId: obi4tgdNS3xNAEiBc
+  - _id: h4KhDxmwDNiuN238g
+    name: 'false'
+    value: false
+    factorTypeId: obi4tgdNS3xNAEiBc
+  - _id: PF8ohQjPpgnCbczyw
+    name: 'true'
+    value: true
+    factorTypeId: g26DS57dNWkaMiRcp
+  - _id: Ro7BTjpCcNFL7fzzT
+    name: 'false'
+    value: false
+    factorTypeId: g26DS57dNWkaMiRcp
+  - _id: 7nGrz7nLgheXGZaSg
     name: 'true'
     value: true
     factorTypeId: b48q4W96daDbt4Gmd
-  - _id: gSHCFCouqieZHnjTs
+  - _id: 7zt5jKqEiwrLrWfSP
     name: 'false'
     value: false
     factorTypeId: b48q4W96daDbt4Gmd
-  - _id: 82A2CKjXBqZB2uGkd
+  - _id: uMKi7xecTZJqTBKsg
     name: 'true'
     value: true
     factorTypeId: 8faqAbLdQx7La6C7u
-  - _id: ZZ4Lr2iccKdheCk8t
+  - _id: WoKSQcuq8aCDYBRXk
     name: 'false'
     value: false
     factorTypeId: 8faqAbLdQx7La6C7u
-  - _id: rW54TtkSSNvWTjxBx
+  - _id: 7JnhTZtCJeSiYaxGR
     name: 'true'
     value: true
     factorTypeId: dpr3vjHMt2pTHjywC
-  - _id: EzckrLs4RztQZ7Tgq
+  - _id: gv7qKexZJvym8Mkai
     name: 'false'
     value: false
     factorTypeId: dpr3vjHMt2pTHjywC
   - _id: YWwosMevTALbyZmjc
     name: '1'
     value: 1
-    factorTypeId: ARERngkNXFGo3ZDpm
+    factorTypeId: YpJNFPfDZEbwsAmMd
   - _id: Z8qTZzDedy9mqYYhY
     name: '5'
     value: 5
@@ -244,6 +448,65 @@ factors:
     name: '45'
     value: 45
     factorTypeId: sToqhgYZPejDWvsp9
+  - _id: p6nwB2WcgooiR5f7b
+    name: '3'
+    value: 3
+    factorTypeId: YpJNFPfDZEbwsAmMd
+  - _id: d8g6RFXEof6HrRm3g
+    name: discreet
+    value: discreet
+    factorTypeId: mJ3zD5ewQTKtQDmhh
+  - _id: 3BvaoebRSHSMNnSYE
+    name: continous
+    value: continous
+    factorTypeId: mJ3zD5ewQTKtQDmhh
+    archivedAt: 2021-02-03T05:12:58.454Z
+  - _id: qGAvofMccGriujk7W
+    name: continuous
+    value: continuous
+    factorTypeId: mJ3zD5ewQTKtQDmhh
+  - _id: tPTgyDJuhEMqPfMcK
+    name: 30s
+    value: 30
+    factorTypeId: 2cYukeq3bvgZb8Qa6
+  - _id: BYeSsSwkoAHyh6tJb
+    name: 3x
+    value: 3
+    factorTypeId: HqQepyditiFfBdzH6
+  - _id: n9JLgRZHaaxmG5pva
+    name: 3players
+    value: '"1-A,1-B,2-B,3-B,2-A"'
+    factorTypeId: 4Mc2N6mo29A78JWXD
+    archivedAt: 2021-02-04T15:36:43.844Z
+  - _id: dkpPXNPMWngjRc5jr
+    name: 3players
+    value: '1-2,1-3,2-3,'
+    factorTypeId: e2qdsQ7BTpB32kX5j
+    archivedAt: 2021-02-04T15:37:33.668Z
+  - _id: tz95WfetfCbBPhpqw
+    name: 3players
+    value: '1-A,1-B,2-B,3-B,2-A'
+    factorTypeId: 4Mc2N6mo29A78JWXD
+  - _id: iQFwSueW7AupfFpGu
+    name: 3players
+    value: '1-2,1-3,2-3'
+    factorTypeId: e2qdsQ7BTpB32kX5j
+  - _id: 3rBswLaaDosuk8nBx
+    name: '4'
+    value: 4
+    factorTypeId: YpJNFPfDZEbwsAmMd
+  - _id: Js7We2E3L9h8WHbTG
+    name: 4players
+    value: '1-2,1-3,2-4,3-4'
+    factorTypeId: e2qdsQ7BTpB32kX5j
+  - _id: Kx8eQvgmXphXMC9LD
+    name: 4players
+    value: '1-A,1-B,2-B,3-B,2-A,4-A'
+    factorTypeId: 4Mc2N6mo29A78JWXD
+  - _id: Z2WCnquEqT8cgLPS6
+    name: '0'
+    value: 0
+    factorTypeId: HqQepyditiFfBdzH6
   - _id: bZ7CAPYhYGZZgvA6N
     name: '999999999'
     value: 999999999

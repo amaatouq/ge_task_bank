@@ -1,34 +1,16 @@
-import pluralize from "pluralize";
 import React from "react";
-import { magnitudesToEnglish } from "../../../shared/conversions";
+import { getUnit } from "../../../shared/unit";
 
 export default class Unit extends React.Component {
   render() {
-    const { input, result, magnitude, round, focused, answer } = this.props;
-    const task = round.get("task");
-
-    let unit = task.question.unit;
-    let preventPluralize = task.question.preventPluralize;
-
-    if (!unit) {
-      return "";
-    }
-
-    if (magnitude && task.question.magnitude) {
-      unit = magnitudesToEnglish[task.question.magnitude] + " " + unit;
-    }
-
-    const a = parseInt(answer || 0, 10);
-    if (!preventPluralize) {
-      unit = pluralize(unit, a);
-    }
-
+    const { input, result, magnitude, round, focused, answer, preventPluralize } = this.props;
+    const unit = getUnit({ round, answer, magnitude, preventPluralize });
 
     return (
       <div
         className={
           result || input
-            ? `pl-2 py-2 text-3xl ${input
+            ? `pl-2 py-2 lg:text-xl xl:text-2xl text-md ${input
               ? "border-b-2 border-gray-300 text-gray-400"
               : "text-gray-500 pr-2"
             } whitespace-nowrap leading-snug ${focused ? "border-gray-500" : "border-gray-300"

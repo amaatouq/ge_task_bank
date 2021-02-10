@@ -4,6 +4,7 @@ import "./bots.js";
 import "./callbacks.js";
 import { instructions, taskData } from "../shared/tasks/tasks";
 import { choice } from "../shared/helperFunctions/choice";
+import { getChatGroups, getNeighbors, getOtherPlayers } from "../shared/helper";
 
 // gameInit is where the structure of a game is defined.
 // Just before every game starts, once all the players needed are ready, this
@@ -23,7 +24,14 @@ Empirica.gameInit((game) => {
       longTermEngagement,
       quitEarly,
       hints,
-      shuffleHints
+      shuffleHints,
+      nInteractions = 0,
+      socialDuration = 30,
+      playerCount,
+      networkStructure,
+      interactionMode,
+      chatGroups,
+      chat = false,
     },
   } = game;
 
@@ -74,6 +82,22 @@ Empirica.gameInit((game) => {
     player.set("hints", {});
   });
 
+  if (playerCount > 1) {
+    check(
+      !networkStructure,
+      "networkStructure must be set if in multi player!"
+    );
+
+    game.players.forEach((p) => {
+      p.set("neighbors", getNeighbors(networkStructure, p));
+
+      if (chat) {
+        check(!chatGroups, "chatGroups must be set when chat is used!");
+        p.set("chatGroups", getChatGroups(chatGroups, p));
+      }
+    });
+  }
+
   // Task selection
 
   let tasks = taskData.slice();
@@ -103,19 +127,34 @@ Empirica.gameInit((game) => {
   }
 
   // Round/Stage info
+  check(
+    playerCount > 1 && interactionMode === "continuous" && nInteractions > 0,
+    "Continuous interaction mode with multiplayer cannot have nInteractions more than 0 "
+  );
 
   _.times(nRounds, (i) => {
     const round = game.addRound();
     const task = tasks[i];
     task.instructions = instructions[task.task];
     round.set("task", task);
-    round.set("index", i);
-    round.addStage({
-      name: "response",
-      displayName: "Response",
-      durationInSeconds: responseDuration,
-      // durationInSeconds: 31540000,
-    });
+
+    for (let i = 0; i < nInteractions + 1; i++) {
+      round.addStage({
+        name: "response",
+        displayName: "Response",
+        durationInSeconds: responseDuration,
+        // durationInSeconds: 31540000,
+      });
+
+      if (playerCount > 1) {
+        round.addStage({
+          name: "social",
+          displayName: "Social",
+          durationInSeconds: socialDuration,
+          // durationInSeconds: 31540000,
+        });
+      }
+    }
 
     if (feedback) {
       round.addStage({

@@ -64,7 +64,14 @@ export default class ResponseInput extends React.Component {
   };
 
   render() {
-    const { round } = this.props;
+    const {
+      round,
+      player,
+      stage,
+      game: {
+        treatment: { interactionMode },
+      },
+    } = this.props;
     const { answer, focused, err } = this.state;
     const task = round.get("task");
 
@@ -76,13 +83,17 @@ export default class ResponseInput extends React.Component {
       minmax.max = task.question.max;
     }
 
+    const disabledForm =
+      player.stage.submitted ||
+      (interactionMode !== "continuous" && stage.name === "social");
+
     return (
       <form action="#" onSubmit={this.handleSubmit} className="relative w-full">
-        <div className="flex">
+        <div className="flex relative">
           <NumberFormat
             thousandSeparator={true}
             isNumericString
-            className="w-full px-0 m-0 py-2 text-3xl text-gray-800 bg-transparent placeholder-gray-300 border-0 border-b-2 border-gray-300 focus:ring-0 focus:outline-none focus:border-b-2 focus:border-gray-500 leading-snug tabular-nums"
+            className="w-full px-0 m-0 py-2 lg:text-xl xl:text-2xl text-md disabled:text-gray-700 focus:text-gray-900 disabled:border-gray-50 text-gray-700 bg-transparent placeholder-gray-400 border-0 border-b-2 border-gray-300 focus:ring-0 focus:outline-none focus:border-b-2 focus:border-gray-500 leading-snug tabular-nums"
             placeholder="Type your answer here..."
             autoFocus
             name="answer"
@@ -93,6 +104,7 @@ export default class ResponseInput extends React.Component {
             onFocus={this.handleFocus}
             onBlur={this.handleBlur}
             autoComplete="off"
+            disabled={disabledForm}
             {...minmax}
           />
           <Unit
@@ -100,8 +112,10 @@ export default class ResponseInput extends React.Component {
             magnitude
             focused={focused}
             answer={answer}
+            preventPluralize={task.question.preventPluralize}
             {...this.props}
           />
+          <NumberToWords answer={answer} task={task} {...this.props} />
         </div>
 
         {/* 
@@ -130,18 +144,28 @@ export default class ResponseInput extends React.Component {
         )}
         */}
 
-        <NumberToWords answer={answer} task={task} {...this.props} />
-
         {answer === "" ? (
           ""
         ) : (
-            <div className="absolute bottom-0">
-              <div className="absolute">
-                <div className="mt-12">
-                  <Button tick text="Submit" />
-                </div>
+            <>
+              <div className="mt-12">
+                <Button
+                  tick
+                  text={player.stage.submitted ? "Submitted" : "Submit"}
+                  done={player.stage.submitted}
+                  disabled={
+                    player.stage.submitted ||
+                    answer < minmax.min ||
+                    answer > minmax.max
+                  }
+                />
               </div>
-            </div>
+              {interactionMode === "continuous" && stage.name === "social" && (
+                <div className="text-gray-400 text-xs mt-3">
+                  <i>You can edit your previous answer.</i>
+                </div>
+              )}
+            </>
           )}
       </form>
     );
