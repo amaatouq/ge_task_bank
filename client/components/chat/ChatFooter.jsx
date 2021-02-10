@@ -27,7 +27,7 @@ export default class ChatFooter extends React.Component {
 
     onNewMessage(msg);
 
-    this.setState({ comment: "" });
+    this.setState({ comment: "", rows: 1 });
   };
 
   handleChange = (e) => {
@@ -61,9 +61,9 @@ export default class ChatFooter extends React.Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <div className="chat-footer">
+        <div className="px-4 pt-2 pb-4 border-t">
           <textarea
-            className="w-full px-0 m-0 py-2 resize-none lg:text-md xl:text-lg text-md text-gray-500 bg-transparent placeholder-gray-300 border-0 border-b-2 border-gray-300 focus:ring-0 focus:outline-none focus:border-b-2 focus:border-gray-500 leading-snug tabular-nums"
+            className="w-full m-0 px-0 resize-none xl:text-lg text-md text-gray-500 bg-transparent placeholder-gray-300 border-0 border-b-2 border-gray-300 focus:ring-0 focus:outline-none focus:border-b-2 focus:border-gray-500 leading-snug tabular-nums"
             id="chat-input"
             name="comment"
             placeholder="Type chat message here..."

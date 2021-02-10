@@ -1,8 +1,7 @@
-import React, { Component } from "react";
 import { Chat } from "@empirica/chat";
+import React, { Component } from "react";
 import ChatFooter from "./ChatFooter";
 import ChatMessage from "./ChatMessage";
-import { convertCharToNumber } from "../../../shared/helper";
 
 export default class ChatContainer extends Component {
   constructor(props) {
@@ -81,52 +80,58 @@ export default class ChatContainer extends Component {
     }
 
     return (
-      <div className="h-full overflow-hidden">
-        <div className="overflow-y-hidden overflow-x-auto whitespace-nowrap">
-          {groups.map((g, i) => {
-            let textColor = "text-gray-300";
-            let hasNewMessage = false;
-            if (g === activeGroup) {
-              textColor = "text-gray-800";
-            } else if (newMessagesGroup.includes(g)) {
-              hasNewMessage = true;
-              textColor = "text-blue-500";
-            }
+      <div
+        style={{ gridTemplateRows: `${groups.length > 1 ? "58px" : ""} 1fr` }}
+        className="grid h-full overflow-hidden chat-container border-t border-r border-l"
+      >
+        {groups.length > 1 ? (
+          <div className="py-4 px-4 overflow-y-hidden overflow-x-auto whitespace-nowrap border-b">
+            {groups.map((g, i) => {
+              let textColor = "text-gray-300";
+              let hasNewMessage = false;
+              if (g === activeGroup) {
+                textColor = "text-gray-800";
+              } else if (newMessagesGroup.includes(g)) {
+                hasNewMessage = true;
+                textColor = "text-blue-500";
+              }
 
-            return (
-              <button
-                key={i}
-                onClick={() => this.setActiveGroup(g)}
-                className={`bg-transparent ml-10 md:text-md text-sm font-semibold leading-none outline-none focus:outline-none ${textColor}`}
-              >
-                <div className="flex flex-row items-center">
-                  <span>Group {convertCharToNumber(g)}</span>
-                  {hasNewMessage && (
-                    <div className="rounded-full w-3 flex items-center justify-center bg-blue-500 ml-2" />
-                  )}
-                </div>
-              </button>
-            );
-          })}
-        </div>
-        {groups.map((g) => {
-          const classnames = ["h-messages-chat-group"];
-          if (g !== activeGroup) {
-            classnames.push("hidden");
-          }
+              return (
+                <button
+                  key={i}
+                  onClick={() => this.setActiveGroup(g)}
+                  className={`bg-transparent mr-10 md:text-md text-sm font-semibold leading-none outline-none focus:outline-none ${textColor}`}
+                >
+                  <div className="flex flex-row items-center">
+                    {/* <span>Group {convertCharToNumber(g)}</span> */}
+                    <span>Group {i + 1}</span>
+                    {hasNewMessage && (
+                      <div className="rounded-full w-3 flex items-center justify-center bg-blue-500 ml-2" />
+                    )}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        ) : (
+          ""
+        )}
 
-          return (
-            <div key={g} className={classnames.join(" ")}>
-              <Chat
-                {...commonProps}
-                customKey={g}
-                footer={ChatFooter}
-                message={ChatMessage}
-                onIncomingMessage={this.handleIncomingMessage}
-              />
-            </div>
-          );
-        })}
+        {groups.map((g) => (
+          <div
+            key={g}
+            className={`overflow-hidden ${g !== activeGroup ? "hidden" : ""}`}
+          >
+            <Chat
+              {...commonProps}
+              customKey={g}
+              customClassName="experiment-chat"
+              footer={ChatFooter}
+              message={ChatMessage}
+              onIncomingMessage={this.handleIncomingMessage}
+            />
+          </div>
+        ))}
       </div>
     );
   }
