@@ -2,7 +2,7 @@ import React from "react";
 
 export function Radio({ selected, name, value, label, onChange }) {
   return (
-    <label className="mr-4 text-gray-600 font-medium">
+    <label className="mr-4 text-gray-800 font-medium">
       <input
         type="radio"
         name={name}
@@ -19,7 +19,7 @@ export function Radio({ selected, name, value, label, onChange }) {
 export function Label({ text, htmlFor }) {
   return (
     <label
-      className="block mt-6 mb-2 text-gray-600 font-medium"
+      className="block mt-6 mb-2 text-gray-800 font-medium"
       htmlFor={htmlFor}
     >
       {text}
