@@ -9,19 +9,19 @@ export default function DebugButtons({
   return (
     <>
       {showReset ? (
-        <div className="mr-4 text-gray-400 text-medium">
+        <div className="mr-4 text-gray-500 text-medium">
           <button onClick={onReset}>Reset Player</button>
         </div>
       ) : (
-        ""
-      )}
+          ""
+        )}
       {showOpenAltPlayer ? (
-        <div className="mr-6 text-gray-400 text-medium">
+        <div className="mr-6 text-gray-500 text-medium">
           <button onClick={onOpenAltPlayer}>New Player</button>
         </div>
       ) : (
-        ""
-      )}
+          ""
+        )}
     </>
   );
 }
