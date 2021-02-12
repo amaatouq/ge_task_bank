@@ -24,7 +24,7 @@ export default class Consent extends React.Component {
                 <p><strong>Department: </strong>UCL Organisations and Innovation</p>
                 <p><strong>Name and contact details of the researchers: </strong>Dr. Joshua Becker (joshua.becker@ucl.ac.uk)</p>
                 <p><strong>Name and contact details of the UCL Data Protection Officer: </strong>Lee Shailer (data-protection@ucl.ac.uk)</p>
-                <p>This study has been approved in accordance with the ethical standards at University College London.</p>
+                <p><strong>This study has been approved in accordance with the ethical standards at University College London.</strong></p>
               </div>
 
               <h4 className="text-3xl font-semibold mt-8 mb-6">Information about this study</h4>
@@ -34,7 +34,7 @@ export default class Consent extends React.Component {
 
               <p>The approximate duration of this study is <strong>5 minutes</strong>.</p>
               <p>Participation in this study is <strong>entirely anonymous.</strong> Data is collected and stored in accordance with the Data Protection Act 2018.</p>
-              <p>You are free to end the study at any time. However, please note that <strong>we are only able to pay you if you complete the whole study.</strong></p>
+              <p>You are free to end the study at any time. However, please note that <strong>we are only able to pay you for the parts of the study you have completed.</strong></p>
               <p>In addition to payment for your time, <strong>you could gain a bonus payment based on your performance</strong>. Please read the instructions carefully to find out how to gain the bonus.</p>
 
               <h4 className="text-3xl font-semibold mt-8 mb-6">Eligibility</h4>
