@@ -29,7 +29,7 @@ export default class Consent extends React.Component {
               Thank you for considering taking part in this research. If you have any questions arising from the information on this page or explanation already given to you, please contact the researcher before you decide whether to join in. You may want to save or print this page to keep for your records. Please read the following information carefully.
 				    </p>
 
-            <p>The approximate duration of this study is <strong>?? minutes</strong>.</p>
+            <p>The approximate duration of this study is <strong>5 minutes</strong>.</p>
             <p>Participation in this study is <strong>entirely anonymous.</strong> Data is collected and stored in accordance with the Data Protection Act 2018.</p>
             <p>You are free to end the study at any time. However, please note that <strong>we are only able to pay you if you complete the whole study.</strong></p>
             <p>In addition to payment for your time, <strong>you could gain a bonus payment based on your performance</strong>. Please read the instructions carefully to find out how to gain the bonus.</p>
@@ -41,7 +41,7 @@ export default class Consent extends React.Component {
 
             <h4 className="text-3xl font-semibold mt-8 mb-6">What happens if I take part?</h4>
             <p>
-              In this study, we will ask you to predict certain events. You will be paid $X for participating in the study with a bonus payment of $0-Y per question based on how well you predicted the event. You will be paid once the events occur and we can compare you predictions to the actual outcomes. The closer your prediction was to the actual event, the higher your bonus payment.
+              In this study, we will ask you to predict certain events. ou will earn $0.10 guaranteed pay for each question answered with a bonus payment of $0-$0.10 per question based on how well you predicted the event. You will be paid once the events occur and we can compare you predictions to the actual outcomes. The closer your prediction was to the actual event, the higher your bonus payment.
             </p>
 
             <h4 className="text-3xl font-semibold mt-8 mb-6">Should I take part in this study?</h4>
@@ -56,7 +56,7 @@ export default class Consent extends React.Component {
 
             <h4 className="text-3xl font-semibold mt-8 mb-6">What will happen to the results of the research project?</h4>
             <p>
-              The results of the research will be presented in a MSc thesis by the researcher, and potentially published in an article or other formats. If you'd like to receive a summary of the findings, you can contact the researcher. Anonymous data collected during the study may be made publically available on platforms such as the Open Science Framework (osf.io) and GitHub (github.com). This data will not include information which would allow others to identify you.
+              The results of the research will be published in an article or other formats. If you'd like to receive a summary of the findings, you can contact the researcher. Anonymous data collected during the study may be made publically available on platforms such as the Open Science Framework (osf.io) and GitHub (github.com). This data will not include information which would allow others to identify you.
 				    </p>
 
             <h4 className="text-3xl font-semibold mt-8 mb-6">Participant’s Statement</h4>
@@ -66,7 +66,7 @@ export default class Consent extends React.Component {
             <div style={{ paddingLeft: "20px" }}>
               <ul className="list-disc">
                 <li>I confirm that I have read and understood the information for this study. I have had an opportunity to consider the information and what will be expected of me. I have also had the opportunity to ask questions which have been answered to my satisfaction</li>
-                <li>I consent to participate in the study. I understand that my information (demographics and game performance) will be used for the purposes explained to me. I understand that according to data protection legislation, ‘public task’ will be the lawful basis for processing.</li>
+                <li>I consent to participate in the study. I understand that my information (demographics and task performance) will be used for the purposes explained to me. I understand that according to data protection legislation, ‘public task’ will be the lawful basis for processing.</li>
                 <li>I understand that all personal information will remain confidential and that all efforts will be made to ensure I cannot be identified. I understand that my data gathered in this study will be stored anonymously and securely. It will not be possible to identify me in any publications.</li>
                 <li>I understand that my information may be subject to review by responsible individuals from the University for monitoring and audit purposes.</li>
                 <li>I understand the direct/indirect benefits of participating.</li>
@@ -76,7 +76,7 @@ export default class Consent extends React.Component {
                 <li>I agree that my anonymised research data may be used by others for future research. No one will be able to identify you when this data is shared.</li>
                 <li>I understand that the information I have submitted will be published as a report. If you wish to receive a copy of it, please email the researchers.</li>
                 <li>I confirm that I understand the inclusion criteria as detailed above.</li>
-                <li>I confirm that: I understand the exclusion criteria as detailed in above; and I do not fall under the exclusion criteria.</li>
+                <li>I confirm that I understand the exclusion criteria as detailed in above; and I do not fall under the exclusion criteria.</li>
                 <li>I am aware of who I should contact if I wish to lodge a complaint.</li>
               </ul>
             </div>

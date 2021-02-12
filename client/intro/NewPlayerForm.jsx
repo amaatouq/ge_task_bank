@@ -33,7 +33,7 @@ export default class NewPlayerForm extends React.Component {
                 className="block mt-8 text-gray-500 text-medium"
                 htmlFor="id"
               >
-                Please enter your MTurk ID:
+                Please enter your Prolific or MTurk ID:
               </label>
 
               <input

@@ -26,7 +26,7 @@ export default class Quiz extends React.Component {
   _handleSubmit(e) {
     e.preventDefault();
     if (
-      this.state.goal !== "estimate" ||
+      this.state.goal !== "prediction" ||
       this.state.color.toLowerCase() !== "white"
     ) {
       this.setState({
@@ -57,17 +57,17 @@ export default class Quiz extends React.Component {
               <Radio
                 selected={goal}
                 name="goal"
-                value="estimate"
+                value="prediction"
                 onChange={this.handleChange}
-                label="The goal of the task is to make the closest estimate possible to the right answer."
+                label="The goal of the task is to make a prediction about future events."
               />
               <div className="mb-3">
                 <Radio
                   selected={goal}
                   name="goal"
-                  value="close"
+                  value="answer"
                   onChange={this.handleChange}
-                  label="The goal of the task is to make a somewhat close guess as fast as possible."
+                  label="The goal of the task is to answer questions that already have an answer."
                 />
               </div>
             </div>

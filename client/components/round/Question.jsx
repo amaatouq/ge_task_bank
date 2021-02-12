@@ -104,7 +104,7 @@ export default class Question extends React.Component {
             </div>
 
             {task.question.description ? (
-              <div className="questions-text text-gray-600 italic mt-4">
+              <div className="text-gray-600 italic mt-4">
                 {task.question.description}
               </div>
             ) : (
