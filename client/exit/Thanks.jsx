@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../components/Button";
 import Wrapper from "../components/Wrapper";
 
 export default class Thanks extends React.Component {
@@ -14,7 +15,6 @@ export default class Thanks extends React.Component {
               Accuracy bonuses will be processed within 2 business days after the forecasted events have occurred.
             </p>
             <br />
-            <br />
 
             <h4 className="text-2xl font-semibold mt-8 mb-6">Here is a reminder of the contacts in case you had a problem with this study:</h4>
             <div>
@@ -24,10 +24,24 @@ export default class Thanks extends React.Component {
               <p>This study has been approved in accordance with the ethical standards at University College London.</p>
             </div>
 
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <p style={{
+              display: "flex",
+              justifyContent: "center",
+            }}>
+              <Button
+                text={"Complete study on Prolific"}
+                onClick={() => { window.location = "https://app.prolific.co/submissions/complete?cc=8E233991" }}
+              />
+            </p>
 
           </div>
         </div>
-      </Wrapper>
+      </Wrapper >
     );
   }
 }

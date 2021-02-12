@@ -31,11 +31,11 @@ export default class GameOverview extends Component {
 
           <p>Once you start typing an answer, a Submit button will appear that you can click when you are ready.</p>
 
-          <p>You will earn $0.10 guaranteed pay for each question answered. This pay will be processed within 2 business days.</p>
+          <p>You will earn $0.15 guaranteed pay for each question answered. This pay will be processed within 2 business days.</p>
 
-          <p>You will also earn up to $0.10 bonus for accuracy for each forecast. The more accurate your forecast, the more you earn! These bonuses will be processed within 2 business days of the last game, so we can calculate scores.</p>
+          <p>You will also earn up to $0.15 bonus for accuracy for each forecast. The more accurate your forecast, the more you earn! These bonuses will be processed within 2 business days of the last game, so we can calculate scores.</p>
 
-          <p>Maximum possible earnings are $1.00.</p>
+          <p>Maximum possible earnings are $1.50</p>
 
           <p>If you do not complete all 5 forecasts, you will be paid for whatever forecasts you complete before we close the session. This session will remain open for 24 hours from the time it was initially launched.</p>
         </div>
