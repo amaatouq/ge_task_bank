@@ -9,7 +9,7 @@ export default class Quiz extends React.Component {
     super(props);
     this.state = {
       goal: "",
-      color: "",
+      hint: "",
       inCorrect: false,
     };
 
@@ -27,7 +27,7 @@ export default class Quiz extends React.Component {
     e.preventDefault();
     if (
       this.state.goal !== "prediction" ||
-      this.state.color.toLowerCase() !== "white"
+      this.state.hint !== "yes"
     ) {
       this.setState({
         inCorrect: true,
@@ -43,7 +43,7 @@ export default class Quiz extends React.Component {
     });
   }
   render() {
-    const { goal, inCorrect, color } = this.state;
+    const { goal, inCorrect, hint } = this.state;
     const { hasPrev, onPrev, onNext, hasNext } = this.props;
     return (
       <IntroLayout title="Quiz" {...this.props}>
@@ -72,19 +72,28 @@ export default class Quiz extends React.Component {
               </div>
             </div>
           </div>
-          <div className="mb-8">
+          <div className="my-8">
             <Label
-              htmlFor="color"
-              text="What color was Napoleon's white horse?"
+              htmlFor="hint"
+              text="Will you be given additional information relevant to each question?"
             />
             <div>
-              <Input
-                name="color"
+              <Radio
+                selected={hint}
+                name="hint"
+                value="no"
                 onChange={this.handleChange}
-                placeholder="e.g. brown"
-                value={color}
-                autoComplete="off"
+                label="No"
               />
+              <div className="mb-3">
+                <Radio
+                  selected={hint}
+                  name="hint"
+                  value="yes"
+                  onChange={this.handleChange}
+                  label="Yes"
+                />
+              </div>
             </div>
           </div>
           {inCorrect && (
