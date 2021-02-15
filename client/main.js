@@ -7,6 +7,7 @@ import Consent from "./intro/Consent";
 import NewPlayerForm from "./intro/NewPlayerForm";
 import Instructions from "./intro/Instructions";
 import DemoStage from "./intro/DemoStage";
+import AttentionCheck from "./intro/AttentionCheck";
 import Quiz from "./intro/Quiz";
 
 // Exit imports
@@ -36,7 +37,7 @@ Empirica.breadcrumb(() => null);
 // At this point they have been assigned a treatment. You can return
 // different instruction steps depending on the assigned treatment.
 Empirica.introSteps((game, treatment) => {
-  const steps = [Instructions, Quiz];
+  const steps = [AttentionCheck, Instructions, Quiz];
   return steps;
   // return [];
   // const steps = [InstructionStepOne];

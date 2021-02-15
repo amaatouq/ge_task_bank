@@ -21,7 +21,8 @@ export default class SurveyNBA extends Component {
             "bet on NBA games",
             "watch NBA games",
             "search for statistics about NBA teams",
-            "purchases NBA licensed merchandise"
+            "purchases NBA licensed merchandise",
+            "please select 'Often'"
         ];
 
         return (
