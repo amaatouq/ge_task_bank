@@ -27,7 +27,7 @@ export default class GameOverview extends Component {
         <div>
           <p>This task asks you to forecast the outcome for {textRounds} NBA basketball games.</p>
 
-          <p>You will be provided with some supporting information relevant to each game.</p>
+          <p>You will be provided with some additional information relevant to each game.</p>
 
           <p>Once you start typing an answer, a Submit button will appear that you can click when you are ready.</p>
 

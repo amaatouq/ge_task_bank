@@ -44,7 +44,7 @@ export default class Consent extends React.Component {
 
               <h4 className="text-3xl font-semibold mt-8 mb-6">What happens if I take part?</h4>
               <p>
-                In this study, we will ask you to predict certain events. ou will earn $0.15 guaranteed pay for each question answered with a bonus payment of $0-$0.15 per question based on how well you predicted the event. You will be paid once the events occur and we can compare your predictions to the actual outcomes. The closer your prediction was to the actual event, the higher your bonus payment.
+                In this study, we will ask you to predict certain events. You will earn $0.15 guaranteed pay for each question answered, and you will earn a bonus payment of $0-$0.15 per question based on how well you predicted the event. You will be paid once the events occur and we can compare your predictions to the actual outcomes. The closer your prediction was to the actual event, the higher your bonus payment.
             </p>
 
               <h4 className="text-3xl font-semibold mt-8 mb-6">Should I take part in this study?</h4>
