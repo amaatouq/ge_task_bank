@@ -14,14 +14,14 @@ export default class SurveyNBA extends Component {
         const sportsConsumeNBA = player.get("sportsConsumeNBA");
 
         const questions = [
-            "I attend NBA games (before the pandemic)",
-            "I read/watch/listen to news about the NBA",
-            "I play basketball",
-            "I play fantasy basketball",
-            "I bet on NBA games",
-            "I watch NBA games",
-            "I search for statistics about NBA teams",
-            "I purchases NBA licensed merchandise"
+            "attend NBA games (before the pandemic)",
+            "read/watch/listen to news about the NBA",
+            "play basketball",
+            "play fantasy basketball",
+            "bet on NBA games",
+            "watch NBA games",
+            "search for statistics about NBA teams",
+            "purchases NBA licensed merchandise"
         ];
 
         return (

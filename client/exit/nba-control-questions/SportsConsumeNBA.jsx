@@ -15,6 +15,8 @@ export default class SportsConsumeNBA extends Component {
 
         return (
             <div>
+                <p className="text-2xl font-semibold mt-8 mb-6">How often do you...</p>
+                <br />
                 <Matrix
                     player={player}
                     playerVariable={"sportsConsumeNBA"}

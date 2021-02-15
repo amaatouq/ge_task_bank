@@ -29,7 +29,7 @@ export default class FavTeamNBA extends Component {
         return (
             <div>
                 <div>
-                    <p>Do you have a favourite team?</p>
+                    <p className="text-2xl font-semibold mt-8 mb-6">Do you have a favourite NBA team?</p>
                     <span style={{
                         padding: "10px"
                     }}>
