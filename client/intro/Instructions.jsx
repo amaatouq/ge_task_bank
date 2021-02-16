@@ -31,6 +31,10 @@ export default class GameOverview extends Component {
 
           <p>Once you start typing an answer, a Submit button will appear that you can click when you are ready.</p>
 
+          {!hideTimer &&
+            <p>You will have {responseDuration} seconds per forecast you make.</p>
+          }
+
           <p>You will earn $0.15 guaranteed pay for each question answered. This pay will be processed within 2 business days.</p>
 
           <p>You will also earn up to $0.15 bonus for accuracy for each forecast. The more accurate your forecast, the more you earn! These bonuses will be processed within 2 business days of the last game, so we can calculate scores.</p>
