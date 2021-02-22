@@ -21,12 +21,8 @@ export default function SocialExposure(props) {
     return null;
   }
 
-<<<<<<< HEAD
   const task = round.get("task");
-=======
   const showChat = chat && stage.name === "social";
-
->>>>>>> master
   const neighborIndexes = player.get("neighbors");
   const neighbors = [];
   const info = [];
@@ -55,7 +51,7 @@ export default function SocialExposure(props) {
   if (medianSocialInfo) {
     info.push("median");
   }
-  
+
   if (meanSocialInfo) {
     info.push("mean");
   }
