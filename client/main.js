@@ -1,14 +1,14 @@
 import Empirica from "meteor/empirica:core";
 import { render } from "react-dom";
+import Waiting from "./components/Waiting";
 import ExitSurvey from "./exit/ExitSurvey";
+import Sorry from "./exit/Sorry";
 import Thanks from "./exit/Thanks";
 import Round from "./game/Round";
-import Waiting from "./components/Waiting";
 import Consent from "./intro/Consent";
-import Instructions from "./intro/Instructions";
 import DemoStage from "./intro/DemoStage";
+import Instructions from "./intro/Instructions";
 import NewPlayerForm from "./intro/NewPlayerForm";
-import Sorry from "./exit/Sorry";
 import Quiz from "./intro/Quiz";
 
 // Set the About Component you want to use for the About dialog (optional).
@@ -30,12 +30,6 @@ Empirica.breadcrumb(() => null);
 Empirica.introSteps((game, treatment) => {
   const steps = [Instructions, DemoStage, Quiz];
   return steps;
-  // return [];
-  // const steps = [InstructionStepOne];
-  // if (treatment.playerCount > 1) {
-  //   steps.push(InstructionStepTwo);
-  // }
-  // steps.push(Quiz);
 });
 
 // The Round component containing the game UI logic.
