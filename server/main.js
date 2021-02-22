@@ -1,9 +1,12 @@
 import Empirica from "meteor/empirica:core";
 import { avatarNames } from "../shared/avatars.js";
+import { getChatGroups, getNeighbors } from "../shared/helper";
+import { instructions, taskData } from "../shared/tasks/tasks";
 import "./bots.js";
 import "./callbacks.js";
-import { instructions, taskData } from "../shared/tasks/tasks";
-import { getChatGroups, getNeighbors, getOtherPlayers } from "../shared/helper";
+
+// Set true while developing to set very large duration on stages.
+const isDebugTime = Meteor.isDevelopment && false;
 
 // gameInit is where the structure of a game is defined.
 // Just before every game starts, once all the players needed are ready, this
@@ -92,11 +95,10 @@ Empirica.gameInit((game) => {
     daily_life_facts,population_of_large_cities,geopolitics`
   );
 
-
   if (tasks.length < nRounds) {
     nRounds = tasks.length;
     game.treatment.nRounds = tasks.length;
-    console.log("Fewer tasks than nRounds. Setting nRounds to tasks.length.")
+    console.log("Fewer tasks than nRounds. Setting nRounds to tasks.length.");
   }
 
   if (randomizeTask) {
@@ -120,16 +122,14 @@ Empirica.gameInit((game) => {
       round.addStage({
         name: "response",
         displayName: "Response",
-        durationInSeconds: responseDuration,
-        // durationInSeconds: 31540000,
+        durationInSeconds: isDebugTime ? 31540000 : responseDuration,
       });
 
       if (playerCount > 1) {
         round.addStage({
           name: "social",
           displayName: "Social",
-          durationInSeconds: socialDuration,
-          // durationInSeconds: 31540000,
+          durationInSeconds: isDebugTime ? 31540000 : socialDuration,
         });
       }
     }
@@ -138,8 +138,7 @@ Empirica.gameInit((game) => {
       round.addStage({
         name: "feedback",
         displayName: "Feedback",
-        durationInSeconds: feedbackDuration,
-        // durationInSeconds: 31540000,
+        durationInSeconds: isDebugTime ? 31540000 : feedbackDuration,
       });
     }
 

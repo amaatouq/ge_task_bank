@@ -10,15 +10,60 @@ export function convertCharToNumber(char) {
   return char.toUpperCase().charCodeAt(0) - 64;
 }
 
-export function getSocialInfoValue(type, neighbors) {
+export function getMinMaxErrorMessage(answer, task) {
+  const err = getMinMaxError(answer, task);
+  switch (err) {
+    case "min":
+      return `Answer should be at least ${task.question.min}.`;
+    case "max":
+      return `Answer should be at most ${task.question.max}.`;
+    default:
+      return "";
+  }
+}
+
+export function getMinMaxError(answer, task) {
+  if (task.question.min !== undefined) {
+    if (answer < task.question.min) {
+      return "min";
+    }
+  }
+
+  if (task.question.max !== undefined) {
+    if (answer > task.question.max) {
+      return "max";
+    }
+  }
+}
+
+export function getSocialInfoValue(type, neighbors, task) {
   if (!neighbors) {
     console.warn("No neighbors on getSocialInfovalue!");
     return 0;
   }
 
-  const values = neighbors.map(
-    (p) => p.stage.get("tmpanswer") || p.round.get("answer") || 0
-  );
+  const values = neighbors
+    .map((p) => {
+      const answer = p.stage.get("tmpanswer") || p.round.get("answer");
+
+      if (answer === undefined) {
+        return 0;
+      }
+
+      if (task.question.min !== undefined) {
+        if (answer < task.question.min) {
+          return null;
+        }
+      }
+      if (task.question.max !== undefined) {
+        if (answer > task.question.max) {
+          return null;
+        }
+      }
+
+      return answer;
+    })
+    .filter((a) => a !== null);
 
   if (values.length === 0) {
     return 0;

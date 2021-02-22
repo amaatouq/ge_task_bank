@@ -4,6 +4,7 @@ import tippy from "tippy.js";
 import "tippy.js/dist/tippy.css"; // optional
 import "tippy.js/themes/light.css";
 import { applyMagnitude } from "../../../shared/conversions";
+import { getMinMaxErrorMessage } from "../../../shared/helper";
 
 export default class Question extends React.Component {
   constructor(props) {
@@ -37,19 +38,7 @@ export default class Question extends React.Component {
       answer = applyMagnitude(answer, task.question.magnitude);
     }
 
-    let err;
-    if (task.question.min !== undefined) {
-      if (answer < task.question.min) {
-        err = `Answer should be at least ${task.question.min}.`;
-      }
-    }
-
-    if (task.question.max !== undefined) {
-      if (answer > task.question.max) {
-        err = `Answer should be at most ${task.question.max}.`;
-      }
-    }
-
+    const err = getMinMaxErrorMessage(answer, task);
     if (!err) {
       return null;
     }
@@ -72,10 +61,11 @@ export default class Question extends React.Component {
       >
         <div className="flex items-baseline justify-center w-full max-w-4xl">
           <div
-            className={`${stage.name !== "response" &&
+            className={`${
+              stage.name !== "response" &&
               stage.name !== "social" &&
               "text-right w-20 "
-              }text-base text-gray-800 pr-3`}
+            }text-base text-gray-800 pr-3`}
           >
             {round.index + 1}.
           </div>
@@ -99,8 +89,8 @@ export default class Question extends React.Component {
                   </svg>
                 </div>
               ) : (
-                  ""
-                )}
+                ""
+              )}
             </div>
 
             {task.question.description ? (
@@ -108,8 +98,8 @@ export default class Question extends React.Component {
                 {task.question.description}
               </div>
             ) : (
-                ""
-              )}
+              ""
+            )}
 
             {this.renderError()}
           </div>

@@ -4,7 +4,7 @@ import ChatContainer from "../chat/ChatContainer";
 import SocialInfo from "./SocialInfo";
 
 export default function SocialExposure(props) {
-  const { stage, game, player } = props;
+  const { stage, round, game, player } = props;
   const { treatment } = game;
   const {
     chat = false,
@@ -21,8 +21,8 @@ export default function SocialExposure(props) {
     return null;
   }
 
+  const task = round.get("task");
   const showChat = chat && stage.name === "social";
-
   const neighborIndexes = player.get("neighbors");
   const neighbors = [];
   const info = [];
@@ -40,10 +40,6 @@ export default function SocialExposure(props) {
     isFeedback = false;
   }
 
-  if (meanSocialInfo) {
-    info.push("mean");
-  }
-
   if (minSocialInfo) {
     info.push("min");
   }
@@ -54,6 +50,10 @@ export default function SocialExposure(props) {
 
   if (medianSocialInfo) {
     info.push("median");
+  }
+
+  if (meanSocialInfo) {
+    info.push("mean");
   }
 
   return (
@@ -68,7 +68,12 @@ export default function SocialExposure(props) {
                 {neighbors.length > 0 && info.length > 0 && (
                   <dl>
                     {info.map((i) => (
-                      <SocialInfo key={i} type={i} neighbors={neighbors} />
+                      <SocialInfo
+                        key={i}
+                        type={i}
+                        neighbors={neighbors}
+                        task={task}
+                      />
                     ))}
                   </dl>
                 )}
