@@ -21,6 +21,8 @@ export default function SocialExposure(props) {
     return null;
   }
 
+  const showChat = chat && stage.name === "social";
+
   const neighborIndexes = player.get("neighbors");
   const neighbors = [];
   const info = [];
@@ -34,29 +36,30 @@ export default function SocialExposure(props) {
     }
   });
 
-  if (stage.name === "response") {
-    isFeedback = false;
-  }
-
-  if (individualNumeric) {
+  if (stage.name === "response" || individualNumeric) {
     isFeedback = false;
   }
 
   if (meanSocialInfo) {
     info.push("mean");
   }
+
   if (minSocialInfo) {
     info.push("min");
   }
+
   if (maxSocialInfo) {
     info.push("max");
   }
+
   if (medianSocialInfo) {
     info.push("median");
   }
 
   return (
-    <div className={`pr-4 h-full grid grid-rows-${feedback && chat ? 2 : 1}`}>
+    <div
+      className={`pr-4 h-full grid grid-rows-${feedback && showChat ? 2 : 1}`}
+    >
       {feedback && (
         <div className="overflow-y-auto h-full">
           <div className="py-4 flex flex-col min-h-full justify-center">
@@ -83,7 +86,7 @@ export default function SocialExposure(props) {
           </div>
         </div>
       )}
-      {chat && <ChatContainer player={player} game={game} />}
+      {showChat && <ChatContainer player={player} game={game} />}
     </div>
   );
 }
