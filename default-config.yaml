@@ -243,7 +243,9 @@ factorTypes:
       Determines how many interactive stages there will be. This means there
       will be nInteractions separate stages where players will be able to see
       their neighbors’ guesses.
-    required: false
+
+      This has to be set to 0 for a solo game or a game with continuous social interaction.
+    required: true
     type: Integer
     min: 0
     max: 99999999
