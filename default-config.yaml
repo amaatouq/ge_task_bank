@@ -248,8 +248,8 @@ factorTypes:
     min: 0
     max: 99999999
   - _id: g26DS57dNWkaMiRcp
-    name: individualNumeric
-    description: Determines whether or not you can see your neighbors’ individual guesses.
+    name: hideSocialNumeric
+    description: If set to false show numeric information about your neighbors’ individual guesses. If set to true, don't show. This does not affect whether chats are shown or not.
     required: false
     type: Boolean
   - _id: 4Mc2N6mo29A78JWXD
