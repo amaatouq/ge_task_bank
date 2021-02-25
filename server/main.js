@@ -138,6 +138,14 @@ Empirica.gameInit((game) => {
           });
         }
       }
+
+      // And add a final response stage for after the last social interaction
+      round.addStage({
+        name: "response",
+        displayName: "Response",
+        durationInSeconds: isDebugTime ? 31540000 : responseDuration,
+      });
+
     } else {
 
       //...otherwise, just create one response stage...
@@ -155,6 +163,7 @@ Empirica.gameInit((game) => {
           durationInSeconds: isDebugTime ? 31540000 : socialDuration,
         });
       }
+
     }
 
 
