@@ -9,6 +9,7 @@ import QuestionImage from "../components/round/QuestionImage";
 import ResponseInput from "../components/round/ResponseInput";
 import RoundScore from "../components/round/RoundScore";
 import SocialExposure from "../components/round/SocialExposure";
+import SocialInstructions from "../components/round/SocialInstructions";
 
 export default class Response extends React.Component {
   revealHint = (event) => {
@@ -25,10 +26,10 @@ export default class Response extends React.Component {
       <div
         key={index}
         className={`mt-6 flex text-md xl:text-xl ${isNext
-            ? "text-gray-400 xl:text-shadow-md text-shadow-sm"
-            : isRevealed
-              ? "text-gray-800"
-              : "text-gray-300"
+          ? "text-gray-400 xl:text-shadow-md text-shadow-sm"
+          : isRevealed
+            ? "text-gray-800"
+            : "text-gray-300"
           }`}
       >
         <div
@@ -188,11 +189,14 @@ export default class Response extends React.Component {
   }
 
   render() {
+    const { stage, game } = this.props;
+
     return (
       <>
         <QuestionImage {...this.props} />
         <div className="flex justify-center items-center w-full">
           <div className="xl:max-w-screen-lg max-w-screen-sm">
+            {stage.name === "social" && <SocialInstructions game={game} />}
             <Question {...this.props}>{this.renderAnswer()}</Question>
           </div>
         </div>

@@ -69,7 +69,7 @@ export default class ResponseInput extends React.Component {
       player,
       stage,
       game: {
-        treatment: { interactionMode },
+        treatment: { interactionMode, chat, individualNumeric },
       },
     } = this.props;
     const { answer, focused, err } = this.state;
@@ -89,6 +89,7 @@ export default class ResponseInput extends React.Component {
 
     return (
       <form action="#" onSubmit={this.handleSubmit} className="relative w-full">
+
         <div className="flex relative">
           <NumberFormat
             thousandSeparator={true}
@@ -146,26 +147,22 @@ export default class ResponseInput extends React.Component {
         {answer === "" ? (
           ""
         ) : (
-          <>
-            <div className="mt-12">
-              <Button
-                tick
-                text={player.stage.submitted ? "Submitted" : "Submit"}
-                done={player.stage.submitted}
-                disabled={
-                  player.stage.submitted ||
-                  answer < minmax.min ||
-                  answer > minmax.max
-                }
-              />
-            </div>
-            {interactionMode === "continuous" && stage.name === "social" && (
-              <div className="text-gray-400 text-xs mt-3">
-                <i>You can edit your previous answer.</i>
+            <>
+              <div className="mt-12">
+                <Button
+                  tick
+                  text={player.stage.submitted ? "Submitted" : "Submit"}
+                  done={player.stage.submitted}
+                  disabled={
+                    player.stage.submitted ||
+                    answer < minmax.min ||
+                    answer > minmax.max
+                  }
+                />
               </div>
-            )}
-          </>
-        )}
+
+            </>
+          )}
       </form>
     );
   }

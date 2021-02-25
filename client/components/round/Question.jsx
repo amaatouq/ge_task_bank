@@ -61,11 +61,10 @@ export default class Question extends React.Component {
       >
         <div className="flex items-baseline justify-center w-full max-w-4xl">
           <div
-            className={`${
-              stage.name !== "response" &&
+            className={`${stage.name !== "response" &&
               stage.name !== "social" &&
               "text-right w-20 "
-            }text-base text-gray-800 pr-3`}
+              }text-base text-gray-800 pr-3`}
           >
             {round.index + 1}.
           </div>
@@ -89,8 +88,8 @@ export default class Question extends React.Component {
                   </svg>
                 </div>
               ) : (
-                ""
-              )}
+                  ""
+                )}
             </div>
 
             {task.question.description ? (
@@ -98,8 +97,8 @@ export default class Question extends React.Component {
                 {task.question.description}
               </div>
             ) : (
-              ""
-            )}
+                ""
+              )}
 
             {this.renderError()}
           </div>
