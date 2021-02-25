@@ -118,14 +118,37 @@ Empirica.gameInit((game) => {
     round.set("task", task);
     round.set("index", i);
 
-    for (let i = 0; i < nInteractions + 1; i++) {
+    // If we have more interactions than 0...
+    if (nInteractions > 0) {
+
+      // ...create an response and social stage for every interaction
+      for (let i = 0; i < nInteractions; i++) {
+        round.addStage({
+          name: "response",
+          displayName: "Response",
+          durationInSeconds: isDebugTime ? 31540000 : responseDuration,
+        });
+
+        // stil check that there are more than one player
+        if (playerCount > 1) {
+          round.addStage({
+            name: "social",
+            displayName: "Social",
+            durationInSeconds: isDebugTime ? 31540000 : socialDuration,
+          });
+        }
+      }
+    } else {
+
+      //...otherwise, just create one response stage...
       round.addStage({
         name: "response",
         displayName: "Response",
         durationInSeconds: isDebugTime ? 31540000 : responseDuration,
       });
 
-      if (playerCount > 1) {
+      //...and create one social stage if this is a continuous interaction mode
+      if (interactionMode === "continuous" && playerCount > 1) {
         round.addStage({
           name: "social",
           displayName: "Social",
@@ -133,6 +156,7 @@ Empirica.gameInit((game) => {
         });
       }
     }
+
 
     if (feedback) {
       round.addStage({
