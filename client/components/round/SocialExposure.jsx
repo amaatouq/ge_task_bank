@@ -8,7 +8,7 @@ export default function SocialExposure(props) {
   const { treatment } = game;
   const {
     chat = false,
-    individualNumeric = false,
+    hideSocialNumeric = false,
     feedback = false,
     meanSocialInfo = false,
     minSocialInfo = false,
@@ -36,7 +36,7 @@ export default function SocialExposure(props) {
     }
   });
 
-  if (stage.name === "response" || individualNumeric) {
+  if (stage.name === "response" || hideSocialNumeric) {
     isFeedback = false;
   }
 
