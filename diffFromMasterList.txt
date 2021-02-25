@@ -8,7 +8,9 @@ Exit Steps
 - Additional survey
 - Thanks (content)
 
-Change the tasks
+Different tasks
+
+A preventPluralize in the question object of the tasks
 
 Extra factor, shuffleHints, to shuffle participants so that the players
 always receive the same position of hint (the 1st, 2nd, or 3rd, etc.) for
