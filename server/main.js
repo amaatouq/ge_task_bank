@@ -118,7 +118,10 @@ Empirica.gameInit((game) => {
     round.set("task", task);
     round.set("index", i);
 
-    for (let i = 0; i < nInteractions + 1; i++) {
+    if (nInteractions > 0) {
+
+    }
+    for (let i = 0; i < nInteractions; i++) {
       round.addStage({
         name: "response",
         displayName: "Response",

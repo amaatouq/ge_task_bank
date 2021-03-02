@@ -112,6 +112,7 @@ export default class ResponseInput extends React.Component {
             magnitude
             focused={focused}
             answer={answer}
+            preventPluralize={task.question.preventPluralize}
             {...this.props}
           />
           <NumberToWords answer={answer} task={task} {...this.props} />
