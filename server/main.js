@@ -117,11 +117,11 @@ Empirica.gameInit((game) => {
     task.instructions = instructions[task.task];
     round.set("task", task);
     round.set("index", i);
+    
+    // If we have more interactions than 0, more than 1 player, and discreet interactions...
+    if (nInteractions > 0 && playerCount > 1 && interactionMode === "discreet" ) {
 
-    // If we have more interactions than 0...
-    if (nInteractions > 0) {
-
-      // ...create an response and social stage for every interaction
+      // ...create a response and social stage for every interaction
       for (let i = 0; i < nInteractions; i++) {
         round.addStage({
           name: "response",
@@ -129,14 +129,11 @@ Empirica.gameInit((game) => {
           durationInSeconds: isDebugTime ? 31540000 : responseDuration,
         });
 
-        // stil check that there are more than one player
-        if (playerCount > 1) {
-          round.addStage({
-            name: "social",
-            displayName: "Social",
-            durationInSeconds: isDebugTime ? 31540000 : socialDuration,
-          });
-        }
+        round.addStage({
+          name: "social",
+          displayName: "Social",
+          durationInSeconds: isDebugTime ? 31540000 : socialDuration,
+        });
       }
 
       // And add a final response stage for after the last social interaction

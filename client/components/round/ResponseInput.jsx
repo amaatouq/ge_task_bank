@@ -112,6 +112,7 @@ export default class ResponseInput extends React.Component {
             magnitude
             focused={focused}
             answer={answer}
+            preventPluralize={task.question.preventPluralize}
             {...this.props}
           />
           <NumberToWords answer={answer} task={task} {...this.props} />
@@ -146,26 +147,34 @@ export default class ResponseInput extends React.Component {
         {answer === "" ? (
           ""
         ) : (
-          <>
-            <div className="mt-12">
-              <Button
-                tick
-                text={player.stage.submitted ? "Submitted" : "Submit"}
-                done={player.stage.submitted}
-                disabled={
-                  player.stage.submitted ||
-                  answer < minmax.min ||
-                  answer > minmax.max
-                }
-              />
-            </div>
-            {interactionMode === "continuous" && stage.name === "social" && (
-              <div className="text-gray-400 text-xs mt-3">
-                <i>You can edit your previous answer.</i>
+            <>
+              <div className="mt-12">
+                <Button
+                  tick
+                  text={
+                    player.stage.submitted
+                      ? interactionMode === "discreet" && stage.name === "social"
+                        ? "Waiting for the other players..."
+                        : "Submitted"
+                      : interactionMode === "discreet" && stage.name === "social"
+                        ? "OK"
+                        : "Submit"
+                  }
+                  done={player.stage.submitted}
+                  disabled={
+                    player.stage.submitted ||
+                    answer < minmax.min ||
+                    answer > minmax.max
+                  }
+                />
               </div>
-            )}
-          </>
-        )}
+              {interactionMode === "continuous" && stage.name === "social" && (
+                <div className="text-gray-400 text-xs mt-3">
+                  <i>You can edit your previous answer.</i>
+                </div>
+              )}
+            </>
+          )}
       </form>
     );
   }
