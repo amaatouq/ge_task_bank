@@ -8,7 +8,10 @@ import { TickIcon } from "../components/icons/TickIcon";
 
 export default class PlayersResponse extends React.Component {
   render() {
-    const { player, round, neighbors: players, stage } = this.props;
+    const { player, round,
+      game: { treatment: { hideSocialNumeric, feedback } },
+      neighbors: players, stage
+    } = this.props;
 
     const allPlayers = [player, ...players];
     const task = round.get("task");
@@ -66,22 +69,23 @@ export default class PlayersResponse extends React.Component {
                     />
                   )}
 
-                  <div
-                    className={`text-sm ${
-                      minmaxerr ? "text-red-500" : "text-gray-500"
-                    }`}
-                  >
-                    <NumberFormat
-                      value={answer}
-                      displayType={"text"}
-                      thousandSeparator={true}
-                    />{" "}
-                    <span
-                      className={minmaxerr ? "text-red-400" : "text-gray-400"}
+                  {!hideSocialNumeric &&
+                    <div
+                      className={`text-sm ${minmaxerr ? "text-red-500" : "text-gray-500"
+                        }`}
                     >
-                      {unit}
-                    </span>
-                  </div>
+                      <NumberFormat
+                        value={answer}
+                        displayType={"text"}
+                        thousandSeparator={true}
+                      />{" "}
+                      <span
+                        className={minmaxerr ? "text-red-400" : "text-gray-400"}
+                      >
+                        {unit}
+                      </span>
+                    </div>
+                  }
                 </div>
 
                 {minmaxerr ? (
@@ -91,16 +95,18 @@ export default class PlayersResponse extends React.Component {
                     </div>
                   </div>
                 ) : (
-                  ""
-                )}
+                    ""
+                  )}
               </div>
 
-              <div className="text-gray-500 pl-5 text-sm flex items-center">
-                <CoinIcon />
-                <div className="pl-2">
-                  {stage.name === "feedback" ? p.round.get("score") : 0}
+              {feedback &&
+                <div className="text-gray-500 pl-5 text-sm flex items-center">
+                  <CoinIcon />
+                  <div className="pl-2">
+                    {stage.name === "feedback" ? p.round.get("score") : 0}
+                  </div>
                 </div>
-              </div>
+              }
             </div>
           );
         })}

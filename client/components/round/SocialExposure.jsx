@@ -9,7 +9,6 @@ export default function SocialExposure(props) {
   const {
     chat = false,
     hideSocialNumeric = false,
-    feedback = false,
     meanSocialInfo = false,
     minSocialInfo = false,
     maxSocialInfo = false,
@@ -36,10 +35,6 @@ export default function SocialExposure(props) {
     }
   });
 
-  if (stage.name === "response" || hideSocialNumeric) {
-    isFeedback = false;
-  }
-
   if (minSocialInfo) {
     info.push("min");
   }
@@ -58,39 +53,37 @@ export default function SocialExposure(props) {
 
   return (
     <div
-      className={`pr-4 h-full grid grid-rows-${feedback && showChat ? 2 : 1}`}
+      className={`pr-4 h-full grid grid-rows-${showChat ? 2 : 1}`}
     >
-      {feedback && (
-        <div className="overflow-y-auto h-full">
-          <div className="py-4 flex flex-col min-h-full justify-center">
-            {isFeedback && (
-              <>
-                {neighbors.length > 0 && info.length > 0 && (
-                  <dl>
-                    {info.map((i) => (
-                      <SocialInfo
-                        key={i}
-                        type={i}
-                        neighbors={neighbors}
-                        task={task}
-                      />
-                    ))}
-                  </dl>
-                )}
-                {neighbors.length > 0 && (
-                  <div className="mt-5">
-                    <PlayersResponse
-                      {...props}
+      <div className="overflow-y-auto h-full">
+        <div className="py-4 flex flex-col min-h-full justify-center">
+          {stage.name !== "response" && (
+            <>
+              {neighbors.length > 0 && info.length > 0 && !hideSocialNumeric && (
+                <dl>
+                  {info.map((i) => (
+                    <SocialInfo
+                      key={i}
+                      type={i}
                       neighbors={neighbors}
-                      withInfo={info.length > 0}
+                      task={task}
                     />
-                  </div>
-                )}
-              </>
-            )}
-          </div>
+                  ))}
+                </dl>
+              )}
+              {neighbors.length > 0 && (
+                <div className="mt-5">
+                  <PlayersResponse
+                    {...props}
+                    neighbors={neighbors}
+                    withInfo={info.length > 0}
+                  />
+                </div>
+              )}
+            </>
+          )}
         </div>
-      )}
+      </div>
       {showChat && <ChatContainer player={player} game={game} />}
     </div>
   );
