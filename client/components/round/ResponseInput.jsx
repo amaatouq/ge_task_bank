@@ -11,8 +11,8 @@ export default class ResponseInput extends React.Component {
 
     this.state = {
       answer:
-        props.player.stage.get("tmpanswer") ||
-        props.player.round.get("answer") ||
+        props.player.stage.get("tmpanswer") ??
+        props.player.round.get("answer") ??
         "",
       focused: false,
     };
