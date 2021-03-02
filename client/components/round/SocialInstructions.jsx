@@ -4,7 +4,7 @@ export default class SocialInstructions extends Component {
     render() {
         const { game: {
             treatment: {
-                interactionMode, chat, individualNumeric
+                interactionMode, chat, hideSocialNumeric
             }
         }
         } = this.props;
@@ -16,7 +16,7 @@ export default class SocialInstructions extends Component {
 
                 {interactionMode === "continuous" && <>
                     <ul className={"list-disc pl-6"}>
-                        {!individualNumeric && <li>See information about the other players' responses (even if they change them)</li>}
+                        {!hideSocialNumeric && <li>See information about the other players' responses (even if they change them)</li>}
                         {chat && <li>Chat with other players about their response</li>}
                         <li>Modify your response until you click 'submit' or the stage ends</li>
                     </ul>
@@ -25,7 +25,7 @@ export default class SocialInstructions extends Component {
 
                 {interactionMode === "discreet" && <>
                     <ul className={"list-disc pl-6"}>
-                        {!individualNumeric && <li>See information about the other players' responses</li>}
+                        {!hideSocialNumeric && <li>See information about the other players' responses</li>}
                         {chat && <li>Chat with other players about their response</li>}
                     </ul>
                 </>
