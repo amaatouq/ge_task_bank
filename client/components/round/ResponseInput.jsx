@@ -151,7 +151,15 @@ export default class ResponseInput extends React.Component {
               <div className="mt-12">
                 <Button
                   tick
-                  text={player.stage.submitted ? "Submitted" : "Submit"}
+                  text={
+                    player.stage.submitted
+                      ? interactionMode === "discreet" && stage.name === "social"
+                        ? "Waiting for the other players..."
+                        : "Submitted"
+                      : interactionMode === "discreet" && stage.name === "social"
+                        ? "OK"
+                        : "Submit"
+                  }
                   done={player.stage.submitted}
                   disabled={
                     player.stage.submitted ||
