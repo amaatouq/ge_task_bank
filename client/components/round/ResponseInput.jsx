@@ -69,7 +69,7 @@ export default class ResponseInput extends React.Component {
       player,
       stage,
       game: {
-        treatment: { interactionMode, chat, individualNumeric },
+        treatment: { interactionMode },
       },
     } = this.props;
     const { answer, focused, err } = this.state;
