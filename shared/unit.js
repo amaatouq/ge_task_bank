@@ -1,7 +1,7 @@
 import { magnitudesToEnglish } from "./conversions";
 import pluralize from "pluralize";
 
-export function getUnit({ round, answer, magnitude }) {
+export function getUnit({ round, answer, magnitude, preventPluralize }) {
   const task = round.get("task");
 
   let unit = task.question.unit;
@@ -14,6 +14,8 @@ export function getUnit({ round, answer, magnitude }) {
   }
 
   const a = parseInt(answer || 0, 10);
-  unit = pluralize(unit, a);
+  if (!preventPluralize) {
+    unit = pluralize(unit, a);
+  }
   return unit;
 }

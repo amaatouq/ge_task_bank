@@ -117,22 +117,52 @@ Empirica.gameInit((game) => {
     task.instructions = instructions[task.task];
     round.set("task", task);
     round.set("index", i);
+    
+    // If we have more interactions than 0, more than 1 player, and discreet interactions...
+    if (nInteractions > 0 && playerCount > 1 && interactionMode === "discreet" ) {
 
-    for (let i = 0; i < nInteractions + 1; i++) {
-      round.addStage({
-        name: "response",
-        displayName: "Response",
-        durationInSeconds: isDebugTime ? 31540000 : responseDuration,
-      });
+      // ...create a response and social stage for every interaction
+      for (let i = 0; i < nInteractions; i++) {
+        round.addStage({
+          name: "response",
+          displayName: "Response",
+          durationInSeconds: isDebugTime ? 31540000 : responseDuration,
+        });
 
-      if (playerCount > 1) {
         round.addStage({
           name: "social",
           displayName: "Social",
           durationInSeconds: isDebugTime ? 31540000 : socialDuration,
         });
       }
+
+      // And add a final response stage for after the last social interaction
+      round.addStage({
+        name: "response",
+        displayName: "Response",
+        durationInSeconds: isDebugTime ? 31540000 : responseDuration,
+      });
+
+    } else {
+
+      //...otherwise, just create one response stage...
+      round.addStage({
+        name: "response",
+        displayName: "Response",
+        durationInSeconds: isDebugTime ? 31540000 : responseDuration,
+      });
+
+      //...and create one social stage if this is a continuous interaction mode
+      if (interactionMode === "continuous" && playerCount > 1) {
+        round.addStage({
+          name: "social",
+          displayName: "Social",
+          durationInSeconds: isDebugTime ? 31540000 : socialDuration,
+        });
+      }
+
     }
+
 
     if (feedback) {
       round.addStage({
