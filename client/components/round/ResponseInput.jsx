@@ -41,25 +41,34 @@ export default class ResponseInput extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    const { player } = this.props;
-    const { answer } = this.state;
+    const { player,
+      stage,
+      game: {
+        treatment: { interactionMode },
+      }
+    } = this.props;
 
-    if (answer === "") {
-      return;
+    if (!(interactionMode === "discreet" && stage.name === "social")) {
+      const { answer } = this.state;
+
+      if (answer === "") {
+        return;
+      }
+
+      // If answered as int, save int, otherwise save float
+
+      const f = parseFloat(answer);
+      const i = parseInt(answer, 10);
+
+      let a = f;
+      if (f === i) {
+        a = i;
+      }
+
+      player.stage.set("answer", a);
+      player.round.set("answer", a);
     }
 
-    // If answered as int, save int, otherwise save float
-
-    const f = parseFloat(answer);
-    const i = parseInt(answer, 10);
-
-    let a = f;
-    if (f === i) {
-      a = i;
-    }
-
-    player.stage.set("answer", a);
-    player.round.set("answer", a);
     player.stage.submit();
   };
 
@@ -144,7 +153,7 @@ export default class ResponseInput extends React.Component {
         )}
         */}
 
-        {answer === "" ? (
+        {answer === "" && !(interactionMode === "discreet" && stage.name === "social") ? (
           ""
         ) : (
             <>
