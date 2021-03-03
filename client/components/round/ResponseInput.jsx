@@ -98,6 +98,7 @@ export default class ResponseInput extends React.Component {
 
     return (
       <form action="#" onSubmit={this.handleSubmit} className="relative w-full">
+
         <div className="flex relative">
           <NumberFormat
             thousandSeparator={true}
@@ -177,11 +178,6 @@ export default class ResponseInput extends React.Component {
                   }
                 />
               </div>
-              {interactionMode === "continuous" && stage.name === "social" && (
-                <div className="text-gray-400 text-xs mt-3">
-                  <i>You can edit your previous answer.</i>
-                </div>
-              )}
             </>
           )}
       </form>
