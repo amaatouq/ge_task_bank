@@ -2,6 +2,7 @@ import { Chat } from "@empirica/chat";
 import React, { Component } from "react";
 import ChatFooter from "./ChatFooter";
 import ChatMessage from "./ChatMessage";
+import { nameToAvatar } from "../../../shared/avatars";
 
 export default class ChatContainer extends Component {
   constructor(props) {
@@ -65,6 +66,17 @@ export default class ChatContainer extends Component {
     }
   };
 
+  getPlayersFromGroup = (group) => {
+    const { game } = this.props;
+
+    const chatPlayers = game.players.filter((player) => {
+      let playerGroups = player.get("chatGroups");
+      return playerGroups.includes(group);
+    });
+
+    return chatPlayers;
+  };
+
   render() {
     const { activeGroup, groups, newMessagesGroup } = this.state;
     const { player, game } = this.props;
@@ -117,21 +129,47 @@ export default class ChatContainer extends Component {
           ""
         )}
 
-        {groups.map((g) => (
-          <div
-            key={g}
-            className={`overflow-hidden ${g !== activeGroup ? "hidden" : ""}`}
-          >
-            <Chat
-              {...commonProps}
-              customKey={g}
-              customClassName="experiment-chat"
-              footer={ChatFooter}
-              message={ChatMessage}
-              onIncomingMessage={this.handleIncomingMessage}
-            />
-          </div>
-        ))}
+        {groups.map((g) => {
+          let chatPlayers = this.getPlayersFromGroup(g);
+          return (
+            <div
+              key={g}
+              className={`overflow-hidden grid chat-container ${
+                g !== activeGroup ? "hidden" : ""
+              }`}
+            >
+              <div className="bg-gray-100 p-1">
+                <div className="text-gray-500 text-xs flex justify-center mb-1">
+                  Chat with:
+                </div>
+                <div className="flex justify-evenly">
+                  {chatPlayers.map((p, index) => {
+                    const avatar = nameToAvatar[p.get("avatar")];
+                    if (p._id !== player._id) {
+                      return (
+                        <div
+                          key={index}
+                          title={p.get("avatar")}
+                          dangerouslySetInnerHTML={{ __html: avatar.svg }}
+                          className="pr-1 w-7 h-icon-svg"
+                        />
+                      );
+                    }
+                  })}
+                </div>
+              </div>
+
+              <Chat
+                {...commonProps}
+                customKey={g}
+                customClassName="experiment-chat"
+                footer={ChatFooter}
+                message={ChatMessage}
+                onIncomingMessage={this.handleIncomingMessage}
+              />
+            </div>
+          );
+        })}
       </div>
     );
   }
