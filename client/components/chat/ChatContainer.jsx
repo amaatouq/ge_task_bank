@@ -66,10 +66,10 @@ export default class ChatContainer extends Component {
     }
   };
 
-  getPlayersFromGroup = group => {
+  getPlayersFromGroup = (group) => {
     const { game } = this.props;
 
-    const chatPlayers = game.players.filter(player => {
+    const chatPlayers = game.players.filter((player) => {
       let playerGroups = player.get("chatGroups");
       return playerGroups.includes(group);
     });
@@ -126,37 +126,38 @@ export default class ChatContainer extends Component {
             })}
           </div>
         ) : (
-            ""
-          )}
+          ""
+        )}
 
         {groups.map((g) => {
           let chatPlayers = this.getPlayersFromGroup(g);
           return (
             <div
               key={g}
-              className={`overflow-hidden ${g !== activeGroup ? "hidden" : ""}`}
+              className={`overflow-hidden grid chat-container ${
+                g !== activeGroup ? "hidden" : ""
+              }`}
             >
               <div className="bg-gray-100 p-1">
-                <div className="text-gray-500 text-xs flex justify-center mb-1">Chat with:</div>
+                <div className="text-gray-500 text-xs flex justify-center mb-1">
+                  Chat with:
+                </div>
                 <div className="flex justify-evenly">
-                  {
-                    chatPlayers.map((p, index) => {
-                      const avatar = nameToAvatar[p.get("avatar")];
-                      if (p._id !== player._id) {
-                        return (
-                          <div
-                            key={index}
-                            title={p.get("avatar")}
-                            dangerouslySetInnerHTML={{ __html: avatar.svg }}
-                            className="pr-1 w-7 h-icon-svg"
-                          />
-                        )
-                      }
-                    })
-                  }
+                  {chatPlayers.map((p, index) => {
+                    const avatar = nameToAvatar[p.get("avatar")];
+                    if (p._id !== player._id) {
+                      return (
+                        <div
+                          key={index}
+                          title={p.get("avatar")}
+                          dangerouslySetInnerHTML={{ __html: avatar.svg }}
+                          className="pr-1 w-7 h-icon-svg"
+                        />
+                      );
+                    }
+                  })}
                 </div>
               </div>
-
 
               <Chat
                 {...commonProps}
@@ -167,10 +168,9 @@ export default class ChatContainer extends Component {
                 onIncomingMessage={this.handleIncomingMessage}
               />
             </div>
-          )
-        })
-        }
-      </div >
+          );
+        })}
+      </div>
     );
   }
 }
