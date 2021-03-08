@@ -120,13 +120,8 @@ input[type="number"]::-webkit-outer-spin-button {
   grid-template-rows: 64px 1fr;
 }
 
-.chat-container {
-  grid-template-rows: 64px 1fr;
-
-}
-
 .experiment-chat {
-  height: 100%;
+  height: calc(100% - 52px);
 }
 
 .experiment-chat .chat {
