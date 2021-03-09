@@ -25,7 +25,6 @@ export default function SocialExposure(props) {
   const neighborIndexes = player.get("neighbors");
   const neighbors = [];
   const info = [];
-  let isFeedback = true;
 
   neighborIndexes.forEach((i) => {
     const neighbor = game.players.find((p) => p.get("index") === parseInt(i));
@@ -52,9 +51,7 @@ export default function SocialExposure(props) {
   }
 
   return (
-    <div
-      className={`pr-4 h-full grid grid-rows-${showChat ? 2 : 1}`}
-    >
+    <div className={`pr-4 h-full grid grid-rows-${showChat ? 2 : 1}`}>
       <div className="overflow-y-auto h-full">
         <div className="py-4 flex flex-col min-h-full justify-center">
           {stage.name !== "response" && (

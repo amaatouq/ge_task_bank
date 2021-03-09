@@ -13,13 +13,20 @@ export default class Round extends React.Component {
       stage,
       player,
       game: {
-        treatment: { feedback, playerCount, hideAvatar, hideTimer, chat },
+        treatment: {
+          feedback,
+          playerCount,
+          hideAvatar,
+          hideTimer,
+          chat,
+          hideSocialNumeric = false,
+        },
       },
     } = this.props;
 
     const task = round.get("task");
     const hasQImage = task.question.image;
-    const has3rdcol = stage.name === "feedback" || chat;
+    const has3rdcol = stage.name === "feedback" || chat || !hideSocialNumeric;
     const cols = `${hasQImage ? "1fr" : ""} 1fr ${has3rdcol ? "320px" : ""}`;
 
     return (
