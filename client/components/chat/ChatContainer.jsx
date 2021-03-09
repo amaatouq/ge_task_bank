@@ -134,7 +134,7 @@ export default class ChatContainer extends Component {
           return (
             <div
               key={g}
-              className={`overflow-hidden grid chat-container ${
+              className={`overflow-hidden flex flex-col ${
                 g !== activeGroup ? "hidden" : ""
               }`}
             >
