@@ -24,7 +24,7 @@ treatments:
       - oWBpWDi7Bp2MysKkg
       - HtyBPSwcDcFZiGLvJ
       - K5zWm2zxy2nT9S6nx
-      - ZpuqmBcSAPFGca29Z
+      - ofBoizkLkaDMBiXmA
       - 4iyZdsK3HiRFWYcdi
       - YvEKKNPTX7AyGvkQZ
       - b6TbBEgY4qtsjFCae
@@ -50,7 +50,7 @@ treatments:
       - oWBpWDi7Bp2MysKkg
       - HtyBPSwcDcFZiGLvJ
       - K5zWm2zxy2nT9S6nx
-      - ZpuqmBcSAPFGca29Z
+      - ofBoizkLkaDMBiXmA
       - 4iyZdsK3HiRFWYcdi
       - YvEKKNPTX7AyGvkQZ
       - b6TbBEgY4qtsjFCae
@@ -243,13 +243,15 @@ factorTypes:
       Determines how many interactive stages there will be. This means there
       will be nInteractions separate stages where players will be able to see
       their neighbors’ guesses.
-    required: false
+
+      This has to be set to 0 for a solo game or a game with continuous social interaction.
+    required: true
     type: Integer
     min: 0
     max: 99999999
   - _id: g26DS57dNWkaMiRcp
-    name: individualNumeric
-    description: Determines whether or not you can see your neighbors’ individual guesses.
+    name: hideSocialNumeric
+    description: If set to false show numeric information about your neighbors’ individual guesses. If set to true, don't show. This does not affect whether chats are shown or not.
     required: false
     type: Boolean
   - _id: 4Mc2N6mo29A78JWXD

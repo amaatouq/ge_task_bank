@@ -39,12 +39,6 @@ Empirica.breadcrumb(() => null);
 Empirica.introSteps((game, treatment) => {
   const steps = [AttentionCheck, Instructions, Quiz];
   return steps;
-  // return [];
-  // const steps = [InstructionStepOne];
-  // if (treatment.playerCount > 1) {
-  //   steps.push(InstructionStepTwo);
-  // }
-  // steps.push(Quiz);
 });
 
 // The Round component containing the game UI logic.

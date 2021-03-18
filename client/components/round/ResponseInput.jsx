@@ -11,8 +11,8 @@ export default class ResponseInput extends React.Component {
 
     this.state = {
       answer:
-        props.player.stage.get("tmpanswer") ||
-        props.player.round.get("answer") ||
+        props.player.stage.get("tmpanswer") ??
+        props.player.round.get("answer") ??
         "",
       focused: false,
     };
@@ -41,25 +41,34 @@ export default class ResponseInput extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    const { player } = this.props;
-    const { answer } = this.state;
+    const { player,
+      stage,
+      game: {
+        treatment: { interactionMode },
+      }
+    } = this.props;
 
-    if (answer === "") {
-      return;
+    if (!(interactionMode === "discreet" && stage.name === "social")) {
+      const { answer } = this.state;
+
+      if (answer === "") {
+        return;
+      }
+
+      // If answered as int, save int, otherwise save float
+
+      const f = parseFloat(answer);
+      const i = parseInt(answer, 10);
+
+      let a = f;
+      if (f === i) {
+        a = i;
+      }
+
+      player.stage.set("answer", a);
+      player.round.set("answer", a);
     }
 
-    // If answered as int, save int, otherwise save float
-
-    const f = parseFloat(answer);
-    const i = parseInt(answer, 10);
-
-    let a = f;
-    if (f === i) {
-      a = i;
-    }
-
-    player.stage.set("answer", a);
-    player.round.set("answer", a);
     player.stage.submit();
   };
 
@@ -89,6 +98,7 @@ export default class ResponseInput extends React.Component {
 
     return (
       <form action="#" onSubmit={this.handleSubmit} className="relative w-full">
+
         <div className="flex relative">
           <NumberFormat
             thousandSeparator={true}
@@ -144,29 +154,32 @@ export default class ResponseInput extends React.Component {
         )}
         */}
 
-        {answer === "" ? (
+        {answer === "" && !(interactionMode === "discreet" && stage.name === "social") ? (
           ""
         ) : (
-            <>
-              <div className="mt-12">
-                <Button
-                  tick
-                  text={player.stage.submitted ? "Submitted" : "Submit"}
-                  done={player.stage.submitted}
-                  disabled={
-                    player.stage.submitted ||
-                    answer < minmax.min ||
-                    answer > minmax.max
-                  }
-                />
-              </div>
-              {interactionMode === "continuous" && stage.name === "social" && (
-                <div className="text-gray-400 text-xs mt-3">
-                  <i>You can edit your previous answer.</i>
-                </div>
-              )}
-            </>
-          )}
+          <>
+            <div className="mt-12">
+              <Button
+                tick
+                text={
+                  player.stage.submitted
+                    ? interactionMode === "discreet" && stage.name === "social"
+                      ? "Waiting for the other players..."
+                      : "Submitted"
+                    : interactionMode === "discreet" && stage.name === "social"
+                      ? "OK"
+                      : "Submit"
+                }
+                done={player.stage.submitted}
+                disabled={
+                  player.stage.submitted ||
+                  answer < minmax.min ||
+                  answer > minmax.max
+                }
+              />
+            </div>
+          </>
+        )}
       </form>
     );
   }

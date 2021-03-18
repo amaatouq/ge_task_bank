@@ -8,7 +8,7 @@ export default class Button extends React.Component {
 
     return (
       <button
-        className="px-4 py-3 bg-gray-300 hover:opacity-50 disabled:opacity-50 active:bg-gray-400 text-gray-800 rounded flex items-center text-lg font-semibold leading-none shadow-md disabled:cursor-not-allowed transition-opacity duration-300"
+        className="px-4 py-3 bg-gray-300 hover:opacity-90 disabled:opacity-50 active:bg-gray-400 text-gray-800 rounded flex items-center text-lg font-semibold leading-none shadow-md disabled:cursor-not-allowed transition-opacity duration-300"
         type="submit"
         onClick={onClick}
         {...rest}

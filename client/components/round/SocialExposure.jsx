@@ -4,12 +4,11 @@ import ChatContainer from "../chat/ChatContainer";
 import SocialInfo from "./SocialInfo";
 
 export default function SocialExposure(props) {
-  const { stage, game, player } = props;
+  const { stage, round, game, player } = props;
   const { treatment } = game;
   const {
     chat = false,
-    individualNumeric = false,
-    feedback = false,
+    hideSocialNumeric = false,
     meanSocialInfo = false,
     minSocialInfo = false,
     maxSocialInfo = false,
@@ -21,10 +20,11 @@ export default function SocialExposure(props) {
     return null;
   }
 
+  const task = round.get("task");
+  const showChat = chat && stage.name === "social";
   const neighborIndexes = player.get("neighbors");
   const neighbors = [];
   const info = [];
-  let isFeedback = true;
 
   neighborIndexes.forEach((i) => {
     const neighbor = game.players.find((p) => p.get("index") === parseInt(i));
@@ -34,56 +34,54 @@ export default function SocialExposure(props) {
     }
   });
 
-  if (stage.name === "response") {
-    isFeedback = false;
+  if (minSocialInfo) {
+    info.push("min");
   }
 
-  if (individualNumeric) {
-    isFeedback = false;
+  if (maxSocialInfo) {
+    info.push("max");
+  }
+
+  if (medianSocialInfo) {
+    info.push("median");
   }
 
   if (meanSocialInfo) {
     info.push("mean");
   }
-  if (minSocialInfo) {
-    info.push("min");
-  }
-  if (maxSocialInfo) {
-    info.push("max");
-  }
-  if (medianSocialInfo) {
-    info.push("median");
-  }
 
   return (
-    <div className={`pr-4 h-full grid grid-rows-${feedback && chat ? 2 : 1}`}>
-      {feedback && (
-        <div className="overflow-y-auto h-full">
-          <div className="py-4 flex flex-col min-h-full justify-center">
-            {isFeedback && (
-              <>
-                {neighbors.length > 0 && info.length > 0 && (
-                  <dl>
-                    {info.map((i) => (
-                      <SocialInfo key={i} type={i} neighbors={neighbors} />
-                    ))}
-                  </dl>
-                )}
-                {neighbors.length > 0 && (
-                  <div className="mt-5">
-                    <PlayersResponse
-                      {...props}
+    <div className={`pr-4 h-full grid grid-rows-${showChat ? 2 : 1}`}>
+      <div className="overflow-y-auto h-full">
+        <div className="py-4 flex flex-col min-h-full justify-center">
+          {stage.name !== "response" && (
+            <>
+              {neighbors.length > 0 && info.length > 0 && !hideSocialNumeric && (
+                <dl>
+                  {info.map((i) => (
+                    <SocialInfo
+                      key={i}
+                      type={i}
                       neighbors={neighbors}
-                      withInfo={info.length > 0}
+                      task={task}
                     />
-                  </div>
-                )}
-              </>
-            )}
-          </div>
+                  ))}
+                </dl>
+              )}
+              {neighbors.length > 0 && (
+                <div className="mt-5">
+                  <PlayersResponse
+                    {...props}
+                    neighbors={neighbors}
+                    withInfo={info.length > 0}
+                  />
+                </div>
+              )}
+            </>
+          )}
         </div>
-      )}
-      {chat && <ChatContainer player={player} game={game} />}
+      </div>
+      {showChat && <ChatContainer player={player} game={game} />}
     </div>
   );
 }

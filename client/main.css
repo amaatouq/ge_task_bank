@@ -121,7 +121,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .experiment-chat {
-  height: 100%;
+  height: calc(100% - 52px);
 }
 
 .experiment-chat .chat {

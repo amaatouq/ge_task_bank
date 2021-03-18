@@ -4,6 +4,7 @@ import tippy from "tippy.js";
 import "tippy.js/dist/tippy.css"; // optional
 import "tippy.js/themes/light.css";
 import { applyMagnitude } from "../../../shared/conversions";
+import { getMinMaxErrorMessage } from "../../../shared/helper";
 
 export default class Question extends React.Component {
   constructor(props) {
@@ -37,19 +38,7 @@ export default class Question extends React.Component {
       answer = applyMagnitude(answer, task.question.magnitude);
     }
 
-    let err;
-    if (task.question.min !== undefined) {
-      if (answer < task.question.min) {
-        err = `Answer should be at least ${task.question.min}.`;
-      }
-    }
-
-    if (task.question.max !== undefined) {
-      if (answer > task.question.max) {
-        err = `Answer should be at most ${task.question.max}.`;
-      }
-    }
-
+    const err = getMinMaxErrorMessage(answer, task);
     if (!err) {
       return null;
     }
@@ -99,17 +88,17 @@ export default class Question extends React.Component {
                   </svg>
                 </div>
               ) : (
-                  ""
-                )}
+                ""
+              )}
             </div>
 
             {task.question.description ? (
-              <div className="text-gray-600 italic mt-4">
+              <div className="questions-text text-gray-600 italic mt-4">
                 {task.question.description}
               </div>
             ) : (
-                ""
-              )}
+              ""
+            )}
 
             {this.renderError()}
           </div>
