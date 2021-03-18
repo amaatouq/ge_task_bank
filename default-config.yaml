@@ -98,7 +98,7 @@ factorTypes:
     min: 1
   - _id: sToqhgYZPejDWvsp9
     name: nRounds
-    description: number of round
+    description: number of rounds
     required: true
     type: Integer
     min: 0

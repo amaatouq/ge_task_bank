@@ -1,3 +1,6 @@
+Packages:
+- Using react-device-detect to check that the users are not using mobile or problematic browser
+
 Intro Steps
 - Consent (content)
 - Instructions (content)
