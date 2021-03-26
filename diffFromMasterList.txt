@@ -16,3 +16,48 @@ Different tasks
 Extra factor, shuffleHints, to shuffle participants so that the players
 always receive the same position of hint (the 1st, 2nd, or 3rd, etc.) for
 each task, but which position of hint they receive is random at first.
+
+##File by file differences:##
+.gitignore | ignore .bat files
+
+client/components/Button.jsx | change colour/styling
+client/components/round/Question.jsx | change colour/styling
+client/components/round/ResponseInput.jsx | change colour/styling
+client/game/Response.jsx | change colour/styling
+
+client/components/survey/Matrix.jsx | custom exit survey
+client/exit/ExitSurvey.jsx | custom exit
+client/exit/Thanks.jsx | custom exit
+client/exit/nba-control-questions/FavTeamNBA.jsx | custom exit survey
+client/exit/nba-control-questions/SportsConsumeNBA.jsx | custom exit survey
+client/exit/nba-control-questions/SurveyNBA.jsx | custom exit survey
+
+client/intro/AttentionCheck.jsx | custom intro page
+client/intro/Consent.jsx | custom intro page
+client/intro/DemoStage.jsx | custom intro page
+client/intro/DemoStageNBA.jsx | custom intro page
+client/intro/Instructions.jsx | custom intro page
+client/intro/NewPlayerForm.jsx | custom intro page
+client/intro/Quiz.jsx | custom intro page
+client/intro/TriggerWarning.jsx | custom intro page
+
+client/main.css | added styling for matrix of custom exit survey
+
+client/main.js | get rid of 
+
+default-config.yaml | tweak a few requirements or names
+info-diversity-config.yaml | our own factors and treatments
+
+package-lock.json | Using react-device-detect
+package.json | Using react-device-detect
+
+server/main.js | added functionality for extra factor shuffleHints
+
+shared/helper.js | fixed 0 in social information
+
+shared/helperFunctions/choice.js | functions to randomly select
+
+shared/tasks/forecasting-task-prototypes.js | prototypes of forecasting tasks
+shared/tasks/master-task-file.js | tasks from the master branch
+shared/tasks/tasks.js | the tasks we are using
+shared/tasks/tasks_21-02-17.js | the tasks from 21-02-17
