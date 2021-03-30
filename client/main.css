@@ -147,5 +147,22 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .alt-main-container {
   display: grid;
-  grid-template-rows: 54px 182px 1fr ;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "question-container"
+    "meta-container";
+}
+
+.question-container {
+  min-height: 212px;
+  max-height: calc(50vh - 64px);
+  display: flex;
+}
+.question-container-column {
+  padding: 30px 20px;
+}
+.meta-container {
+  min-height: calc(50vh - 64px);
+  max-height: 100%;
+  display: flex;
 }
