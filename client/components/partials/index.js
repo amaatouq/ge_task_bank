@@ -1,1 +1,2 @@
-export * from "./Header";
+export * from "./Headers";
+export * from "./ModalInstruction";

@@ -1,7 +1,7 @@
 import React from "react";
 import { nameToAvatar } from "../../shared/avatars";
 
-export function Avatar({ player, bordered, iconOnly }) {
+export function Avatar({ player, bordered, iconOnly, isAltLayout }) {
   const av = player.get("avatar");
   if (!av) {
     return null;
@@ -17,6 +17,9 @@ export function Avatar({ player, bordered, iconOnly }) {
 
   if (bordered) {
     cn.push("border border-gray-400 px-5 py-1 rounded-full");
+    if (isAltLayout) {
+      cn.push("w-48");
+    }
   }
 
   return (
