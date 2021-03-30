@@ -25,23 +25,21 @@ export default class GameOverview extends Component {
     return (
       <IntroLayout title="Instructions" {...this.props}>
         <div>
-          <p>This task asks you to forecast the outcome for {textRounds} NBA basketball games.</p>
+          <p>This task asks you to answer {textRounds} question{textRounds > 1 && "s"}. For each question you will be asked to make an estimation (provide an educated guess) as to the correct answer to the question. </p>
 
-          <p>You will be provided with some additional information relevant to each game.</p>
+          <p>You will be provided with some additional information relevant to each question.</p>
 
           <p>Once you start typing an answer, a Submit button will appear that you can click when you are ready.</p>
 
           {!hideTimer &&
-            <p>You will have {responseDuration} seconds per forecast you make.</p>
+            <p>You will have {responseDuration} seconds per question.</p>
           }
 
-          <p>You will earn $0.15 guaranteed pay for each question answered. This pay will be processed within 2 business days.</p>
+          <p>You will earn $0.15 guaranteed pay for each question answered. You will also earn up to $0.15 bonus for accuracy. The more accurate your answer, the more you earn! This pay will be processed within 2 business days.</p>
 
-          <p>You will also earn up to $0.15 bonus for accuracy for each forecast. The more accurate your forecast, the more you earn! These bonuses will be processed within 2 business days of the last game, so we can calculate scores.</p>
+          <p>Maximum possible earnings are ${0.30 * textRounds}0.</p>
 
-          <p>Maximum possible earnings are $1.50</p>
-
-          <p>If you do not complete all 5 forecasts, you will be paid for whatever forecasts you complete before we close the session. This session will remain open for 24 hours from the time it was initially launched.</p>
+          <p>If you do not complete all questions, you will be paid for whatever question you have completed before we close the session. This session will remain open for 24 hours from the time it was initially launched.</p>
         </div>
 
         <br />

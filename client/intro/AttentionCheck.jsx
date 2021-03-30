@@ -30,7 +30,6 @@ export default class AttentionCheck extends Component {
 
     renderQuestion = () => {
         const {
-
             player
         } = this.props;
 
@@ -47,45 +46,50 @@ export default class AttentionCheck extends Component {
                         name="attentionCheck"
                         value="Washington Post"
                         onChange={this.handleRadioChange}
-                        checked={this.props.player.get("attentionCheck") == "Washington Post"}
+                        checked={player.get("attentionCheck") == "Washington Post"}
+                        style={{ marginBottom: "10px" }}
                     /> The Washington Post
-                            <br />
+                    <br />
 
                     <input
                         type="radio"
                         name="attentionCheck"
                         value="The Guardian"
                         onChange={this.handleRadioChange}
-                        checked={this.props.player.get("attentionCheck") == "The Guardian"}
+                        checked={player.get("attentionCheck") == "The Guardian"}
+                        style={{ marginBottom: "10px" }}
                     /> The Guardian
-                            <br />
+                    <br />
 
                     <input
                         type="radio"
                         name="attentionCheck"
                         value="Gorafi"
                         onChange={this.handleRadioChange}
-                        checked={this.props.player.get("attentionCheck") == "Gorafi"}
+                        checked={player.get("attentionCheck") == "Gorafi"}
+                        style={{ marginBottom: "10px" }}
                     /> Le Gorafi
-                            <br />
+                    <br />
 
                     <input
                         type="radio"
                         name="attentionCheck"
                         value="The Times"
                         onChange={this.handleRadioChange}
-                        checked={this.props.player.get("attentionCheck") == "The Times"}
+                        checked={player.get("attentionCheck") == "The Times"}
+                        style={{ marginBottom: "10px" }}
                     /> The Times
-                            <br />
+                    <br />
 
                     <input
                         type="radio"
                         name="attentionCheck"
                         value="Other"
                         onChange={this.handleRadioChange}
-                        checked={this.props.player.get("attentionCheck") == "Other"}
+                        checked={player.get("attentionCheck") == "Other"}
+                        style={{ marginBottom: "10px" }}
                     /> Other
-                            <br />
+                    <br />
 
                     <p className="mt-8 mb-8" style={{
                         display: "flex",
@@ -96,7 +100,7 @@ export default class AttentionCheck extends Component {
                             type="submit"
                         >
                             Submit
-                                </button>
+                        </button>
                     </p>
 
                 </form>

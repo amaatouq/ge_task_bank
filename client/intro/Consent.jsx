@@ -7,13 +7,16 @@ import { isMobile } from 'react-device-detect';
 
 export default class Consent extends React.Component {
   render() {
+    const isForecasting = false
+    const minutes = 5
+
     return !isMobile ?
       (
         <Wrapper {...this.props}>
           <div className="flex justify-center items-center text-base text-gray-800">
             <div className="max-w-2xl">
 
-              <TriggerWarning />
+              {isForecasting && <TriggerWarning />}
 
               <div className="text-5xl font-semibold mt-8 mb-6">
                 {" "}
@@ -30,9 +33,9 @@ export default class Consent extends React.Component {
               <h4 className="text-3xl font-semibold mt-8 mb-6">Information about this study</h4>
               <p>
                 Thank you for considering taking part in this research. If you have any questions arising from the information on this page or explanation already given to you, please contact the researcher before you decide whether to join in. You may want to save or print this page to keep for your records. Please read the following information carefully.
-				    </p>
+				      </p>
 
-              <p>The approximate duration of this study is <strong>5 minutes</strong>.</p>
+              <p>The approximate duration of this study is <strong>{minutes} minutes</strong>.</p>
               <p>Participation in this study is <strong>entirely anonymous.</strong> Data is collected and stored in accordance with the Data Protection Act 2018.</p>
               <p>You are free to end the study at any time. However, please note that <strong>we are only able to pay you for the parts of the study you have completed.</strong></p>
               <p>In addition to payment for your time, <strong>you could gain a bonus payment based on your performance</strong>. Please read the instructions carefully to find out how to gain the bonus.</p>
@@ -45,27 +48,27 @@ export default class Consent extends React.Component {
               <h4 className="text-3xl font-semibold mt-8 mb-6">What happens if I take part?</h4>
               <p>
                 In this study, we will ask you to predict certain events. You will earn $0.15 guaranteed pay for each question answered, and you will earn a bonus payment of $0-$0.15 per question based on how well you predicted the event. You will be paid once the events occur and we can compare your predictions to the actual outcomes. The closer your prediction was to the actual event, the higher your bonus payment.
-            </p>
+              </p>
 
               <h4 className="text-3xl font-semibold mt-8 mb-6">Should I take part in this study?</h4>
               <p>
                 It is up to you to decide whether or not to take part. If you have any questions arising from the information or explanation already given to you, please ask the researcher before you decide whether to participate. You can withdraw at any time without giving a reason. If you decide to withdraw during the study and have your data destroyed, the data you have provided up that point will be destroyed (and we will be unable to pay you). As the data collected is anonymous, we may not be able to delete your data after you have completed the study.
-           </p>
+              </p>
 
               <h4 className="text-3xl font-semibold mt-8 mb-6">What if something goes wrong?</h4>
               <p>
                 If you wish to raise a complaint about any aspect of this study, you should contact the Principal Researcher in the first instance. If you feel your complaint has not been handled to your satisfaction you can contact the Chair of the UCL Research Ethics Committee at ethics@ucl.ac.uk.
-				    </p>
+				      </p>
 
               <h4 className="text-3xl font-semibold mt-8 mb-6">What will happen to the results of the research project?</h4>
               <p>
                 The results of the research will be published in an article or other formats. If you'd like to receive a summary of the findings, you can contact the researcher. Anonymous data collected during the study may be made publically available on platforms such as the Open Science Framework (osf.io) and GitHub (github.com). This data will not include information which would allow others to identify you.
-				    </p>
+				      </p>
 
               <h4 className="text-3xl font-semibold mt-8 mb-6">Participant’s Statement</h4>
               <p>
                 By clicking the button below I consent to the following:
-			    	</p>
+			    	  </p>
               <div style={{ paddingLeft: "20px" }}>
                 <ul className="list-disc">
                   <li>I confirm that I have read and understood the information for this study. I have had an opportunity to consider the information and what will be expected of me. I have also had the opportunity to ask questions which have been answered to my satisfaction</li>

@@ -63,7 +63,7 @@ Empirica.exitSteps((game, player) => {
   ) {
     return [Sorry];
   }
-  return [SurveyNBA, ExitSurvey, Thanks];
+  return [ExitSurvey, Thanks];
 });
 
 // Start the app render tree.

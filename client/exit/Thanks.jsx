@@ -12,7 +12,7 @@ export default class Thanks extends React.Component {
             <h4 className="text-3xl font-semibold mt-8 mb-6">Finished!</h4>
             <p>Thank you for participating.</p>
             <p>
-              Accuracy bonuses will be processed within 2 business days after the forecasted events have occurred.
+              Accuracy bonuses will be processed within 2 business days.
             </p>
             <br />
 

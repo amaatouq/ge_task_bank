@@ -26,7 +26,7 @@ export default class Quiz extends React.Component {
   _handleSubmit(e) {
     e.preventDefault();
     if (
-      this.state.goal !== "prediction" ||
+      this.state.goal !== "answer" ||
       this.state.hint !== "yes"
     ) {
       this.setState({
