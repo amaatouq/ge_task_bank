@@ -1,15 +1,27 @@
 import React, { Fragment } from "react";
-import OldLayout from "./OldLayout";
+// import DebugButtons from "../components/DebugButtons";
+import { Header } from "../components/partials";
+// import Wait from "../components/Wait";
+// import { Avatar } from "./Avatar";
+// import Response from "./Response";
+// import Score from "./Score";
+// import Timer from "./Timer";
 import NewLayout from "./NewLayout";
 
-export default class Round extends React.Component {
+export default class OldLayout extends React.Component {
   render() {
     const useAltLayout = true;
 
-    if (useAltLayout) {
-      return <NewLayout {...this.props} />;
-    }
+    return (
+      <div className="h-full text-base main-container">
+        <Header isAltLayout={useAltLayout} {...this.props} />
 
-    return <OldLayout {...this.props} />;
+        {useAltLayout ? (
+          <NewLayout {...this.props} />
+        ) : (
+          <OldLayout {...this.props} />
+        )}
+      </div>
+    );
   }
 }
