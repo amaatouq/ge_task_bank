@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import DebugButtons from "../components/DebugButtons";
+import MetaContainer from "../components/meta/MetaContainer";
 
 export default class NewLayout extends React.Component {
   render() {
@@ -28,7 +29,7 @@ export default class NewLayout extends React.Component {
       <div className="h-full text-base alt-main-container">
         <div className="bg-red-500"></div>
         <div className="bg-green-500"></div>
-        <div className="bg-blue-500"></div>
+        <MetaContainer {...this.props} />
       </div>
     );
   }
