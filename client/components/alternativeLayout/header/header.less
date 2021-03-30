@@ -1,0 +1,87 @@
+.btn-instruction {
+  padding: 5px 10px;
+
+  background: #5e7e8f;
+  border-radius: 10px;
+
+  color: #ffffff;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  line-height: 1.0625rem;
+
+  svg,
+  span {
+    flex: 0 0 auto;
+    max-width: 100%;
+    display: block;
+  }
+  svg {
+    margin-right: 5px;
+  }
+}
+
+.header-alt {
+  background-color: #fff;
+  height: 54px;
+}
+
+.modal {
+  transition: opacity 0.25s ease;
+  z-index: 9999;
+}
+body.modal-active {
+  overflow-x: hidden;
+  overflow-y: visible !important;
+}
+
+.btn-modal-close {
+  background-color: #252c33;
+  color: rgba(227, 227, 227, 0.9);
+  padding: 10px 20px;
+  border: none;
+  display: block;
+  line-height: 21px;
+  font-size: 17px;
+  border: none;
+  border-radius: 5px;
+}
+
+.instruction-icon {
+  width: 24px;
+}
+
+.modal-content {
+  max-width: 661px;
+  padding: 30px;
+  background: #f4f4f4;
+  border-radius: 30px;
+
+  @media (max-width: 680px) {
+    max-width: 80vw;
+  }
+}
+
+.modal-body {
+  color: #606469;
+  font-size: 17px;
+  min-width: 300px;
+}
+
+.instruction-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  & > li {
+    padding: 0 0 0 15px;
+    vertical-align: middle;
+
+    &:before {
+      content: "•";
+      margin-left: -15px;
+      padding-right: 5px;
+    }
+  }
+}
