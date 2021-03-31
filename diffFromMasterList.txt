@@ -7,9 +7,11 @@ Intro Steps
 - Demostage (content + took out) 
 
 Exit Steps
-- Exit survey (content)
-- Additional survey
+- Exit survey (content - took out the instructions specific to MTurk)
+- Additional survey for us
 - Thanks (content)
+
+Inverted the response input and the hints (hints appear first)
 
 Different tasks
 
