@@ -1,93 +1,162 @@
-import React, { Component } from 'react'
+import React from "react";
 import Button from "../components/Button";
 import Wrapper from "../components/Wrapper";
+import { Label, Input, Radio, Textarea } from "../components/Forms";
 
-export default class ExitSurvey extends Component {
+export default class ExitSurvey extends React.Component {
     static stepName = "ExitSurvey";
+    state = { age: "", gender: "", strength: "", fair: "", feedback: "" };
 
-    handleChangeGender = e => {
-        const { player } = this.props;
-        const demographics = player.get("demographics");
+    handleChange = (event) => {
+        const el = event.currentTarget;
+        this.setState({ [el.name]: el.value });
+    };
 
-        demographics.gender = e.currentTarget.value;
-
-        player.set("demographics", demographics);
-    }
-
-    handleChangeAge = e => {
-        const { player } = this.props;
-        const demographics = player.get("demographics");
-
-        demographics.age = e.currentTarget.value;
-
-        player.set("demographics", demographics);
-    }
-
-    handleChangeComment = e => {
-        const { player } = this.props;
-        const demographics = player.get("demographics");
-
-        demographics.comment = e.currentTarget.value;
-
-        player.set("demographics", demographics);
-    }
-
-    handleSubmit = e => {
-        e.preventDefault();
-        this.props.onSubmit();
-    }
+    handleSubmit = (event) => {
+        event.preventDefault();
+        this.props.onSubmit(this.state);
+    };
 
     render() {
         const { player } = this.props;
-        const demographics = player.get("demographics");
+        const { age, gender, strength, fair, feedback, education } = this.state;
+
         return (
             <Wrapper {...this.props}>
                 <div className="flex justify-center items-center text-gray-800">
                     <div className="max-w-4xl">
-                        <h4 className="text-4xl font-semibold mt-8 mb-6">Exit Survey</h4>
+                        <div className="text-4xl font-semibold mt-8 mb-6">Exit Survey</div>
+
+                        <p className="mt-4">
+                            Please answer the following short survey.{" "}
+                            <em>
+                                You do not have to provide any information you feel
+                                uncomfortable with.
+              </em>
+                        </p>
                         <form onSubmit={this.handleSubmit}>
-                            <p>Please indicate your gender</p>
-                            <input
-                                type="text"
-                                name="gender"
-                                autoComplete="off"
-                                value={demographics.gender ? demographics.gender : ""}
-                                size="100"
-                                onChange={this.handleChangeGender}
-                            />
-                            <br />
-                            <br />
+                            <div className="form-line">
+                                <div>
+                                    <Label htmlFor="age" text="Age" />
+                                    <div>
+                                        <Input
+                                            id="age"
+                                            type="number"
+                                            min="0"
+                                            max="150"
+                                            step="1"
+                                            dir="auto"
+                                            name="age"
+                                            value={age}
+                                            onChange={this.handleChange}
+                                        />
+                                    </div>
+                                </div>
+                                <div>
+                                    <Label htmlFor="gender" text="Gender" />
+                                    <div>
+                                        <Input
+                                            id="gender"
+                                            type="text"
+                                            dir="auto"
+                                            name="gender"
+                                            value={gender}
+                                            onChange={this.handleChange}
+                                            autoComplete="off"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
 
-                            <p>Please indicate your age</p>
-                            <input
-                                type="number"
-                                name="age"
-                                size="20"
-                                value={demographics.age ? demographics.age : ""}
-                                onChange={this.handleChangeAge}
-                            />
-                            <br />
-                            <br />
+                            <div>
+                                <Label
+                                    htmlFor="education"
+                                    text="Highest Education Qualification"
+                                />
+                                <div>
+                                    <Radio
+                                        selected={education}
+                                        name="education"
+                                        value="high-school"
+                                        label="High School"
+                                        onChange={this.handleChange}
+                                    />
+                                    <Radio
+                                        selected={education}
+                                        name="education"
+                                        value="bachelor"
+                                        label="US Bachelor's Degree"
+                                        onChange={this.handleChange}
+                                    />
+                                    <Radio
+                                        selected={education}
+                                        name="education"
+                                        value="master"
+                                        label="Master's or higher"
+                                        onChange={this.handleChange}
+                                    />
+                                    <Radio
+                                        selected={education}
+                                        name="education"
+                                        value="other"
+                                        label="Other"
+                                        onChange={this.handleChange}
+                                    />
+                                </div>
+                            </div>
 
-                            <p>If you have any additional comments about the game, please write them here:</p>
-                            <textarea name="comment"
-                                autoComplete="off"
-                                value={demographics.comment ? demographics.comment : ""}
-                                onChange={this.handleChangeComment}
-                                style={{ width: "500px", height: "200px" }}></textarea>
-                            <br />
-                            <br />
+                            <div className="form-line thirds">
+                                <div>
+                                    <Label
+                                        htmlFor="strength"
+                                        text="How would you describe your strength in the game?"
+                                    />
+                                    <div>
+                                        <Textarea
+                                            dir="auto"
+                                            id="strength"
+                                            name="strength"
+                                            value={strength}
+                                            onChange={this.handleChange}
+                                        />
+                                    </div>
+                                </div>
+                                <div>
+                                    <Label htmlFor="fair" text="Do you feel the pay was fair?" />
+                                    <div>
+                                        <Textarea
+                                            dir="auto"
+                                            id="fair"
+                                            name="fair"
+                                            value={fair}
+                                            onChange={this.handleChange}
+                                        />
+                                    </div>
+                                </div>
+                                <div>
+                                    <Label
+                                        htmlFor="feedback"
+                                        text="Feedback, including problems you encountered."
+                                    />
+                                    <div>
+                                        <Textarea
+                                            dir="auto"
+                                            id="feedback"
+                                            name="feedback"
+                                            value={feedback}
+                                            onChange={this.handleChange}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
 
-                            <p className="mt-8 mb-8" style={{
-                                display: "flex",
-                                justifyContent: "center",
-                            }}>
+                            <div className="mt-8 mb-8">
                                 <Button text="Submit" />
-                            </p>
+                            </div>
                         </form>
                     </div>
                 </div>
             </Wrapper>
-        )
+        );
     }
 }
