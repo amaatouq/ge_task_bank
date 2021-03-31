@@ -69,11 +69,6 @@ Empirica.gameInit((game) => {
   game.players.forEach((player, i) => {
     player.set("avatar", avatars.pop());
     player.set("score", 0);
-    player.set("hasFavouriteTeam", false);
-    player.set("favouriteTeam", "");
-    player.set("sportsConsumeNBA", {});
-    player.set("demographics", {});
-
 
     // Shuffling the hints
     if (shuffleHints && typeof hints != "undefined") {
