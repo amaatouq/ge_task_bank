@@ -1,37 +1,37 @@
 import React, { Component } from 'react';
 import Wrapper from "../components/Wrapper";
-import { CustomButton } from "../components/Button";
 
 export default class AttentionCheck extends Component {
+    state = { answer: "" };
 
-    handleRadioChange = e => {
+    // Update the selected answer
+    handleChange = e => {
+        const radio = e.currentTarget;
+        this.setState({ answer: radio.value });
+    };
 
-        // Get the radio button
-        let radio = e.currentTarget;
+    // Submit answer
+    handleSubmit = event => {
+        event.preventDefault();
 
-        // Get the player
-        const { player } = this.props;
+        const { player, onNext } = this.props
+        const { answer } = this.state
 
-        if (radio.checked) {
-            player.set("attentionCheck", radio.value);
+        player.set("attentionCheck", answer)
+        // If there is no answer, alert the player
+        if (answer === "") {
+            alert("Please select an answer")
+        } else if (answer === "Gorafi") {
+            player.set("failedAttentionCheck", false)
+            // Navigate to the next page
+            onNext();
+        } else {
+            player.set("failedAttentionCheck", true)
         }
-
-    }
-
-    handleSubmit = e => {
-        e.preventDefault();
-
-        // Get the player
-        const { player } = this.props;
-
-        player.set("submitAttention", true);
-
-    }
+    };
 
     renderQuestion = () => {
-        const {
-            player
-        } = this.props;
+        const { answer } = this.state
 
         return (
             <div>
@@ -41,55 +41,64 @@ export default class AttentionCheck extends Component {
                 <p>Based on the instructions above, which news outlet have we asked you to select?</p>
 
                 <form onSubmit={this.handleSubmit}>
-                    <input
-                        type="radio"
-                        name="attentionCheck"
-                        value="Washington Post"
-                        onChange={this.handleRadioChange}
-                        checked={player.get("attentionCheck") == "Washington Post"}
-                        style={{ marginBottom: "10px" }}
-                    /> The Washington Post
-                    <br />
+                    <div className="mb-2">
+                        <input
+                            type="radio"
+                            name="attentionCheck"
+                            value="Washington Post"
+                            onChange={this.handleChange}
+                            checked={answer === "Washington Post"}
+                        /> The Washington Post
+                        <br />
+                    </div>
 
-                    <input
-                        type="radio"
-                        name="attentionCheck"
-                        value="The Guardian"
-                        onChange={this.handleRadioChange}
-                        checked={player.get("attentionCheck") == "The Guardian"}
-                        style={{ marginBottom: "10px" }}
-                    /> The Guardian
+                    <div className="mb-2">
+                        <input
+                            type="radio"
+                            name="attentionCheck"
+                            value="The Guardian"
+                            onChange={this.handleChange}
+                            checked={answer === "The Guardian"}
+                            style={{ marginBottom: "10px" }}
+                        /> The Guardian
                     <br />
+                    </div>
 
-                    <input
-                        type="radio"
-                        name="attentionCheck"
-                        value="Gorafi"
-                        onChange={this.handleRadioChange}
-                        checked={player.get("attentionCheck") == "Gorafi"}
-                        style={{ marginBottom: "10px" }}
-                    /> Le Gorafi
+                    <div className="mb-2">
+                        <input
+                            type="radio"
+                            name="attentionCheck"
+                            value="Gorafi"
+                            onChange={this.handleChange}
+                            checked={answer === "Gorafi"}
+                            style={{ marginBottom: "10px" }}
+                        /> Le Gorafi
                     <br />
+                    </div>
 
-                    <input
-                        type="radio"
-                        name="attentionCheck"
-                        value="The Times"
-                        onChange={this.handleRadioChange}
-                        checked={player.get("attentionCheck") == "The Times"}
-                        style={{ marginBottom: "10px" }}
-                    /> The Times
+                    <div className="mb-2">
+                        <input
+                            type="radio"
+                            name="attentionCheck"
+                            value="The Times"
+                            onChange={this.handleChange}
+                            checked={answer === "The Times"}
+                            style={{ marginBottom: "10px" }}
+                        /> The Times
                     <br />
+                    </div>
 
-                    <input
-                        type="radio"
-                        name="attentionCheck"
-                        value="Other"
-                        onChange={this.handleRadioChange}
-                        checked={player.get("attentionCheck") == "Other"}
-                        style={{ marginBottom: "10px" }}
-                    /> Other
+                    <div className="mb-2">
+                        <input
+                            type="radio"
+                            name="attentionCheck"
+                            value="Other"
+                            onChange={this.handleChange}
+                            checked={answer === "Other"}
+                            style={{ marginBottom: "10px" }}
+                        /> Other
                     <br />
+                    </div>
 
                     <p className="mt-8 mb-8" style={{
                         display: "flex",
@@ -110,45 +119,21 @@ export default class AttentionCheck extends Component {
         )
     }
 
-    renderOutcome = () => {
-        const {
-            player,
-            onNext,
-            hasNext
-        } = this.props;
-
-        return (
-            <div>
-                {player.get("attentionCheck") === "Gorafi"
-                    ? <div>
-                        <br />
-                        <p>Thank you for answering correctly. You can now continue to the instruction for the study.</p>
-                        <p style={{ display: "flex", justifyContent: "center" }}>
-                            <CustomButton onClick={onNext} disabled={!hasNext}>
-                                Continue
-                            </CustomButton>
-                        </p>
-                    </div>
-                    : <div>
-                        <br />
-                        <p>Sorry, it seems you were not paying careful attention to the instructions. Unfortunately you cannot continue with this study. Please return your participation to this study (this does not have any adverse effects for you).</p>
-                    </div>}
-            </div>
-        )
-    }
-
     render() {
-        const {
-            player
-        } = this.props;
+        const { player } = this.props
+        const failedAttentionCheck = player.get("failedAttentionCheck") ?? false
 
         return (
             <Wrapper {...this.props}>
                 <div className="flex justify-center items-center text-base text-gray-800">
                     <div className="max-w-2xl">
-                        {!player.get("submitAttention")
-                            ? this.renderQuestion()
-                            : this.renderOutcome()}
+                        {failedAttentionCheck
+                            ? <div>
+                                <br />
+                                <p>Sorry, it seems you were not paying careful attention to the instructions. Unfortunately you cannot continue with this study. Please return your participation to this study (this does not have any adverse effects for you).</p>
+                            </div>
+                            : this.renderQuestion()
+                        }
                     </div>
                 </div>
             </Wrapper >
