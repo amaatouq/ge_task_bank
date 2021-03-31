@@ -2,9 +2,10 @@ import React from "react";
 import PlayersResponse from "../../game/PlayersResponse";
 import ChatContainer from "../chat/ChatContainer";
 import SocialInfo from "./SocialInfo";
+import NeighborsStats from "../../components/meta/summary/NeighborsStats";
 
 export default function SocialExposure(props) {
-  const { stage, round, game, player } = props;
+  const { stage, round, game, player, isAltLayout = false } = props;
   const { treatment } = game;
   const {
     chat = false,
@@ -48,6 +49,10 @@ export default function SocialExposure(props) {
 
   if (meanSocialInfo) {
     info.push("mean");
+  }
+
+  if (isAltLayout) {
+    return <NeighborsStats neighbors={neighbors} info={info} task={task} />;
   }
 
   return (

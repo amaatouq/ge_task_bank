@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import ChatFooter from "./ChatFooter";
 import ChatMessage from "./ChatMessage";
 import { nameToAvatar } from "../../../shared/avatars";
+import AltChatHeader from "../meta/chat/AltChatHeader";
 
 export default class ChatContainer extends Component {
   constructor(props) {
@@ -79,7 +80,7 @@ export default class ChatContainer extends Component {
 
   render() {
     const { activeGroup, groups, newMessagesGroup } = this.state;
-    const { player, game } = this.props;
+    const { player, game, isAltLayout = false } = this.props;
 
     const commonProps = {
       player,
@@ -89,6 +90,28 @@ export default class ChatContainer extends Component {
 
     if (groups.length === 0) {
       return null;
+    }
+
+    if (isAltLayout) {
+      return (
+        <div
+          className={`chat-container grid-rows-1 grid-cols-${groups.length} overflow-hidden grid justify-center`}
+        >
+          {groups.map((g, i) => (
+            <div className={`alt-chat-container ${i === 0 ? "" : "ml-3"}`} key={g}>
+              <AltChatHeader {...this.props} chatNo={i + 1} />
+              <Chat
+                {...commonProps}
+                customKey={g}
+                customClassName="experiment-chat"
+                footer={ChatFooter}
+                message={ChatMessage}
+                onIncomingMessage={this.handleIncomingMessage}
+              />
+            </div>
+          ))}
+        </div>
+      );
     }
 
     return (

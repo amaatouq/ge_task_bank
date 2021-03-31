@@ -32,7 +32,7 @@ export default class NewLayout extends React.Component {
             <div className="w-full bg-gray-500 h-full"></div>
           </div>
         </div>
-        <div className="bg-blue-500 meta-container"></div>
+        <MetaContainer {...this.props} />
       </div>
     );
   }

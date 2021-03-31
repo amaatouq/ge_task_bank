@@ -5,7 +5,7 @@ import Unit from "./Unit";
 
 export default class NumberToWords extends React.Component {
   render() {
-    const { answer, task } = this.props;
+    const { answer, task, isAltLayout } = this.props;
 
     if (!answer || parseInt(answer, 10) < 1000) {
       return "";
@@ -30,6 +30,17 @@ export default class NumberToWords extends React.Component {
     }
 
     res = res.charAt(0).toUpperCase() + res.slice(1);
+
+    if (isAltLayout) {
+      return (
+        <div className="text-dark-gray flex whitespace-nowrap w-full py-2 leading-none tabular-nums">
+          <div className="">{res}</div>
+          <div className="ml-1">
+            <Unit answer={answer} {...this.props} />
+          </div>
+        </div>
+      );
+    }
 
     return (
       <div className="absolute bottom-0">
