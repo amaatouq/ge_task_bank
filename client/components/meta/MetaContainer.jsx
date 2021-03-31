@@ -11,8 +11,7 @@ export class MetaContainer extends Component {
     } = this.props;
     const { chat = false } = treatment;
 
-    // const showChat = chat && stage.name === "social";
-    const showChat = true;
+    const showChat = chat && stage.name === "social";
     return (
       <div className="meta-container">
         <ResponseContainer {...this.props} />
