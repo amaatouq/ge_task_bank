@@ -47,7 +47,7 @@ export default class Consent extends React.Component {
 
               <h4 className="text-3xl font-semibold mt-8 mb-6">What happens if I take part?</h4>
               <p>
-                In this study, we will ask you to predict certain events. You will earn $0.15 guaranteed pay for each question answered, and you will earn a bonus payment of $0-$0.15 per question based on how well you predicted the event. You will be paid once the events occur and we can compare your predictions to the actual outcomes. The closer your prediction was to the actual event, the higher your bonus payment.
+                In this study, we will ask you to answer some questions. You will earn $0.15 guaranteed pay for each question answered, and you will earn a bonus payment of $0-$0.15 per question based on how accurately you answered. The more accurate your answer, the higher your bonus payment.
               </p>
 
               <h4 className="text-3xl font-semibold mt-8 mb-6">Should I take part in this study?</h4>
@@ -71,7 +71,7 @@ export default class Consent extends React.Component {
 			    	  </p>
               <div style={{ paddingLeft: "20px" }}>
                 <ul className="list-disc">
-                  <li>I confirm that I have read and understood the information for this study. I have had an opportunity to consider the information and what will be expected of me. I have also had the opportunity to ask questions which have been answered to my satisfaction</li>
+                  <li>I confirm that I have read and understood the information for this study. I have had an opportunity to consider the information and what will be expected of me. I have also had the opportunity to ask questions which have been answered to my satisfaction.</li>
                   <li>I consent to participate in the study. I understand that my information (demographics and task performance) will be used for the purposes explained to me. I understand that according to data protection legislation, ‘public task’ will be the lawful basis for processing.</li>
                   <li>I understand that all personal information will remain confidential and that all efforts will be made to ensure I cannot be identified. I understand that my data gathered in this study will be stored anonymously and securely. It will not be possible to identify me in any publications.</li>
                   <li>I understand that my information may be subject to review by responsible individuals from University College London for monitoring and audit purposes.</li>
@@ -101,7 +101,7 @@ export default class Consent extends React.Component {
           <div className="flex justify-center items-center text-base text-gray-800">
             <div className="max-w-2xl">
 
-              <TriggerWarning />
+              {isForecasting && <TriggerWarning />}
 
               <div className="text-5xl font-semibold mt-8 mb-6">
                 {" "}
