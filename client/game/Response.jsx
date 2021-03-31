@@ -161,8 +161,10 @@ export default class Response extends React.Component {
       case "social":
         return (
           <>
-            <ResponseInput {...this.props} />
             {this.renderHints()}
+            <br />
+            <br />
+            <ResponseInput {...this.props} />
           </>
         );
       default:
