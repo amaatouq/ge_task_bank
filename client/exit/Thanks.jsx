@@ -35,7 +35,7 @@ export default class Thanks extends React.Component {
             }}>
               <Button
                 text={"Complete study on Prolific"}
-                onClick={() => { window.location = "https://app.prolific.co/submissions/complete?cc=8E233991" }}
+                onClick={() => { window.location = "https://app.prolific.co/submissions/complete?cc=45296217" }}
               />
             </p>
 
