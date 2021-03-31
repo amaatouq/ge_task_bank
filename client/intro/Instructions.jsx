@@ -25,11 +25,9 @@ export default class GameOverview extends Component {
     return (
       <IntroLayout title="Instructions" {...this.props}>
         <div>
-          <p>This task asks you to answer {textRounds} question{textRounds > 1 && "s"}. For each question you will be asked to make an estimation (provide an educated guess) as to the correct answer to the question. </p>
-
-          <p>You will be provided with some additional information relevant to each question.</p>
-
-          <p>Once you start typing an answer, a Submit button will appear that you can click when you are ready.</p>
+          <p>
+            This task asks you give your best guess or estimate for {textRounds > 1 ? textRounds : "a"} question{textRounds > 1 && "s"} about social or economic life (e.g., how much on average does a dozen eggs cost?).
+          </p>
 
           {!hideTimer &&
             <p>You will have {responseDuration} seconds per question.</p>
@@ -38,8 +36,6 @@ export default class GameOverview extends Component {
           <p>You will earn $0.15 guaranteed pay for each question answered. You will also earn up to $0.15 bonus for accuracy. The more accurate your answer, the more you earn! This pay will be processed within 2 business days.</p>
 
           <p>Maximum possible earnings are ${0.30 * textRounds}0.</p>
-
-          <p>If you do not complete all questions, you will be paid for whatever question you have completed before we close the session. This session will remain open for 24 hours from the time it was initially launched.</p>
         </div>
 
         <br />
