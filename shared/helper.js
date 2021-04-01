@@ -39,7 +39,7 @@ export function getMinMaxError(answer, task) {
 export function getSocialInfoValue(type, neighbors, task) {
   if (!neighbors) {
     console.warn("No neighbors on getSocialInfovalue!");
-    return 0;
+    return 0.0;
   }
 
   const values = neighbors
@@ -66,7 +66,7 @@ export function getSocialInfoValue(type, neighbors, task) {
     .filter((a) => a !== null);
 
   if (values.length === 0) {
-    return 0;
+    return 0.0;
   }
 
   switch (type) {
@@ -80,7 +80,7 @@ export function getSocialInfoValue(type, neighbors, task) {
       return getMedianValue(values);
     default:
       console.warn("Social info type is not supported!");
-      return 0;
+      return 0.0;
   }
 }
 
@@ -90,19 +90,21 @@ export function getMeanValue(values) {
   };
 
   let result = values.reduce(getSum, 0);
-  result = (result / values.length).toFixed(2);
+  result = (result / values.length).toFixed(1);
   return result;
 }
 export function getMinValue(values) {
-  return Math.min(...values);
+  return Math.min(...values).toFixed(1);
 }
 export function getMaxValue(values) {
-  return Math.max(...values);
+  return Math.max(...values).toFixed(1);
 }
 export function getMedianValue(values) {
   const mid = Math.floor(values.length / 2);
   const nums = [...values].sort((a, b) => a - b);
-  return values.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+  const value =
+    values.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+  return value.toFixed(1);
 }
 
 export function getNeighbors(structure, player) {

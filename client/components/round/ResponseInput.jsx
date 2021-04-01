@@ -18,14 +18,8 @@ export default class ResponseInput extends React.Component {
     };
   }
 
-  // Replaced by handleChangeValue when started using NumberFormat
-  // handleChange = (event) => {
-  //   const { value, name } = event.currentTarget;
-  //   this.setState({ [name]: value });
-  // };
-
   handleChangeValue = (change) => {
-    const { player, round } = this.props;
+    const { player } = this.props;
     player.stage.set("tmpanswer", change.value);
     this.setState({ answer: change.value, err: "" });
   };
@@ -41,11 +35,12 @@ export default class ResponseInput extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    const { player,
+    const {
+      player,
       stage,
       game: {
         treatment: { interactionMode },
-      }
+      },
     } = this.props;
 
     if (!(interactionMode === "discreet" && stage.name === "social")) {
@@ -80,6 +75,7 @@ export default class ResponseInput extends React.Component {
       game: {
         treatment: { interactionMode },
       },
+      isAltLayout = false,
     } = this.props;
     const { answer, focused, err } = this.state;
     const task = round.get("task");
@@ -96,9 +92,62 @@ export default class ResponseInput extends React.Component {
       player.stage.submitted ||
       (interactionMode !== "continuous" && stage.name === "social");
 
+    if (isAltLayout) {
+      return (
+        <form action="#" onSubmit={this.handleSubmit} className="">
+          <NumberFormat
+            thousandSeparator={true}
+            isNumericString
+            className="alt-input w-full px-0 m-0 py-2 text-sm disabled:text-gray-700 disabled:border-gray-50 text-dark-gray focus:ring-0 focus:outline-none focus:border-b-2 focus:border-gray-500 leading-snug tabular-nums"
+            placeholder="Type your answer here..."
+            autoFocus
+            name="answer"
+            value={answer}
+            onValueChange={this.handleChangeValue}
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur}
+            autoComplete="off"
+            disabled={disabledForm}
+            {...minmax}
+          />
+          <NumberToWords
+            isAltLayout
+            answer={answer}
+            task={task}
+            {...this.props}
+          />
+
+          {answer === "" &&
+          !(interactionMode === "discreet" && stage.name === "social") ? (
+            ""
+          ) : (
+            <>
+              <div className="mt-8">
+                <button
+                  className="w-full alt-submit-btn text-white rounded text-sm font-bold"
+                  disabled={
+                    player.stage.submitted ||
+                    answer < minmax.min ||
+                    answer > minmax.max
+                  }
+                >
+                  {player.stage.submitted
+                    ? interactionMode === "discreet" && stage.name === "social"
+                      ? "Waiting for the other players..."
+                      : "Submitted"
+                    : interactionMode === "discreet" && stage.name === "social"
+                    ? "OK"
+                    : "Update"}{" "}
+                </button>
+              </div>
+            </>
+          )}
+        </form>
+      );
+    }
+
     return (
       <form action="#" onSubmit={this.handleSubmit} className="relative w-full">
-
         <div className="flex relative">
           <NumberFormat
             thousandSeparator={true}
@@ -128,58 +177,33 @@ export default class ResponseInput extends React.Component {
           <NumberToWords answer={answer} task={task} {...this.props} />
         </div>
 
-        {/* 
-        {answer && task.question.magnitude ? (
-          <div className="absolute bottom-0">
-            <div className="absolute">
-              <div className="mt-1 flex whitespace-nowrap w-full py-2 text-gray-600 leading-none tabular-nums">
-                <NumberFormat
-                  value={applyMagnitude(
-                    parseInt(answer, 10),
-                    task.question.magnitude
-                  )}
-                  displayType="text"
-                  thousandSeparator={true}
-                  className=""
-                />
-                <div className="ml-2">
-                  <Unit answer={answer} {...this.props} />
-                </div>
-                <div className="ml-1">total</div>
-              </div>
+        {answer === "" &&
+        !(interactionMode === "discreet" && stage.name === "social") ? (
+          ""
+        ) : (
+          <>
+            <div className="mt-12">
+              <Button
+                tick
+                text={
+                  player.stage.submitted
+                    ? interactionMode === "discreet" && stage.name === "social"
+                      ? "Waiting for the other players..."
+                      : "Submitted"
+                    : interactionMode === "discreet" && stage.name === "social"
+                    ? "OK"
+                    : "Submit"
+                }
+                done={player.stage.submitted}
+                disabled={
+                  player.stage.submitted ||
+                  answer < minmax.min ||
+                  answer > minmax.max
+                }
+              />
             </div>
-          </div>
-        ) : (
-          ""
+          </>
         )}
-        */}
-
-        {answer === "" && !(interactionMode === "discreet" && stage.name === "social") ? (
-          ""
-        ) : (
-            <>
-              <div className="mt-12">
-                <Button
-                  tick
-                  text={
-                    player.stage.submitted
-                      ? interactionMode === "discreet" && stage.name === "social"
-                        ? "Waiting for the other players..."
-                        : "Submitted"
-                      : interactionMode === "discreet" && stage.name === "social"
-                        ? "OK"
-                        : "Submit"
-                  }
-                  done={player.stage.submitted}
-                  disabled={
-                    player.stage.submitted ||
-                    answer < minmax.min ||
-                    answer > minmax.max
-                  }
-                />
-              </div>
-            </>
-          )}
       </form>
     );
   }

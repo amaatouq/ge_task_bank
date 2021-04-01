@@ -20,6 +20,18 @@ main {
   font-size: 14px;
 }
 
+.text-dark-gray {
+  color: rgba(96, 100, 105, 1);
+}
+
+.text-medium-gray {
+  color: rgba(133, 148, 158, 1);
+}
+
+.text-light-gray {
+  color: rgba(202, 202, 204, 1);
+}
+
 @responsive {
   .text-shadow {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -118,6 +130,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .main-container {
   display: grid;
   grid-template-rows: 64px 1fr;
+  overflow: hidden;
 }
 
 .experiment-chat {
@@ -146,24 +159,18 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .alt-main-container {
+  height: 100%;
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto minmax(50%, 1fr);
   grid-template-areas:
     "question-container"
     "meta-container";
-  position: relative;
+  overflow: hidden;
 }
 
 .question-container {
   min-height: 212px;
-  max-height: calc(50vh - 64px);
-  display: flex;
-}
-.question-container-column {
-  padding: 30px 20px;
-}
-.meta-container {
-  min-height: calc(50vh - 64px);
-  max-height: 100%;
+  overflow-y: auto;
+  height: 100%;
   display: flex;
 }
