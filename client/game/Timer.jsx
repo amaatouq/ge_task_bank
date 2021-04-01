@@ -3,7 +3,7 @@ import React from "react";
 
 class timer extends React.Component {
   render() {
-    const { remainingSeconds } = this.props;
+    const { remainingSeconds, isAltLayout = false } = this.props;
 
     const classes = ["flex flex-col items-center justify-center"];
     if (remainingSeconds <= 5) {
@@ -14,14 +14,18 @@ class timer extends React.Component {
       classes.push("text-gray-500");
     }
 
+    let labelClassName =
+      "uppercase font-bold text-sm text-gray-400 leading-none tracking-wide";
+    let timerClassName = "text-3xl tabular-nums slashed-zero leading-none";
+    if (isAltLayout) {
+      labelClassName = "text-xs font-bold text-dark-grey";
+      timerClassName = "text-18 font-bold text-dark-grey";
+    }
+
     return (
       <div className={classes.join(" ")}>
-        <div className="uppercase font-bold text-sm text-gray-400 leading-none tracking-wide">
-          Timer
-        </div>
-        <span className="text-3xl tabular-nums slashed-zero leading-none">
-          {format(remainingSeconds)}
-        </span>
+        <div className={labelClassName}>Timer</div>
+        <span className={timerClassName}>{format(remainingSeconds)}</span>
       </div>
     );
   }

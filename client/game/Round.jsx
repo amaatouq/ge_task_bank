@@ -1,6 +1,7 @@
-import React, { Fragment } from "react";
+import React from "react";
+import { ModalInstruction, Header } from "../components/partials";
+import { Consumer, Provider } from "../context";
 // import DebugButtons from "../components/DebugButtons";
-import { Header } from "../components/partials";
 // import Wait from "../components/Wait";
 // import { Avatar } from "./Avatar";
 // import Response from "./Response";
@@ -13,15 +14,20 @@ export default class Round extends React.Component {
     const useAltLayout = true;
 
     return (
-      <div className="h-full text-base main-container">
-        <Header isAltLayout={useAltLayout} {...this.props} />
+      <Provider triggerModal={this.props.stage.name === "social"}>
+        <div className="h-full text-base main-container">
+          <Header isAltLayout={useAltLayout} {...this.props} />
 
-        {useAltLayout ? (
-          <NewLayout {...this.props} />
-        ) : (
-          <OldLayout {...this.props} />
-        )}
-      </div>
+          {useAltLayout ? (
+            <>
+              <NewLayout {...this.props} />
+              <ModalInstruction {...this.props} />
+            </>
+          ) : (
+            <OldLayout {...this.props} />
+          )}
+        </div>
+      </Provider>
     );
   }
 }

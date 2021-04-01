@@ -3,6 +3,7 @@ import Timer from "../../game/Timer";
 import { Avatar } from "../../game/Avatar";
 import Score from "../../game/Score";
 import DebugButtons from "../DebugButtons";
+import { ButtonInstruction } from "./ButtonInstruction";
 
 export function Header(props) {
   const {
@@ -25,14 +26,15 @@ export function Header(props) {
     <header className={classNames.join(" ")}>
       <div>
         {playerCount > 0 && !hideAvatar ? (
-          <Avatar bordered player={player} />
+          <Avatar bordered player={player} isAltLayout={isAltLayout} />
         ) : (
           <div />
         )}
       </div>
-      {(stage.name === "wait") | hideTimer ? <div></div> : <Timer {...props} />}
+      {(stage.name === "wait") | hideTimer ? <></> : <Timer {...props} />}
       <div className="flex justify-end items-center">
         <DebugButtons {...props} />
+        {isAltLayout && stage.name === "social" && <ButtonInstruction />}
         {feedback && <Score player={player} />}
       </div>
     </header>
