@@ -2,10 +2,11 @@ import numberToWords from "number-to-words";
 import React from "react";
 import { applyMagnitude } from "../../../shared/conversions";
 import Unit from "./Unit";
+import UnitSimple from "./UnitSimple";
 
 export default class NumberToWords extends React.Component {
   render() {
-    const { answer, task } = this.props;
+    const { answer, task, isAltLayout } = this.props;
 
     if (!answer || parseInt(answer, 10) < 1000) {
       return "";
@@ -30,6 +31,14 @@ export default class NumberToWords extends React.Component {
     }
 
     res = res.charAt(0).toUpperCase() + res.slice(1);
+
+    if (isAltLayout) {
+      return (
+        <div className="text-dark-gray flex w-full py-2 ml-2 text-sm leading-none tabular-nums">
+          {res} <UnitSimple answer={answer} {...this.props} />
+        </div>
+      );
+    }
 
     return (
       <div className="absolute bottom-0">

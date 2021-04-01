@@ -1,5 +1,6 @@
 import React from "react";
 import { Question } from "../components/question/Questions";
+import MetaContainer from "../components/meta/MetaContainer";
 
 export default class NewLayout extends React.Component {
   render() {
@@ -12,7 +13,7 @@ export default class NewLayout extends React.Component {
             </div>
           </div>
         </div>
-        <div className="bg-blue-500 meta-container"></div>
+        <MetaContainer {...this.props} />
       </div>
     );
   }
