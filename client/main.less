@@ -13,3 +13,31 @@
 .info-icon {
   width: 18px;
 }
+
+.alt-main-container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto minmax(50%, 1fr);
+  grid-template-areas:
+    "question-container"
+    "meta-container";
+  overflow: hidden;
+}
+
+.question-container {
+  height: auto;
+  display: flex;
+  min-height: 100px;
+
+  &.with-image {
+    min-height: 210px;
+  }
+}
+
+.ln-27 {
+  line-height: 27px;
+}
+
+.ln-15 {
+  line-height: 15px;
+}

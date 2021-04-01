@@ -157,20 +157,3 @@ input[type="number"]::-webkit-outer-spin-button {
 .experiment-chat .chat form {
   flex-shrink: 0;
 }
-
-.alt-main-container {
-  height: 100%;
-  display: grid;
-  grid-template-rows: auto minmax(50%, 1fr);
-  grid-template-areas:
-    "question-container"
-    "meta-container";
-  overflow: hidden;
-}
-
-.question-container {
-  min-height: 212px;
-  overflow-y: auto;
-  height: 100%;
-  display: flex;
-}

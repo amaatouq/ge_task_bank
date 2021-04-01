@@ -1,0 +1,34 @@
+.question-container-column {
+  padding: 30px 20px;
+}
+
+.alt-question-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  font-size: 14px;
+  padding: 0;
+  max-height: 100%;
+
+  &.with-image-question {
+    grid-template-columns: 205px 1fr;
+  }
+}
+
+.question-image-area {
+  height: 100%;
+  width: 100%;
+  padding-right: 20px;
+
+  .img-area {
+    height: 150px;
+  }
+}
+
+.question-detail {
+  background-color: #cacacc;
+  border: 1px solid #cacacc;
+  border-radius: 5px;
+  padding: 0 10px;
+  max-height: 100%;
+  overflow-y: auto;
+}
