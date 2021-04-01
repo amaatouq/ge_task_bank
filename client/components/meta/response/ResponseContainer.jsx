@@ -24,11 +24,9 @@ export class ResponseContainer extends Component {
     const otherPlayers = game.players.filter((p) => p._id !== player._id);
     let answer =
       player.stage.get("tmpanswer") || player.round.get("answer") || "_";
-    // answer = `${answer} ${unit}`;
-
     return (
       <div className="response-container">
-        <div className="player-response overflow-auto">
+        <div className="player-response">
           <span className="text-dark-gray font-bold text-sm">
             Your response
           </span>
@@ -48,11 +46,11 @@ export class ResponseContainer extends Component {
             Other Players Detailed
           </span>
           <ul className="overflow-y-auto mt-2">
-            {otherPlayers.map((p) => {
+            {otherPlayers.map((p, i) => {
               let oAnswer = p.round.get("answer") || "_";
 
               return (
-                <li className="flex justify-between text-sm" key={p._id}>
+                <li className="flex justify-between text-sm" key={i}>
                   <Avatar iconOnly player={p} />
                   <span>
                     <Answer answer={oAnswer} /> {unit}

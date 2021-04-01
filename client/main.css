@@ -130,6 +130,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .main-container {
   display: grid;
   grid-template-rows: 64px 1fr;
+  overflow: hidden;
 }
 
 .experiment-chat {
@@ -158,19 +159,18 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .alt-main-container {
+  height: 100%;
   display: grid;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto minmax(50%, 1fr);
   grid-template-areas:
     "question-container"
     "meta-container";
+  overflow: hidden;
 }
 
 .question-container {
   min-height: 212px;
-  max-height: calc(50vh - 64px);
+  overflow-y: auto;
+  height: 100%;
   display: flex;
-}
-
-.question-container-column {
-  padding: 30px 20px;
 }

@@ -2,6 +2,7 @@ import numberToWords from "number-to-words";
 import React from "react";
 import { applyMagnitude } from "../../../shared/conversions";
 import Unit from "./Unit";
+import UnitSimple from "./UnitSimple";
 
 export default class NumberToWords extends React.Component {
   render() {
@@ -33,11 +34,8 @@ export default class NumberToWords extends React.Component {
 
     if (isAltLayout) {
       return (
-        <div className="text-dark-gray flex whitespace-nowrap w-full py-2 leading-none tabular-nums">
-          <div className="">{res}</div>
-          <div className="ml-1">
-            <Unit answer={answer} {...this.props} />
-          </div>
+        <div className="text-dark-gray flex w-full py-2 ml-2 text-sm leading-none tabular-nums">
+          {res} <UnitSimple answer={answer} {...this.props} />
         </div>
       );
     }

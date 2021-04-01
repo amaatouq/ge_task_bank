@@ -8,7 +8,7 @@ import { Header } from "../components/partials";
 // import Timer from "./Timer";
 import NewLayout from "./NewLayout";
 
-export default class OldLayout extends React.Component {
+export default class Round extends React.Component {
   render() {
     const useAltLayout = true;
 

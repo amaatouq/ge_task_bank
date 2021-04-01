@@ -97,19 +97,29 @@ export default class ChatContainer extends Component {
         <div
           className={`chat-container grid-rows-1 grid-cols-${groups.length} overflow-hidden grid justify-center`}
         >
-          {groups.map((g, i) => (
-            <div className={`alt-chat-container ${i === 0 ? "" : "ml-3"}`} key={g}>
-              <AltChatHeader {...this.props} chatNo={i + 1} />
-              <Chat
-                {...commonProps}
-                customKey={g}
-                customClassName="experiment-chat"
-                footer={ChatFooter}
-                message={ChatMessage}
-                onIncomingMessage={this.handleIncomingMessage}
-              />
-            </div>
-          ))}
+          {groups.map((g, i) => {
+            let playersGroup = this.getPlayersFromGroup(g);
+            return (
+              <div
+                className={`alt-chat-container ${i === 0 ? "" : "ml-3"}`}
+                key={g}
+              >
+                <AltChatHeader
+                  {...this.props}
+                  chatNo={i + 1}
+                  playersGroup={playersGroup}
+                />
+                <Chat
+                  {...commonProps}
+                  customKey={g}
+                  customClassName="experiment-chat"
+                  footer={ChatFooter}
+                  message={ChatMessage}
+                  onIncomingMessage={this.handleIncomingMessage}
+                />
+              </div>
+            );
+          })}
         </div>
       );
     }
