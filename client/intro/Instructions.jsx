@@ -42,7 +42,7 @@ export default class GameOverview extends Component {
         <br />
 
         <p style={{ display: "flex", justifyContent: "center" }}>
-          <CustomButton onClick={onNext} disabled={!hasNext}>
+          <CustomButton onClick={onNext} >
             Continue
           </CustomButton>
         </p>
