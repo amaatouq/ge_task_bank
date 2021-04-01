@@ -32,7 +32,7 @@ export default class ExitSurvey extends React.Component {
                             <em>
                                 You do not have to provide any information you feel
                                 uncomfortable with.
-              </em>
+                            </em>
                         </p>
                         <form onSubmit={this.handleSubmit}>
                             <div className="form-line">
@@ -106,33 +106,6 @@ export default class ExitSurvey extends React.Component {
                             </div>
 
                             <div className="form-line thirds">
-                                <div>
-                                    <Label
-                                        htmlFor="strength"
-                                        text="How would you describe your strength in the game?"
-                                    />
-                                    <div>
-                                        <Textarea
-                                            dir="auto"
-                                            id="strength"
-                                            name="strength"
-                                            value={strength}
-                                            onChange={this.handleChange}
-                                        />
-                                    </div>
-                                </div>
-                                <div>
-                                    <Label htmlFor="fair" text="Do you feel the pay was fair?" />
-                                    <div>
-                                        <Textarea
-                                            dir="auto"
-                                            id="fair"
-                                            name="fair"
-                                            value={fair}
-                                            onChange={this.handleChange}
-                                        />
-                                    </div>
-                                </div>
                                 <div>
                                     <Label
                                         htmlFor="feedback"
