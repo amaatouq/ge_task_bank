@@ -8,6 +8,7 @@ import { Consumer, Provider } from "../context";
 // import Score from "./Score";
 // import Timer from "./Timer";
 import NewLayout from "./NewLayout";
+import OldLayout from "./OldLayout";
 
 export default class Round extends React.Component {
   render() {

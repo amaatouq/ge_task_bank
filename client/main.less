@@ -15,23 +15,29 @@
 }
 
 .alt-main-container {
+  height: 100%;
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto minmax(50%, 1fr);
   grid-template-areas:
     "question-container"
     "meta-container";
-  position: relative;
+  overflow: hidden;
 }
 
 .question-container {
   height: auto;
   display: flex;
+  min-height: 100px;
+
+  &.with-image {
+    min-height: 210px;
+  }
 }
-.question-container-column {
-  padding: 30px 20px;
+
+.ln-27 {
+  line-height: 27px;
 }
-.meta-container {
-  min-height: calc(50vh - 64px);
-  max-height: 100%;
-  display: flex;
+
+.ln-15 {
+  line-height: 15px;
 }
