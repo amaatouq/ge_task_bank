@@ -42,13 +42,11 @@ Empirica.gameInit((game) => {
   check(feedback && feedbackDuration <= 0, "feedbackDuration should be > 0");
   check(
     longTermEngagement && game.players.length > 1,
-    "longTermEngagement cannot be used with more than 1 player",
-    false
+    "longTermEngagement cannot be used with more than 1 player"
   );
   check(
     !longTermEngagement && quitEarly,
-    "Cannot have quitEarly without longTermEngagement",
-    false
+    "Cannot have quitEarly without longTermEngagement"
   );
 
   // Player info
@@ -117,10 +115,13 @@ Empirica.gameInit((game) => {
     task.instructions = instructions[task.task];
     round.set("task", task);
     round.set("index", i);
-    
-    // If we have more interactions than 0, more than 1 player, and discreet interactions...
-    if (nInteractions > 0 && playerCount > 1 && interactionMode === "discreet" ) {
 
+    // If we have more interactions than 0, more than 1 player, and discreet interactions...
+    if (
+      nInteractions > 0 &&
+      playerCount > 1 &&
+      interactionMode === "discreet"
+    ) {
       // ...create a response and social stage for every interaction
       for (let i = 0; i < nInteractions; i++) {
         round.addStage({
@@ -142,9 +143,7 @@ Empirica.gameInit((game) => {
         displayName: "Response",
         durationInSeconds: isDebugTime ? 31540000 : responseDuration,
       });
-
     } else {
-
       //...otherwise, just create one response stage...
       round.addStage({
         name: "response",
@@ -160,9 +159,7 @@ Empirica.gameInit((game) => {
           durationInSeconds: isDebugTime ? 31540000 : socialDuration,
         });
       }
-
     }
-
 
     if (feedback) {
       round.addStage({

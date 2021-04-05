@@ -39,7 +39,7 @@ export default class Round extends React.Component {
               <Fragment></Fragment>
             )}
           </div>
-          {(stage.name === "wait") | hideTimer ? (
+          {stage.name === "wait" || hideTimer ? (
             <div></div>
           ) : (
             <Timer {...this.props} />
