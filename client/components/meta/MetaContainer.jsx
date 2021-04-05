@@ -10,13 +10,25 @@ export class MetaContainer extends Component {
       game: { treatment },
     } = this.props;
     const { chat = false } = treatment;
+    const isResponseStage = stage.name === "response";
 
     const showChat = chat && stage.name === "social";
+
     return (
-      <div className="meta-container">
-        <ResponseContainer {...this.props} />
-        {showChat ? <ChatContainer {...this.props} isAltLayout /> : <div></div>}
-        <SummaryContainer {...this.props} />
+      <div
+        className={`meta-container ${isResponseStage ? "response-stage" : ""}`}
+      >
+        {!isResponseStage && (
+          <>
+            <ResponseContainer {...this.props} />
+            {showChat ? (
+              <ChatContainer {...this.props} isAltLayout />
+            ) : (
+              <div></div>
+            )}
+          </>
+        )}
+        <SummaryContainer {...this.props} isResponseStage={isResponseStage} />
       </div>
     );
   }

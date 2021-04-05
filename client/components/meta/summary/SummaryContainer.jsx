@@ -4,9 +4,11 @@ import PlayerResponse from "./PlayerResponse";
 
 export class SummaryContainer extends Component {
   render() {
+    const { isResponseStage } = this.props;
+
     return (
       <div className="summary-container">
-        <SocialExposure {...this.props} isAltLayout />
+        {!isResponseStage && <SocialExposure {...this.props} isAltLayout />}
         <PlayerResponse {...this.props} />
       </div>
     );
