@@ -1,4 +1,5 @@
 import React from "react";
+import NumberFormat from "react-number-format";
 import { getSocialInfoValue } from "../../../shared/helper";
 
 export default function SocialInfo({ type, neighbors, task }) {
@@ -15,9 +16,16 @@ export default function SocialInfo({ type, neighbors, task }) {
             of neighbors
           </div>
         </dt>
-        <dd className="pl-5 text-lg font-semibold text-gray-900 flex items-center">
-          {socialInfoValue}
-        </dd>
+        <NumberFormat
+          thousandSeparator={true}
+          isNumericString
+          className="pl-5 text-lg font-semibold text-gray-900 flex items-center"
+          placeholder="0.0"
+          autoFocus
+          name="answer"
+          displayType="text"
+          value={socialInfoValue}
+        />
       </div>
     </div>
   );
