@@ -13,7 +13,6 @@ export class AutoScroll extends Component {
     if (
       this.scrollRef.current.scrollHeight > this.scrollRef.current.clientHeight
     ) {
-      this.started = true;
       this.start();
     }
   }
@@ -23,18 +22,9 @@ export class AutoScroll extends Component {
       this.scrollRef.current.scrollHeight > this.scrollRef.current.clientHeight;
 
     if (canScroll && !this.started) {
-      if (this.started) {
-        return;
-      }
-
       this.start();
-      this.started = true;
-    } else {
-      if (!this.started) {
-        return;
-      }
+    } else if (!canScroll && this.started) {
       this.stop();
-      this.started = false;
     }
   }
 
@@ -43,7 +33,8 @@ export class AutoScroll extends Component {
   }
 
   start = () => {
-    const { rate } = this.props;
+    this.started = true;
+    const { rate = 5000 } = this.props;
     let offset = 0;
     let duration = (this.scrollRef.current.scrollTop * rate) / 100;
 
@@ -81,6 +72,7 @@ export class AutoScroll extends Component {
   };
 
   stop() {
+    this.started = false;
     Velocity(this.scrollRef.current, "stop");
   }
 
