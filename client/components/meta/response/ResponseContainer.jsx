@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import NumberFormat from "react-number-format";
 
 import { Avatar } from "../../../game/Avatar";
-import NumberFormat from "react-number-format";
+import AutoScroll from "./AutoScroll";
 
 const Answer = ({ answer }) => (
   <NumberFormat
@@ -17,6 +18,14 @@ const Answer = ({ answer }) => (
 );
 
 export class ResponseContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      shouldScroll: true,
+      bottomDirection: true,
+    };
+  }
+
   render() {
     const { player, game, round } = this.props;
     const task = round.get("task");
@@ -24,6 +33,7 @@ export class ResponseContainer extends Component {
     const otherPlayers = game.players.filter((p) => p._id !== player._id);
     let answer =
       player.stage.get("tmpanswer") || player.round.get("answer") || "_";
+
     return (
       <div className="response-container">
         <div className="player-response">
@@ -42,23 +52,25 @@ export class ResponseContainer extends Component {
           </span>
         </div>
         <div className="other-responses">
-          <span className="text-dark-gray font-bold text-sm">
+          <span className="text-dark-gray font-bold text-sm mb-2">
             Other Players Detailed
           </span>
-          <ul className="overflow-y-auto mt-2">
-            {otherPlayers.map((p, i) => {
-              let oAnswer = p.round.get("answer") || "_";
+          <AutoScroll rate={3000}>
+            <ul>
+              {otherPlayers.map((p, i) => {
+                let oAnswer = p.round.get("answer") || "_";
 
-              return (
-                <li className="flex justify-between text-sm" key={i}>
-                  <Avatar iconOnly player={p} />
-                  <span>
-                    <Answer answer={oAnswer} /> {unit}
-                  </span>
-                </li>
-              );
-            })}
-          </ul>
+                return (
+                  <li className="flex justify-between text-sm" key={i}>
+                    <Avatar iconOnly player={p} />
+                    <span>
+                      <Answer answer={oAnswer} /> {unit}
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
+          </AutoScroll>
         </div>
       </div>
     );

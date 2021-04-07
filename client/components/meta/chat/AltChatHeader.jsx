@@ -9,8 +9,8 @@ export default class AltChatHeader extends React.Component {
       <div className="alt-chat-header font-bold flex justify-between">
         <span>Chat {chatNo.toString().padStart(2, "0")}</span>
         <div>
-          {playersGroup.map((p) => (
-            <Avatar iconOnly player={p} />
+          {playersGroup.map((p, i) => (
+            <Avatar key={i} iconOnly player={p} />
           ))}
         </div>
       </div>

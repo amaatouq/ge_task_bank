@@ -1,12 +1,6 @@
 import React from "react";
 import { ModalInstruction, Header } from "../components/partials";
-import { Consumer, Provider } from "../context";
-// import DebugButtons from "../components/DebugButtons";
-// import Wait from "../components/Wait";
-// import { Avatar } from "./Avatar";
-// import Response from "./Response";
-// import Score from "./Score";
-// import Timer from "./Timer";
+import { Provider } from "../context";
 import NewLayout from "./NewLayout";
 import OldLayout from "./OldLayout";
 
