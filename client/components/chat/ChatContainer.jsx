@@ -167,9 +167,7 @@ export default class ChatContainer extends Component {
           return (
             <div
               key={g}
-              className={`overflow-hidden flex flex-col ${
-                g !== activeGroup ? "hidden" : ""
-              }`}
+              className={`overflow-hidden flex flex-col ${g !== activeGroup ? "hidden" : ""}`}
             >
               <div className="bg-gray-100 p-1">
                 <div className="text-gray-500 text-xs flex justify-center mb-1">

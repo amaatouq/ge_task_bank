@@ -22,9 +22,12 @@ export default class Message extends React.Component {
   };
 
   render() {
-    const { message, player } = this.props;
+    const { message, player, scope } = this.props;
     const { player: msgPlayer, text, timeStamp } = message;
     const isSelf = player._id == msgPlayer._id;
+
+    // Get the sender's username
+    const msgPlayerUsername = scope.players.filter(_player => _player._id === msgPlayer._id)[0].get("username")
 
     if (!msgPlayer.avatar) {
       return null;
@@ -37,9 +40,8 @@ export default class Message extends React.Component {
 
     return (
       <div
-        className={`"message flex flex-col px-4 ${
-          isSelf ? "items-end justify-end" : ""
-        }"`}
+        className={`"message flex flex-col px-4 ${isSelf ? "items-end justify-end" : ""
+          }"`}
       >
         <div className="flex flex-row items-center px-2 py-2">
           {!isSelf && (
@@ -48,7 +50,7 @@ export default class Message extends React.Component {
               className="avatar w-8 h-8 mr-2"
             />
           )}
-          {this.renderName(isSelf, msgPlayer.avatar)}
+          {this.renderName(isSelf, msgPlayerUsername)}
           <div
             className="mx-1 text-gray-300"
             dangerouslySetInnerHTML={{ __html: "&#183" }}
