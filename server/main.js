@@ -58,6 +58,9 @@ Empirica.gameInit((game) => {
     player.set("score", 0);
     player.set("index", i + 1);
     player.set("hints", {});
+
+    // If there is no username, set the avatar to the username
+    if (!player.get("username")) { player.set("username", player.get("avatar")) }
   });
 
   if (playerCount > 1) {
