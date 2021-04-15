@@ -32,7 +32,7 @@ export class ResponseContainer extends Component {
     const { unit } = task.question;
     const otherPlayers = game.players.filter((p) => p._id !== player._id);
     let answer =
-      player.stage.get("tmpanswer") || player.round.get("answer") || "_";
+      player.stage.get("tmpanswer") ?? player.round.get("answer") ?? "_";
 
     return (
       <div className="response-container">
@@ -58,7 +58,7 @@ export class ResponseContainer extends Component {
           <AutoScroll rate={3000}>
             <ul>
               {otherPlayers.map((p, i) => {
-                let oAnswer = p.round.get("answer") || "_";
+                let oAnswer = p.round.get("answer") ?? "_";
 
                 return (
                   <li className="flex justify-between text-sm" key={i}>
