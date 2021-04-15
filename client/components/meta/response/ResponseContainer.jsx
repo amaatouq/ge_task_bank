@@ -58,7 +58,7 @@ export class ResponseContainer extends Component {
           <AutoScroll rate={3000}>
             <ul>
               {otherPlayers.map((p, i) => {
-                let oAnswer = p.round.get("answer") || "_";
+                let oAnswer = p.round.get("answer") ?? "_";
 
                 return (
                   <li className="flex justify-between text-sm" key={i}>
