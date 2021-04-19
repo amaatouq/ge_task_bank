@@ -3,6 +3,7 @@ import PlayersResponse from "../../game/PlayersResponse";
 import ChatContainer from "../chat/ChatContainer";
 import SocialInfo from "./SocialInfo";
 import NeighborsStats from "../../components/meta/summary/NeighborsStats";
+import { getNeighborPlayers } from "../../../shared/helper";
 
 export default function SocialExposure(props) {
   const { stage, round, game, player, isAltLayout = false } = props;
@@ -23,17 +24,8 @@ export default function SocialExposure(props) {
 
   const task = round.get("task");
   const showChat = chat && stage.name === "social";
-  const neighborIndexes = player.get("neighbors");
-  const neighbors = [];
+  const neighbors = getNeighborPlayers(player, game);
   const info = [];
-
-  neighborIndexes.forEach((i) => {
-    const neighbor = game.players.find((p) => p.get("index") === parseInt(i));
-
-    if (neighbor) {
-      neighbors.push(neighbor);
-    }
-  });
 
   if (minSocialInfo) {
     info.push("min");

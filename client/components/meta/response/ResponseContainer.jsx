@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import NumberFormat from "react-number-format";
+import { getNeighborPlayers } from "../../../../shared/helper";
 
 import { Avatar } from "../../../game/Avatar";
 import AutoScroll from "./AutoScroll";
@@ -30,7 +31,7 @@ export class ResponseContainer extends Component {
     const { player, game, round } = this.props;
     const task = round.get("task");
     const { unit } = task.question;
-    const otherPlayers = game.players.filter((p) => p._id !== player._id);
+    const neighbors = getNeighborPlayers(player, game);
     let answer =
       player.stage.get("tmpanswer") ?? player.round.get("answer") ?? "_";
 
@@ -57,7 +58,7 @@ export class ResponseContainer extends Component {
           </span>
           <AutoScroll rate={3000}>
             <ul>
-              {otherPlayers.map((p, i) => {
+              {neighbors.map((p, i) => {
                 let oAnswer = p.round.get("answer") ?? "_";
 
                 return (
