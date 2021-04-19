@@ -124,7 +124,8 @@ export default class ResponseInput extends React.Component {
             <>
               <div className="mt-8">
                 <button
-                  className="w-full alt-submit-btn text-white rounded text-sm font-bold"
+                  type="submit"
+                  className="w-full alt-submit-btn text-white rounded text-sm font-bold disabled:opacity-40"
                   disabled={
                     player.stage.submitted ||
                     answer < minmax.min ||
