@@ -1,9 +1,10 @@
 import React from "react";
-import { getUnit } from "../../../shared/unit";
 import UnitSimple from "./UnitSimple";
 
 export default class Unit extends React.Component {
   render() {
+    const { result, input, focused } = this.props;
+
     return (
       <div
         className={
