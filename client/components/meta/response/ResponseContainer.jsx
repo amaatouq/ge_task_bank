@@ -31,8 +31,7 @@ export class ResponseContainer extends Component {
     const task = round.get("task");
     const { unit } = task.question;
     const otherPlayers = game.players.filter((p) => p._id !== player._id);
-    let answer =
-      player.stage.get("tmpanswer") ?? player.round.get("answer") ?? "_";
+    let answer = player.round.get("answer") ?? "_";
 
     return (
       <div className="response-container">

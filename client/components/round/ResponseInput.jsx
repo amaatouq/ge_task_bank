@@ -41,6 +41,7 @@ export default class ResponseInput extends React.Component {
       game: {
         treatment: { interactionMode },
       },
+      isAltLayout = false,
     } = this.props;
 
     if (!(interactionMode === "discreet" && stage.name === "social")) {
@@ -62,6 +63,15 @@ export default class ResponseInput extends React.Component {
 
       player.stage.set("answer", a);
       player.round.set("answer", a);
+    }
+
+    // Will not submit the stage if it's new layout and on social
+    if (
+      isAltLayout &&
+      interactionMode === "continuous" &&
+      stage.name === "social"
+    ) {
+      return;
     }
 
     player.stage.submit();
