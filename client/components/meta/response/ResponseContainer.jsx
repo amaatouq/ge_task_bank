@@ -8,7 +8,7 @@ const Answer = ({ answer }) => (
   <NumberFormat
     thousandSeparator={true}
     isNumericString
-    className="text-dark-gray"
+    className="text-dark-gray break-all"
     placeholder="_"
     autoFocus
     name="answer"

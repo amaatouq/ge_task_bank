@@ -80,7 +80,7 @@ export class AutoScroll extends Component {
     const { children } = this.props;
     return (
       <div
-        className="overflow-y-auto"
+        className="overflow-y-auto min-20"
         ref={this.scrollRef}
         onWheel={this.handleWheel}
       >

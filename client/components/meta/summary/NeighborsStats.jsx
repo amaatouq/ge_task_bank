@@ -18,14 +18,19 @@ export default function NeighborsStats({ info, neighbors, task }) {
           let value = getSocialInfoValue(i, neighbors, task);
 
           return (
-            <li key={i} className="flex justify-between items-center">
-              <span className="text-light-gray text-sm">
+            <li
+              key={i}
+              className={`flex justify-between items-center${
+                i !== info.length - 1 ? " mb-1" : ""
+              }`}
+            >
+              <span className="text-light-gray text-sm block flex-auto">
                 <span className="text-dark-gray text-sm">{i}</span> of neighbors
               </span>
               <NumberFormat
                 thousandSeparator={true}
                 isNumericString
-                className="text-sm"
+                className="text-sm break-all"
                 placeholder="0.0"
                 autoFocus
                 name="answer"
