@@ -132,7 +132,7 @@ export default class ResponseInput extends React.Component {
             ""
           ) : (
             <>
-              <div className="mt-8">
+              <div className="mt-5">
                 <button
                   type="submit"
                   className="w-full alt-submit-btn text-white rounded text-sm font-bold disabled:opacity-40"
