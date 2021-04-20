@@ -47,7 +47,7 @@ export function getSocialInfoValue(type, neighbors, task) {
       const answer = p.stage.get("tmpanswer") || p.round.get("answer");
 
       if (answer === undefined) {
-        return 0;
+        return null;
       }
 
       if (task.question.min !== undefined) {
@@ -66,7 +66,7 @@ export function getSocialInfoValue(type, neighbors, task) {
     .filter((a) => a !== null);
 
   if (values.length === 0) {
-    return 0;
+    return null;
   }
 
   switch (type) {
