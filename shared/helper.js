@@ -145,3 +145,18 @@ export function getChatGroups(chatGroupsTreatment, player) {
 
   return groups.sort();
 }
+
+export function getNeighborPlayers(player, game) {
+  const neighborIndexes = player.get("neighbors");
+  const neighbors = [];
+
+  neighborIndexes.forEach((i) => {
+    const neighbor = game.players.find((p) => p.get("index") === parseInt(i));
+
+    if (neighbor) {
+      neighbors.push(neighbor);
+    }
+  });
+
+  return neighbors;
+}
