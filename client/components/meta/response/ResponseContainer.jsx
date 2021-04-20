@@ -3,9 +3,10 @@ import NumberFormat from "react-number-format";
 import { getNeighborPlayers } from "../../../../shared/helper";
 
 import { Avatar } from "../../../game/Avatar";
+import AutoRotate from "./AutoRotate";
 import AutoScroll from "./AutoScroll";
 
-const Answer = ({ answer }) => (
+export const Answer = ({ answer }) => (
   <NumberFormat
     thousandSeparator={true}
     isNumericString
@@ -55,22 +56,7 @@ export class ResponseContainer extends Component {
           <span className="text-dark-gray font-bold text-sm mb-2">
             Other Players Detailed
           </span>
-          <AutoScroll rate={3000}>
-            <ul>
-              {neighbors.map((p, i) => {
-                let oAnswer = p.round.get("answer") ?? "_";
-
-                return (
-                  <li className="flex justify-between text-sm" key={i}>
-                    <Avatar iconOnly player={p} />
-                    <span>
-                      <Answer answer={oAnswer} /> {unit}
-                    </span>
-                  </li>
-                );
-              })}
-            </ul>
-          </AutoScroll>
+          <AutoRotate otherPlayers={otherPlayers} unit={unit} rate={1000} />
         </div>
       </div>
     );
