@@ -4,7 +4,7 @@ import { InfoIcon } from "./SvgIcon";
 export default function Modal({
   open = false,
   onClose,
-  title = "Instruction",
+  title = "Instructions",
   children,
 }) {
   if (!open) {

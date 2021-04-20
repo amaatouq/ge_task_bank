@@ -108,7 +108,7 @@ export default class ResponseInput extends React.Component {
           <NumberFormat
             thousandSeparator={true}
             isNumericString
-            className="alt-input w-full px-0 m-0 py-2 text-sm disabled:text-gray-700 disabled:border-gray-50 text-dark-gray focus:ring-0 focus:outline-none focus:border-b-2 focus:border-gray-500 leading-snug tabular-nums"
+            className="alt-input w-full px-0 m-0 py-2 text-sm disabled:text-gray-700 disabled:border-gray-50 text-dark-gray focus:ring-0 focus:outline-none focus:border-b-2 focus:border-gray-500 leading-snug tabular-nums disabled:opacity-50 disabled:cursor-not-allowed"
             placeholder="Type your answer here..."
             autoFocus
             name="answer"
@@ -135,7 +135,7 @@ export default class ResponseInput extends React.Component {
               <div className="mt-5">
                 <button
                   type="submit"
-                  className="w-full alt-submit-btn text-white rounded text-sm font-bold disabled:opacity-40"
+                  className="w-full alt-submit-btn text-white rounded text-sm font-bold disabled:opacity-40 disabled:cursor-not-allowed"
                   disabled={
                     player.stage.submitted ||
                     answer < minmax.min ||
@@ -145,10 +145,15 @@ export default class ResponseInput extends React.Component {
                   {player.stage.submitted
                     ? interactionMode === "discreet" && stage.name === "social"
                       ? "Waiting for the other players..."
-                      : "Submitted"
+                      : (interactionMode === "discreet" &&
+                          stage.name === "response" &&
+                          "Submitted... waiting for the other players") ||
+                        "Submitted"
                     : interactionMode === "discreet" && stage.name === "social"
                     ? "OK"
-                    : "Update"}{" "}
+                    : !player.round.get("answer")
+                    ? "Submit"
+                    : "Update"}
                 </button>
               </div>
             </>

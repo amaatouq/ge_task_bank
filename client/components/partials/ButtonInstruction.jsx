@@ -13,7 +13,7 @@ export function ButtonInstruction() {
             onClick={openModal}
           >
             <InfoIcon />
-            <span>Instruction</span>
+            <span>Instructions</span>
           </button>
         );
       }}
