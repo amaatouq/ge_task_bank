@@ -32,7 +32,9 @@ export class Question extends Component {
                 <div className="flex-initial">{qText}</div>
               </div>
               <div className="flex-1 w-full pl-2 text-gray-700 leading-5">
-                <div>{qDesc}</div>
+                {qDesc && qDesc !== "" && (
+                  <div className="with-bullet">{qDesc}</div>
+                )}
               </div>
               {hints.length > 0 && (
                 <>
@@ -44,7 +46,7 @@ export class Question extends Component {
                       className="w-full pl-2 text-gray-700 leading-5"
                       key={i}
                     >
-                      {h}
+                      <div className="with-bullet">{h}</div>
                     </div>
                   ))}
                 </>

@@ -45,3 +45,13 @@
 .min-20 {
   min-height: 20px;
 }
+
+.with-bullet {
+  padding-left: 5px;
+
+  &:before {
+    content: "•";
+    display: inline-block;
+    margin-left: -12px;
+  }
+}

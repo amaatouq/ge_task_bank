@@ -8,7 +8,8 @@ export default class NumberToWords extends React.Component {
   render() {
     const { answer, task, isAltLayout } = this.props;
 
-    if (!answer || parseInt(answer, 10) < 1000) {
+    if (!answer) {
+      // if (!answer || parseInt(answer, 10) < 1000) {
       return "";
     }
 
