@@ -56,7 +56,7 @@ export class ResponseContainer extends Component {
           <span className="text-dark-gray font-bold text-sm mb-2">
             Other Players Detailed
           </span>
-          <AutoRotate otherPlayers={otherPlayers} unit={unit} rate={1000} />
+          <AutoRotate otherPlayers={neighbors} unit={unit} rate={1000} />
         </div>
       </div>
     );
