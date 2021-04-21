@@ -16,7 +16,7 @@ import Username from "./intro/Username"
 // Empirica.about(About);
 
 // Set the Consent Component you want to present players (optional).
-Empirica.consent(Consent);
+// Empirica.consent(Consent);
 Empirica.newPlayer(NewPlayerForm);
 Empirica.waiting(Waiting);
 
@@ -28,14 +28,14 @@ Empirica.breadcrumb(() => null);
 // Introduction pages to show before they play the game (optional).
 // At this point they have been assigned a treatment. You can return
 // different instruction steps depending on the assigned treatment.
-Empirica.introSteps((game, treatment) => {
+// Empirica.introSteps((game, treatment) => {
 
-  if (treatment.playerCount > 1) {
-    return [Instructions, DemoStage, Username, Quiz]
-  }
+//   if (treatment.playerCount > 1) {
+//     return [Instructions, DemoStage, Username, Quiz]
+//   }
 
-  return [Instructions, DemoStage, Quiz]
-});
+//   return [Instructions, DemoStage, Quiz]
+// });
 
 // The Round component containing the game UI logic.
 // This is where you will be doing the most development.

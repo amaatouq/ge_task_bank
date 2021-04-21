@@ -29,7 +29,9 @@ export class ResponseContainer extends Component {
   }
 
   render() {
-    const { player, game, round } = this.props;
+    const { player, round, game } = this.props;
+    const { interactionMode } = game.treatment
+
     const task = round.get("task");
     const { unit } = task.question;
     const neighbors = getNeighborPlayers(player, game);
@@ -48,9 +50,12 @@ export class ResponseContainer extends Component {
               <Answer answer={answer} /> {unit}
             </span>
           </div>
-          <span className="text-medium-gray text-sm leading-none">
-            Update your reponse in the lower right corner of page.
-          </span>
+          {interactionMode === "continuous" &&
+            <span className="text-medium-gray text-sm leading-none">
+              Update your reponse in the lower right corner of page.
+            </span>
+          }
+
         </div>
         <div className="other-responses">
           <span className="text-dark-gray font-bold text-sm mb-2">
