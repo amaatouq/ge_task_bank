@@ -77,6 +77,42 @@ export default class ResponseInput extends React.Component {
     player.stage.submit();
   };
 
+  getButtonText = () => {
+
+    // Get the props
+    const { player, stage, game: {
+      treatment: { playerCount, interactionMode },
+    } } = this.props
+
+    // If they have submitted
+    if (player.stage.submitted) {
+
+      // If it is a discreet social stage
+      if (interactionMode === "discreet" && stage.name === "social") {
+        return ("Waiting for the other players...")
+      }
+
+      // Otherwise say that it is submitted, and waiting for others if there are others
+      return (playerCount === 0 ? "Submitted..." : "Submitted... waiting for the other players")
+
+    }
+
+    // If they haven't submitted...
+
+    // If it is a discreet social stage
+    if (interactionMode === "discreet" && stage.name === "social") {
+      return ("OK")
+    }
+
+    // If the player has submitted an answer previously this round
+    if (player.round.get("answer")) {
+      return ("Update")
+    }
+
+    // Otherwise...
+    return ("Submit")
+  }
+
   render() {
     const {
       round,
@@ -128,7 +164,7 @@ export default class ResponseInput extends React.Component {
           />
 
           {answer === "" &&
-          !(interactionMode === "discreet" && stage.name === "social") ? (
+            !(interactionMode === "discreet" && stage.name === "social") ? (
             ""
           ) : (
             <>
@@ -142,18 +178,7 @@ export default class ResponseInput extends React.Component {
                     answer > minmax.max
                   }
                 >
-                  {player.stage.submitted
-                    ? interactionMode === "discreet" && stage.name === "social"
-                      ? "Waiting for the other players..."
-                      : (interactionMode === "discreet" &&
-                          stage.name === "response" &&
-                          "Submitted... waiting for the other players") ||
-                        "Submitted"
-                    : interactionMode === "discreet" && stage.name === "social"
-                    ? "OK"
-                    : !player.round.get("answer")
-                    ? "Submit"
-                    : "Update"}
+                  {this.getButtonText()}
                 </button>
               </div>
             </>
@@ -194,7 +219,7 @@ export default class ResponseInput extends React.Component {
         </div>
 
         {answer === "" &&
-        !(interactionMode === "discreet" && stage.name === "social") ? (
+          !(interactionMode === "discreet" && stage.name === "social") ? (
           ""
         ) : (
           <>
@@ -207,8 +232,8 @@ export default class ResponseInput extends React.Component {
                       ? "Waiting for the other players..."
                       : "Submitted"
                     : interactionMode === "discreet" && stage.name === "social"
-                    ? "OK"
-                    : "Submit"
+                      ? "OK"
+                      : "Submit"
                 }
                 done={player.stage.submitted}
                 disabled={
