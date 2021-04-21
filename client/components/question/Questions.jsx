@@ -2,7 +2,10 @@ import React, { Component } from "react";
 
 export class Question extends Component {
   render() {
-    const { round } = this.props;
+    const { round, stage, game: { treatment: { interactionMode } } } = this.props;
+
+    const canUpdate = interactionMode !== "discreet"
+
 
     const task = round.get("task") || {};
     const { question } = task;
@@ -46,14 +49,20 @@ export class Question extends Component {
                       className="w-full pl-2 text-gray-700 leading-5"
                       key={i}
                     >
-                      <div className="with-bullet">{h}</div>
+                      <div className="with-bullet">{" " + h}</div>
                     </div>
                   ))}
                 </>
               )}
+              {canUpdate ? (
+                <div className="w-full ln-27">
+                  <strong>{stage.name === "social" ? "Update" : "Submit"} your response below to the right.</strong>
+                </div>
+              ) : stage.name !== "social" &&
               <div className="w-full ln-27">
-                <strong>Update your response below to the right.</strong>
+                <strong>Submit your response below to the right.</strong>
               </div>
+              }
             </div>
           </div>
         </div>
