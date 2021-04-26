@@ -44,7 +44,7 @@ export function getSocialInfoValue(type, neighbors, task) {
 
   const values = neighbors
     .map((p) => {
-      const answer = p.stage.get("tmpanswer") || p.round.get("answer");
+      const answer = p.round.get("answer");
 
       if (answer === undefined) {
         return 0;
@@ -104,6 +104,12 @@ export function getMedianValue(values) {
   const nums = [...values].sort((a, b) => a - b);
   const value =
     values.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+
+  if (!value) {
+    console.error("median value is invalid");
+    return 0.0;
+  }
+
   return value.toFixed(1);
 }
 
