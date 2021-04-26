@@ -1,18 +1,21 @@
 import React, { Component } from "react";
+import { getHints } from "../../../shared/helper";
 
 export class Question extends Component {
   render() {
-    const { round } = this.props;
+    const { round, player, game } = this.props;
 
     const task = round.get("task") || {};
+    const hints = getHints(player, round, game);
     const { question } = task;
-    const { text: qText, description: qDesc, image, hints = [] } = question;
+    const { text: qText, description: qDesc, image } = question;
     const classContainer = ["question-container"];
     const classQuestions = ["alt-question-container h-full"];
     if (image) {
       classQuestions.push("with-image-question");
       classContainer.push("with-image");
     }
+
     return (
       <div className={classContainer}>
         <div className="question-container-column bg-white w-full">
@@ -36,7 +39,7 @@ export class Question extends Component {
                   <div className="with-bullet">{qDesc}</div>
                 )}
               </div>
-              {hints.length > 0 && (
+              {hints && hints.length > 0 && (
                 <>
                   <div className="w-full ln-27">
                     <strong>More info:</strong>
