@@ -20,7 +20,7 @@ export class Question extends Component {
             {image && (
               <div className="question-image-area">
                 <div className="img-area w-100 bg-white h-full">
-                  <img src={image} className="object-scale-down" />
+                  <img src={image} className="object-scale-down img-question" />
                 </div>
               </div>
             )}

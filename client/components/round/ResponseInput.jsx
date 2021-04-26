@@ -15,7 +15,45 @@ export default class ResponseInput extends React.Component {
         props.player.round.get("answer") ??
         "",
       focused: false,
+      disableUpdate: false,
     };
+  }
+
+  componentDidMount() {
+    const {
+      stage,
+      game: {
+        treatment: { interactionMode },
+      },
+      isAltLayout = false,
+    } = this.props;
+
+    if (
+      isAltLayout &&
+      interactionMode === "continuous" &&
+      stage.name === "social"
+    ) {
+      this.setState({ disableUpdate: true });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.answer !== this.state.answer) {
+      const {
+        stage,
+        game: {
+          treatment: { interactionMode },
+        },
+        isAltLayout = false,
+      } = this.props;
+      if (
+        isAltLayout &&
+        interactionMode === "continuous" &&
+        stage.name === "social"
+      ) {
+        this.setState({ disableUpdate: false });
+      }
+    }
   }
 
   handleChangeValue = (change) => {
@@ -71,6 +109,7 @@ export default class ResponseInput extends React.Component {
       interactionMode === "continuous" &&
       stage.name === "social"
     ) {
+      this.setState({ disableUpdate: true });
       return;
     }
 
@@ -87,7 +126,7 @@ export default class ResponseInput extends React.Component {
       },
       isAltLayout = false,
     } = this.props;
-    const { answer, focused, err } = this.state;
+    const { answer, focused, disableUpdate } = this.state;
     const task = round.get("task");
 
     const minmax = {};
@@ -139,7 +178,8 @@ export default class ResponseInput extends React.Component {
                   disabled={
                     player.stage.submitted ||
                     answer < minmax.min ||
-                    answer > minmax.max
+                    answer > minmax.max ||
+                    disableUpdate
                   }
                 >
                   {player.stage.submitted
