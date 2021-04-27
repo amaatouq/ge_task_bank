@@ -29,12 +29,14 @@ export class PlayerResponse extends Component {
     );
   }
   render() {
-    const { player } = this.props;
+    const { player, stage } = this.props;
     return (
       <div className="player-response">
-        <span className="text-dark-gray font-bold text-sm mb-2">
-          {player.round.get("answer") ? "Update" : "Submit"} your response
-        </span>
+        {!player.stage.submitted && stage.name !== "social" &&
+          <span className="text-dark-gray font-bold text-sm mb-2">
+            Please submit your response
+          </span>
+        }
         {this.renderError()}
         <ResponseInput {...this.props} isAltLayout />
       </div>
