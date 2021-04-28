@@ -13,23 +13,26 @@ export function ModalInstruction({ game }) {
             <p className="mb-5">This is a social stage where you can:</p>
             <ul className="mb-5 instruction-list">
               <li className="mb-3">
-                See information about the other player’s responses (even if they
-                change item)
+                See information about the other player’s responses
               </li>
               {chat && (
                 <li className="mb-3">
                   Chat with other player about their response
                 </li>
               )}
-              {interactionMode === "continuous" && <li className="mb-3">
-                Modify your response until you click ‘submit’ (cannot modify it
-                once you click submit!) or the other stage ends
-              </li>}
-              
-              <li className="mb-3">
-                if everyone clicks ‘submit’ , the stage will end early and you
-                will go on the next stage.
-              </li>
+              {interactionMode === "continuous"
+                ?
+                <li className="mb-3">
+                  Modify your response and press ‘Update’ to change your response
+                </li>
+                :
+                <li className="mb-3">
+                  if everyone clicks ‘OK’ , the stage will end early and you
+                  will go on the next stage.
+                </li>
+              }
+
+
             </ul>
           </Modal>
         );
