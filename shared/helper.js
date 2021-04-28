@@ -188,17 +188,17 @@ export function getHints(player, round, game) {
   // As the rounds go, the "hints" of the player will be populated, where each key is the index of the round
   // BONUS: This allows us to track which hints player got at which round.
 
+  const playerHints = player.get("hints")
+  const roundIndex = round.get("index")
+
   // If the hints are already set you want to get those instead of resetting them...
-  let hints;
-  if (typeof player.get("hints")[round.get("index")] != "undefined") {
-    hints = player.get("hints")[round.get("index")];
-  } else {
-    //If they are not set, you want to set them...
-    hints = [];
+  //If they are not set, you want to set them...
+  let hints = playerHints[roundIndex] ?? []
+  if (hints.length === 0) {
 
     // If there is a configuration set in the treatment.hint, use it to select the hints
     if (treatment.hints) {
-      const hintsConf = JSON.parse(treatment.hints);
+      const hintsConf = JSON.parse(treatment.hints)
       const configuration = hintsConf[player.get("index").toString()];
 
       if (!configuration) {
@@ -243,8 +243,7 @@ export function getHints(player, round, game) {
     }
 
     // Populate the player's hints
-    let playerHints = player.get("hints");
-    playerHints[round.get("index")] = hints;
+    playerHints[roundIndex] = hints;
     player.set("hints", playerHints);
   }
 

@@ -533,7 +533,7 @@ factors:
     factorTypeId: QLen9pcMK75ohbBub
   - _id: ZaHvuL44GmanwuqoF
     name: 1random
-    value: '''{"1":["?"]}'''
+    value: '{"1":["?"]}'
     factorTypeId: KPaBsT8QA6WWc8osT
 lobbyConfigs:
   - name: Default
