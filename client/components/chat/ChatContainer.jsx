@@ -80,7 +80,7 @@ export default class ChatContainer extends Component {
 
   render() {
     const { activeGroup, groups, newMessagesGroup } = this.state;
-    const { player, game, isAltLayout = false } = this.props;
+    const { player, game, isAltLayout = false, round } = this.props;
 
     const commonProps = {
       player,
@@ -111,7 +111,7 @@ export default class ChatContainer extends Component {
                 />
                 <Chat
                   {...commonProps}
-                  customKey={g}
+                  customKey={`${g}_${round.index}`}
                   customClassName="experiment-chat"
                   footer={ChatFooter}
                   message={ChatMessage}
@@ -167,7 +167,9 @@ export default class ChatContainer extends Component {
           return (
             <div
               key={g}
-              className={`overflow-hidden flex flex-col ${g !== activeGroup ? "hidden" : ""}`}
+              className={`overflow-hidden flex flex-col ${
+                g !== activeGroup ? "hidden" : ""
+              }`}
             >
               <div className="bg-gray-100 p-1">
                 <div className="text-gray-500 text-xs flex justify-center mb-1">
