@@ -16,7 +16,7 @@ export class MetaContainer extends Component {
 
     return (
       <div
-        className={`meta-container ${isResponseStage ? "response-stage" : ""}`}
+        className={`meta-container ${showChat ? "with-chat" : "without-chat"} ${isResponseStage ? "response-stage" : ""}`}
       >
         {!isResponseStage && (
           <>

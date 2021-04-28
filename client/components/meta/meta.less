@@ -2,10 +2,20 @@
   overflow: auto;
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 225px 1fr 225px;
+
   grid-column-gap: 14px;
   padding: 0 20px 10px 20px;
   margin-top: 30px;
+
+  &.with-chat {
+    grid-template-columns: 225px 1fr 225px;
+  }
+
+  &.without-chat {
+    grid-template-columns: 225px 1px 225px;
+    justify-content: center;
+  }
+
 
   &.response-stage {
     grid-template-columns: 50%;
