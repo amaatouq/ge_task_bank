@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export class Question extends Component {
   render() {
-    const { round, stage, game } = this.props;
+    const { round, stage, player, game } = this.props;
 
     const { treatment: { interactionMode } } = game
     const canUpdate = interactionMode !== "discreet"
