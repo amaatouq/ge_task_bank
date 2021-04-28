@@ -4,10 +4,13 @@ export const instructions = {
 Correlation measures how closely related two variables are. For the example
 below, if tall kids tend to be heavy, and short kids tend to be light, we would
 say that height and weight are correlated.
+
 ![Height and age correlation graph](/instructions/height-age.png)
+
 In this task, your correlation guess can range from 0 to 1, and the closer the
 points fit to a straight line, the closer the correlation will be to 1. No
 calculations are necessary, just make your best estimate.
+
 ![Correlation graph examples](/instructions/correlation-examples.png)
     `,
   },
