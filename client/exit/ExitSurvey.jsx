@@ -5,7 +5,7 @@ import { Label, Input, Radio, Textarea } from "../components/Forms";
 
 export default class ExitSurvey extends React.Component {
   static stepName = "ExitSurvey";
-  state = { age: "", gender: "", strength: "", fair: "", feedback: "" };
+  state = { age: "", gender: "", feedback: "" };
 
   handleChange = (event) => {
     const el = event.currentTarget;
@@ -19,26 +19,19 @@ export default class ExitSurvey extends React.Component {
 
   render() {
     const { player } = this.props;
-    const { age, gender, strength, fair, feedback, education } = this.state;
+    const { age, gender, feedback, education } = this.state;
 
     return (
       <Wrapper {...this.props}>
         <div className="flex justify-center items-center text-gray-800">
           <div className="max-w-4xl">
             <div className="text-4xl font-semibold mt-8 mb-6">Exit Survey</div>
-            <p>
-              Please submit the following code to receive your bonus:{" "}
-              <strong>{player._id}</strong>.
-            </p>
-            <p>
-              You final <strong>bonus</strong> is in addition of the{" "}
-              <strong>1 base reward</strong> for completing the HIT.
-            </p>
+
             <p className="mt-4">
               Please answer the following short survey.{" "}
               <em>
                 You do not have to provide any information you feel
-                uncomfortable with.
+                uncomfortable providing.
               </em>
             </p>
             <form onSubmit={this.handleSubmit}>
@@ -113,33 +106,6 @@ export default class ExitSurvey extends React.Component {
               </div>
 
               <div className="form-line thirds">
-                <div>
-                  <Label
-                    htmlFor="strength"
-                    text="How would you describe your strength in the game?"
-                  />
-                  <div>
-                    <Textarea
-                      dir="auto"
-                      id="strength"
-                      name="strength"
-                      value={strength}
-                      onChange={this.handleChange}
-                    />
-                  </div>
-                </div>
-                <div>
-                  <Label htmlFor="fair" text="Do you feel the pay was fair?" />
-                  <div>
-                    <Textarea
-                      dir="auto"
-                      id="fair"
-                      name="fair"
-                      value={fair}
-                      onChange={this.handleChange}
-                    />
-                  </div>
-                </div>
                 <div>
                   <Label
                     htmlFor="feedback"
