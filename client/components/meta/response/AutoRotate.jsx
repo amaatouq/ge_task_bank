@@ -1,19 +1,18 @@
-import React, { Component } from "react";
-import { deepCopy } from "../../../../shared/helperFunctions/deepCopy";
-import { Avatar } from "../../../game/Avatar";
-import { Answer } from "./ResponseContainer";
+import React, { Component } from 'react'
+import { deepCopy } from '../../../../shared/helperFunctions/deepCopy';
+import { Avatar } from '../../../game/Avatar';
+import { Answer } from './ResponseContainer'
 
 export default class AutoRotate extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      players: deepCopy(this.props.otherPlayers),
-    };
-    this.mouseInside = false;
-    this.started = false;
-    this.reverse = false;
-    this.scrollRef = React.createRef();
-    this.timer = null;
+      players: deepCopy(this.props.otherPlayers)
+    }
+    this.mouseInside = false
+    this.started = false
+    this.scrollRef = React.createRef()
+    this.timer = null
   }
 
   // https://stackoverflow.com/questions/1985260/rotate-the-elements-in-an-array-in-javascript
@@ -21,7 +20,7 @@ export default class AutoRotate extends Component {
     if (reverse) arr.unshift(arr.pop());
     else arr.push(arr.shift());
     return arr;
-  };
+  }
 
   componentDidMount() {
     if (
@@ -31,7 +30,7 @@ export default class AutoRotate extends Component {
     }
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate() {
     const canScroll =
       this.scrollRef.current.scrollHeight > this.scrollRef.current.clientHeight;
 
@@ -39,12 +38,6 @@ export default class AutoRotate extends Component {
       this.start();
     } else if (!canScroll && this.started) {
       this.stop();
-    }
-
-    if (!_.isEqual(prevProps.otherPlayers, this.props.otherPlayers)) {
-      this.setState({
-        players: this.arrayRotate(this.props.otherPlayers, this.reverse),
-      });
     }
   }
 
@@ -55,15 +48,13 @@ export default class AutoRotate extends Component {
   start = () => {
     this.started = true;
 
-    const { rate } = this.props;
+    const { players } = this.state
+    const { rate } = this.props
 
     this.timer = setInterval(() => {
-      this.reverse = !this.reverse;
-      this.setState({
-        players: this.arrayRotate(this.props.otherPlayers, this.reverse),
-      });
-    }, rate);
-  };
+      this.setState({ players: this.arrayRotate(players) })
+    }, rate)
+  }
 
   stop() {
     this.started = false;
@@ -71,24 +62,26 @@ export default class AutoRotate extends Component {
   }
 
   mouseEnter = () => {
-    this.mouseInside = true;
+    this.mouseInside = true
     if (this.started) {
-      this.stop();
+      this.stop()
     }
-  };
+  }
 
   mouseLeave = () => {
-    this.mouseInside = false;
+    this.mouseInside = false
     if (
       this.scrollRef.current.scrollHeight > this.scrollRef.current.clientHeight
     ) {
       this.start();
     }
-  };
+  }
 
   render() {
-    const { unit } = this.props;
-    const { players } = this.state;
+    const { unit } = this.props
+    const { players } = this.state
+
+    //this.setState({ players: this.arrayRotate(players) })
 
     return (
       <div
@@ -100,6 +93,7 @@ export default class AutoRotate extends Component {
         <ul>
           {players.map((p, i) => {
             let oAnswer = p.round.get("answer") ?? "_";
+
             return (
               <li className="flex justify-between text-sm" key={i}>
                 <Avatar iconOnly player={p} />
@@ -111,6 +105,6 @@ export default class AutoRotate extends Component {
           })}
         </ul>
       </div>
-    );
+    )
   }
 }
