@@ -13,11 +13,11 @@ export function ModalInstruction({ game }) {
             <p className="mb-5">This is a social stage where you can:</p>
             <ul className="mb-5 instruction-list">
               <li className="mb-3">
-                See information about the other player’s responses
+                See information about the other players’ responses
               </li>
               {chat && (
                 <li className="mb-3">
-                  Chat with other player about their response
+                  Chat with other players about their response
                 </li>
               )}
               {interactionMode === "continuous"
@@ -27,7 +27,7 @@ export function ModalInstruction({ game }) {
                 </li>
                 :
                 <li className="mb-3">
-                  if everyone clicks ‘OK’ , the stage will end early and you
+                  If everyone clicks ‘OK’ , the stage will end early and you
                   will go on the next stage.
                 </li>
               }
