@@ -4,11 +4,20 @@ import IntroLayout from "./IntroLayout";
 import { isMultiPlayer } from "../../shared/helper";
 import { instructions, taskData } from "../../shared/tasks/tasks";
 
+import { instructionsInfo } from "./instructionsInfo"
+
 export default class GameOverview extends Component {
   constructor(props) {
     super(props);
   }
   render() {
+    const {
+      pay,
+      bonus,
+      isForecasting,
+      time
+    } = instructionsInfo
+
     const {
       game: {
         treatment: { nRounds, responseDuration, playerCount, feedback, feedbackDuration, longTermEngagement, quitEarly, hideAvatar, hideTimer },
@@ -19,188 +28,34 @@ export default class GameOverview extends Component {
       hasNext,
     } = this.props;
 
-    let tasks = taskData.slice();
-    let textRounds = tasks.length < nRounds ? tasks.length : nRounds
+    const tasks = taskData.slice();
+    const textRounds = tasks.length < nRounds ? tasks.length : nRounds
 
     return (
       <IntroLayout title="Instructions" {...this.props}>
-        <p>
-          After completing the instructions and comprehension check, you will
-          begin the game.
-        </p>
-        <br />
-        <p>
-          <strong>Rounds</strong>
-        </p>
-        <p>
-          The game consists of <strong>{textRounds} round{textRounds > 1 && "s"}</strong>. In each round
-          you will see a question (possibly an image as well) and be asked to{" "}
-          <strong>
-            make an educated{" "}
-            <a target="_blank" href="https://en.wikipedia.org/wiki/Estimation">
-              estimation
-            </a>
-            ; on what you believe the correct answer is
-          </strong>
-          . In other words, a rough calculation of the value, extent, or
-          quantity of something. For instance, a common estimation question
-          could involve approximating how many chocolates are in the image
-          bellow.
-        </p>
-        <div
-          key="image"
-          className="p-8 pl-24 h-full w-5/12 m-w-full m-h-full overflow-hidden m-auto"
-        >
-          <img
-            className="h-full w-full object-scale-down"
-            src="/instructions/candies_C_268.jpg"
-          />
+        <div>
+          <p>
+            This task asks you give your best guess or estimate for {textRounds > 1 ? textRounds : "a"} question{textRounds > 1 && "s"} about social or economic life (e.g., how much on average does a dozen eggs cost?).
+          </p>
+
+          {!hideTimer &&
+            <p>You will have {responseDuration} seconds per question.</p>
+          }
+
+          <p>You will earn ${pay} guaranteed pay for each question answered. You will also earn up to ${bonus} bonus for accuracy. The more accurate your answer, the more you earn! This pay will be processed within 2 business days.</p>
+
+          <p>Maximum possible earnings are ${(pay + bonus) * textRounds}0.</p>
         </div>
 
-        <p>
-          In each round, you will be given a question (possibly an image as
-          well). You will then input your answer in a box.
-        </p>
-        <p>
-          You might be shown <strong>hints</strong> to helps you answer the
-          question.
-        </p>
-        <p>
-          Once you start typing an answer, a <strong>Submit</strong> button will
-          appear that you can click when you are ready.
-        </p>
-        {!hideTimer &&
-          <p>
-            You have <strong>{responseDuration} seconds</strong> to submit your answer.
-          </p>
-        }
-
+        <br />
         <br />
 
-        {!hideAvatar &&
-          <div>
-            <p><strong>Avatar</strong></p>
-            <p>
-              You will receive an avatar (an animal's icon and name). Your avatar appears in the top left corner of the screen during the game.
-          </p>
-          </div>
-        }
-
-        {isMultiPlayer(playerCount) && (
-          <Fragment>
-            <br />
-            <p>
-              <strong>Multiple Players</strong>
-            </p>
-            <p>
-              You might be playing with more than one player at a time. In this
-              case, you will have to wait until everyone has provided their
-              answer before proceeding to the next stage. The{" "}
-              <strong>tick mark by your avatar</strong> indicates whether your
-              have submitted an answer for this stage.
-            </p>
-            <p>Your avatar tells you appart from other players.</p>
-            <p>
-              {/*Need to set a conditional*/}
-              You might have a stage where you are given information about the
-              other players' answers.
-            </p>
-          </Fragment>
-        )}
-
-        <br />
-
-        <p>
-          <strong> Correct Answer and Scoring</strong>
-        </p>
-        {feedback ? (
-          <p>
-            Once you have submitted your answer, you will be shown the correct
-            answer. You have {feedbackDuration} seconds to view the answer. You
-            can click an "OK" button when you have finished reading the answer.{" "}
-          </p>
-        ) : (
-            <p>
-              Once you have submitted your answer, you will NOT be shown the
-              correct answer.
-            </p>
-          )}
-        <p>
-          You will score points{" "}
-          <strong>
-            depending on how close to the true answer your estimation is
-          </strong>
-          .
-        </p>
-
-        <br />
-        <p>
-          <strong>Pace and Timing</strong>
-        </p>
-
-        {longTermEngagement ? (
-          <Fragment>
-            <div>
-              <p>
-                Once you have provided your answer and obtained your score,
-                there will be a <strong>wait stage</strong>. Here you can decide
-                to take a break from the game and return later.
-              </p>
-              <p>
-                If you click the <strong>COPY LINK</strong> button, the link to
-                this experiment will be copied to your clipboard and allow you
-                to save it. That way, you can save it and return to the
-                experiment even after closing your browser.
-              </p>
-              <p>
-                <strong>
-                  Note that the experimenter might decide to end the game after
-                  a certain date.
-                </strong>
-              </p>
-            </div>
-            {quitEarly && (
-              <p>
-                The <strong>QUIT</strong> button allows you to end the
-                experiment early without going through any more questions. This
-                will send you to the debriefing stage.{" "}
-                <strong>
-                  You will not be able to return and answer more questions.
-                </strong>
-              </p>
-            )}
-          </Fragment>
-        ) : (
-            <p>
-              Once you have provided your answer and obtained your score, the next
-              question starts.
-            </p>
-          )}
-
-        <br />
-
-        <p>
-          <strong>Practice</strong>
-        </p>
-        <p>
-          On the next page, we will show you a demonstration of how a normal
-          round works.
-        </p>
-        <p>
-          Feel free to enter an answer, this will not count toward your final
-          score.
-        </p>
-        <p>
-          You are given a different amount of time than in the actual game, just for this practice stage.
-        </p>
-
-        <br />
         <p style={{ display: "flex", justifyContent: "center" }}>
-          <CustomButton onClick={onNext} disabled={!hasNext}>
-            Continue to practice
+          <CustomButton onClick={onNext} >
+            Continue
           </CustomButton>
         </p>
-      </IntroLayout>
+      </IntroLayout >
     );
   }
 }

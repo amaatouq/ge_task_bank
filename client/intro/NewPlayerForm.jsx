@@ -5,18 +5,6 @@ import Wrapper from "../components/Wrapper";
 export default class NewPlayerForm extends React.Component {
   state = { id: "" };
 
-  constructor(props) {
-    super(props);
-
-    this.inputRef = React.createRef();
-  }
-
-  componentDidMount() {
-    if (this.inputRef.current) {
-      this.inputRef.current.focus();
-    }
-  }
-
   handleUpdate = (event) => {
     const { value, name } = event.currentTarget;
     this.setState({ [name]: value });
@@ -45,7 +33,7 @@ export default class NewPlayerForm extends React.Component {
                 className="block mt-8 text-gray-500 text-medium"
                 htmlFor="id"
               >
-                Player ID
+                Please enter your Prolific or MTurk ID:
               </label>
 
               <input
@@ -56,14 +44,10 @@ export default class NewPlayerForm extends React.Component {
                 id="id"
                 value={id}
                 onChange={this.handleUpdate}
-                placeholder="e.g. john@example.com"
+                placeholder=""
                 required
                 autoComplete="off"
-                ref={this.inputRef}
               />
-              <div className="m-1 text-sm text-gray-400 leading-snug">
-                Enter your player identification (provided ID, MTurk ID, etc.)
-              </div>
 
               <div className="mt-8">
                 <Button text="Submit" />
