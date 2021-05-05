@@ -39,7 +39,7 @@ export class Question extends Component {
               </div>
               <div className="flex-1 w-full pl-2 text-gray-700 leading-5">
                 {qDesc && qDesc !== "" && (
-                  <div className="with-bullet">{qDesc}</div>
+                  <div className="with-bullet">{" " + qDesc}</div>
                 )}
               </div>
               {hints && hints.length > 0 && (
