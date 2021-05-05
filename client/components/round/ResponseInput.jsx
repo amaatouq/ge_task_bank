@@ -109,6 +109,7 @@ export default class ResponseInput extends React.Component {
       interactionMode === "continuous" &&
       stage.name === "social"
     ) {
+      player.stage.set("hasUpdatedOnce", true)
       this.setState({ disableUpdate: true });
       return;
     }
