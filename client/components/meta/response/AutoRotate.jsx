@@ -7,7 +7,7 @@ export default class AutoRotate extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      players: deepCopy(this.props.otherPlayers)
+      playerOrder: this.props.otherPlayers.map(_player => _player._id)
     }
     this.mouseInside = false
     this.started = false
@@ -30,7 +30,7 @@ export default class AutoRotate extends Component {
     }
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate() {
     const canScroll =
       this.scrollRef.current.scrollHeight > this.scrollRef.current.clientHeight;
 
@@ -38,12 +38,6 @@ export default class AutoRotate extends Component {
       this.start();
     } else if (!canScroll && this.started) {
       this.stop();
-    }
-
-    if (!_.isEqual(prevProps.otherPlayers, this.props.otherPlayers)) {
-      this.setState({
-        players: this.arrayRotate(this.props.otherPlayers),
-      });
     }
   }
 
@@ -54,11 +48,11 @@ export default class AutoRotate extends Component {
   start = () => {
     this.started = true;
 
-    const { players } = this.state
+    const { playerOrder } = this.state
     const { rate } = this.props
 
     this.timer = setInterval(() => {
-      this.setState({ players: this.arrayRotate(players) })
+      this.setState({ playerOrder: this.arrayRotate(playerOrder) })
     }, rate)
   }
 
@@ -84,10 +78,8 @@ export default class AutoRotate extends Component {
   }
 
   render() {
-    const { unit } = this.props
-    const { players } = this.state
-
-    //this.setState({ players: this.arrayRotate(players) })
+    const { unit, otherPlayers } = this.props
+    const { playerOrder } = this.state
 
     return (
       <div
@@ -97,7 +89,9 @@ export default class AutoRotate extends Component {
         onMouseLeave={this.mouseLeave}
       >
         <ul>
-          {players.map((p, i) => {
+          {playerOrder.map((p_id, i) => {
+
+            const p = otherPlayers.filter(_player => _player._id === p_id)[0]
             let oAnswer = p.round.get("answer") ?? "_";
 
             return (
