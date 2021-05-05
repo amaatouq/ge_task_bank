@@ -202,27 +202,20 @@ export default class ResponseInput extends React.Component {
             {...this.props}
           />
 
-          {answer === "" &&
-            !(interactionMode === "discreet" && stage.name === "social") ? (
-            ""
-          ) : (
-            <>
-              <div className="mt-5">
-                <button
-                  type="submit"
-                  className="w-full alt-submit-btn text-white rounded text-sm font-bold disabled:opacity-40 disabled:cursor-not-allowed"
-                  disabled={
-                    player.stage.submitted ||
-                    answer < minmax.min ||
-                    answer > minmax.max ||
-                    disableUpdate
-                  }
-                >
-                  {this.getButtonText()}
-                </button>
-              </div>
-            </>
-          )}
+          <div className="mt-5">
+            <button
+              type="submit"
+              className="w-full alt-submit-btn text-white rounded text-sm font-bold disabled:opacity-40 disabled:cursor-not-allowed"
+              disabled={
+                player.stage.submitted ||
+                answer < minmax.min ||
+                answer > minmax.max ||
+                disableUpdate
+              }
+            >
+              {this.getButtonText()}
+            </button>
+          </div>
         </form>
       );
     }
