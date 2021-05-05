@@ -30,7 +30,7 @@ export default class AutoRotate extends Component {
     }
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     const canScroll =
       this.scrollRef.current.scrollHeight > this.scrollRef.current.clientHeight;
 
@@ -38,6 +38,12 @@ export default class AutoRotate extends Component {
       this.start();
     } else if (!canScroll && this.started) {
       this.stop();
+    }
+
+    if (!_.isEqual(prevProps.otherPlayers, this.props.otherPlayers)) {
+      this.setState({
+        players: this.arrayRotate(this.props.otherPlayers),
+      });
     }
   }
 
