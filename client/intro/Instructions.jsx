@@ -4,7 +4,7 @@ import IntroLayout from "./IntroLayout";
 import { isMultiPlayer } from "../../shared/helper";
 import { instructions, taskData } from "../../shared/tasks/tasks";
 
-import { instructionsInfo } from "./instructionsInfo"
+import { num2stringdecimals, instructionsInfo } from "./instructionsInfo"
 
 export default class GameOverview extends Component {
   constructor(props) {
@@ -39,7 +39,7 @@ export default class GameOverview extends Component {
           </p>
 
           {!hideTimer &&
-            <p>You will have {responseDuration} seconds to answer each question.</p>
+            <p>You will have {responseDuration} seconds to answer a question.</p>
           }
 
           {
@@ -55,7 +55,7 @@ export default class GameOverview extends Component {
 
           <p>You will earn ${pay} guaranteed pay for each question answered. You will also earn up to ${bonus} bonus for accuracy. The more accurate your answer, the more you earn! This pay will be processed within 2 business days.</p>
 
-          <p>Maximum possible earnings are ${(pay + bonus) * textRounds}0.</p>
+          <p>Maximum possible earnings are ${num2stringdecimals((Number(pay) + Number(bonus)) * textRounds)}.</p>
         </div>
 
         <p style={{ display: "flex", justifyContent: "center" }}>
