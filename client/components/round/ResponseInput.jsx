@@ -5,6 +5,8 @@ import Button from "../Button";
 import NumberToWords from "./NumberToWords";
 import Unit from "./Unit";
 
+import { TimeSync } from "meteor/mizzao:timesync";
+
 export default class ResponseInput extends React.Component {
   constructor(props) {
     super(props);
@@ -70,6 +72,31 @@ export default class ResponseInput extends React.Component {
     this.setState({ focused: false });
   };
 
+  formatAnswer = answer => {
+    // If answered as int, save int, otherwise save float
+    const f = parseFloat(answer);
+    const i = parseInt(answer, 10);
+
+    if (f === i) {
+      return i;
+    }
+
+    return f
+  }
+
+  trackUpdate = (player, answer, isGivenDuringSocial) => {
+    if (answer === "") {
+      return;
+    }
+
+    const a = this.formatAnswer(answer)
+    const timeStamp = new Date(TimeSync.serverTime(null, 1000))
+
+    const updatedAnswers = player.round.get("updatedAnswers") ?? []
+    updatedAnswers.push({ id: player._id, answer: a, timeStamp, isGivenDuringSocial })
+    player.round.set("updatedAnswers", updatedAnswers)
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
 
@@ -89,16 +116,8 @@ export default class ResponseInput extends React.Component {
         return;
       }
 
-      // If answered as int, save int, otherwise save float
-
-      const f = parseFloat(answer);
-      const i = parseInt(answer, 10);
-
-      let a = f;
-      if (f === i) {
-        a = i;
-      }
-
+      this.trackUpdate(player, answer, stage.name === "social")
+      const a = this.formatAnswer(answer)
       player.stage.set("answer", a);
       player.round.set("answer", a);
     }
@@ -109,7 +128,11 @@ export default class ResponseInput extends React.Component {
       interactionMode === "continuous" &&
       stage.name === "social"
     ) {
+
+      // Set that it has to hide the information next to your response
       player.stage.set("hasUpdatedOnce", true)
+
+      // Disable the update button until answer is changed
       this.setState({ disableUpdate: true });
       return;
     }
