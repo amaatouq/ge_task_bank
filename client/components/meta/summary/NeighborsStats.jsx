@@ -15,14 +15,13 @@ export default function NeighborsStats({ info, neighbors, task }) {
 
       <ul className="mt-1">
         {info.map((i) => {
-          let value = getSocialInfoValue(i, neighbors, task);
+          let value = getSocialInfoValue(i, neighbors, task) ?? "N/A";
 
           return (
             <li
               key={i}
-              className={`flex justify-between items-center${
-                i !== info.length - 1 ? " mb-1" : ""
-              }`}
+              className={`flex justify-between items-center${i !== info.length - 1 ? " mb-1" : ""
+                }`}
             >
               <span className="text-light-gray text-sm block flex-auto">
                 <span className="text-dark-gray text-sm">{i}</span> of neighbors
