@@ -34,7 +34,7 @@ export default class AttentionCheck extends Component {
         const { answer } = this.state
 
         return (
-            <div>
+            <div className="mt-3">
                 <br />
                 <p>Please read the instructions to this questions carefully. This question asks you about your favourite news outlet. No matter which one is your actual favourite, we want you to select "Le Gorafi". This is so we can ensure that you are paying attention to the instructions in this study.</p>
 
@@ -73,7 +73,7 @@ export default class AttentionCheck extends Component {
                         <label className="cursor-pointer">
                             <input
                                 type="radio"
-                                name="attentionCheck"
+                                name="attentionCheckCorrect"
                                 value="Gorafi"
                                 onChange={this.handleChange}
                                 checked={answer === "Gorafi"}

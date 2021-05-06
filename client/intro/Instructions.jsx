@@ -58,9 +58,6 @@ export default class GameOverview extends Component {
           <p>Maximum possible earnings are ${(pay + bonus) * textRounds}0.</p>
         </div>
 
-        <br />
-        <br />
-
         <p style={{ display: "flex", justifyContent: "center" }}>
           <CustomButton onClick={onNext} >
             Continue
