@@ -92,7 +92,7 @@ export default class AutoRotate extends Component {
           {playerOrder.map((p_id, i) => {
 
             const p = otherPlayers.filter(_player => _player._id === p_id)[0]
-            let oAnswer = p.round.get("answer") ?? "_";
+            let oAnswer = p.round.get("answer") ?? "N/A";
 
             return (
               <li className="flex justify-between text-sm" key={i}>

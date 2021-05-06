@@ -35,7 +35,7 @@ export class ResponseContainer extends Component {
     const task = round.get("task");
     const { unit } = task.question;
     const neighbors = getNeighborPlayers(player, game);
-    let answer = player.round.get("answer") ?? "_";
+    let answer = player.round.get("answer") ?? "N/A";
 
     return (
       <div className="response-container">
