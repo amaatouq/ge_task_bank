@@ -41,69 +41,77 @@ export default class AttentionCheck extends Component {
                 <p>Based on the instructions above, which news outlet have we asked you to select?</p>
 
                 <form onSubmit={this.handleSubmit}>
-                    <div className="mb-2">
-                        <input
-                            type="radio"
-                            name="attentionCheck"
-                            value="Washington Post"
-                            onChange={this.handleChange}
-                            checked={answer === "Washington Post"}
-                        /> The Washington Post
+                    <div className="mb-3">
+                        <label className="cursor-pointer">
+                            <input
+                                type="radio"
+                                name="attentionCheck"
+                                value="Washington Post"
+                                onChange={this.handleChange}
+                                checked={answer === "Washington Post"}
+                                className="cursor-pointer"
+                            /> The Washington Post
+                        </label>
                         <br />
                     </div>
 
-                    <div className="mb-2">
-                        <input
-                            type="radio"
-                            name="attentionCheck"
-                            value="The Guardian"
-                            onChange={this.handleChange}
-                            checked={answer === "The Guardian"}
-                            style={{ marginBottom: "10px" }}
-                        /> The Guardian
-                    <br />
+                    <div className="mb-3">
+                        <label className="cursor-pointer">
+                            <input
+                                type="radio"
+                                name="attentionCheck"
+                                value="The Guardian"
+                                onChange={this.handleChange}
+                                checked={answer === "The Guardian"}
+                                className="cursor-pointer"
+                            /> The Guardian
+                        </label>
+                        <br />
                     </div>
 
-                    <div className="mb-2">
-                        <input
-                            type="radio"
-                            name="attentionCheck"
-                            value="Gorafi"
-                            onChange={this.handleChange}
-                            checked={answer === "Gorafi"}
-                            style={{ marginBottom: "10px" }}
-                        /> Le Gorafi
-                    <br />
+                    <div className="mb-3">
+                        <label className="cursor-pointer">
+                            <input
+                                type="radio"
+                                name="attentionCheck"
+                                value="Gorafi"
+                                onChange={this.handleChange}
+                                checked={answer === "Gorafi"}
+                                className="cursor-pointer"
+                            /> Le Gorafi
+                        </label>
+                        <br />
                     </div>
 
-                    <div className="mb-2">
-                        <input
-                            type="radio"
-                            name="attentionCheck"
-                            value="The Times"
-                            onChange={this.handleChange}
-                            checked={answer === "The Times"}
-                            style={{ marginBottom: "10px" }}
-                        /> The Times
-                    <br />
+                    <div className="mb-3">
+                        <label className="cursor-pointer">
+                            <input
+                                type="radio"
+                                name="attentionCheck"
+                                value="The Times"
+                                onChange={this.handleChange}
+                                checked={answer === "The Times"}
+                                className="cursor-pointer"
+                            /> The Times
+                        </label>
+                        <br />
                     </div>
 
-                    <div className="mb-2">
-                        <input
-                            type="radio"
-                            name="attentionCheck"
-                            value="Other"
-                            onChange={this.handleChange}
-                            checked={answer === "Other"}
-                            style={{ marginBottom: "10px" }}
-                        /> Other
-                    <br />
+                    <div className="mb-3">
+                        <label className="cursor-pointer">
+                            <input
+                                type="radio"
+                                name="attentionCheck"
+                                value="Other"
+                                onChange={this.handleChange}
+                                checked={answer === "Other"}
+                                className="cursor-pointer"
+                            /> Other
+                        </label>
+                        <br />
                     </div>
 
-                    <p className="mt-8 mb-8" style={{
-                        display: "flex",
-                        justifyContent: "center",
-                    }}>
+                    <p className="mt-8 mb-8 flex justify-center">
                         <button
                             className="px-4 py-3 bg-gray-300 hover:opacity-50 disabled:opacity-50 active:bg-gray-400 text-gray-800 rounded flex items-center text-lg font-semibold leading-none shadow-md disabled:cursor-not-allowed transition-opacity duration-300"
                             type="submit"
@@ -114,7 +122,7 @@ export default class AttentionCheck extends Component {
 
                 </form>
 
-            </div>
+            </div >
 
         )
     }

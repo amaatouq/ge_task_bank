@@ -20,7 +20,7 @@ export default class GameOverview extends Component {
 
     const {
       game: {
-        treatment: { nRounds, responseDuration, playerCount, feedback, feedbackDuration, longTermEngagement, quitEarly, hideAvatar, hideTimer },
+        treatment: { nRounds, responseDuration, playerCount, chat, hideTimer },
       },
       hasPrev,
       onPrev,
@@ -39,7 +39,18 @@ export default class GameOverview extends Component {
           </p>
 
           {!hideTimer &&
-            <p>You will have {responseDuration} seconds per question.</p>
+            <p>You will have {responseDuration} seconds to answer each question.</p>
+          }
+
+          {
+            playerCount > 1 &&
+            <div className="mb-2">
+              <p className="mb-0">First you answer a question, then you have a round where you interact with {playerCount - 1} other players where:</p>
+              <ul className="instruction-list">
+                <li>you will see information about the other players' answers</li>
+                {chat && <li>you will be able to chat with the other players.</li>}
+              </ul>
+            </div>
           }
 
           <p>You will earn ${pay} guaranteed pay for each question answered. You will also earn up to ${bonus} bonus for accuracy. The more accurate your answer, the more you earn! This pay will be processed within 2 business days.</p>
