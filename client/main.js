@@ -13,7 +13,7 @@ import Quiz from "./intro/Quiz";
 import Username from "./intro/Username"
 import AttentionCheck from "./intro/AttentionCheck"
 
-const isDev = false
+const isDev = true
 
 if (!isDev) {
 
