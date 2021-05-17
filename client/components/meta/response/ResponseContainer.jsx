@@ -52,7 +52,7 @@ export class ResponseContainer extends Component {
           </div>
           {interactionMode === "continuous" && !player.stage.get("hasUpdatedOnce") && (
             <span className="text-medium-gray text-sm leading-none">
-              Update your reponse in the lower right corner of page.
+              Update your reponse on the lower right of the page.
             </span>
           )}
         </div>

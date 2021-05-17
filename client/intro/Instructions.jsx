@@ -20,7 +20,7 @@ export default class GameOverview extends Component {
 
     const {
       game: {
-        treatment: { nRounds, responseDuration, playerCount, chat, hideTimer },
+        treatment: { nRounds, responseDuration, playerCount, chat, hideTimer, socialDuration },
       },
       hasPrev,
       onPrev,
@@ -45,7 +45,7 @@ export default class GameOverview extends Component {
           {
             playerCount > 1 &&
             <div className="mb-2">
-              <p className="mb-0">First you answer a question, then you have a round where you interact with {playerCount - 1} other players where:</p>
+              <p className="mb-0">First you answer a question, then you will interact with {playerCount - 1} other players{!hideTimer && ` for ${socialDuration} seconds`}, where:</p>
               <ul className="instruction-list">
                 <li>you will see information about the other players' answers</li>
                 {chat && <li>you will be able to chat with the other players.</li>}
