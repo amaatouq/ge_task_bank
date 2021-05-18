@@ -25,12 +25,14 @@ if (!isDev) {
   // different instruction steps depending on the assigned treatment.
   Empirica.introSteps((game, treatment) => {
 
+    const introSteps = [Instructions]
     if (treatment.playerCount > 1) {
-      return [AttentionCheck, Instructions, Username]
+      introSteps.push(Username)
     }
 
-    return [AttentionCheck, Instructions]
-  });
+    return introSteps
+  })
+
 }
 
 // Set the About Component you want to use for the About dialog (optional).
