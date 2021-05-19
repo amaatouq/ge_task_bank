@@ -24,8 +24,6 @@ export default function calcTimeRemaining(timeToStart, now, bufferTime) {
     const targetMinute = hour_minute[1];
     const targetSecond = hour_minute[2] == undefined ? 0 : hour_minute[2];
 
-
-
     // this is the subject's local time
     const localTime = now;
 
@@ -37,13 +35,10 @@ export default function calcTimeRemaining(timeToStart, now, bufferTime) {
     //NYC IS OFFSET 4 HOURS DURING DAYLIGHT SAVINGS TIME
     var chicagoOffset = getChicagoTimeZoneOffset() * 60000;
 
-
-
     // this could probably be more concise 
     const chicagoDate = new Date(localTime + localOffset + chicagoOffset);
     const targetDate = new Date(chicagoDate.getYear() + 1900, chicagoDate.getMonth(), chicagoDate.getDate(), targetHour, targetMinute, targetSecond)
     const time_to_start = (targetDate.getTime() - chicagoDate.getTime()) / 1000;
-
 
     return (time_to_start + bufferTime);
 }
