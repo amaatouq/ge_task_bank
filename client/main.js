@@ -33,8 +33,7 @@ if (!isDev) {
 
     introSteps.push(WaitingPage)
 
-    // return introSteps
-    return [WaitingPage]
+    return introSteps
   })
 
 }
