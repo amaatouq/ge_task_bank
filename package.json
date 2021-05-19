@@ -13,6 +13,8 @@
     "marked": "^1.2.5",
     "meteor-node-stubs": "0.4.1",
     "minimist": ">=0.2.1",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.33",
     "number-to-words": "^1.2.4",
     "pluralize": "^8.0.0",
     "react": "16.5.2",

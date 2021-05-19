@@ -12,6 +12,7 @@ import NewPlayerForm from "./intro/NewPlayerForm";
 import Quiz from "./intro/Quiz";
 import Username from "./intro/Username"
 import AttentionCheck from "./intro/AttentionCheck"
+import WaitingPage from "./intro/wait-timer/WaitingPage";
 
 const isDev = false
 
@@ -30,7 +31,10 @@ if (!isDev) {
       introSteps.push(Username)
     }
 
-    return introSteps
+    introSteps.push(WaitingPage)
+
+    // return introSteps
+    return [WaitingPage]
   })
 
 }

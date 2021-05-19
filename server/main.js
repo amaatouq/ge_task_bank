@@ -1,9 +1,17 @@
 import Empirica from "meteor/empirica:core";
+import { Configs } from "../shared/api/collection.js";
 import { avatarNames } from "../shared/avatars.js";
 import { getChatGroups, getNeighbors } from "../shared/helper";
 import { instructions, taskData } from "../shared/tasks/tasks";
 import "./bots.js";
 import "./callbacks.js";
+
+Meteor.publish('admin-global-configs', function publishTasks() {
+  return Configs.find({})
+})
+
+// Configs.insert({ timeToStart: "Tue May 18 2021 23:59:20 GMT+0100 (British Summer Time)", maxBuffer: 0, loginRefresh: 60 })
+// Configs.remove("S6ArH36PJTh3SLtm4")
 
 // Set true while developing to set very large duration on stages.
 const isDebugTime = Meteor.isDevelopment && false;
