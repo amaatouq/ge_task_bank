@@ -20,7 +20,7 @@ export default class WaitingPage extends Component {
         const { onNext, player } = this.props;
 
         return (
-            <IntroLayout title="Wait Page" {...this.props}>
+            <IntroLayout title="" {...this.props}>
                 {/* Load the db data which loads the page contents */}
                 <WaitingPageContentContainer onNext={onNext} player={player} />
             </IntroLayout>
@@ -162,17 +162,10 @@ class WaitingPageContent extends React.Component {
         const { loading, timeToStart, prolificCode } = this.props;
 
         return (
-            <div>
-                <p>The game hasn't started it, it will start at {timeToStart} Chicago Time.</p>
-                <p>Please come back to this page at a minute before the start time and make sure your login below is active.</p>
-                <div className="bp3-non-ideal-state">
-                    <div className="bp3-non-ideal-state-description">
-                        {loading ? this.renderLoading() : this.renderWaitingPage()}
-                    </div>
+            <div className="bp3-non-ideal-state">
+                <div className="bp3-non-ideal-state-description">
+                    {loading ? this.renderLoading() : this.renderWaitingPage()}
                 </div>
-                <br />
-                {prolificCode !== undefined && <p>In the meantime, here is the code to complete this study: <strong>{prolificCode}</strong>. That way you can do other studies before this one starts. Do not miss the start time for this study!</p>}
-                <p><strong>We can only pay participants who complete the game.</strong></p>
             </div>
         );
     }

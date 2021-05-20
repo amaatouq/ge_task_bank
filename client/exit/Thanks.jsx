@@ -28,12 +28,12 @@ export default class Thanks extends React.Component {
               <p>This study has been approved in accordance with the ethical standards at University College London.</p>
             </div>
 
-            <p className="mt-8 mb-8 flex justify-center">
+            {/* <p className="mt-8 mb-8 flex justify-center">
               <Button
                 text={"Complete study on Prolific"}
                 onClick={() => { window.location = "https://app.prolific.co/submissions/complete?cc=45296217" }}
               />
-            </p>
+            </p> */}
 
           </div>
         </div>

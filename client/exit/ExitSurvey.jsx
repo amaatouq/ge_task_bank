@@ -26,7 +26,8 @@ export default class ExitSurvey extends React.Component {
         <div className="flex justify-center items-center text-gray-800">
           <div className="max-w-4xl">
             <div className="text-4xl font-semibold mt-8 mb-6">Exit Survey</div>
-
+            <form onSubmit={this.handleSubmit}>
+              {/*
             <p className="mt-4">
               Please answer the following short survey.{" "}
               <em>
@@ -34,7 +35,7 @@ export default class ExitSurvey extends React.Component {
                 uncomfortable providing.
               </em>
             </p>
-            <form onSubmit={this.handleSubmit}>
+            
               <div className="form-line">
                 <div>
                   <Label htmlFor="age" text="Age" />
@@ -103,13 +104,13 @@ export default class ExitSurvey extends React.Component {
                     onChange={this.handleChange}
                   />
                 </div>
-              </div>
+              </div>*/}
 
               <div className="form-line thirds">
                 <div>
                   <Label
                     htmlFor="feedback"
-                    text="Feedback, including problems you encountered."
+                    text="Any feedback (including problems you may have encountered)?"
                   />
                   <div>
                     <Textarea
@@ -129,7 +130,7 @@ export default class ExitSurvey extends React.Component {
             </form>
           </div>
         </div>
-      </Wrapper>
+      </Wrapper >
     );
   }
 }

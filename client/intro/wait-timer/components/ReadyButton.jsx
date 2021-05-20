@@ -82,10 +82,12 @@ export default class ReadyButton extends React.Component {
         const disabled = this.props.disabled == undefined ? false : this.props.disabled
         return (
             <>
-                { this.state.remainingTime > 0 ? this.renderReady() : this.renderExpired()}
+                <p>
+                    {this.state.remainingTime > 0 ? this.renderReady() : this.renderExpired()}
+                </p>
                 <div>
-                    <div style={{ "paddingTop": "1rem", "fontSize": "2rem", "fontWeight": "bold" }}> In order to play, your login must be active (green) when the game starts</div>
-                    <div style={{ "paddingTop": "1rem" }}><i>Its OK to leave this page.  If your login expires, you will be able to click to reactivate.  But don't miss the start time!</i></div>
+                    <p><strong>In order to play, your login must be active (green) when the game starts</strong></p>
+                    <p><i>Its OK to leave this page.  If your login expires, you will be able to click to reactivate.  But don't miss the start time!</i></p>
                 </div>
             </>
         )

@@ -35,28 +35,29 @@ export default class GameOverview extends Component {
       <IntroLayout title="Instructions" {...this.props}>
         <div>
           <p>
-            This task asks you give your best guess or estimate for {textRounds > 1 ? textRounds : "a"} question{textRounds > 1 && "s"} about social or economic life (e.g., how much on average does a dozen eggs cost?).
+            This task you'll be asked to give your best guess for {textRounds > 1 ? textRounds : "a"} question{textRounds > 1 && "s"} about social or economic life (e.g., what's the average price for a gallon of milk?).
           </p>
 
           {!hideTimer &&
-            <p>You will have {responseDuration} seconds to answer a question.</p>
+            <p>You will have {responseDuration} seconds to answer{textRounds > 1 && " a question"}.</p>
           }
 
           {
             playerCount > 1 &&
-            <div className="mb-2">
-              <p className="mb-0">First you answer a question, then you will interact with {playerCount - 1} other players{!hideTimer && ` for ${socialDuration} seconds`}, where:</p>
-              <ul className="instruction-list">
-                <li>you will see information about the other players' answers</li>
-                {chat && <li>you will be able to chat with the other players.</li>}
-              </ul>
-            </div>
+            <p>After providing your initial answer, you will have {socialDuration / 60} minutes to {chat && "chat with other players and "}learn about other players' answers.</p>
           }
+          <br />
 
-          <p>You will earn ${pay} guaranteed pay for each question answered. You will also earn up to ${bonus} bonus for accuracy. The more accurate your answer, the more you earn! This pay will be processed within 2 business days.</p>
+          <p>PAYEMENT:</p>
+          <ul className="instruction-list">
+            <li>${pay} guaranteed pay.</li>
+            <li>UP TO ${bonus} bonus for accuracy. The more accurate your answer, the more you earn! </li>
+            <li>Maximum possible earnings are ${num2stringdecimals((Number(pay) + Number(bonus)) * textRounds)}.</li>
+            <li>Bonus pay will be processed within 2 business days.</li>
+          </ul>
 
-          <p>Maximum possible earnings are ${num2stringdecimals((Number(pay) + Number(bonus)) * textRounds)}.</p>
         </div>
+        <br />
 
         <p style={{ display: "flex", justifyContent: "center" }}>
           <CustomButton onClick={onNext} >

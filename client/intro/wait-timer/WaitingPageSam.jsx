@@ -6,8 +6,6 @@ import { Configs } from '../../../shared/api/collection'
 
 // Import components
 import IntroLayout from "../IntroLayout"
-import CountdownTimer from "./components/CountdownTimer"
-import ReadyButton from "./components/ReadyButton"
 import Countdown from './components/Countdown'
 
 export default class WaitingPage extends Component {
