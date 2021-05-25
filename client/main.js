@@ -14,6 +14,7 @@ import Username from "./intro/Username"
 import AttentionCheck from "./intro/AttentionCheck"
 import WaitingPage from "./intro/wait-timer/WaitingPage";
 import WaitingConsent from "./intro/wait-timer/WaitingConsent";
+import WaitingThankYou from "./exit/WaitingThankYou";
 
 const isDev = false
 
@@ -34,7 +35,8 @@ if (!isDev) {
 
     introSteps.push(WaitingPage)
 
-    return introSteps
+    // return introSteps
+    return [WaitingPage]
   })
 
 }
@@ -70,9 +72,9 @@ Empirica.exitSteps((game, player) => {
       player.exitStatus !== "finished" &&
       player.exitReason !== "playerQuit")
   ) {
-    return [Sorry, Thanks];
+    return [Sorry];
   }
-  return [ExitSurvey, Thanks];
+  return [ExitSurvey, WaitingThankYou];
 });
 
 // Start the app render tree.

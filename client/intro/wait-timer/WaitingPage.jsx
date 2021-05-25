@@ -136,7 +136,7 @@ class WaitingPageContent extends React.Component {
 
 
     renderWaitingPage = () => {
-        const { now, timeToStart, bufferTime, loginRefresh } = this.props
+        const { now, timeToStart, bufferTime, loginRefresh, prolificCode } = this.props
         const { timeout, playerReady } = this.state
 
         const timeout_notready = (timeout && !playerReady);
@@ -166,6 +166,14 @@ class WaitingPageContent extends React.Component {
                 <div className="bp3-non-ideal-state-description">
                     {loading ? this.renderLoading() : this.renderWaitingPage()}
                 </div>
+                {prolificCode !== "" &&
+                    <fieldset className="prolific-fieldset">
+                        <legend>Payment and Prolific</legend>
+                        <p>In the meantime, you can validate this study on Prolific with this code: {prolificCode}.</p>
+                        <p>This will allow you to do other things before this study starts.</p>
+                        <p style={{ marginBottom: "0" }}><strong>REMEBER TO COME BACK IN TIME! We will only pay you if you complete the study (if you do not complete the study we will ask you to return your participation).</strong></p>
+                    </fieldset>
+                }
             </div>
         );
     }

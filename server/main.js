@@ -10,7 +10,7 @@ Meteor.publish('admin-global-configs', function publishTasks() {
   return Configs.find({})
 })
 
-// Configs.insert({ timeToStart: "21:55", maxBuffer: 0, loginRefresh: 60 })
+// Configs.insert({ timeToStart: "21:55", maxBuffer: 0, loginRefresh: 60, prolificCode: "" })
 // Configs.remove("S6ArH36PJTh3SLtm4")
 
 // Set true while developing to set very large duration on stages.

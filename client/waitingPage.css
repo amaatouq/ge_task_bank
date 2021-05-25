@@ -12,3 +12,17 @@
 .game-start-message {
 	font-size: 1.4em;
 }
+
+.prolific-fieldset {
+	border: 1px solid black;
+	border-radius: 1rem;
+	padding: 1rem;
+}
+
+.prolific-fieldset > legend {
+	padding: 0 0.5rem;
+}
+
+.prolific-fieldset > p {
+	margin-bottom: 1rem;
+}
