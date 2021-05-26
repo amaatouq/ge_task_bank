@@ -143,7 +143,11 @@ class WaitingPageContent extends React.Component {
 
         if (timeout_notready) {
             return (
-                <div className="game-is-closed"><center>Login timed out, game is closed.</center></div>
+                <div className="game-is-closed">
+                    <center>Sorry, your login wasn't active at the time the game started. The game is now closed.</center>
+                    <br />
+                    {prolificCode !== "" && <p>Please return your participation on Prolific.</p>}
+                </div>
             )
         }
 
@@ -160,13 +164,14 @@ class WaitingPageContent extends React.Component {
 
     render() {
         const { loading, timeToStart, prolificCode } = this.props;
+        const { timeout, playerReady } = this.state
 
         return (
             <div className="bp3-non-ideal-state">
                 <div className="bp3-non-ideal-state-description">
                     {loading ? this.renderLoading() : this.renderWaitingPage()}
                 </div>
-                {prolificCode !== "" &&
+                {prolificCode !== "" && !loading && !(timeout && !playerReady) &&
                     <fieldset className="prolific-fieldset">
                         <legend>Payment and Prolific</legend>
                         <p>In the meantime, you can validate this study on Prolific with this code: {prolificCode}.</p>
