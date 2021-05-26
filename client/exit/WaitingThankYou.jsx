@@ -19,8 +19,11 @@ export default class WaitingThankYou extends Component {
 
 class WaitingThankYouPage extends Component {
     render() {
-        const { loading, prolificCode } = this.props
-        console.log(prolificCode)
+        const { loading, prolificCode, player } = this.props
+
+        if (!player.get("finishedStudy")) {
+            player.set("finishedStudy", true)
+        }
 
         if (loading) {
             return (
