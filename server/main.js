@@ -43,6 +43,9 @@ Empirica.gameInit((game) => {
     },
   } = game;
 
+  // Set treatment to the game data to facilitate wrangling
+  game.set("treament", game.treatment)
+
   let nRounds = game.treatment.nRounds;
 
   check(nRounds <= 0, "nRounds should be > 0");
