@@ -10,8 +10,10 @@ Meteor.publish('admin-global-configs', function publishTasks() {
   return Configs.find({})
 })
 
-// Configs.insert({ timeToStart: "21:55", maxBuffer: 0, loginRefresh: 60, prolificCode: "" })
-// Configs.remove("S6ArH36PJTh3SLtm4")
+// Configs.insert({ timeToStart: "06:45", maxBuffer: 0, loginRefresh: 60, prolificCode: "" })
+// console.log(Configs.find({}).fetch())
+// Configs.remove("tcGNDskmbCxbZEQon")
+// Configs.remove("EDF6EBiB86iTTPLSm")
 
 // Set true while developing to set very large duration on stages.
 const isDebugTime = Meteor.isDevelopment && false;

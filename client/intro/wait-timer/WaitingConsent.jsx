@@ -69,6 +69,7 @@ WaitingConsentPageContents = withTracker(rest => {
     // Get the globalConfigs collection
     const globalConfigs = Configs.find({}).fetch()[0];
     const timeToStart = globalConfigs.timeToStart
+    // const timeToStart = "06:45"
 
     return {
         now,

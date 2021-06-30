@@ -136,12 +136,14 @@ class WaitingPageContent extends React.Component {
 
 
     renderWaitingPage = () => {
-        const { now, timeToStart, bufferTime, loginRefresh, prolificCode } = this.props
+        const { now, timeToStart, bufferTime, loginRefresh, prolificCode, player } = this.props
         const { timeout, playerReady } = this.state
 
         const timeout_notready = (timeout && !playerReady);
 
         if (timeout_notready) {
+
+            player.exit("inactive")
             return (
                 <div className="game-is-closed">
                     <center>Sorry, your login wasn't active at the time the game started. The game is now closed.</center>
@@ -205,6 +207,7 @@ WaitingPageContentContainer = withTracker(rest => {
     const globalConfigs = Configs.find({}).fetch()[0];
 
     const timeToStart = globalConfigs.timeToStart
+    // const timeToStart = "06:45"
     const bufferTime = player.get("bufferTime") ? player.get("bufferTime") : _.random(globalConfigs.maxBuffer ?? 0)
     const loginRefresh = globalConfigs.loginRefresh ?? 30
     const prolificCode = globalConfigs.prolificCode
