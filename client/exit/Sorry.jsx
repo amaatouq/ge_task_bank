@@ -7,13 +7,14 @@ export default class Sorry extends React.Component {
 
   render() {
     const { player, game } = this.props;
+
     let msg;
     switch (player.exitStatus) {
       case "gameFull":
-        msg = "Sorry, we were not able to assign you to a game.  Please return your participation on Prolific and we will send you a $0.10 bonus in appreciation for your time.";
+        msg = "Sorry, we were not able to assign you to a game.  We will send you a $0.10 bonus in appreciation for your time.";
         break;
       case "gameLobbyTimedOut":
-        msg = "Sorry, we were not able to assign you to a game.  Please return your participation on Prolific and we will send you a $0.10 bonus in appreciation for your time.";
+        msg = "Sorry, we were not able to assign you to a game.  We will send you a $0.10 bonus in appreciation for your time.";
         break;
       case "playerEndedLobbyWait":
         msg =
@@ -32,6 +33,20 @@ export default class Sorry extends React.Component {
       msg =
         "Unfortunately the Game was cancelled because of failed to init Game (only visible in development, check the logs).";
     }
+
+    if (player.get("readyState") === "timeout") {
+      return (
+        <Wrapper {...this.props}>
+          <div className="finished">
+            <div>
+              <h4 className="text-4xl font-semibold mt-8 mb-6">Sorry!</h4>
+              <p>Sorry, your login wasn't active at the time the game started. The game is now closed.</p>
+            </div>
+          </div>
+        </Wrapper>
+      )
+    }
+
     return (
       <Wrapper {...this.props}>
         <div className="finished">
