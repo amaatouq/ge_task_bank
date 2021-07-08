@@ -3,142 +3,188 @@ treatments:
     factorIds:
       - YWwosMevTALbyZmjc
       - Z8qTZzDedy9mqYYhY
-      - HeocpQPGgaR8Z3Tbt
-      - 5AXktx5YY3DMvdB5L
+      - zCMjitApPYQf9Gx68
+      - pXu8PhLsEAZHhAz7d
       - qtgWqpEtizZ4SKF5C
       - 8xBkmBYw37fmy9Ztb
       - oWBpWDi7Bp2MysKkg
       - HtyBPSwcDcFZiGLvJ
-      - dFizLNzakmSDCvKjz
-      - zXLQbYeCHfEyAde7i
+      - NAqt745oC2uuCHvM4
+      - 7C92XPxcNab3xNfvv
       - 4iyZdsK3HiRFWYcdi
   - name: multi3
     factorIds:
       - p6nwB2WcgooiR5f7b
       - Z8qTZzDedy9mqYYhY
-      - HeocpQPGgaR8Z3Tbt
-      - 5AXktx5YY3DMvdB5L
+      - zCMjitApPYQf9Gx68
+      - pXu8PhLsEAZHhAz7d
       - qtgWqpEtizZ4SKF5C
       - 8xBkmBYw37fmy9Ztb
       - AAXBytkKFMDyadCH9
       - oWBpWDi7Bp2MysKkg
       - HtyBPSwcDcFZiGLvJ
-      - qbR2BXjtRTDLiZPwT
-      - AddunpcFtngoNPMoS
+      - dbcwhpsxYP5RKzfHz
+      - Z5YTHDdbcEza6KiBW
       - 4iyZdsK3HiRFWYcdi
-      - M3L2bcGpL2hA9hx7o
-      - oC2mLG2f7ZoL9fNPm
+      - D4eucQcubzaFwxeub
+      - qxXh7u7oocgCrPNdf
       - d8g6RFXEof6HrRm3g
       - iQFwSueW7AupfFpGu
       - tPTgyDJuhEMqPfMcK
-      - Gf3u4hf7qKcuCsAQx
-      - 2st2AYHdwLbqzeepi
-      - AzPZ847QpDas4btX5
-      - vwwp26TNEjRfMxYS8
+      - 5RvE9fyceJz2HZuPK
+      - 2suGejbxFZ4imAwma
+      - QZRGoi67vAPKDjiFc
+      - hQKmXXxc8iJpeCfhp
       - BYeSsSwkoAHyh6tJb
-      - bYRsHuTvJDf2EdtLk
+      - EbtvxtMt7Mci26zYx
       - tz95WfetfCbBPhpqw
   - name: 4players_discreet
     factorIds:
       - 3rBswLaaDosuk8nBx
       - Z8qTZzDedy9mqYYhY
-      - HeocpQPGgaR8Z3Tbt
-      - 5AXktx5YY3DMvdB5L
+      - zCMjitApPYQf9Gx68
+      - pXu8PhLsEAZHhAz7d
       - qtgWqpEtizZ4SKF5C
       - 8xBkmBYw37fmy9Ztb
       - AAXBytkKFMDyadCH9
       - oWBpWDi7Bp2MysKkg
       - HtyBPSwcDcFZiGLvJ
-      - qbR2BXjtRTDLiZPwT
-      - AddunpcFtngoNPMoS
+      - dbcwhpsxYP5RKzfHz
+      - Z5YTHDdbcEza6KiBW
       - 4iyZdsK3HiRFWYcdi
-      - M3L2bcGpL2hA9hx7o
-      - oC2mLG2f7ZoL9fNPm
+      - D4eucQcubzaFwxeub
+      - qxXh7u7oocgCrPNdf
       - d8g6RFXEof6HrRm3g
       - Js7We2E3L9h8WHbTG
       - tPTgyDJuhEMqPfMcK
-      - Gf3u4hf7qKcuCsAQx
-      - 2st2AYHdwLbqzeepi
-      - AzPZ847QpDas4btX5
-      - vwwp26TNEjRfMxYS8
+      - 5RvE9fyceJz2HZuPK
+      - 2suGejbxFZ4imAwma
+      - QZRGoi67vAPKDjiFc
+      - hQKmXXxc8iJpeCfhp
       - BYeSsSwkoAHyh6tJb
-      - bYRsHuTvJDf2EdtLk
+      - EbtvxtMt7Mci26zYx
       - Kx8eQvgmXphXMC9LD
   - name: 4players_continuous
     factorIds:
       - 3rBswLaaDosuk8nBx
       - Z8qTZzDedy9mqYYhY
-      - HeocpQPGgaR8Z3Tbt
-      - 5AXktx5YY3DMvdB5L
+      - zCMjitApPYQf9Gx68
+      - pXu8PhLsEAZHhAz7d
       - qtgWqpEtizZ4SKF5C
       - 8xBkmBYw37fmy9Ztb
       - AAXBytkKFMDyadCH9
       - oWBpWDi7Bp2MysKkg
       - HtyBPSwcDcFZiGLvJ
-      - qbR2BXjtRTDLiZPwT
-      - AddunpcFtngoNPMoS
+      - dbcwhpsxYP5RKzfHz
+      - Z5YTHDdbcEza6KiBW
       - 4iyZdsK3HiRFWYcdi
-      - M3L2bcGpL2hA9hx7o
-      - oC2mLG2f7ZoL9fNPm
+      - D4eucQcubzaFwxeub
+      - qxXh7u7oocgCrPNdf
       - qGAvofMccGriujk7W
       - Js7We2E3L9h8WHbTG
       - tPTgyDJuhEMqPfMcK
-      - bFdrd5MMHcDwuhxbP
-      - vcdogz7oeGFodToLB
-      - EaA6649NSsAhjp3fF
-      - bu7EnA8jtM3P9Mz4r
-      - bYRsHuTvJDf2EdtLk
+      - jAuTthNj8BfDjBorT
+      - qYv3ARR8GcKcpzcET
+      - 5rgEutSWijFWGa4vA
+      - C4gyWNh7RRhDx5Nsm
+      - EbtvxtMt7Mci26zYx
       - Kx8eQvgmXphXMC9LD
-  - name: Chat
+  - name: 8_Chat
     factorIds:
       - hNsz7jhMuFn42D2Bj
       - YdqPYMxtdk93Cqzjv
-      - HeocpQPGgaR8Z3Tbt
-      - eXnbnwRutm7yxh83W
-      - qtgWqpEtizZ4SKF5C
+      - zCMjitApPYQf9Gx68
+      - 67oMn5qBZhQ8k332X
       - qJ3QCatryHYSpftgr
-      - qbR2BXjtRTDLiZPwT
-      - AddunpcFtngoNPMoS
+      - dbcwhpsxYP5RKzfHz
+      - Z5YTHDdbcEza6KiBW
       - v3zhjW4DQNAibZ5kF
-      - M3L2bcGpL2hA9hx7o
-      - oC2mLG2f7ZoL9fNPm
+      - D4eucQcubzaFwxeub
+      - qxXh7u7oocgCrPNdf
       - qGAvofMccGriujk7W
       - rs8ZXDgGwLvYtQZ7Z
       - Zwwp5AZ9aMWz8rH2S
-      - bu7EnA8jtM3P9Mz4r
-      - 2st2AYHdwLbqzeepi
-      - bFdrd5MMHcDwuhxbP
-      - vcdogz7oeGFodToLB
+      - C4gyWNh7RRhDx5Nsm
+      - 2suGejbxFZ4imAwma
+      - jAuTthNj8BfDjBorT
+      - qYv3ARR8GcKcpzcET
       - Z2WCnquEqT8cgLPS6
-      - bYRsHuTvJDf2EdtLk
+      - EbtvxtMt7Mci26zYx
       - ZcvsDvQXfCSmG8wKD
-      - bjRGi5Fu7vvKR8Dky
-      - BzvHYnsuuNjpSBxPz
-  - name: NoChat
+      - 8AHDuwWtDjCzacCnL
+      - awnFu5kJpDiaZ7D9g
+  - name: 8_NoChat
     factorIds:
       - hNsz7jhMuFn42D2Bj
       - YdqPYMxtdk93Cqzjv
-      - HeocpQPGgaR8Z3Tbt
-      - eXnbnwRutm7yxh83W
+      - zCMjitApPYQf9Gx68
+      - 67oMn5qBZhQ8k332X
       - qJ3QCatryHYSpftgr
-      - qbR2BXjtRTDLiZPwT
-      - AddunpcFtngoNPMoS
+      - dbcwhpsxYP5RKzfHz
+      - Z5YTHDdbcEza6KiBW
       - v3zhjW4DQNAibZ5kF
-      - M3L2bcGpL2hA9hx7o
-      - vZN8x76xuFzYxtYgJ
+      - D4eucQcubzaFwxeub
+      - PofmnbcKfdgjv4RDs
       - qGAvofMccGriujk7W
       - rs8ZXDgGwLvYtQZ7Z
       - Zwwp5AZ9aMWz8rH2S
-      - bu7EnA8jtM3P9Mz4r
-      - 2st2AYHdwLbqzeepi
-      - bFdrd5MMHcDwuhxbP
-      - vcdogz7oeGFodToLB
+      - C4gyWNh7RRhDx5Nsm
+      - 2suGejbxFZ4imAwma
+      - jAuTthNj8BfDjBorT
+      - qYv3ARR8GcKcpzcET
       - Z2WCnquEqT8cgLPS6
-      - bYRsHuTvJDf2EdtLk
-      - bjRGi5Fu7vvKR8Dky
-      - BzvHYnsuuNjpSBxPz
+      - EbtvxtMt7Mci26zYx
+      - 8AHDuwWtDjCzacCnL
+      - awnFu5kJpDiaZ7D9g
+  - name: 10_Chat
+    factorIds:
+      - iNCPvibFdrQeN9yjx
+      - YdqPYMxtdk93Cqzjv
+      - zCMjitApPYQf9Gx68
+      - 67oMn5qBZhQ8k332X
+      - ue44qEySh98fetuaY
+      - dbcwhpsxYP5RKzfHz
+      - Z5YTHDdbcEza6KiBW
+      - gyT5AkzSC5bSWuWiK
+      - D4eucQcubzaFwxeub
+      - qxXh7u7oocgCrPNdf
+      - qGAvofMccGriujk7W
+      - xbH2czoCALFFaggB9
+      - Zwwp5AZ9aMWz8rH2S
+      - C4gyWNh7RRhDx5Nsm
+      - 2suGejbxFZ4imAwma
+      - jAuTthNj8BfDjBorT
+      - qYv3ARR8GcKcpzcET
+      - Z2WCnquEqT8cgLPS6
+      - EbtvxtMt7Mci26zYx
+      - vLWaRmvAdTvTrvdR9
+      - 8AHDuwWtDjCzacCnL
+      - awnFu5kJpDiaZ7D9g
+  - name: 10_NoChat
+    factorIds:
+      - iNCPvibFdrQeN9yjx
+      - YdqPYMxtdk93Cqzjv
+      - zCMjitApPYQf9Gx68
+      - 67oMn5qBZhQ8k332X
+      - ue44qEySh98fetuaY
+      - dbcwhpsxYP5RKzfHz
+      - Z5YTHDdbcEza6KiBW
+      - gyT5AkzSC5bSWuWiK
+      - D4eucQcubzaFwxeub
+      - PofmnbcKfdgjv4RDs
+      - qGAvofMccGriujk7W
+      - xbH2czoCALFFaggB9
+      - Zwwp5AZ9aMWz8rH2S
+      - C4gyWNh7RRhDx5Nsm
+      - 2suGejbxFZ4imAwma
+      - jAuTthNj8BfDjBorT
+      - qYv3ARR8GcKcpzcET
+      - Z2WCnquEqT8cgLPS6
+      - EbtvxtMt7Mci26zYx
+      - 8AHDuwWtDjCzacCnL
+      - awnFu5kJpDiaZ7D9g
 factorTypes:
-  - _id: Y6D8f3mxvt5DFSaP2
+  - _id: DHZF9QM9W4WFKSzwZ
     name: playerCount
     description: The Number of players participating in the given game.
     required: true
@@ -328,114 +374,114 @@ factorTypes:
     required: false
     type: Boolean
 factors:
-  - _id: HeocpQPGgaR8Z3Tbt
+  - _id: zCMjitApPYQf9Gx68
     name: 'true'
     value: true
     factorTypeId: wz7s4ufXj2ss5hHGY
-  - _id: RsqEpebryCveTdcmR
+  - _id: WNsQDRDDRsvLwz7m4
     name: 'false'
     value: false
     factorTypeId: wz7s4ufXj2ss5hHGY
-  - _id: 5AXktx5YY3DMvdB5L
+  - _id: pXu8PhLsEAZHhAz7d
     name: 'true'
     value: true
     factorTypeId: GCGbdjiqFbsHYAYSk
-  - _id: eXnbnwRutm7yxh83W
+  - _id: 67oMn5qBZhQ8k332X
     name: 'false'
     value: false
     factorTypeId: GCGbdjiqFbsHYAYSk
-  - _id: dFizLNzakmSDCvKjz
+  - _id: NAqt745oC2uuCHvM4
     name: 'true'
     value: true
     factorTypeId: YMa7vmBFmum5YcHX4
-  - _id: qbR2BXjtRTDLiZPwT
+  - _id: dbcwhpsxYP5RKzfHz
     name: 'false'
     value: false
     factorTypeId: YMa7vmBFmum5YcHX4
-  - _id: zXLQbYeCHfEyAde7i
+  - _id: 7C92XPxcNab3xNfvv
     name: 'true'
     value: true
     factorTypeId: pGbLrSrHZAatHoC9K
-  - _id: AddunpcFtngoNPMoS
+  - _id: Z5YTHDdbcEza6KiBW
     name: 'false'
     value: false
     factorTypeId: pGbLrSrHZAatHoC9K
-  - _id: M3L2bcGpL2hA9hx7o
+  - _id: D4eucQcubzaFwxeub
     name: 'true'
     value: true
     factorTypeId: nB5HyfYmdxKQzWkyi
-  - _id: z9DwxyNnDpasdibWw
+  - _id: iuzkZquWs9fz4vZYE
     name: 'false'
     value: false
     factorTypeId: nB5HyfYmdxKQzWkyi
-  - _id: oC2mLG2f7ZoL9fNPm
+  - _id: qxXh7u7oocgCrPNdf
     name: 'true'
     value: true
     factorTypeId: LqbnLgDHgJzprHbAR
-  - _id: vZN8x76xuFzYxtYgJ
+  - _id: PofmnbcKfdgjv4RDs
     name: 'false'
     value: false
     factorTypeId: LqbnLgDHgJzprHbAR
-  - _id: Gf3u4hf7qKcuCsAQx
+  - _id: 5RvE9fyceJz2HZuPK
     name: 'true'
     value: true
     factorTypeId: u6Gc6NvGLnZX57cKg
-  - _id: bu7EnA8jtM3P9Mz4r
+  - _id: C4gyWNh7RRhDx5Nsm
     name: 'false'
     value: false
     factorTypeId: u6Gc6NvGLnZX57cKg
-  - _id: 2st2AYHdwLbqzeepi
+  - _id: 2suGejbxFZ4imAwma
     name: 'true'
     value: true
     factorTypeId: SfuTi4jrjoJKeNj8m
-  - _id: EaA6649NSsAhjp3fF
+  - _id: 5rgEutSWijFWGa4vA
     name: 'false'
     value: false
     factorTypeId: SfuTi4jrjoJKeNj8m
-  - _id: bFdrd5MMHcDwuhxbP
+  - _id: jAuTthNj8BfDjBorT
     name: 'true'
     value: true
     factorTypeId: JTYhugFFkpcQt794j
-  - _id: AzPZ847QpDas4btX5
+  - _id: QZRGoi67vAPKDjiFc
     name: 'false'
     value: false
     factorTypeId: JTYhugFFkpcQt794j
-  - _id: vcdogz7oeGFodToLB
+  - _id: qYv3ARR8GcKcpzcET
     name: 'true'
     value: true
     factorTypeId: obi4tgdNS3xNAEiBc
-  - _id: vwwp26TNEjRfMxYS8
+  - _id: hQKmXXxc8iJpeCfhp
     name: 'false'
     value: false
     factorTypeId: obi4tgdNS3xNAEiBc
-  - _id: KiJqcnzAyNX6TzJDi
+  - _id: JWjcH39yMoCruwLRq
     name: 'true'
     value: true
     factorTypeId: g26DS57dNWkaMiRcp
-  - _id: bYRsHuTvJDf2EdtLk
+  - _id: EbtvxtMt7Mci26zYx
     name: 'false'
     value: false
     factorTypeId: g26DS57dNWkaMiRcp
-  - _id: Y9oAkt89nakgJ8FCd
+  - _id: LfTv4EEFsZA6xkhCj
     name: 'true'
     value: true
     factorTypeId: b48q4W96daDbt4Gmd
-  - _id: bjRGi5Fu7vvKR8Dky
+  - _id: 8AHDuwWtDjCzacCnL
     name: 'false'
     value: false
     factorTypeId: b48q4W96daDbt4Gmd
-  - _id: RYHhp2XZJZB8rrc8o
+  - _id: XnKocpamDHnBL24ex
     name: 'true'
     value: true
     factorTypeId: 8faqAbLdQx7La6C7u
-  - _id: BzvHYnsuuNjpSBxPz
+  - _id: awnFu5kJpDiaZ7D9g
     name: 'false'
     value: false
     factorTypeId: 8faqAbLdQx7La6C7u
   - _id: YWwosMevTALbyZmjc
     name: '1'
     value: 1
-    factorTypeId: Y6D8f3mxvt5DFSaP2
+    factorTypeId: DHZF9QM9W4WFKSzwZ
   - _id: Z8qTZzDedy9mqYYhY
     name: '5'
     value: 5
@@ -475,7 +521,7 @@ factors:
   - _id: p6nwB2WcgooiR5f7b
     name: '3'
     value: 3
-    factorTypeId: Y6D8f3mxvt5DFSaP2
+    factorTypeId: DHZF9QM9W4WFKSzwZ
   - _id: d8g6RFXEof6HrRm3g
     name: discreet
     value: discreet
@@ -518,7 +564,7 @@ factors:
   - _id: 3rBswLaaDosuk8nBx
     name: '4'
     value: 4
-    factorTypeId: Y6D8f3mxvt5DFSaP2
+    factorTypeId: DHZF9QM9W4WFKSzwZ
   - _id: Js7We2E3L9h8WHbTG
     name: 4players
     value: '1-2,1-3,2-4,3-4'
@@ -554,31 +600,31 @@ factors:
   - _id: zJHnkk3JCztzdSRi5
     name: '2'
     value: 2
-    factorTypeId: Y6D8f3mxvt5DFSaP2
+    factorTypeId: DHZF9QM9W4WFKSzwZ
   - _id: D9qMBf82gvLE2ELwi
     name: '5'
     value: 5
-    factorTypeId: Y6D8f3mxvt5DFSaP2
+    factorTypeId: DHZF9QM9W4WFKSzwZ
   - _id: kJssnFKKFNHTbF5aN
     name: '6'
     value: 6
-    factorTypeId: Y6D8f3mxvt5DFSaP2
+    factorTypeId: DHZF9QM9W4WFKSzwZ
   - _id: oHBHCPYWSB5wzsXov
     name: '7'
     value: 7
-    factorTypeId: Y6D8f3mxvt5DFSaP2
+    factorTypeId: DHZF9QM9W4WFKSzwZ
   - _id: hNsz7jhMuFn42D2Bj
     name: '8'
     value: 8
-    factorTypeId: Y6D8f3mxvt5DFSaP2
+    factorTypeId: DHZF9QM9W4WFKSzwZ
   - _id: RHj5tcYbpQeFAkden
     name: '9'
     value: 9
-    factorTypeId: Y6D8f3mxvt5DFSaP2
+    factorTypeId: DHZF9QM9W4WFKSzwZ
   - _id: iNCPvibFdrQeN9yjx
     name: '10'
     value: 10
-    factorTypeId: Y6D8f3mxvt5DFSaP2
+    factorTypeId: DHZF9QM9W4WFKSzwZ
   - _id: ZaHvuL44GmanwuqoF
     name: 1random
     value: '{"1":["?"]}'
@@ -620,6 +666,24 @@ factors:
     name: 3min
     value: 180
     factorTypeId: 2cYukeq3bvgZb8Qa6
+  - _id: gyT5AkzSC5bSWuWiK
+    name: 10_1each_2extra
+    value: >-
+      {"1":[1],"2":[2],"3":[3],"4":[4],"5":[5],"6":[6],"7":[7],"8":[8],"9":[6],"10":[8]}
+    factorTypeId: KPaBsT8QA6WWc8osT
+  - _id: ue44qEySh98fetuaY
+    name: 90s
+    value: 90
+    factorTypeId: TiwWcki7aj5rS7PvN
+  - _id: vLWaRmvAdTvTrvdR9
+    name: 10_all
+    value: '1-A,2-A,3-A,4-A,5-A,6-A,7-A,8-A,9-A,10-A'
+    factorTypeId: 4Mc2N6mo29A78JWXD
+  - _id: xbH2czoCALFFaggB9
+    name: 10players
+    value: >-
+      1-2,1-3,1-4,1-5,1-6,1-7,1-8,1-9,1-10,2-3,2-4,2-5,2-6,2-7,2-8,2-9,2-10,3-4,3-5,3-6,3-7,3-8,3-9,3-10,4-5,4-6,4-7,4-8,4-9,4-10,5-6,5-7,5-8,5-9,5-10,6-7,6-8,6-9,6-10,7-8,7-9,7-10,8-9,8-10,9-10
+    factorTypeId: e2qdsQ7BTpB32kX5j
 lobbyConfigs:
   - name: Default
     timeoutType: lobby

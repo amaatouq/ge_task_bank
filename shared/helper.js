@@ -188,13 +188,12 @@ export function getHints(player, round, game) {
   // As the rounds go, the "hints" of the player will be populated, where each key is the index of the round
   // BONUS: This allows us to track which hints player got at which round.
 
-  const playerHints = player.get("hints")
+  const playerHints = player.round.get("hints") ?? { hintText: [], hintIndex: [] }
   const roundIndex = round.get("index")
 
   // If the hints are already set you want to get those instead of resetting them...
   //If they are not set, you want to set them...
-  let hints = playerHints[roundIndex] ?? []
-  if (hints.length === 0) {
+  if (playerHints["hintText"].length === 0) {
 
     // If there is a configuration set in the treatment.hint, use it to select the hints
     if (treatment.hints) {
@@ -220,7 +219,7 @@ export function getHints(player, round, game) {
           // ...check that there could be a hint with this index (it doesn't return undefined)
           if (typeof possibleHints[config - 1] != "undefined") {
             // ...push the hint that has this index
-            hints.push(possibleHints[config - 1]);
+            playerHints["hintText"].push(possibleHints[config - 1]);
             // and take this hint out of the hints ready to be selected randomly
             randomPossibleHints.splice(config - 1, 1);
           }
@@ -234,18 +233,22 @@ export function getHints(player, round, game) {
       if (nbRandomHints > 0) {
         for (let i = 0; i < nbRandomHints; i++) {
           // Randomly select a hint (and take it out) with popChoice
-          hints.push(popChoice(randomPossibleHints));
+          playerHints["hintText"].push(popChoice(randomPossibleHints));
         }
       }
     } else {
       // Else, just allocate all the hints
-      hints = possibleHints;
+      playerHints["hintText"] = possibleHints;
     }
 
+    // Get the hint indexes
+    playerHints["hintText"].forEach(hint => {
+      playerHints["hintIndex"].push(possibleHints.indexOf(hint) + 1)
+    })
+
     // Populate the player's hints
-    playerHints[roundIndex] = hints;
-    player.set("hints", playerHints);
+    player.round.set("hints", playerHints);
   }
 
-  return hints;
+  return playerHints["hintText"];
 }
