@@ -11,10 +11,10 @@ export default class Sorry extends React.Component {
     let msg;
     switch (player.exitStatus) {
       case "gameFull":
-        msg = "Sorry, we were not able to assign you to a game.  We will send you a $0.10 bonus in appreciation for your time.";
+        msg = "Sorry, we were not able to assign you to a game.  We will send you a $0.50 bonus in appreciation for your time.";
         break;
       case "gameLobbyTimedOut":
-        msg = "Sorry, we were not able to assign you to a game.  We will send you a $0.10 bonus in appreciation for your time.";
+        msg = "Sorry, we were not able to assign you to a game.  We will send you a $0.50 bonus in appreciation for your time.";
         break;
       case "playerEndedLobbyWait":
         msg =
