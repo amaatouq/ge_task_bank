@@ -18,7 +18,7 @@ export const taskData = [
         'The average earnings for people receiving a 2 year degree in biology is $24,267.',
         'The average earnings for people receiving a 2 year degree in business is $29,685.',
         'The average earnings for people receiving a 2 year degree in accounting is $31,184.',
-        'Registered nursing is among the top 20 most popular fields.  Nursing graduates earned an income more than twice the average for the top 20 most popular fields.',
+        'Nursing graduates earned an income more than twice the average among the 20 most popular degrees.',
         'Average earnings for the top 20 most popular fields was $25,872.',
         'For nurses, the highest earning state was California, where nursing graduates earned $91,544 on average.'
       ],

@@ -37,14 +37,18 @@ export default class GameOverview extends Component {
           <p>
             This task you'll be asked to give your best guess for {textRounds > 1 ? textRounds : "a"} question{textRounds > 1 && "s"} about social or economic life (e.g., what's the average price for a gallon of milk?).
           </p>
-
           {!hideTimer &&
             <p>You will have {responseDuration} seconds to answer{textRounds > 1 && " a question"}.</p>
           }
 
           {
             playerCount > 1 &&
-            <p>After providing your initial answer, you will have {socialDuration / 60} minutes to {chat && "chat with other players and "}learn about other players' answers.</p>
+            <>
+              <p>
+                You will be provided with some supporting information.  <b>Other people may have different information than you.</b>
+              </p>
+              <p>After providing your initial answer, you will have {socialDuration / 60} minutes to {chat && "chat with other players and "}learn about other players' answers.</p>
+            </>
           }
           <br />
 
