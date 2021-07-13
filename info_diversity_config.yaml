@@ -183,6 +183,53 @@ treatments:
       - EbtvxtMt7Mci26zYx
       - 8AHDuwWtDjCzacCnL
       - awnFu5kJpDiaZ7D9g
+  - name: 2_test_Chat
+    factorIds:
+      - zJHnkk3JCztzdSRi5
+      - YdqPYMxtdk93Cqzjv
+      - zCMjitApPYQf9Gx68
+      - 67oMn5qBZhQ8k332X
+      - ue44qEySh98fetuaY
+      - dbcwhpsxYP5RKzfHz
+      - Z5YTHDdbcEza6KiBW
+      - gyT5AkzSC5bSWuWiK
+      - D4eucQcubzaFwxeub
+      - qxXh7u7oocgCrPNdf
+      - qGAvofMccGriujk7W
+      - xbH2czoCALFFaggB9
+      - Zwwp5AZ9aMWz8rH2S
+      - C4gyWNh7RRhDx5Nsm
+      - 2suGejbxFZ4imAwma
+      - jAuTthNj8BfDjBorT
+      - qYv3ARR8GcKcpzcET
+      - Z2WCnquEqT8cgLPS6
+      - EbtvxtMt7Mci26zYx
+      - vLWaRmvAdTvTrvdR9
+      - 8AHDuwWtDjCzacCnL
+      - awnFu5kJpDiaZ7D9g
+  - name: 2_test_NoChat
+    factorIds:
+      - zJHnkk3JCztzdSRi5
+      - YdqPYMxtdk93Cqzjv
+      - zCMjitApPYQf9Gx68
+      - 67oMn5qBZhQ8k332X
+      - ue44qEySh98fetuaY
+      - dbcwhpsxYP5RKzfHz
+      - Z5YTHDdbcEza6KiBW
+      - gyT5AkzSC5bSWuWiK
+      - D4eucQcubzaFwxeub
+      - PofmnbcKfdgjv4RDs
+      - qGAvofMccGriujk7W
+      - xbH2czoCALFFaggB9
+      - Zwwp5AZ9aMWz8rH2S
+      - C4gyWNh7RRhDx5Nsm
+      - 2suGejbxFZ4imAwma
+      - jAuTthNj8BfDjBorT
+      - qYv3ARR8GcKcpzcET
+      - Z2WCnquEqT8cgLPS6
+      - EbtvxtMt7Mci26zYx
+      - 8AHDuwWtDjCzacCnL
+      - awnFu5kJpDiaZ7D9g
 factorTypes:
   - _id: DHZF9QM9W4WFKSzwZ
     name: playerCount
