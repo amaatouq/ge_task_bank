@@ -43,9 +43,9 @@ export class Question extends Component {
                 )}
               </div>
               {hints && hints.length > 0 && (
-                <>
+                <div className="hintBox">
                   <div className="w-full ln-27">
-                    <strong>More info:</strong>
+                    <strong>Your private information:</strong>
                   </div>
                   {hints.map((h, i) => (
                     <div
@@ -55,11 +55,11 @@ export class Question extends Component {
                       <div className="with-bullet">{" " + h}</div>
                     </div>
                   ))}
-                </>
+                </div>
               )}
               {canUpdate ? (
                 <div className="w-full ln-27">
-                  <strong>{stage.name === "social" ? "Update" : "Submit"} your response below to the right.</strong>
+                  <strong>{stage.name === "social" ? "Update your response below to the right. Use the chatroom to exchange information with other players and improve your answer." : "Submit your response below to the right."}</strong>
                 </div>
               ) : stage.name !== "social" &&
               <div className="w-full ln-27">

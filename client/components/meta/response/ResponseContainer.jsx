@@ -6,6 +6,8 @@ import { Avatar } from "../../../game/Avatar";
 import AutoRotate from "./AutoRotate";
 import AutoScroll from "./AutoScroll";
 
+import { getUnit } from '../../../../shared/unit';
+
 export const Answer = ({ answer }) => (
   <NumberFormat
     thousandSeparator={true}
@@ -47,7 +49,7 @@ export class ResponseContainer extends Component {
             <Avatar iconOnly player={player} />
 
             <span>
-              <Answer answer={answer} /> {unit}
+              <Answer answer={answer} /> {getUnit({ round, answer, unit })}
             </span>
           </div>
           {interactionMode === "continuous" && !player.stage.get("hasUpdatedOnce") && (
@@ -60,7 +62,7 @@ export class ResponseContainer extends Component {
           <span className="text-dark-gray font-bold text-sm mb-2">
             Other Players Detailed
           </span>
-          <AutoRotate otherPlayers={neighbors} unit={unit} rate={1000} />
+          <AutoRotate otherPlayers={neighbors} unit={unit} rate={1000} {...this.props} />
         </div>
       </div>
     );

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { deepCopy } from '../../../../shared/helperFunctions/deepCopy';
+import { getUnit } from '../../../../shared/unit';
 import { Avatar } from '../../../game/Avatar';
 import { Answer } from './ResponseContainer'
 
@@ -78,7 +79,7 @@ export default class AutoRotate extends Component {
   }
 
   render() {
-    const { unit, otherPlayers } = this.props
+    const { unit, otherPlayers, round } = this.props
     const { playerOrder } = this.state
 
     return (
@@ -98,7 +99,7 @@ export default class AutoRotate extends Component {
               <li className="flex justify-between text-sm" key={i}>
                 <Avatar iconOnly player={p} />
                 <span>
-                  <Answer answer={oAnswer} /> {unit}
+                  <Answer answer={oAnswer} /> {getUnit({ round, oAnswer, unit })}
                 </span>
               </li>
             );

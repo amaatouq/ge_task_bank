@@ -10,20 +10,19 @@ export function ModalInstruction({ game }) {
 
         return (
           <Modal open={showModal} onClose={toggleModal}>
-            <p className="mb-5">This is a social stage where you can:</p>
             <ul className="mb-5 instruction-list">
-              <li className="mb-3">
-                See information about the other players’ responses
-              </li>
               {chat && (
                 <li className="mb-3">
-                  Chat with other players about their response
+                  Use the chatroom to exchange information with other players.
                 </li>
               )}
+              <li className="mb-3">
+                Combine your information to improve your accuracy.
+              </li>
               {interactionMode === "continuous"
                 ?
                 <li className="mb-3">
-                  Modify your response and press ‘Update’ to change your response
+                  You must click "update" to save your new answer.
                 </li>
                 :
                 <li className="mb-3">

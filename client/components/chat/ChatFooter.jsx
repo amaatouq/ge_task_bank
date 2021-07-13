@@ -66,7 +66,7 @@ export default class ChatFooter extends React.Component {
             className="chat-textarea w-full m-0 px-0 resize-none xl:text-lg text-md text-gray-500 bg-transparent placeholder-gray-300 border-0 border-b-2 border-white focus:ring-0 focus:outline-none focus:border-b-2 focus:border-gray-500 leading-snug tabular-nums"
             id="chat-input"
             name="comment"
-            placeholder="Type chat message here..."
+            placeholder="Type chat message here and press Enter to send..."
             value={comment}
             onKeyPress={(e) => {
               if (e.key === "Enter") {

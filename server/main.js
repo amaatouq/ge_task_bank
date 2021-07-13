@@ -10,7 +10,7 @@ Meteor.publish('admin-global-configs', function publishTasks() {
   return Configs.find({})
 })
 
-// Configs.insert({ timeToStart: "06:45", maxBuffer: 0, loginRefresh: 60, prolificCode: "" })
+// Configs.insert({ timeToStart: "18:45", maxBuffer: 0, loginRefresh: 60, prolificCode: "" })
 // console.log(Configs.find({}).fetch())
 // Configs.remove("tcGNDskmbCxbZEQon")
 // Configs.remove("EDF6EBiB86iTTPLSm")
