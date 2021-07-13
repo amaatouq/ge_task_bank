@@ -45,7 +45,7 @@ export default class GameOverview extends Component {
             playerCount > 1 &&
             <>
               <p>
-                You will be provided with some supporting information.  <b>Other people may have different information than you.</b>
+                You will be provided with some supporting information.  <b>Other people may have different information than you. Use the chat tool to exchange information and improve your accuracy.</b>
               </p>
               <p>After providing your initial answer, you will have {socialDuration / 60} minutes to {chat && "chat with other players and "}learn about other players' answers.</p>
             </>
@@ -55,7 +55,7 @@ export default class GameOverview extends Component {
           <p>PAYEMENT:</p>
           <ul className="instruction-list">
             <li>${pay} guaranteed pay.</li>
-            <li>UP TO ${bonus} bonus for accuracy. The more accurate your answer, the more you earn! </li>
+            <li>UP TO ${bonus} bonus for accuracy. <b>The more accurate your answer, the more you earn!</b></li>
             <li>Maximum possible earnings are ${num2stringdecimals((Number(pay) + Number(bonus)) * textRounds)}.</li>
             <li>Bonus pay will be processed within 2 business days.</li>
           </ul>
