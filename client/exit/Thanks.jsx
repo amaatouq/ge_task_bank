@@ -2,12 +2,16 @@ import React from "react";
 import Button from "../components/Button";
 import Wrapper from "../components/Wrapper";
 
+// Allows you to sync time with the server
+import { TimeSync } from "meteor/mizzao:timesync";
+
 export default class Thanks extends React.Component {
   static stepName = "Thanks";
   render() {
     const { player } = this.props
     if (!player.get("finishedStudy")) {
       player.set("finishedStudy", true)
+      player.set("finishStudyAt", new Date(TimeSync.serverTime(null, 1000)).toISOString())
     }
 
     return (
